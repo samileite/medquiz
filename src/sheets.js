@@ -14,7 +14,7 @@ async function getSheetTabs(sheetId) {
     const text = await res.text();
     const matches = [...text.matchAll(/"name":"([^"]+)"/g)];
     const names = matches.map(m => m[1]).filter((v, i, a) => a.indexOf(v) === i);
-    return names.filter(n => n !== "Página1" && n !== "Sheet1");
+    return names;
   } catch {
     return [];
   }
