@@ -1,0 +1,4 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f9f9f9; color: #1a1a1a; min-height: 100vh; }
+button { font-family: 'Inter', sans-serif; cursor: pointer; }
+select, input, textarea { font-family: 'Inter', sans-serif; }
