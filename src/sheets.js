@@ -1,80 +1,77 @@
-import { SHEET_IDS } from "./constants.js";
-
-const SHEET_GIDS = {
-  Endocrinologia: "1473029296",
-};
-
-async function fetchSheetData(sheetId, gid = "0") {
-  const url = `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:json&gid=${gid}`;
-  const res = await fetch(url);
-  const text = await res.text();
-
-  const jsonText = text.substring(text.indexOf("{"), text.lastIndexOf("}") + 1);
-  return JSON.parse(jsonText);
-}
+import { supabase } from "./lib/supabase.js";
 
 export async function fetchQuestionsByDisciplina(disciplina) {
-  const sheetId = SHEET_IDS[disciplina];
-
-  if (!sheetId) return [];
-
   try {
-    const gid = SHEET_GIDS[disciplina] || "0";
-    const json = await fetchSheetData(sheetId, gid);
-    const rows = json.table?.rows || [];
+    const { data: discipline, error: disciplineError } = await supabase
+      .from("disciplines")
+      .select("id, name")
+      .eq("name", disciplina)
+      .single();
 
-    return rows
-      .map((row) => row.c?.map((cell) => cell?.v?.toString().trim() || "") || [])
-      .filter((c) => c[3] && c[3].toLowerCase() !== "enunciado")
-      .map((c, index) => {
-        const alternativas = [];
+    if (disciplineError) throw disciplineError;
 
-        if (c[4]) alternativas.push({ id: "A", texto: c[4] });
-        if (c[5]) alternativas.push({ id: "B", texto: c[5] });
-        if (c[6]) alternativas.push({ id: "C", texto: c[6] });
-        if (c[7]) alternativas.push({ id: "D", texto: c[7] });
-        if (c[8]) alternativas.push({ id: "E", texto: c[8] });
+    const { data, error } = await supabase
+      .from("questions")
+      .select(`
+        id,
+        difficulty,
+        statement,
+        correct_answer,
+        general_comment,
+        summary,
+        memory_tip,
+        trap,
+        reference,
+        topics(name),
+        alternatives(letter, text, explanation)
+      `)
+      .eq("discipline_id", discipline.id)
+      .eq("active", true)
+      .order("created_at", { ascending: true });
 
-        return {
-          id: `${disciplina}-${index + 1}`,
-          topic: c[0] || disciplina,
-          subtopic: c[0] || disciplina,
-          difficulty: c[1] || "médio",
-          banca: c[2] || "",
-          enunciado: c[3],
-          alternativas,
-          correta: (c[9] || "A").toUpperCase(),
-          explicacao: {
-            geral: c[10] || "",
-            porAlternativa: {
-              A: c[11] || "",
-              B: c[12] || "",
-              C: c[13] || "",
-              D: c[14] || "",
-              E: c[15] || "",
-            },
-            raciocinioCli: c[16] || "",
-            dicaMemorizacao: c[17] || "",
-            pegadinha: c[18] || "",
-            diretriz: c[19] || "",
-          },
-        };
+    if (error) throw error;
+
+    console.log("Questões Supabase:", data);
+
+    return (data || []).map((q) => {
+      const alternativas = (q.alternatives || [])
+        .sort((a, b) => a.letter.localeCompare(b.letter))
+        .map((a) => ({
+          id: a.letter,
+          texto: a.text,
+        }));
+
+      const porAlternativa = {};
+
+      (q.alternatives || []).forEach((a) => {
+        porAlternativa[a.letter] = a.explanation || "";
       });
+
+      return {
+        id: q.id,
+        topic: q.topics?.name || disciplina,
+        subtopic: q.topics?.name || disciplina,
+        difficulty: q.difficulty || "médio",
+        banca: "",
+        enunciado: q.statement,
+        alternativas,
+        correta: q.correct_answer,
+        explicacao: {
+          geral: q.general_comment || "",
+          porAlternativa,
+          raciocinioCli: q.summary || "",
+          dicaMemorizacao: q.memory_tip || "",
+          pegadinha: q.trap || "",
+          diretriz: q.reference || "",
+        },
+      };
+    });
   } catch (err) {
-    console.error("Erro ao carregar planilha:", err);
+    console.error("Erro ao carregar questões do Supabase:", err);
     return [];
   }
 }
 
 export async function fetchQuestions() {
-  const disciplinas = Object.keys(SHEET_IDS).filter((d) => SHEET_IDS[d]);
-
-  let all = [];
-
-  for (const d of disciplinas) {
-    const qs = await fetchQuestionsByDisciplina(d);
-    all = [...all, ...qs];
-  }
-
-  return all;
+  return fetchQuestionsByDisciplina("Endocrinologia");
 }
