@@ -1,7 +1,13 @@
+import dotenv from "dotenv";
+dotenv.config({ path: ".env.local" });
+
 import admin from "firebase-admin";
 import { createClient } from "@supabase/supabase-js";
 
 if (!admin.apps.length) {
+  console.log("PROJECT_ID =", process.env.FIREBASE_PROJECT_ID);
+  console.log("CLIENT_EMAIL =", process.env.FIREBASE_CLIENT_EMAIL);
+  console.log("PRIVATE_KEY EXISTS =", !!process.env.FIREBASE_PRIVATE_KEY);
   admin.initializeApp({
     credential: admin.credential.cert({
       projectId: process.env.FIREBASE_PROJECT_ID,

@@ -168,7 +168,6 @@ export default function App() {
         selectedAnswer: selected,
         correctAnswer: correta?.toString().toUpperCase(),
       });
-      console.log("saveAnswer result:", result);
       if (result) {
         setLastSaveStatus({ status: "saved", message: "Resposta salva com sucesso" });
       } else {
