@@ -4,6 +4,7 @@ import { useAuth } from "./Auth.jsx";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
 import { DISCIPLINAS_POR_PERIODO, DIFFICULTIES, SHEET_IDS } from "./constants.js";
+import { saveAnswer } from "./services/answers.js";
 import ProfilePage from "./Profile.jsx";
 
 function Timer({ active, onTick, resetKey }) {
@@ -61,6 +62,7 @@ export default function App() {
   const [timerKey, setTimerKey] = useState(0);
   const [savingProgress, setSavingProgress] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [lastSaveStatus, setLastSaveStatus] = useState(null);
 
   useEffect(() => { loadProgress(); }, []);
 
@@ -148,6 +150,35 @@ export default function App() {
     setAnswers(newAnswers);
     setTimes(prev => ({ ...prev, [q.id]: curTime }));
     setRevealed(true); setTimerOn(false);
+
+    // Log de diagnóstico: confirmar que a ação de responder foi disparada
+    console.log("handleConfirm: preparando para salvar resposta", {
+      userUid: user?.uid,
+      questionId: q?.id,
+      selected,
+      correta,
+      curTime,
+    });
+
+    setLastSaveStatus({ status: "saving", message: "Enviando resposta..." });
+    try {
+      const result = await saveAnswer({
+        user,
+        questionId: q?.id,
+        selectedAnswer: selected,
+        correctAnswer: correta?.toString().toUpperCase(),
+      });
+      console.log("saveAnswer result:", result);
+      if (result) {
+        setLastSaveStatus({ status: "saved", message: "Resposta salva com sucesso" });
+      } else {
+        setLastSaveStatus({ status: "error", message: "Resposta não salva (ver console)" });
+      }
+    } catch (err) {
+      console.error("saveAnswer lançou um erro:", err);
+      setLastSaveStatus({ status: "error", message: String(err) });
+    }
+
     await saveProgress(newAnswers, null, null);
   }
 
@@ -269,6 +300,15 @@ export default function App() {
           <div style={{ display: "flex", gap: 10, justifyContent: "space-between" }}>
             <button onClick={() => { if (idx > 0) { setIdx(idx - 1); setSelected(null); setRevealed(false); setCurTime(0); } }} disabled={idx === 0} style={{ borderRadius: 10, padding: "10px 18px", fontSize: 14, cursor: "pointer" }}>← Anterior</button>
             <button onClick={handleNext} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>{idx < filteredQs.length - 1 ? "Próxima →" : "Ver resultado"}</button>
+          </div>
+        </div>
+      )}
+
+      {lastSaveStatus && (
+        <div style={{ position: "fixed", right: 18, bottom: 18, zIndex: 9999 }}>
+          <div style={{ padding: "10px 14px", borderRadius: 10, background: lastSaveStatus.status === "saved" ? "#e6ffef" : lastSaveStatus.status === "saving" ? "#fff7e6" : "#ffe6e6", color: "#111", boxShadow: "0 6px 20px rgba(0,0,0,0.08)", fontSize: 13 }}>
+            <strong>{lastSaveStatus.status === "saved" ? "✓ Salvo" : lastSaveStatus.status === "saving" ? "Enviando" : "Erro"}</strong>
+            <div style={{ fontSize: 12 }}>{lastSaveStatus.message}</div>
           </div>
         </div>
       )}
