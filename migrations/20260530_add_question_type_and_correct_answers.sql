@@ -22,7 +22,9 @@ set selected_answers = array[selected_answer]
 where selected_answer is not null
 and (selected_answers is null or cardinality(selected_answers) = 0);
 
-update user_answers
-set correct_answers = array[correct_answer]
-where correct_answer is not null
-and (correct_answers is null or cardinality(correct_answers) = 0);
+-- Se a tabela user_answers tiver uma coluna correct_answer, descomente
+-- a seção abaixo para migrar os valores existentes.
+-- update user_answers
+-- set correct_answers = array[correct_answer]
+-- where correct_answer is not null
+-- and (correct_answers is null or cardinality(correct_answers) = 0);
