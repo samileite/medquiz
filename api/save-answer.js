@@ -31,7 +31,13 @@ export default async function handler(req, res) {
       return res.status(401).json({ error: "Token ausente" });
     }
 
-    const decoded = await admin.auth().verifyIdToken(token);
+    let decoded;
+    try {
+      decoded = await admin.auth().verifyIdToken(token);
+    } catch (err) {
+      console.error("Token inválido:", err?.message || err);
+      return res.status(401).json({ error: "Token inválido" });
+    }
 
     const {
       questionId,
@@ -39,26 +45,38 @@ export default async function handler(req, res) {
       selectedAnswers,
       correctAnswer,
       correctAnswers,
-    } = req.body;
+    } = req.body || {};
+
+    const normalizeAnswers = (arrOrSingle) => {
+      if (Array.isArray(arrOrSingle)) return arrOrSingle.map((v) => String(v).toUpperCase());
+      if (arrOrSingle || arrOrSingle === 0) return [String(arrOrSingle).toUpperCase()];
+      return [];
+    };
 
     const normalizedSelectedAnswers = Array.isArray(selectedAnswers)
       ? selectedAnswers.map((v) => String(v).toUpperCase())
-      : selectedAnswer
-        ? [String(selectedAnswer).toUpperCase()]
-        : [];
+      : normalizeAnswers(selectedAnswer);
     const normalizedCorrectAnswers = Array.isArray(correctAnswers)
       ? correctAnswers.map((v) => String(v).toUpperCase())
-      : correctAnswer
-        ? [String(correctAnswer).toUpperCase()]
-        : [];
+      : normalizeAnswers(correctAnswer);
 
-    if (!questionId || normalizedSelectedAnswers.length === 0 || normalizedCorrectAnswers.length === 0) {
-      return res.status(400).json({ error: "Dados incompletos" });
+    if (!questionId) {
+      return res.status(400).json({ error: "Dados incompletos: questionId ausente" });
+    }
+    if (normalizedSelectedAnswers.length === 0) {
+      return res.status(400).json({ error: "Dados incompletos: selectedAnswer(s) ausente(s)" });
+    }
+    if (normalizedCorrectAnswers.length === 0) {
+      return res.status(400).json({ error: "Dados incompletos: correctAnswer(s) ausente(s)" });
     }
 
-    const sortedSelected = [...normalizedSelectedAnswers].sort();
-    const sortedCorrect = [...normalizedCorrectAnswers].sort();
-    const isCorrect = sortedSelected.length === sortedCorrect.length && sortedSelected.every((value, index) => value === sortedCorrect[index]);
+    function areAnswersEqual(a = [], b = []) {
+      const A = [...a].map((v) => String(v).toUpperCase()).sort();
+      const B = [...b].map((v) => String(v).toUpperCase()).sort();
+      return A.length === B.length && A.every((value, index) => value === B[index]);
+    }
+
+    const isCorrect = areAnswersEqual(normalizedSelectedAnswers, normalizedCorrectAnswers);
 
     const { error } = await supabase
       .from("user_answers")
@@ -78,8 +96,8 @@ export default async function handler(req, res) {
       );
 
     if (error) {
-      console.error(error);
-      return res.status(500).json({ error: "Erro ao salvar resposta" });
+      console.error("Supabase error:", error);
+      return res.status(500).json({ error: "Erro Supabase: " + (error.message || JSON.stringify(error)) });
     }
 
     return res.status(200).json({ success: true, isCorrect });

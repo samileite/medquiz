@@ -227,12 +227,13 @@ export default function App() {
     setTimerOn(false);
 
     try {
-      const result = await saveAnswer({
+      const isMultiple = q?.questionType === "multiple";
+    const result = await saveAnswer({
         user,
         questionId: q?.id,
-        selectedAnswer: selectedValues.length === 1 ? selectedValues[0] : undefined,
+        selectedAnswer: !isMultiple && selectedValues.length === 1 ? selectedValues[0] : undefined,
         selectedAnswers: selectedValues,
-        correctAnswer: correta?.toString().toUpperCase(),
+        correctAnswer: !isMultiple ? correta?.toString().toUpperCase() : undefined,
         correctAnswers: correctValues,
       });
       if (!result) {
