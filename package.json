@@ -8,13 +8,15 @@
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "import-gastro": "node scripts/import-gastro-from-pdf.mjs ./scripts/gastro-from-pdf.json"
+    "import-gastro": "node scripts/import-gastro-from-pdf.mjs ./scripts/gastro-from-pdf.json",
+    "import-pneumologia": "node scripts/import-gastro-from-pdf.mjs ./scripts/pneumologia-from-pdf.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.106.2",
     "dotenv": "^17.4.2",
     "firebase": "^12.13.0",
     "firebase-admin": "^13.10.0",
+    "pdf-parse": "^2.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ws": "^8.21.0"

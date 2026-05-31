@@ -3,6 +3,7 @@ import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
 import fs from "fs/promises";
 import path from "path";
+import { pathToFileURL } from "url";
 
 dotenv.config({ path: ".env.import" });
 
@@ -21,13 +22,34 @@ const filePath = path.resolve(process.cwd(), fileArg);
 
 async function readSourceFile() {
   const content = await fs.readFile(filePath, "utf-8");
+  if (filePath.endsWith(".mjs")) {
+    const imported = await import(`${pathToFileURL(filePath).href}?t=${Date.now()}`);
+    return imported.default || imported;
+  }
   return JSON.parse(content);
 }
 
-async function upsertDiscipline() {
+function slugify(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+async function upsertDiscipline(raw) {
+  const discipline = raw.discipline || {};
+  const name = typeof discipline === "string"
+    ? discipline
+    : discipline.name || raw.disciplineName || "Gastroenterologia";
+  const slug = typeof discipline === "object" && discipline.slug
+    ? discipline.slug
+    : raw.disciplineSlug || slugify(name);
+
   const { data, error } = await supabase
     .from("disciplines")
-    .upsert({ name: "Gastroenterologia", slug: "gastroenterologia" }, { onConflict: "slug" })
+    .upsert({ name, slug }, { onConflict: "slug" })
     .select()
     .single();
 
@@ -87,7 +109,7 @@ function normalizeQuestionRaw(question) {
   }
 
   return {
-    topic: question.topic || question.section || "Gastroenterologia",
+    topic: question.topic || question.section || "Geral",
     difficulty: question.difficulty || "médio",
     statement: question.statement,
     questionType,
@@ -97,6 +119,7 @@ function normalizeQuestionRaw(question) {
     summary: question.summary || question.resumo || null,
     memoryTip: question.memoryTip || question.memory_tip || null,
     trap: question.trap || null,
+    imageUrl: question.imageUrl || question.image_url || null,
     reference: question.reference || null,
   };
 }
@@ -125,7 +148,7 @@ async function importQuestions() {
     throw new Error(`Nenhuma questão valida encontrada em ${filePath}`);
   }
 
-  const discipline = await upsertDiscipline();
+  const discipline = await upsertDiscipline(raw);
   console.log(`Disciplina: ${discipline.name} (${discipline.id})`);
   console.log(`Questões para importar: ${questions.length}`);
 
@@ -133,6 +156,19 @@ async function importQuestions() {
 
   for (const question of questions) {
     const topic = await upsertTopic(discipline.id, question.topic);
+
+    const { data: existingQuestion, error: existingQuestionError } = await supabase
+      .from("questions")
+      .select("id")
+      .eq("discipline_id", discipline.id)
+      .eq("statement", question.statement)
+      .maybeSingle();
+
+    if (existingQuestionError) throw existingQuestionError;
+    if (existingQuestion) {
+      console.log(`Pulando questão já existente: ${question.statement.slice(0, 80)}`);
+      continue;
+    }
 
     const { data: createdQuestion, error: questionError } = await supabase
       .from("questions")
@@ -142,13 +178,13 @@ async function importQuestions() {
         difficulty: question.difficulty,
         statement: question.statement,
         question_type: question.questionType,
-        correct_answer: question.questionType === "single" ? question.correctAnswers[0] : null,
+        correct_answer: question.correctAnswers[0],
         correct_answers: question.correctAnswers,
         general_comment: question.generalComment,
         summary: question.summary,
         memory_tip: question.memoryTip,
         trap: question.trap,
-        reference: question.reference,
+        reference: question.imageUrl ? `image:${question.imageUrl}` : question.reference,
         active: true,
       })
       .select()

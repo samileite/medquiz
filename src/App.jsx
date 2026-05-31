@@ -73,6 +73,27 @@ function AlternativeAnalysisCard({ letter, text, justification, status, badgeCol
   );
 }
 
+function RestartStudyModal({ disciplina, answeredCount, onCancel, onConfirm }) {
+  return (
+    <div style={{ position: "fixed", inset: 0, zIndex: 20, background: "rgba(0,0,0,0.36)", display: "grid", placeItems: "center", padding: 20 }}>
+      <div style={{ width: "100%", maxWidth: 440, background: "#fff", borderRadius: 20, padding: "1.35rem", boxShadow: "0 24px 70px rgba(0,0,0,0.22)" }}>
+        <div style={{ width: 42, height: 42, borderRadius: 14, background: "#fff1f1", display: "grid", placeItems: "center", fontSize: 22, marginBottom: 14 }}>⚠️</div>
+        <h3 style={{ margin: "0 0 8px", fontSize: 18, color: "#1a1a1a" }}>Reiniciar estudos?</h3>
+        <p style={{ margin: "0 0 12px", fontSize: 14, lineHeight: 1.7, color: "#444" }}>
+          Você já iniciou os estudos de {disciplina}. Ao iniciar uma nova sessão, todo o histórico dessa disciplina será perdido.
+        </p>
+        <p style={{ margin: "0 0 18px", fontSize: 13, lineHeight: 1.6, color: "#777" }}>
+          Sugerimos clicar em “Continuar estudo”. Tem certeza que deseja reiniciar os estudos de {disciplina}? {answeredCount > 0 ? `${answeredCount} resposta(s) serão removidas do progresso.` : ""}
+        </p>
+        <div style={{ display: "flex", gap: 10, justifyContent: "flex-end", flexWrap: "wrap" }}>
+          <button onClick={onCancel} style={{ borderRadius: 10, padding: "10px 16px", fontSize: 14, cursor: "pointer", border: "1px solid #e0e0e0", background: "#fff", color: "#555" }}>Cancelar</button>
+          <button onClick={onConfirm} style={{ borderRadius: 10, padding: "10px 16px", fontSize: 14, cursor: "pointer", border: "none", background: "#e24b4a", color: "#fff", fontWeight: 700 }}>Sim, reiniciar</button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const { user, userData } = useAuth();
   const periodo = userData?.periodo || 5;
@@ -100,6 +121,7 @@ export default function App() {
   const [timerKey, setTimerKey] = useState(0);
   const [savingProgress, setSavingProgress] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [showRestartConfirm, setShowRestartConfirm] = useState(false);
 
   useEffect(() => { loadProgress(); }, []);
 
@@ -171,6 +193,9 @@ export default function App() {
   const avgTime = totalAns > 0 ? Math.round(Object.values(times).reduce((a, b) => a + b, 0) / totalAns) : 0;
   const pct = totalAns > 0 ? Math.round((totalAcertos / totalAns) * 100) : 0;
   const totalErros = totalAns - totalAcertos;
+  const selectedDisciplinaAnswers = Object.entries(answers)
+    .filter(([, answer]) => answer.disciplina === selectedDisciplina);
+  const selectedDisciplinaHistoryCount = selectedDisciplinaAnswers.length;
 
   const disciplinaStats = disciplinasDoPeriodo.reduce((acc, d) => {
     const qs = Object.values(answers).filter(a => a.disciplina === d);
@@ -178,14 +203,23 @@ export default function App() {
     return acc;
   }, {});
 
-  function startQuiz(mode) {
+  function getSessionQuestions(mode, answerSource = answers) {
     let qs = [...questions];
     if (selectedSubtopics.length > 0) qs = qs.filter((q) => selectedSubtopics.includes(q.subtopic));
     if (filterDiff !== "Todas") qs = qs.filter((q) => q.difficulty === filterDiff);
-    if (mode === "errors") qs = qs.filter((q) => answers[q.id] && !answers[q.id].correct);
+    if (mode === "continue") qs = qs.filter((q) => !answerSource[q.id]);
+    if (mode === "errors") qs = qs.filter((q) => answerSource[q.id] && !answerSource[q.id].correct);
     if (mode === "favorites") qs = qs.filter((q) => favorites.has(q.id));
+    return qs;
+  }
+
+  function startQuiz(mode, answerSource = answers) {
+    const qs = getSessionQuestions(mode, answerSource);
     if (qs.length === 0) {
-      alert("Nenhuma questão encontrada com esses filtros!");
+      const message = mode === "continue"
+        ? "Você concluiu todas as questões com esses filtros. Você pode revisar erros ou reiniciar os estudos."
+        : "Nenhuma questão encontrada com esses filtros!";
+      alert(message);
       return;
     }
     const initialSelected = qs[0]?.questionType === "multiple" ? [] : null;
@@ -196,6 +230,32 @@ export default function App() {
     setTimerOn(true);
     setTimerKey((k) => k + 1);
     setView("quiz");
+  }
+
+  function requestStartSession() {
+    if (selectedDisciplinaHistoryCount > 0) {
+      setShowRestartConfirm(true);
+      return;
+    }
+    startQuiz(null);
+  }
+
+  function continueStudy() {
+    startQuiz("continue");
+  }
+
+  async function resetDisciplineProgressAndStart() {
+    const removedQuestionIds = new Set(selectedDisciplinaAnswers.map(([questionId]) => questionId));
+    const nextAnswers = Object.fromEntries(
+      Object.entries(answers).filter(([, answer]) => answer.disciplina !== selectedDisciplina)
+    );
+    setAnswers(nextAnswers);
+    setTimes((prev) => Object.fromEntries(
+      Object.entries(prev).filter(([questionId]) => !removedQuestionIds.has(questionId))
+    ));
+    setShowRestartConfirm(false);
+    await saveProgress(nextAnswers, null, null);
+    startQuiz(null, nextAnswers);
   }
 
   function areAnswersEqual(selectedAnswers, correctAnswers) {
@@ -320,8 +380,7 @@ export default function App() {
     return String(text || "").replace(/^(CORRETA|CORRETO|INCORRETA|INCORRETO)\s*[:.]?\s*/i, "").trim();
   }
 
-  const answered = answers[q?.id];
-  const selectedAnswer = answered?.selected || selected;
+  const selectedAnswer = selected;
   const correctAnswers = q?.corretas || (correta ? [correta] : []);
   const hasSelection = Array.isArray(selected) ? selected.length > 0 : !!selected;
   const extraExplanationCards = [
@@ -356,6 +415,15 @@ export default function App() {
         <button onClick={() => toggleFavorite(q.id)} style={{ marginLeft: "auto", background: "none", border: "none", fontSize: 20, cursor: "pointer", color: favorites.has(q.id) ? "#ef9f27" : "#ddd" }}>{favorites.has(q.id) ? "★" : "☆"}</button>
       </div>
       <div style={{ background: "#f9f9f9", borderRadius: 14, padding: "1.1rem 1.25rem", marginBottom: 18, lineHeight: 1.7, fontSize: 15 }}>{q.enunciado}</div>
+      {q.imageUrl && (
+        <div style={{ background: "#111", borderRadius: 16, padding: 10, marginBottom: 18, boxShadow: "0 10px 24px rgba(0,0,0,0.12)" }}>
+          <img
+            src={q.imageUrl}
+            alt={`Imagem da questão ${idx + 1}`}
+            style={{ width: "100%", display: "block", borderRadius: 10, objectFit: "contain", maxHeight: 520 }}
+          />
+        </div>
+      )}
       <div style={{ marginBottom: 16 }}>
         {alts.map((alt) => {
           const rawJustification = q?.explicacao?.porAlternativa?.[alt.id];
@@ -453,6 +521,14 @@ export default function App() {
 
   if (view === "result") return (
     <div style={{ maxWidth: 660, margin: "0 auto", padding: "2rem 1rem", fontFamily: "Inter,sans-serif" }}>
+      {showRestartConfirm && (
+        <RestartStudyModal
+          disciplina={selectedDisciplina}
+          answeredCount={selectedDisciplinaHistoryCount}
+          onCancel={() => setShowRestartConfirm(false)}
+          onConfirm={resetDisciplineProgressAndStart}
+        />
+      )}
       <h2 style={{ fontSize: 22, fontWeight: 600, marginBottom: 4 }}>Sessão concluída! 🎉</h2>
       <p style={{ color: "#aaa", fontSize: 14, marginBottom: 24 }}>Veja seu desempenho</p>
       <div style={{ display: "flex", gap: 10, marginBottom: 24, flexWrap: "wrap" }}>
@@ -463,7 +539,8 @@ export default function App() {
         <StatCard label="Tempo médio" value={`${avgTime}s`} />
       </div>
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-        <button onClick={() => startQuiz(null)} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "11px 22px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>Nova sessão</button>
+        <button onClick={requestStartSession} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "11px 22px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>Nova sessão</button>
+        {selectedDisciplinaHistoryCount > 0 && <button onClick={continueStudy} style={{ borderRadius: 10, padding: "11px 18px", fontSize: 14, cursor: "pointer" }}>Continuar estudando</button>}
         <button onClick={() => setView("disciplina")} style={{ borderRadius: 10, padding: "11px 18px", fontSize: 14, cursor: "pointer" }}>Voltar</button>
         {totalErros > 0 && <button onClick={() => startQuiz("errors")} style={{ borderRadius: 10, padding: "11px 18px", fontSize: 14, color: "#a32d2d", cursor: "pointer" }}>Revisar {totalErros} erro(s)</button>}
       </div>
@@ -472,6 +549,14 @@ export default function App() {
 
   if (view === "disciplina" && selectedDisciplina) return (
     <div style={{ maxWidth: 660, margin: "0 auto", padding: "1.5rem 1rem", fontFamily: "Inter,sans-serif" }}>
+      {showRestartConfirm && (
+        <RestartStudyModal
+          disciplina={selectedDisciplina}
+          answeredCount={selectedDisciplinaHistoryCount}
+          onCancel={() => setShowRestartConfirm(false)}
+          onConfirm={resetDisciplineProgressAndStart}
+        />
+      )}
       <button onClick={() => { setSelectedDisciplina(null); setView("home"); }} style={{ background: "none", border: "none", color: "#aaa", fontSize: 13, cursor: "pointer", padding: 0, marginBottom: 20 }}>← Disciplinas</button>
       <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 4 }}>{selectedDisciplina}</h2>
       <p style={{ color: "#aaa", fontSize: 14, marginBottom: 20 }}>{questions.length} questões disponíveis</p>
@@ -517,7 +602,12 @@ export default function App() {
           </div>
 
           <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-            <button onClick={() => startQuiz(null)} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "11px 22px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>Iniciar sessão</button>
+            <button onClick={requestStartSession} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "11px 22px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>Iniciar sessão</button>
+            {selectedDisciplinaHistoryCount > 0 && (
+              <button onClick={continueStudy} style={{ background: "#e6f1fb", color: "#185fa5", border: "1px solid #bdd9f0", borderRadius: 10, padding: "11px 18px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>
+                Continuar estudando ({getSessionQuestions("continue").length})
+              </button>
+            )}
             {Object.values(answers).filter(a => a.disciplina === selectedDisciplina && !a.correct).length > 0 && (
               <button onClick={() => startQuiz("errors")} style={{ borderRadius: 10, padding: "11px 18px", fontSize: 14, border: "1px solid #f09595", color: "#a32d2d", cursor: "pointer" }}>
                 Revisar erros ({Object.values(answers).filter(a => a.disciplina === selectedDisciplina && !a.correct).length})

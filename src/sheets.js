@@ -49,6 +49,10 @@ export async function fetchQuestionsByDisciplina(disciplina) {
         porAlternativa[a.letter] = a.explanation || "";
       });
 
+      const imageUrl = q.reference?.startsWith("image:")
+        ? q.reference.replace(/^image:/, "")
+        : "";
+
       return {
         id: q.id,
         topic: q.topics?.name || disciplina,
@@ -60,6 +64,7 @@ export async function fetchQuestionsByDisciplina(disciplina) {
           : q.correct_answer ? [q.correct_answer] : [],
         banca: "",
         enunciado: q.statement,
+        imageUrl,
         alternativas,
         correta: q.correct_answer,
         explicacao: {
@@ -68,7 +73,7 @@ export async function fetchQuestionsByDisciplina(disciplina) {
           raciocinioCli: q.summary || "",
           dicaMemorizacao: q.memory_tip || "",
           pegadinha: q.trap || "",
-          diretriz: q.reference || "",
+          diretriz: imageUrl ? "" : q.reference || "",
         },
       };
     });
