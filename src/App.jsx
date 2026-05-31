@@ -36,6 +36,43 @@ function StatCard({ label, value, color }) {
   );
 }
 
+function InfoCard({ icon, title, subtitle, children, borderColor, background }) {
+  return (
+    <div style={{ background: background || "#fff", border: `1px solid ${borderColor || "#e0e0e0"}`, borderRadius:18, padding:"1.1rem 1.25rem", marginBottom:16, boxShadow:"0 18px 40px rgba(15, 110, 86, 0.08)" }}>
+      <div style={{ display:"flex", alignItems:"flex-start", gap:12, marginBottom: subtitle ? 10 : 0 }}>
+        <div style={{ width:38, height:38, borderRadius:12, display:"grid", placeItems:"center", background: borderColor ? `${borderColor}22` : "#f1f1f1", fontSize:20 }}>{icon}</div>
+        <div style={{ flex:1 }}>
+          <div style={{ fontSize:15, fontWeight:700, color:"#1a1a1a", marginBottom:4 }}>{title}</div>
+          {subtitle && <div style={{ fontSize:13, color:"#555", lineHeight:1.6 }}>{subtitle}</div>}
+        </div>
+      </div>
+      {children}
+    </div>
+  );
+}
+
+function AlternativeAnalysisCard({ letter, text, justification, status, badgeColor, active }) {
+  const border = active ? (badgeColor === "green" ? "#0f6e56" : badgeColor === "red" ? "#e24b4a" : "#e0e0e0") : "#e0e0e0";
+  const background = active ? (badgeColor === "green" ? "#eaf7f0" : badgeColor === "red" ? "#fff1f1" : "#fff") : "#fff";
+  const iconBg = badgeColor === "green" ? "#d3f0e4" : badgeColor === "red" ? "#f9d3d3" : "#f4f4f5";
+  const iconColor = badgeColor === "green" ? "#0f6e56" : badgeColor === "red" ? "#a32d2d" : "#555";
+
+  return (
+    <div style={{ borderRadius:16, border:`1px solid ${border}`, background, padding:"14px 16px", marginBottom:12 }}>
+      <div style={{ display:"flex", alignItems:"flex-start", gap:12, marginBottom: justification ? 10 : 0 }}>
+        <div style={{ minWidth:32, height:32, borderRadius:"50%", display:"grid", placeItems:"center", background:iconBg, color:iconColor, fontWeight:700 }}>{letter}</div>
+        <div style={{ flex:1 }}>
+          <div style={{ display:"flex", alignItems:"center", gap:10, flexWrap:"wrap" }}>
+            <div style={{ fontSize:14, fontWeight:600, color:"#1a1a1a", lineHeight:1.5 }}>{text}</div>
+            <Badge label={status} color={badgeColor} />
+          </div>
+        </div>
+      </div>
+      {justification && <div style={{ fontSize:13, lineHeight:1.7, color:"#333" }}>{justification}</div>}
+    </div>
+  );
+}
+
 export default function App() {
   const { user, userData } = useAuth();
   const periodo = userData?.periodo || 5;
@@ -62,7 +99,6 @@ export default function App() {
   const [timerKey, setTimerKey] = useState(0);
   const [savingProgress, setSavingProgress] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
-  const [lastSaveStatus, setLastSaveStatus] = useState(null);
 
   useEffect(() => { loadProgress(); }, []);
 
@@ -151,16 +187,6 @@ export default function App() {
     setTimes(prev => ({ ...prev, [q.id]: curTime }));
     setRevealed(true); setTimerOn(false);
 
-    // Log de diagnóstico: confirmar que a ação de responder foi disparada
-    console.log("handleConfirm: preparando para salvar resposta", {
-      userUid: user?.uid,
-      questionId: q?.id,
-      selected,
-      correta,
-      curTime,
-    });
-
-    setLastSaveStatus({ status: "saving", message: "Enviando resposta..." });
     try {
       const result = await saveAnswer({
         user,
@@ -168,14 +194,11 @@ export default function App() {
         selectedAnswer: selected,
         correctAnswer: correta?.toString().toUpperCase(),
       });
-      if (result) {
-        setLastSaveStatus({ status: "saved", message: "Resposta salva com sucesso" });
-      } else {
-        setLastSaveStatus({ status: "error", message: "Resposta não salva (ver console)" });
+      if (!result) {
+        console.error("saveAnswer não retornou sucesso ao salvar a resposta");
       }
     } catch (err) {
       console.error("saveAnswer lançou um erro:", err);
-      setLastSaveStatus({ status: "error", message: String(err) });
     }
 
     await saveProgress(newAnswers, null, null);
@@ -193,18 +216,12 @@ export default function App() {
     await saveProgress(null, n, null);
   }
 
-  async function handleNote(id, value) {
-    const newNotes = { ...notes, [id]: value };
-    setNotes(newNotes);
-    await saveProgress(null, null, newNotes);
-  }
-
   function altStyle(id) {
-    const base = { border: "1px solid #e0e0e0", borderRadius: 12, padding: "13px 16px", cursor: revealed ? "default" : "pointer", transition: "all 0.15s", display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 8, background: "#fff" };
+    const base = { border: "1px solid #e0e0e0", borderRadius: 16, padding: "16px", cursor: revealed ? "default" : "pointer", transition: "all 0.15s", display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12, background: "#fff", boxShadow: "0 6px 18px rgba(15, 110, 86, 0.06)" };
     if (!revealed) { if (selected === id) return { ...base, border: "1.5px solid #185fa5", background: "#e6f1fb" }; return base; }
-    if (id === correta) return { ...base, border: "1.5px solid #0f6e56", background: "#e1f5ee" };
-    if (id === selected && id !== correta) return { ...base, border: "1.5px solid #e24b4a", background: "#fcebeb" };
-    return { ...base, opacity: 0.45 };
+    if (id === correta) return { ...base, border: "1.5px solid #0f6e56", background: "#eaf7f0" };
+    if (id === selected && id !== correta) return { ...base, border: "1.5px solid #e24b4a", background: "#fff1f1" };
+    return { ...base, border: "1px solid #d9d9d9", background: "#fafafa" };
   }
 
   function circleStyle(id) {
@@ -215,7 +232,18 @@ export default function App() {
     return { ...base, color: "#aaa" };
   }
 
+  function cleanExplanationPrefix(text) {
+    return String(text || "").replace(/^(CORRETA|CORRETO|INCORRETA|INCORRETO)\s*[:.]?\s*/i, "").trim();
+  }
+
   const answered = answers[q?.id];
+  const selectedAnswer = answered?.selected || selected;
+  const extraExplanationCards = [
+    { key: "raciocinioCli", label: "Raciocínio clínico", value: q?.explicacao?.raciocinioCli, color: "#185fa5", bg: "#e6f1fb", textColor: "#0c447c" },
+    { key: "dicaMemorizacao", label: "Memorização", value: q?.explicacao?.dicaMemorizacao, color: "#633806", bg: "#faeeda", textColor: "#412402" },
+    { key: "pegadinha", label: "Pegadinha", value: q?.explicacao?.pegadinha, color: "#711b13", bg: "#fcebeb", textColor: "#501313" },
+    { key: "diretriz", label: "Diretriz", value: q?.explicacao?.diretriz, color: "#185fa5", bg: "#e6f1fb", textColor: "#0c447c" },
+  ].filter(card => card.value?.trim());
   const diffColor = { "fácil": "green", "médio": "amber", "difícil": "red" };
 
   if (view === "quiz" && !q) return null;
@@ -243,14 +271,38 @@ export default function App() {
       </div>
       <div style={{ background: "#f9f9f9", borderRadius: 14, padding: "1.1rem 1.25rem", marginBottom: 18, lineHeight: 1.7, fontSize: 15 }}>{q.enunciado}</div>
       <div style={{ marginBottom: 16 }}>
-        {alts.map(alt => (
-          <div key={alt.id} onClick={() => !revealed && setSelected(alt.id)} style={altStyle(alt.id)}>
-            <span style={circleStyle(alt.id)}>{alt.id}</span>
-            <span style={{ fontSize: 14, lineHeight: 1.6, flex: 1 }}>{alt.texto}</span>
-            {revealed && alt.id === correta && <span style={{ color: "#0f6e56", fontSize: 18 }}>✓</span>}
-            {revealed && alt.id === selected && alt.id !== correta && <span style={{ color: "#e24b4a", fontSize: 18 }}>✗</span>}
-          </div>
-        ))}
+        {alts.map(alt => {
+          const rawJustification = q?.explicacao?.porAlternativa?.[alt.id];
+          const justification = revealed ? cleanExplanationPrefix(rawJustification) : rawJustification?.trim();
+          const isCorrect = alt.id === correta;
+          const isSelectedAlt = selectedAnswer === alt.id && !isCorrect;
+          const label = revealed ? (isCorrect ? "Resposta correta" : isSelectedAlt ? "Sua resposta" : null) : null;
+          const explanationStyle = isCorrect ?
+            { background: "#eaf7f0", border: "1px solid #c8e8d8", color: "#0f6e56" } :
+            { background: "#fff1f1", border: "1px solid #f4d2d2", color: "#6f1f1f" };
+          return (
+            <div key={alt.id} onClick={() => !revealed && setSelected(alt.id)} style={altStyle(alt.id)}>
+              <div style={{ display: "flex", alignItems: "flex-start", gap: 12, width: "100%" }}>
+                <span style={circleStyle(alt.id)}>{alt.id}</span>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: 14, lineHeight: 1.6, color: "#1a1a1a" }}>{alt.texto}</div>
+                  {label && (
+                    <div style={{ marginTop: 10, display: "inline-flex", alignItems: "center", padding: "6px 10px", borderRadius: 999, background: isCorrect ? "#e1f5ee" : "#ffe5e5", color: isCorrect ? "#0f6e56" : "#a32d2d", fontSize: 12, fontWeight: 700, letterSpacing: "0.01em" }}>
+                      {label}
+                    </div>
+                  )}
+                  {revealed && justification && (
+                    <div style={{ marginTop: 12, padding: "12px 14px", borderRadius: 14, fontSize: 13, lineHeight: 1.7, ...explanationStyle }}>
+                      {justification}
+                    </div>
+                  )}
+                </div>
+                {revealed && isCorrect && <span style={{ color: "#0f6e56", fontSize: 18 }}>✓</span>}
+                {revealed && isSelectedAlt && <span style={{ color: "#e24b4a", fontSize: 18 }}>✗</span>}
+              </div>
+            </div>
+          );
+        })}
       </div>
       {!revealed && (
         <button onClick={handleConfirm} disabled={!selected} style={{ width: "100%", padding: 13, borderRadius: 12, fontWeight: 600, fontSize: 15, background: selected ? "#0f6e56" : "#e0e0e0", color: selected ? "#fff" : "#aaa", border: "none", cursor: selected ? "pointer" : "not-allowed", marginBottom: 16, transition: "all 0.2s" }}>
@@ -259,43 +311,27 @@ export default function App() {
       )}
       {revealed && (
         <div>
-          <div style={{ border: `1.5px solid ${answered?.correct ? "#0f6e56" : "#e24b4a"}`, borderRadius: 14, padding: "1rem 1.25rem", marginBottom: 16, background: answered?.correct ? "#e1f5ee" : "#fcebeb", display: "flex", alignItems: "flex-start", gap: 12 }}>
-            <span style={{ fontSize: 22 }}>{answered?.correct ? "✅" : "❌"}</span>
-            <div>
-              <p style={{ fontWeight: 600, margin: 0, color: answered?.correct ? "#0f6e56" : "#a32d2d", fontSize: 15 }}>{answered?.correct ? "Resposta correta!" : "Resposta incorreta"}</p>
-              <p style={{ margin: "4px 0 0", fontSize: 13, lineHeight: 1.6, color: answered?.correct ? "#085041" : "#711b13" }}>{q.explicacao.geral}</p>
+          {q.explicacao.geral && (
+            <InfoCard
+              icon="💡"
+              title="Explicação geral"
+              subtitle="Reforce o fundamento por trás da resposta correta."
+              borderColor="#185fa5"
+              background="#eef5ff"
+            >
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#333" }}>{q.explicacao.geral}</p>
+            </InfoCard>
+          )}
+          {extraExplanationCards.length > 0 && (
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12, marginBottom: 16 }}>
+              {extraExplanationCards.map(card => (
+                <div key={card.key} style={{ background: card.bg, borderRadius: 16, border: `1px solid ${card.color}33`, padding: "14px 16px" }}>
+                  <p style={{ fontSize: 11, fontWeight: 700, color: card.color, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 8 }}>{card.label}</p>
+                  <p style={{ fontSize: 13, lineHeight: 1.7, margin: 0, color: card.textColor }}>{card.value}</p>
+                </div>
+              ))}
             </div>
-          </div>
-          <div style={{ background: "#f9f9f9", borderRadius: 14, padding: "1rem 1.25rem", marginBottom: 12 }}>
-            <p style={{ fontSize: 12, fontWeight: 600, color: "#aaa", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>Análise por alternativa</p>
-            {Object.entries(q.explicacao.porAlternativa).map(([id, txt]) => txt ? (
-              <div key={id} style={{ marginBottom: 10, paddingLeft: 10, borderLeft: `3px solid ${id === correta ? "#0f6e56" : "#e0e0e0"}` }}>
-                <span style={{ fontSize: 12, fontWeight: 600, color: id === correta ? "#0f6e56" : "#aaa" }}>({id}) </span>
-                <span style={{ fontSize: 13, lineHeight: 1.6 }}>{txt}</span>
-              </div>
-            ) : null)}
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 12 }}>
-            <div style={{ background: "#f9f9f9", borderRadius: 12, padding: "12px 14px" }}>
-              <p style={{ fontSize: 11, fontWeight: 600, color: "#aaa", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>Raciocínio clínico</p>
-              <p style={{ fontSize: 13, lineHeight: 1.5, margin: 0 }}>{q.explicacao.raciocinioCli}</p>
-            </div>
-            <div style={{ background: "#faeeda", borderRadius: 12, padding: "12px 14px" }}>
-              <p style={{ fontSize: 11, fontWeight: 600, color: "#633806", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>Memorização</p>
-              <p style={{ fontSize: 13, lineHeight: 1.5, margin: 0, color: "#412402" }}>{q.explicacao.dicaMemorizacao}</p>
-            </div>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 16 }}>
-            <div style={{ background: "#fcebeb", borderRadius: 12, padding: "12px 14px" }}>
-              <p style={{ fontSize: 11, fontWeight: 600, color: "#711b13", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>Pegadinha</p>
-              <p style={{ fontSize: 13, lineHeight: 1.5, margin: 0, color: "#501313" }}>{q.explicacao.pegadinha}</p>
-            </div>
-            <div style={{ background: "#e6f1fb", borderRadius: 12, padding: "12px 14px" }}>
-              <p style={{ fontSize: 11, fontWeight: 600, color: "#185fa5", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 6 }}>Diretriz</p>
-              <p style={{ fontSize: 13, lineHeight: 1.5, margin: 0, color: "#0c447c" }}>{q.explicacao.diretriz}</p>
-            </div>
-          </div>
-          <textarea placeholder="Sua anotação pessoal..." value={notes[q.id] || ""} onChange={e => handleNote(q.id, e.target.value)} style={{ width: "100%", marginBottom: 16, fontSize: 13, padding: "10px 12px", borderRadius: 10, border: "1px solid #e0e0e0", minHeight: 70, resize: "vertical" }} />
+          )}
           <div style={{ display: "flex", gap: 10, justifyContent: "space-between" }}>
             <button onClick={() => { if (idx > 0) { setIdx(idx - 1); setSelected(null); setRevealed(false); setCurTime(0); } }} disabled={idx === 0} style={{ borderRadius: 10, padding: "10px 18px", fontSize: 14, cursor: "pointer" }}>← Anterior</button>
             <button onClick={handleNext} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>{idx < filteredQs.length - 1 ? "Próxima →" : "Ver resultado"}</button>
@@ -303,14 +339,6 @@ export default function App() {
         </div>
       )}
 
-      {lastSaveStatus && (
-        <div style={{ position: "fixed", right: 18, bottom: 18, zIndex: 9999 }}>
-          <div style={{ padding: "10px 14px", borderRadius: 10, background: lastSaveStatus.status === "saved" ? "#e6ffef" : lastSaveStatus.status === "saving" ? "#fff7e6" : "#ffe6e6", color: "#111", boxShadow: "0 6px 20px rgba(0,0,0,0.08)", fontSize: 13 }}>
-            <strong>{lastSaveStatus.status === "saved" ? "✓ Salvo" : lastSaveStatus.status === "saving" ? "Enviando" : "Erro"}</strong>
-            <div style={{ fontSize: 12 }}>{lastSaveStatus.message}</div>
-          </div>
-        </div>
-      )}
     </div>
   );
 
@@ -347,7 +375,7 @@ export default function App() {
       ) : error ? (
         <div style={{ textAlign: "center", padding: "3rem" }}>
           <div style={{ fontSize: 32, marginBottom: 12 }}>⚠️</div>
-          <p style={{ color: "#aaa", marginBottom: 16 }}>Planilha não encontrada ou vazia</p>
+          <p style={{ color: "#aaa", marginBottom: 16 }}>Conteúdo não encontrado ou indisponível</p>
           <button onClick={() => loadDisciplina(selectedDisciplina)} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "10px 20px", cursor: "pointer" }}>Tentar novamente</button>
         </div>
       ) : (
@@ -421,41 +449,44 @@ export default function App() {
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 10 }}>
           {disciplinasDoPeriodo.map(d => {
-            const hasSheet = !!SHEET_IDS[d];
+            const hasContent = !!SHEET_IDS[d];
             const stat = disciplinaStats[d];
-            const dpct = stat?.total > 0 ? Math.round((stat.correct / stat.total) * 100) : null;
+            const progressPct = stat?.total > 0 ? Math.round((stat.correct / stat.total) * 100) : null;
+            const hasProgress = hasContent && progressPct !== null;
             return (
               <button
                 key={d}
-                onClick={() => { if (hasSheet) { setSelectedDisciplina(d); setView("disciplina"); } }}
+                onClick={() => { if (hasContent) { setSelectedDisciplina(d); setView("disciplina"); } }}
                 style={{
                   background: "#fff", borderRadius: 14, padding: "16px", border: "1px solid #e0e0e0",
-                  textAlign: "left", cursor: hasSheet ? "pointer" : "default",
-                  opacity: hasSheet ? 1 : 0.5, transition: "all 0.15s",
-                  boxShadow: hasSheet ? "none" : "none",
+                  textAlign: "left", cursor: hasContent ? "pointer" : "default",
+                  opacity: hasContent ? 1 : 0.5, transition: "all 0.15s",
                 }}>
-                <p style={{ fontSize: 14, fontWeight: 500, margin: "0 0 6px", color: "#1a1a1a" }}>{d}</p>
-                {hasSheet ? (
-                  dpct !== null ? (
+                <p style={{ fontSize: 14, fontWeight: 500, margin: "0 0 12px", color: "#1a1a1a" }}>{d}</p>
+                {hasContent ? (
+                  hasProgress ? (
                     <div>
-                      <div style={{ height: 4, background: "#e0e0e0", borderRadius: 999, overflow: "hidden", marginBottom: 4 }}>
-                        <div style={{ height: "100%", width: `${dpct}%`, background: dpct >= 70 ? "#1d9e75" : dpct >= 50 ? "#ef9f27" : "#e24b4a", borderRadius: 999 }} />
+                      <div style={{ height: 6, background: "#edf3f7", borderRadius: 999, overflow: "hidden", marginBottom: 8 }}>
+                        <div style={{ height: "100%", width: `${progressPct}%`, background: progressPct >= 70 ? "#1d9e75" : progressPct >= 50 ? "#ef9f27" : "#e24b4a", borderRadius: 999 }} />
                       </div>
-                      <span style={{ fontSize: 11, color: "#aaa" }}>{stat.correct}/{stat.total} ({dpct}%)</span>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 10 }}>
+                        <span style={{ fontSize: 11, color: "#555" }}>{stat.total} respondidas</span>
+                        <span style={{ fontSize: 11, color: progressPct >= 70 ? "#0f6e56" : progressPct >= 50 ? "#854f0b" : "#e24b4a" }}>{progressPct}%</span>
+                      </div>
                     </div>
-                  ) : <span style={{ fontSize: 11, color: "#0f6e56" }}>Disponível →</span>
-                ) : <span style={{ fontSize: 11, color: "#aaa" }}>Em breve</span>}
+                  ) : (
+                    <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                      <span style={{ fontSize: 11, color: "#0f6e56", fontWeight: 600 }}>Conteúdo disponível</span>
+                      <span style={{ fontSize: 11, color: "#777" }}>Comece a praticar</span>
+                    </div>
+                  )
+                ) : (
+                  <span style={{ fontSize: 11, color: "#aaa" }}>Em breve</span>
+                )}
               </button>
             );
           })}
         </div>
-      </div>
-
-      <div style={{ marginTop: 24, background: "#f0f9ff", borderRadius: 14, padding: "1rem 1.25rem", border: "1px solid #bfdbfe" }}>
-        <p style={{ fontSize: 12, fontWeight: 600, color: "#185fa5", marginBottom: 6 }}>Como adicionar questões</p>
-        <p style={{ fontSize: 13, color: "#1e40af", lineHeight: 1.6, margin: 0 }}>
-          Crie uma planilha Google para cada disciplina. Cada aba = um assunto. Adicione o ID da planilha no arquivo <strong>constants.js</strong>.
-        </p>
       </div>
     </div>
   );

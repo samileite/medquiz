@@ -29,7 +29,7 @@ export const DISCIPLINAS_POR_PERIODO = {
 };
 
 export const SHEET_IDS = {
-  "Gastro": "1luwDPQpASADazaUxwDb0wksAaJuugcX7DWnjr2a94es",
+  "Gastroenterologia": "1luwDPQpASADazaUxwDb0wksAaJuugcX7DWnjr2a94es",
   "Endocrinologia": "1fzeNk72BIBS0e10O07KzdE5AnnsBNwuAUMPy4x8YCv4",
   "Dermatologia": "",
   "Pneumologia": "",
