@@ -4,10 +4,20 @@ export async function saveAnswer({
   user,
   questionId,
   selectedAnswer,
+  selectedAnswers,
   correctAnswer,
+  correctAnswers,
 }) {
-  const normalizedAnswer = selectedAnswer?.toString().toUpperCase();
-  const normalizedCorrect = correctAnswer?.toString().toUpperCase();
+  const normalizedSelectedAnswers = Array.isArray(selectedAnswers)
+    ? selectedAnswers.map((v) => String(v).toUpperCase())
+    : selectedAnswer
+      ? [String(selectedAnswer).toUpperCase()]
+      : [];
+  const normalizedCorrectAnswers = Array.isArray(correctAnswers)
+    ? correctAnswers.map((v) => String(v).toUpperCase())
+    : correctAnswer
+      ? [String(correctAnswer).toUpperCase()]
+      : [];
 
   if (!user?.getIdToken) {
     console.error("Erro ao salvar resposta: usuário ausente");
@@ -19,8 +29,18 @@ export async function saveAnswer({
     return null;
   }
 
-  if (!VALID_ANSWERS.has(normalizedAnswer)) {
-    console.error("Erro ao salvar resposta: selectedAnswer inválida", normalizedAnswer);
+  if (normalizedSelectedAnswers.length === 0) {
+    console.error("Erro ao salvar resposta: selectedAnswers ausente");
+    return null;
+  }
+
+  if (!normalizedSelectedAnswers.every((answer) => VALID_ANSWERS.has(answer))) {
+    console.error("Erro ao salvar resposta: selectedAnswers inválida", normalizedSelectedAnswers);
+    return null;
+  }
+
+  if (normalizedCorrectAnswers.length === 0) {
+    console.error("Erro ao salvar resposta: correctAnswers ausente");
     return null;
   }
 
@@ -35,8 +55,9 @@ export async function saveAnswer({
       },
       body: JSON.stringify({
         questionId,
-        selectedAnswer: normalizedAnswer,
-        correctAnswer: normalizedCorrect,
+        selectedAnswer: normalizedSelectedAnswers.length === 1 ? normalizedSelectedAnswers[0] : undefined,
+        selectedAnswers: normalizedSelectedAnswers,
+        correctAnswers: normalizedCorrectAnswers,
       }),
     });
 

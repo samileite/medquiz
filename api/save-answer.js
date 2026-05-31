@@ -36,14 +36,29 @@ export default async function handler(req, res) {
     const {
       questionId,
       selectedAnswer,
+      selectedAnswers,
       correctAnswer,
+      correctAnswers,
     } = req.body;
 
-    if (!questionId || !selectedAnswer || !correctAnswer) {
+    const normalizedSelectedAnswers = Array.isArray(selectedAnswers)
+      ? selectedAnswers.map((v) => String(v).toUpperCase())
+      : selectedAnswer
+        ? [String(selectedAnswer).toUpperCase()]
+        : [];
+    const normalizedCorrectAnswers = Array.isArray(correctAnswers)
+      ? correctAnswers.map((v) => String(v).toUpperCase())
+      : correctAnswer
+        ? [String(correctAnswer).toUpperCase()]
+        : [];
+
+    if (!questionId || normalizedSelectedAnswers.length === 0 || normalizedCorrectAnswers.length === 0) {
       return res.status(400).json({ error: "Dados incompletos" });
     }
 
-    const isCorrect = selectedAnswer === correctAnswer;
+    const sortedSelected = [...normalizedSelectedAnswers].sort();
+    const sortedCorrect = [...normalizedCorrectAnswers].sort();
+    const isCorrect = sortedSelected.length === sortedCorrect.length && sortedSelected.every((value, index) => value === sortedCorrect[index]);
 
     const { error } = await supabase
       .from("user_answers")
@@ -51,7 +66,9 @@ export default async function handler(req, res) {
         {
           firebase_user_id: decoded.uid,
           question_id: questionId,
-          selected_answer: selectedAnswer,
+          selected_answer: normalizedSelectedAnswers.length === 1 ? normalizedSelectedAnswers[0] : null,
+          selected_answers: normalizedSelectedAnswers,
+          correct_answers: normalizedCorrectAnswers,
           is_correct: isCorrect,
           answered_at: new Date().toISOString(),
         },

@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { fetchQuestionsByDisciplina } from "./sheets.js";
+import { fetchQuestionsByDisciplina, fetchDisciplineAvailability } from "./sheets.js";
 import { useAuth } from "./Auth.jsx";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
-import { DISCIPLINAS_POR_PERIODO, DIFFICULTIES, SHEET_IDS } from "./constants.js";
+import { DISCIPLINAS_POR_PERIODO, DIFFICULTIES } from "./constants.js";
 import { saveAnswer } from "./services/answers.js";
 import ProfilePage from "./Profile.jsx";
 
@@ -96,6 +96,7 @@ export default function App() {
   const [timerOn, setTimerOn] = useState(false);
   const [favorites, setFavorites] = useState(new Set());
   const [notes, setNotes] = useState({});
+  const [availableDisciplines, setAvailableDisciplines] = useState({});
   const [timerKey, setTimerKey] = useState(0);
   const [savingProgress, setSavingProgress] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -105,6 +106,15 @@ export default function App() {
   useEffect(() => {
     if (selectedDisciplina) loadDisciplina(selectedDisciplina);
   }, [selectedDisciplina]);
+
+  useEffect(() => {
+    if (!disciplinasDoPeriodo.length) return;
+    async function loadAvailability() {
+      const availability = await fetchDisciplineAvailability(disciplinasDoPeriodo);
+      setAvailableDisciplines(availability);
+    }
+    loadAvailability();
+  }, [disciplinasDoPeriodo]);
 
   async function loadProgress() {
     if (!user) return;
@@ -170,29 +180,60 @@ export default function App() {
 
   function startQuiz(mode) {
     let qs = [...questions];
-    if (selectedSubtopics.length > 0) qs = qs.filter(q => selectedSubtopics.includes(q.subtopic));
-    if (filterDiff !== "Todas") qs = qs.filter(q => q.difficulty === filterDiff);
-    if (mode === "errors") qs = qs.filter(q => answers[q.id] && !answers[q.id].correct);
-    if (mode === "favorites") qs = qs.filter(q => favorites.has(q.id));
-    if (qs.length === 0) { alert("Nenhuma questão encontrada com esses filtros!"); return; }
-    setFilteredQs(qs); setIdx(0); setSelected(null); setRevealed(false);
-    setTimerOn(true); setTimerKey(k => k + 1); setView("quiz");
+    if (selectedSubtopics.length > 0) qs = qs.filter((q) => selectedSubtopics.includes(q.subtopic));
+    if (filterDiff !== "Todas") qs = qs.filter((q) => q.difficulty === filterDiff);
+    if (mode === "errors") qs = qs.filter((q) => answers[q.id] && !answers[q.id].correct);
+    if (mode === "favorites") qs = qs.filter((q) => favorites.has(q.id));
+    if (qs.length === 0) {
+      alert("Nenhuma questão encontrada com esses filtros!");
+      return;
+    }
+    const initialSelected = qs[0]?.questionType === "multiple" ? [] : null;
+    setFilteredQs(qs);
+    setIdx(0);
+    setSelected(initialSelected);
+    setRevealed(false);
+    setTimerOn(true);
+    setTimerKey((k) => k + 1);
+    setView("quiz");
+  }
+
+  function areAnswersEqual(selectedAnswers, correctAnswers) {
+    const a = [...selectedAnswers].map((v) => String(v).toUpperCase()).sort();
+    const b = [...correctAnswers].map((v) => String(v).toUpperCase()).sort();
+    return a.length === b.length && a.every((value, index) => value === b[index]);
   }
 
   async function handleConfirm() {
     if (!selected || revealed) return;
-    const correct = selected === correta;
-    const newAnswers = { ...answers, [q.id]: { selected, correct, disciplina: selectedDisciplina } };
+    const selectedValues = Array.isArray(selected) ? selected : [selected];
+    const correctValues = q.corretas || (correta ? [correta] : []);
+    if (selectedValues.length === 0) return;
+
+    const correct = areAnswersEqual(selectedValues, correctValues);
+    const newAnswers = {
+      ...answers,
+      [q.id]: {
+        selected: Array.isArray(selected) ? selected : selected,
+        selectedAnswers: selectedValues,
+        correct,
+        disciplina: selectedDisciplina,
+      },
+    };
+
     setAnswers(newAnswers);
-    setTimes(prev => ({ ...prev, [q.id]: curTime }));
-    setRevealed(true); setTimerOn(false);
+    setTimes((prev) => ({ ...prev, [q.id]: curTime }));
+    setRevealed(true);
+    setTimerOn(false);
 
     try {
       const result = await saveAnswer({
         user,
         questionId: q?.id,
-        selectedAnswer: selected,
+        selectedAnswer: selectedValues.length === 1 ? selectedValues[0] : undefined,
+        selectedAnswers: selectedValues,
         correctAnswer: correta?.toString().toUpperCase(),
+        correctAnswers: correctValues,
       });
       if (!result) {
         console.error("saveAnswer não retornou sucesso ao salvar a resposta");
@@ -205,8 +246,18 @@ export default function App() {
   }
 
   function handleNext() {
-    if (idx < filteredQs.length - 1) { setIdx(idx + 1); setSelected(null); setRevealed(false); setTimerOn(true); setTimerKey(k => k + 1); setCurTime(0); }
-    else { setTimerOn(false); setView("result"); }
+    if (idx < filteredQs.length - 1) {
+      const nextQuestion = filteredQs[idx + 1];
+      setIdx(idx + 1);
+      setSelected(nextQuestion?.questionType === "multiple" ? [] : null);
+      setRevealed(false);
+      setTimerOn(true);
+      setTimerKey((k) => k + 1);
+      setCurTime(0);
+    } else {
+      setTimerOn(false);
+      setView("result");
+    }
   }
 
   async function toggleFavorite(id) {
@@ -216,19 +267,51 @@ export default function App() {
     await saveProgress(null, n, null);
   }
 
-  function altStyle(id) {
-    const base = { border: "1px solid #e0e0e0", borderRadius: 16, padding: "16px", cursor: revealed ? "default" : "pointer", transition: "all 0.15s", display: "flex", alignItems: "flex-start", gap: 12, marginBottom: 12, background: "#fff", boxShadow: "0 6px 18px rgba(15, 110, 86, 0.06)" };
-    if (!revealed) { if (selected === id) return { ...base, border: "1.5px solid #185fa5", background: "#e6f1fb" }; return base; }
-    if (id === correta) return { ...base, border: "1.5px solid #0f6e56", background: "#eaf7f0" };
-    if (id === selected && id !== correta) return { ...base, border: "1.5px solid #e24b4a", background: "#fff1f1" };
+  function altStyle(id, isSelected, isCorrect) {
+    const base = {
+      border: "1px solid #e0e0e0",
+      borderRadius: 16,
+      padding: "16px",
+      cursor: revealed ? "default" : "pointer",
+      transition: "all 0.15s",
+      display: "flex",
+      alignItems: "flex-start",
+      gap: 12,
+      marginBottom: 12,
+      background: "#fff",
+      boxShadow: "0 6px 18px rgba(15, 110, 86, 0.06)",
+    };
+
+    if (!revealed) {
+      if (isSelected) return { ...base, border: "1.5px solid #185fa5", background: "#e6f1fb" };
+      return base;
+    }
+
+    if (isCorrect) return { ...base, border: "1.5px solid #0f6e56", background: "#eaf7f0" };
+    if (isSelected) return { ...base, border: "1.5px solid #e24b4a", background: "#fff1f1" };
     return { ...base, border: "1px solid #d9d9d9", background: "#fafafa" };
   }
 
-  function circleStyle(id) {
-    const base = { minWidth: 28, height: 28, borderRadius: "50%", border: "1px solid #e0e0e0", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, fontWeight: 600, flexShrink: 0, color: "#555" };
-    if (!revealed) { if (selected === id) return { ...base, border: "1.5px solid #185fa5", background: "#185fa5", color: "#fff" }; return base; }
-    if (id === correta) return { ...base, border: "none", background: "#0f6e56", color: "#fff" };
-    if (id === selected && id !== correta) return { ...base, border: "none", background: "#e24b4a", color: "#fff" };
+  function circleStyle(id, isSelected, isCorrect) {
+    const base = {
+      minWidth: 28,
+      height: 28,
+      borderRadius: "50%",
+      border: "1px solid #e0e0e0",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: 12,
+      fontWeight: 600,
+      flexShrink: 0,
+      color: "#555",
+    };
+    if (!revealed) {
+      if (isSelected) return { ...base, border: "1.5px solid #185fa5", background: "#185fa5", color: "#fff" };
+      return base;
+    }
+    if (isCorrect) return { ...base, border: "none", background: "#0f6e56", color: "#fff" };
+    if (isSelected) return { ...base, border: "none", background: "#e24b4a", color: "#fff" };
     return { ...base, color: "#aaa" };
   }
 
@@ -238,6 +321,8 @@ export default function App() {
 
   const answered = answers[q?.id];
   const selectedAnswer = answered?.selected || selected;
+  const correctAnswers = q?.corretas || (correta ? [correta] : []);
+  const hasSelection = Array.isArray(selected) ? selected.length > 0 : !!selected;
   const extraExplanationCards = [
     { key: "raciocinioCli", label: "Raciocínio clínico", value: q?.explicacao?.raciocinioCli, color: "#185fa5", bg: "#e6f1fb", textColor: "#0c447c" },
     { key: "dicaMemorizacao", label: "Memorização", value: q?.explicacao?.dicaMemorizacao, color: "#633806", bg: "#faeeda", textColor: "#412402" },
@@ -271,19 +356,42 @@ export default function App() {
       </div>
       <div style={{ background: "#f9f9f9", borderRadius: 14, padding: "1.1rem 1.25rem", marginBottom: 18, lineHeight: 1.7, fontSize: 15 }}>{q.enunciado}</div>
       <div style={{ marginBottom: 16 }}>
-        {alts.map(alt => {
+        {alts.map((alt) => {
           const rawJustification = q?.explicacao?.porAlternativa?.[alt.id];
           const justification = revealed ? cleanExplanationPrefix(rawJustification) : rawJustification?.trim();
-          const isCorrect = alt.id === correta;
-          const isSelectedAlt = selectedAnswer === alt.id && !isCorrect;
-          const label = revealed ? (isCorrect ? "Resposta correta" : isSelectedAlt ? "Sua resposta" : null) : null;
-          const explanationStyle = isCorrect ?
-            { background: "#eaf7f0", border: "1px solid #c8e8d8", color: "#0f6e56" } :
-            { background: "#fff1f1", border: "1px solid #f4d2d2", color: "#6f1f1f" };
+          const isCorrect = correctAnswers.includes(alt.id);
+          const isSelected = Array.isArray(selectedAnswer) ? selectedAnswer.includes(alt.id) : selectedAnswer === alt.id;
+          const label = revealed ? (isCorrect ? "Resposta correta" : isSelected ? "Sua resposta" : null) : null;
+          const explanationStyle = isCorrect
+            ? { background: "#eaf7f0", border: "1px solid #c8e8d8", color: "#0f6e56" }
+            : isSelected
+              ? { background: "#fff1f1", border: "1px solid #f4d2d2", color: "#6f1f1f" }
+              : { background: "#fff", border: "1px solid #e0e0e0", color: "#555" };
           return (
-            <div key={alt.id} onClick={() => !revealed && setSelected(alt.id)} style={altStyle(alt.id)}>
+            <div
+              key={alt.id}
+              onClick={() => {
+                if (revealed) return;
+                if (q.questionType === "multiple") {
+                  setSelected((prev) => {
+                    const current = Array.isArray(prev) ? prev : [];
+                    return current.includes(alt.id)
+                      ? current.filter((item) => item !== alt.id)
+                      : [...current, alt.id];
+                  });
+                } else {
+                  setSelected(alt.id);
+                }
+              }}
+              style={altStyle(alt.id, isSelected, isCorrect)}
+            >
               <div style={{ display: "flex", alignItems: "flex-start", gap: 12, width: "100%" }}>
-                <span style={circleStyle(alt.id)}>{alt.id}</span>
+                <span style={circleStyle(alt.id, isSelected, isCorrect)}>{alt.id}</span>
+                {q.questionType === "multiple" && (
+                  <span style={{ fontSize: 12, color: isSelected ? "#0f6e56" : "#999", minWidth: 22, lineHeight: "28px" }}>
+                    {isSelected ? "☑" : "☐"}
+                  </span>
+                )}
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 14, lineHeight: 1.6, color: "#1a1a1a" }}>{alt.texto}</div>
                   {label && (
@@ -298,14 +406,14 @@ export default function App() {
                   )}
                 </div>
                 {revealed && isCorrect && <span style={{ color: "#0f6e56", fontSize: 18 }}>✓</span>}
-                {revealed && isSelectedAlt && <span style={{ color: "#e24b4a", fontSize: 18 }}>✗</span>}
+                {revealed && isSelected && !isCorrect && <span style={{ color: "#e24b4a", fontSize: 18 }}>✗</span>}
               </div>
             </div>
           );
         })}
       </div>
       {!revealed && (
-        <button onClick={handleConfirm} disabled={!selected} style={{ width: "100%", padding: 13, borderRadius: 12, fontWeight: 600, fontSize: 15, background: selected ? "#0f6e56" : "#e0e0e0", color: selected ? "#fff" : "#aaa", border: "none", cursor: selected ? "pointer" : "not-allowed", marginBottom: 16, transition: "all 0.2s" }}>
+        <button onClick={handleConfirm} disabled={!hasSelection} style={{ width: "100%", padding: 13, borderRadius: 12, fontWeight: 600, fontSize: 15, background: hasSelection ? "#0f6e56" : "#e0e0e0", color: hasSelection ? "#fff" : "#aaa", border: "none", cursor: hasSelection ? "pointer" : "not-allowed", marginBottom: 16, transition: "all 0.2s" }}>
           Confirmar resposta
         </button>
       )}
@@ -448,8 +556,8 @@ export default function App() {
           Disciplinas do {userData?.periodo || 5}º Período
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 10 }}>
-          {disciplinasDoPeriodo.map(d => {
-            const hasContent = !!SHEET_IDS[d];
+          {disciplinasDoPeriodo.map((d) => {
+            const hasContent = !!availableDisciplines[d];
             const stat = disciplinaStats[d];
             const progressPct = stat?.total > 0 ? Math.round((stat.correct / stat.total) * 100) : null;
             const hasProgress = hasContent && progressPct !== null;
