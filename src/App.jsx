@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from "react";
-import { fetchQuestionsByDisciplina, fetchDisciplineAvailability } from "./sheets.js";
+import { fetchQuestionsByDisciplina, fetchDisciplineAvailability, fetchTaxonomyTreeByDisciplina } from "./sheets.js";
 import { useAuth } from "./Auth.jsx";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
@@ -73,6 +73,45 @@ function RestartStudyModal({ disciplina, answeredCount, onCancel, onConfirm }) {
   );
 }
 
+function compareByOrderAndName(a, b) {
+  const orderDiff = (a.order ?? 0) - (b.order ?? 0);
+  if (orderDiff !== 0) return orderDiff;
+  return a.name.localeCompare(b.name);
+}
+
+function getUniqueTaxonomyOptions(rows, idKey, nameKey, orderKey) {
+  const byId = new Map();
+  rows.forEach((row) => {
+    const id = row[idKey];
+    const name = row[nameKey];
+    if (!id || !name || byId.has(id)) return;
+    byId.set(id, { id, name, order: row[orderKey] ?? 0 });
+  });
+  return [...byId.values()].sort(compareByOrderAndName);
+}
+
+function FilterChipGroup({ label, allLabel = "Todos", options, selectedIds, onClear, onToggle, formatLabel = (item) => item.name }) {
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <label style={{ fontSize: 12, color: "#aaa", display: "block", marginBottom: 8 }}>{label}</label>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+        <button
+          onClick={onClear}
+          style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, border: "1px solid", borderColor: selectedIds.length === 0 ? "#0f6e56" : "#e0e0e0", background: selectedIds.length === 0 ? "#e1f5ee" : "#fff", color: selectedIds.length === 0 ? "#0f6e56" : "#555", cursor: "pointer" }}>
+          {allLabel}
+        </button>
+        {options.map((option) => (
+          <button key={option.id}
+            onClick={() => onToggle(option.id)}
+            style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, border: "1px solid", borderColor: selectedIds.includes(option.id) ? "#0f6e56" : "#e0e0e0", background: selectedIds.includes(option.id) ? "#e1f5ee" : "#fff", color: selectedIds.includes(option.id) ? "#0f6e56" : "#555", cursor: "pointer" }}>
+            {formatLabel(option)}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function App() {
   const { user, userData } = useAuth();
   const periodo = userData?.periodo || 5;
@@ -81,6 +120,10 @@ export default function App() {
   const [selectedDisciplina, setSelectedDisciplina] = useState(null);
   const [selectedExams, setSelectedExams] = useState([]);
   const [availableExams, setAvailableExams] = useState([]);
+  const [taxonomyTree, setTaxonomyTree] = useState([]);
+  const [selectedGrandThemeId, setSelectedGrandThemeId] = useState(null);
+  const [selectedDomainId, setSelectedDomainId] = useState(null);
+  const [selectedDetailId, setSelectedDetailId] = useState(null);
   const [selectedSubtopics, setSelectedSubtopics] = useState([]);
   const [availableSubtopics, setAvailableSubtopics] = useState([]);
   const [questions, setQuestions] = useState([]);
@@ -153,10 +196,15 @@ export default function App() {
   }
 
   async function loadDisciplina(disciplina) {
-    setLoading(true); setError(false); setQuestions([]);
+    setLoading(true); setError(false); setQuestions([]); setTaxonomyTree([]);
+    setSelectedGrandThemeId(null); setSelectedDomainId(null); setSelectedDetailId(null);
     try {
-      const qs = await fetchQuestionsByDisciplina(disciplina);
+      const [qs, tree] = await Promise.all([
+        fetchQuestionsByDisciplina(disciplina),
+        fetchTaxonomyTreeByDisciplina(disciplina),
+      ]);
       setQuestions(qs);
+      setTaxonomyTree(tree);
       const exams = [...new Set(qs.map(q => q.exam).filter(Boolean))].sort(compareExamCodes);
       const subs = [...new Set(qs.map(q => q.subtopic))];
       setAvailableExams(exams);
@@ -167,6 +215,52 @@ export default function App() {
     } catch {
       setError(true); setLoading(false);
     }
+  }
+
+  const grandThemeOptions = useMemo(
+    () => getUniqueTaxonomyOptions(taxonomyTree, "grand_theme_id", "grand_theme_name", "grand_theme_order"),
+    [taxonomyTree]
+  );
+  const domainOptions = useMemo(() => {
+    if (!selectedGrandThemeId) return [];
+    return getUniqueTaxonomyOptions(
+      taxonomyTree.filter((row) => row.grand_theme_id === selectedGrandThemeId),
+      "domain_id",
+      "domain_name",
+      "domain_order"
+    );
+  }, [selectedGrandThemeId, taxonomyTree]);
+  const detailOptions = useMemo(() => {
+    if (!selectedDomainId) return [];
+    return getUniqueTaxonomyOptions(
+      taxonomyTree.filter((row) => row.domain_id === selectedDomainId),
+      "detail_id",
+      "detail_name",
+      "detail_order"
+    );
+  }, [selectedDomainId, taxonomyTree]);
+  const hasTaxonomy = grandThemeOptions.length > 0;
+
+  function clearGrandThemeFilter() {
+    setSelectedGrandThemeId(null);
+    setSelectedDomainId(null);
+    setSelectedDetailId(null);
+  }
+
+  function selectGrandTheme(id) {
+    setSelectedGrandThemeId((current) => current === id ? null : id);
+    setSelectedDomainId(null);
+    setSelectedDetailId(null);
+  }
+
+  function clearDomainFilter() {
+    setSelectedDomainId(null);
+    setSelectedDetailId(null);
+  }
+
+  function selectDomain(id) {
+    setSelectedDomainId((current) => current === id ? null : id);
+    setSelectedDetailId(null);
   }
 
   const q = filteredQs[idx];
@@ -190,6 +284,9 @@ export default function App() {
   function getSessionQuestions(mode, answerSource = answers) {
     let qs = [...questions];
     if (selectedExams.length > 0) qs = qs.filter((q) => selectedExams.includes(q.exam));
+    if (selectedGrandThemeId) qs = qs.filter((q) => q.grandThemeId === selectedGrandThemeId);
+    if (selectedDomainId) qs = qs.filter((q) => q.domainId === selectedDomainId);
+    if (selectedDetailId) qs = qs.filter((q) => q.detailId === selectedDetailId);
     if (selectedSubtopics.length > 0) qs = qs.filter((q) => selectedSubtopics.includes(q.subtopic));
     if (filterDiff !== "Todas") qs = qs.filter((q) => q.difficulty === filterDiff);
     if (mode === "continue") qs = qs.filter((q) => !answerSource[q.id]);
@@ -580,6 +677,35 @@ export default function App() {
                 ))}
               </div>
             </div>
+            {hasTaxonomy && (
+              <>
+                <FilterChipGroup
+                  label="Grande Tema"
+                  options={grandThemeOptions}
+                  selectedIds={selectedGrandThemeId ? [selectedGrandThemeId] : []}
+                  onClear={clearGrandThemeFilter}
+                  onToggle={selectGrandTheme}
+                />
+                {selectedGrandThemeId && domainOptions.length > 0 && (
+                  <FilterChipGroup
+                    label="Domínio"
+                    options={domainOptions}
+                    selectedIds={selectedDomainId ? [selectedDomainId] : []}
+                    onClear={clearDomainFilter}
+                    onToggle={selectDomain}
+                  />
+                )}
+                {selectedDomainId && detailOptions.length > 0 && (
+                  <FilterChipGroup
+                    label="Detalhe"
+                    options={detailOptions}
+                    selectedIds={selectedDetailId ? [selectedDetailId] : []}
+                    onClear={() => setSelectedDetailId(null)}
+                    onToggle={(id) => setSelectedDetailId((current) => current === id ? null : id)}
+                  />
+                )}
+              </>
+            )}
             <div style={{ marginBottom: 14 }}>
               <label style={{ fontSize: 12, color: "#aaa", display: "block", marginBottom: 8 }}>Assuntos</label>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>

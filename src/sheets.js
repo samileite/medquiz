@@ -16,6 +16,9 @@ export async function fetchQuestionsByDisciplina(disciplina) {
       .select(`
         id,
         exam,
+        grand_theme_id,
+        domain_id,
+        detail_id,
         difficulty,
         statement,
         question_type,
@@ -58,6 +61,9 @@ export async function fetchQuestionsByDisciplina(disciplina) {
       return {
         id: q.id,
         exam: normalizeExamCode(q.exam),
+        grandThemeId: q.grand_theme_id || null,
+        domainId: q.domain_id || null,
+        detailId: q.detail_id || null,
         topic: q.topics?.name || disciplina,
         subtopic: q.topics?.name || disciplina,
         difficulty: q.difficulty || "médio",
@@ -88,6 +94,36 @@ export async function fetchQuestionsByDisciplina(disciplina) {
 
 export async function fetchQuestions() {
   return fetchQuestionsByDisciplina("Endocrinologia");
+}
+
+export async function fetchTaxonomyTreeByDisciplina(disciplina) {
+  try {
+    const { data, error } = await supabase
+      .from("v_taxonomy_tree")
+      .select(`
+        discipline_id,
+        discipline_name,
+        grand_theme_id,
+        grand_theme_name,
+        grand_theme_order,
+        domain_id,
+        domain_name,
+        domain_order,
+        detail_id,
+        detail_name,
+        detail_order
+      `)
+      .eq("discipline_name", disciplina)
+      .order("grand_theme_order", { ascending: true })
+      .order("domain_order", { ascending: true })
+      .order("detail_order", { ascending: true });
+
+    if (error) throw error;
+    return data || [];
+  } catch (err) {
+    console.error("Erro ao carregar árvore de taxonomia:", err);
+    return [];
+  }
 }
 
 export async function fetchDisciplineAvailability(names = []) {
