@@ -37,21 +37,6 @@ function StatCard({ label, value, color }) {
   );
 }
 
-function InfoCard({ icon, title, subtitle, children, borderColor, background }) {
-  return (
-    <div style={{ background: background || "#fff", border: `1px solid ${borderColor || "#e0e0e0"}`, borderRadius:18, padding:"1.1rem 1.25rem", marginBottom:16, boxShadow:"0 18px 40px rgba(15, 110, 86, 0.08)" }}>
-      <div style={{ display:"flex", alignItems:"flex-start", gap:12, marginBottom: subtitle ? 10 : 0 }}>
-        <div style={{ width:38, height:38, borderRadius:12, display:"grid", placeItems:"center", background: borderColor ? `${borderColor}22` : "#f1f1f1", fontSize:20 }}>{icon}</div>
-        <div style={{ flex:1 }}>
-          <div style={{ fontSize:15, fontWeight:700, color:"#1a1a1a", marginBottom:4 }}>{title}</div>
-          {subtitle && <div style={{ fontSize:13, color:"#555", lineHeight:1.6 }}>{subtitle}</div>}
-        </div>
-      </div>
-      {children}
-    </div>
-  );
-}
-
 function RestartStudyModal({ disciplina, answeredCount, onCancel, onConfirm }) {
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 20, background: "rgba(0,0,0,0.36)", display: "grid", placeItems: "center", padding: 20 }}>
@@ -572,17 +557,6 @@ export default function App() {
       )}
       {revealed && (
         <div>
-          {q.explicacao.geral && (
-            <InfoCard
-              icon="💡"
-              title="Explicação geral"
-              subtitle="Reforce o fundamento por trás da resposta correta."
-              borderColor="#185fa5"
-              background="#eef5ff"
-            >
-              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.75, color: "#333" }}>{q.explicacao.geral}</p>
-            </InfoCard>
-          )}
           {extraExplanationCards.length > 0 && (
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12, marginBottom: 16 }}>
               {extraExplanationCards.map(card => (
