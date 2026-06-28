@@ -14,12 +14,20 @@ export async function fetchAdminQuestions() {
       detail_id,
       difficulty,
       question_type,
+      correct_answer,
+      correct_answers,
+      general_comment,
+      summary,
+      memory_tip,
+      trap,
+      reference,
       active,
       disciplines(id, name),
       topics(name),
       question_grand_themes(name),
       question_domains(name),
-      question_details(name)
+      question_details(name),
+      alternatives(letter, text, explanation)
     `)
     .order("created_at", { ascending: false });
 
@@ -37,6 +45,20 @@ export async function fetchAdminQuestions() {
     detailId: question.detail_id || "",
     difficulty: question.difficulty || "Sem dificuldade",
     questionType: question.question_type || "single",
+    correctAnswer: question.correct_answer || "",
+    correctAnswers: Array.isArray(question.correct_answers) ? question.correct_answers : [],
+    generalComment: question.general_comment || "",
+    summary: question.summary || "",
+    memoryTip: question.memory_tip || "",
+    trap: question.trap || "",
+    reference: question.reference || "",
+    alternatives: (question.alternatives || [])
+      .sort((a, b) => String(a.letter).localeCompare(String(b.letter)))
+      .map((alternative) => ({
+        letter: alternative.letter || "",
+        text: alternative.text || "",
+        explanation: alternative.explanation || "",
+      })),
     legacyTopic: question.topics?.name || "Sem assunto",
     grandTheme: question.question_grand_themes?.name || "",
     domain: question.question_domains?.name || "",
@@ -89,7 +111,7 @@ export async function fetchAdminQuestionOptions() {
   };
 }
 
-export async function updateAdminQuestionClassification(questionId, values, user) {
+export async function updateAdminQuestion(questionId, values, user) {
   const payload = {
     questionId,
     exam: normalizeExamCode(values.exam),
@@ -99,6 +121,14 @@ export async function updateAdminQuestionClassification(questionId, values, user
     detailId: values.detailId || null,
     difficulty: values.difficulty,
     active: values.active,
+    statement: values.statement,
+    correctAnswers: values.correctAnswers,
+    generalComment: values.generalComment,
+    summary: values.summary,
+    memoryTip: values.memoryTip,
+    trap: values.trap,
+    reference: values.reference,
+    alternatives: values.alternatives,
   };
 
   if (!user?.getIdToken) {
@@ -140,4 +170,8 @@ export async function updateAdminQuestionClassification(questionId, values, user
   }
 
   return result.question;
+}
+
+export async function updateAdminQuestionClassification(questionId, values, user) {
+  return updateAdminQuestion(questionId, values, user);
 }

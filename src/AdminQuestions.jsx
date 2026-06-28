@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
-import { fetchAdminQuestions, fetchAdminQuestionOptions, updateAdminQuestionClassification } from "./services/adminQuestions.js";
+import { fetchAdminQuestions, fetchAdminQuestionOptions, updateAdminQuestion } from "./services/adminQuestions.js";
 import { compareExamCodes } from "./utils/exams.js";
 import { useAuth } from "./Auth.jsx";
 
@@ -80,7 +80,43 @@ const inputStyle = {
   color: "#222",
 };
 
-function ClassificationEditor({ question, options, saving, onCancel, onSave }) {
+const textAreaStyle = {
+  ...inputStyle,
+  minHeight: 86,
+  resize: "vertical",
+  lineHeight: 1.45,
+};
+
+const ALTERNATIVE_LETTERS = ["A", "B", "C", "D", "E"];
+
+function normalizeDraftAlternatives(alternatives = []) {
+  const byLetter = new Map(
+    alternatives.map((alternative) => [alternative.letter, alternative])
+  );
+
+  return ALTERNATIVE_LETTERS.map((letter) => ({
+    letter,
+    text: byLetter.get(letter)?.text || "",
+    explanation: byLetter.get(letter)?.explanation || "",
+  }));
+}
+
+function correctAnswersToText(question) {
+  const answers = question.correctAnswers?.length
+    ? question.correctAnswers
+    : question.correctAnswer ? [question.correctAnswer] : [];
+
+  return answers.join(", ");
+}
+
+function textToCorrectAnswers(value) {
+  return String(value || "")
+    .split(",")
+    .map((answer) => answer.trim().toUpperCase())
+    .filter(Boolean);
+}
+
+function QuestionEditor({ question, options, saving, onCancel, onSave }) {
   const [draft, setDraft] = useState({
     exam: question.exam,
     topicId: question.topicId,
@@ -89,6 +125,14 @@ function ClassificationEditor({ question, options, saving, onCancel, onSave }) {
     detailId: question.detailId,
     difficulty: question.difficulty,
     active: question.active,
+    statement: question.statement,
+    correctAnswersText: correctAnswersToText(question),
+    generalComment: question.generalComment,
+    summary: question.summary,
+    memoryTip: question.memoryTip,
+    trap: question.trap,
+    reference: question.reference,
+    alternatives: normalizeDraftAlternatives(question.alternatives),
   });
 
   const topics = useMemo(
@@ -129,6 +173,15 @@ function ClassificationEditor({ question, options, saving, onCancel, onSave }) {
     setDraft((current) => ({ ...current, [name]: value }));
   }
 
+  function updateAlternative(letter, name, value) {
+    setDraft((current) => ({
+      ...current,
+      alternatives: current.alternatives.map((alternative) => (
+        alternative.letter === letter ? { ...alternative, [name]: value } : alternative
+      )),
+    }));
+  }
+
   function updateGrandTheme(value) {
     setDraft((current) => ({
       ...current,
@@ -149,6 +202,64 @@ function ClassificationEditor({ question, options, saving, onCancel, onSave }) {
   return (
     <tr style={{ background: "#fbfcfc", borderTop: "1px solid #d9ece5" }}>
       <td colSpan={11} style={{ padding: 16 }}>
+        <div style={{ display: "grid", gap: 12, marginBottom: 16 }}>
+          <FormField label="Enunciado">
+            <textarea value={draft.statement} onChange={(event) => updateDraft("statement", event.target.value)} style={{ ...textAreaStyle, minHeight: 120 }} />
+          </FormField>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+            <FormField label="Resposta correta">
+              <input
+                value={draft.correctAnswersText}
+                onChange={(event) => updateDraft("correctAnswersText", event.target.value.toUpperCase())}
+                placeholder="A ou A, C"
+                style={inputStyle}
+              />
+            </FormField>
+            <FormField label="Tipo">
+              <input value={question.questionType} readOnly style={{ ...inputStyle, color: "#777", background: "#f6f6f6" }} />
+            </FormField>
+          </div>
+          <div style={{ display: "grid", gap: 10 }}>
+            {draft.alternatives.map((alternative) => (
+              <div key={alternative.letter} style={{ border: "1px solid #ededed", borderRadius: 10, padding: 10, background: "#fff" }}>
+                <div style={{ display: "grid", gridTemplateColumns: "44px minmax(180px, 1fr)", gap: 10, alignItems: "start" }}>
+                  <strong style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: 34, height: 34, borderRadius: 8, background: "#eef4f1", color: "#0f6e56" }}>{alternative.letter}</strong>
+                  <div style={{ display: "grid", gap: 8 }}>
+                    <textarea
+                      value={alternative.text}
+                      onChange={(event) => updateAlternative(alternative.letter, "text", event.target.value)}
+                      placeholder={`Alternativa ${alternative.letter}`}
+                      style={{ ...textAreaStyle, minHeight: 58 }}
+                    />
+                    <textarea
+                      value={alternative.explanation}
+                      onChange={(event) => updateAlternative(alternative.letter, "explanation", event.target.value)}
+                      placeholder={`Comentário da alternativa ${alternative.letter}`}
+                      style={{ ...textAreaStyle, minHeight: 58 }}
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+            <FormField label="Comentários">
+              <textarea value={draft.generalComment} onChange={(event) => updateDraft("generalComment", event.target.value)} style={textAreaStyle} />
+            </FormField>
+            <FormField label="Resumo">
+              <textarea value={draft.summary} onChange={(event) => updateDraft("summary", event.target.value)} style={textAreaStyle} />
+            </FormField>
+            <FormField label="Memory tip">
+              <textarea value={draft.memoryTip} onChange={(event) => updateDraft("memoryTip", event.target.value)} style={textAreaStyle} />
+            </FormField>
+            <FormField label="Trap">
+              <textarea value={draft.trap} onChange={(event) => updateDraft("trap", event.target.value)} style={textAreaStyle} />
+            </FormField>
+            <FormField label="Referência">
+              <textarea value={draft.reference} onChange={(event) => updateDraft("reference", event.target.value)} style={textAreaStyle} />
+            </FormField>
+          </div>
+        </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 14 }}>
           <FormField label="Exam">
             <input value={draft.exam} onChange={(event) => updateDraft("exam", event.target.value.toUpperCase())} style={inputStyle} />
@@ -195,8 +306,16 @@ function ClassificationEditor({ question, options, saving, onCancel, onSave }) {
           <button onClick={onCancel} disabled={saving} style={{ fontSize: 12, padding: "8px 12px", borderRadius: 8, border: "1px solid #d9d9d9", background: "#fff", color: "#555", cursor: saving ? "not-allowed" : "pointer" }}>
             Cancelar
           </button>
-          <button onClick={() => onSave(draft)} disabled={saving} style={{ fontSize: 12, padding: "8px 14px", borderRadius: 8, border: "none", background: saving ? "#8bbcaf" : "#0f6e56", color: "#fff", fontWeight: 700, cursor: saving ? "not-allowed" : "pointer" }}>
-            {saving ? "Salvando..." : "Salvar classificação"}
+          <button
+            onClick={() => onSave({
+              ...draft,
+              correctAnswers: textToCorrectAnswers(draft.correctAnswersText),
+              alternatives: draft.alternatives.filter((alternative) => alternative.text.trim()),
+            })}
+            disabled={saving}
+            style={{ fontSize: 12, padding: "8px 14px", borderRadius: 8, border: "none", background: saving ? "#8bbcaf" : "#0f6e56", color: "#fff", fontWeight: 700, cursor: saving ? "not-allowed" : "pointer" }}
+          >
+            {saving ? "Salvando..." : "Salvar questão"}
           </button>
         </div>
       </td>
@@ -279,19 +398,19 @@ export default function AdminQuestions() {
     });
   }
 
-  async function saveClassification(question, draft) {
+  async function saveQuestion(question, draft) {
     try {
       setSavingId(question.id);
       setSaveError("");
       setSaveSuccess("");
-      await updateAdminQuestionClassification(question.id, draft, user);
+      await updateAdminQuestion(question.id, draft, user);
       const list = await fetchAdminQuestions();
       setQuestions(list);
       setEditingId("");
-      setSaveSuccess("Classificação salva com sucesso.");
+      setSaveSuccess("Questão salva com sucesso.");
     } catch (err) {
-      console.error("Erro ao salvar classificação:", err);
-      setSaveError(err?.message || "Não foi possível salvar a classificação.");
+      console.error("Erro ao salvar questão:", err);
+      setSaveError(err?.message || "Não foi possível salvar a questão.");
     } finally {
       setSavingId("");
     }
@@ -375,12 +494,12 @@ export default function AdminQuestions() {
                     </td>
                   </tr>
                   {editingId === question.id && (
-                    <ClassificationEditor
+                    <QuestionEditor
                       question={question}
                       options={options}
                       saving={savingId === question.id}
                       onCancel={() => setEditingId("")}
-                      onSave={(draft) => saveClassification(question, draft)}
+                      onSave={(draft) => saveQuestion(question, draft)}
                     />
                   )}
                 </Fragment>

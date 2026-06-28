@@ -5,6 +5,7 @@ import admin from "firebase-admin";
 import { createClient } from "@supabase/supabase-js";
 
 const VALID_DIFFICULTIES = new Set(["fácil", "médio", "difícil"]);
+const VALID_ANSWER_LETTERS = new Set(["A", "B", "C", "D", "E"]);
 
 function getFirebaseAdmin() {
   const requiredEnv = [
@@ -58,6 +59,43 @@ function emptyToNull(value) {
   return value ? String(value) : null;
 }
 
+function normalizeNullableText(value) {
+  const text = String(value || "").trim();
+  return text || null;
+}
+
+function normalizeRequiredText(value, fieldLabel) {
+  const text = String(value || "").trim();
+  if (!text) {
+    throw new Error(`${fieldLabel} é obrigatório`);
+  }
+  return text;
+}
+
+function normalizeCorrectAnswers(value) {
+  const answers = Array.isArray(value)
+    ? value
+    : String(value || "").split(",");
+
+  return [...new Set(
+    answers
+      .map((answer) => String(answer || "").trim().toUpperCase())
+      .filter(Boolean)
+  )];
+}
+
+function normalizeAlternatives(value) {
+  if (!Array.isArray(value)) return [];
+
+  return value
+    .map((alternative) => ({
+      letter: String(alternative?.letter || "").trim().toUpperCase(),
+      text: String(alternative?.text || "").trim(),
+      explanation: normalizeNullableText(alternative?.explanation),
+    }))
+    .filter((alternative) => alternative.letter && alternative.text);
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -94,6 +132,14 @@ export default async function handler(req, res) {
       detailId,
       difficulty,
       active,
+      statement,
+      correctAnswers,
+      generalComment,
+      summary,
+      memoryTip,
+      trap,
+      reference,
+      alternatives,
     } = req.body || {};
 
     if (!questionId) {
@@ -108,6 +154,31 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Status active inválido" });
     }
 
+    let normalizedStatement;
+    let normalizedCorrectAnswers;
+    let normalizedAlternatives;
+
+    try {
+      normalizedStatement = normalizeRequiredText(statement, "Enunciado");
+      normalizedCorrectAnswers = normalizeCorrectAnswers(correctAnswers);
+      normalizedAlternatives = normalizeAlternatives(alternatives);
+    } catch (validationError) {
+      return res.status(400).json({ error: validationError?.message || "Dados inválidos" });
+    }
+
+    if (normalizedAlternatives.length === 0) {
+      return res.status(400).json({ error: "Informe pelo menos uma alternativa com texto" });
+    }
+
+    const alternativeLetters = new Set(normalizedAlternatives.map((alternative) => alternative.letter));
+    const invalidAnswers = normalizedCorrectAnswers.filter(
+      (answer) => !VALID_ANSWER_LETTERS.has(answer) || !alternativeLetters.has(answer)
+    );
+
+    if (normalizedCorrectAnswers.length === 0 || invalidAnswers.length > 0) {
+      return res.status(400).json({ error: "Resposta correta inválida para as alternativas informadas" });
+    }
+
     const payload = {
       exam: normalizeExamCode(exam),
       topic_id: emptyToNull(topicId),
@@ -116,6 +187,14 @@ export default async function handler(req, res) {
       detail_id: emptyToNull(detailId),
       difficulty,
       active,
+      statement: normalizedStatement,
+      correct_answer: normalizedCorrectAnswers[0],
+      correct_answers: normalizedCorrectAnswers,
+      general_comment: normalizeNullableText(generalComment),
+      summary: normalizeNullableText(summary),
+      memory_tip: normalizeNullableText(memoryTip),
+      trap: normalizeNullableText(trap),
+      reference: normalizeNullableText(reference),
     };
 
     const { data, error } = await supabase
@@ -130,6 +209,15 @@ export default async function handler(req, res) {
         domain_id,
         detail_id,
         difficulty,
+        question_type,
+        correct_answer,
+        correct_answers,
+        statement,
+        general_comment,
+        summary,
+        memory_tip,
+        trap,
+        reference,
         active
       `)
       .single();
@@ -137,6 +225,41 @@ export default async function handler(req, res) {
     if (error) {
       console.error("Supabase update error:", error);
       return res.status(500).json({ error: `Erro Supabase: ${error.message || JSON.stringify(error)}` });
+    }
+
+    for (const alternative of normalizedAlternatives) {
+      const alternativePayload = {
+        text: alternative.text,
+        explanation: alternative.explanation,
+      };
+
+      const { data: updatedAlternatives, error: updateAlternativeError } = await supabase
+        .from("alternatives")
+        .update(alternativePayload)
+        .eq("question_id", questionId)
+        .eq("letter", alternative.letter)
+        .select("letter");
+
+      if (updateAlternativeError) {
+        console.error("Supabase alternative update error:", updateAlternativeError);
+        return res.status(500).json({ error: `Erro Supabase alternativas: ${updateAlternativeError.message || JSON.stringify(updateAlternativeError)}` });
+      }
+
+      if (!updatedAlternatives?.length) {
+        const { error: insertAlternativeError } = await supabase
+          .from("alternatives")
+          .insert({
+            question_id: questionId,
+            letter: alternative.letter,
+            text: alternative.text,
+            explanation: alternative.explanation,
+          });
+
+        if (insertAlternativeError) {
+          console.error("Supabase alternative insert error:", insertAlternativeError);
+          return res.status(500).json({ error: `Erro Supabase alternativas: ${insertAlternativeError.message || JSON.stringify(insertAlternativeError)}` });
+        }
+      }
     }
 
     return res.status(200).json({ success: true, question: data });
