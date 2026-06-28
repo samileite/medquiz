@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import WebSocket from "ws";
 import { createClient } from "@supabase/supabase-js";
+import { normalizeExamCode } from "../src/utils/exams.js";
 
 dotenv.config({
   path: ".env.import"
@@ -77,6 +78,7 @@ async function importQuestions() {
 
   for (const c of rows) {
     const tema = c[0] || "Endocrinologia";
+    const exam = normalizeExamCode(c[2]);
     const dificuldade = c[1] || "médio";
     const enunciado = c[3];
     const resposta = (c[9] || "").toUpperCase();
@@ -93,6 +95,7 @@ async function importQuestions() {
       .insert({
         discipline_id: discipline.id,
         topic_id: topic.id,
+        exam,
         difficulty: dificuldade,
         statement: enunciado,
         correct_answer: resposta,

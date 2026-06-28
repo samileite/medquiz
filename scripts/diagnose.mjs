@@ -117,6 +117,7 @@ if (endoDiscError) {
     .select(
       `
       id,
+      exam,
       difficulty,
       statement,
       correct_answer,
@@ -147,6 +148,7 @@ if (endoDiscError) {
       const q = endoQuestions[0];
       console.log(`Questão ID: ${q.id}`);
       console.log(`Ativo: ${q.active ? "✅ SIM" : "❌ NÃO"}`);
+      console.log(`Prova: ${q.exam}`);
       console.log(`Dificuldade: ${q.difficulty}`);
       console.log(`Tema: ${q.topics?.name || "(vazio)"}`);
       console.log(`Topic ID vinculado: ${q.topic_id || "não encontrado"}`);
@@ -169,7 +171,7 @@ if (endoDiscError) {
       // Filtro: active = true
       const { data: activeQuestions } = await supabase
         .from("questions")
-        .select("id, active")
+        .select("id, exam, active")
         .eq("discipline_id", endoDisc.id)
         .eq("active", true);
       console.log(`✓ Questões com active=true: ${activeQuestions?.length || 0}`);
@@ -177,7 +179,7 @@ if (endoDiscError) {
       // Filtro: active = false
       const { data: inactiveQuestions } = await supabase
         .from("questions")
-        .select("id, active")
+        .select("id, exam, active")
         .eq("discipline_id", endoDisc.id)
         .eq("active", false);
       console.log(`✓ Questões com active=false: ${inactiveQuestions?.length || 0}`);
@@ -201,6 +203,7 @@ if (endoDiscError) {
           .select(
             `
         id,
+        exam,
         difficulty,
         statement,
         correct_answer,
@@ -230,6 +233,7 @@ if (endoDiscError) {
           const q = frontendQueryResult[0];
           const mappedQuestion = {
             id: q.id,
+            exam: q.exam,
             topic: q.topics?.name || "Endocrinologia",
             subtopic: q.topics?.name || "Endocrinologia",
             difficulty: q.difficulty || "médio",
@@ -262,14 +266,14 @@ if (endoDiscError) {
 
       const { data: allQuestions } = await supabase
         .from("questions")
-        .select("id, discipline_id, active, difficulty")
+        .select("id, exam, discipline_id, active, difficulty")
         .limit(10);
 
       if (allQuestions && allQuestions.length > 0) {
         console.log("Primeiras 10 questões no banco:");
         allQuestions.forEach((q) => {
           console.log(
-            `  - ID: ${q.id}, Discipline: ${q.discipline_id}, Active: ${q.active}, Diff: ${q.difficulty}`
+            `  - ID: ${q.id}, Exam: ${q.exam}, Discipline: ${q.discipline_id}, Active: ${q.active}, Diff: ${q.difficulty}`
           );
         });
       }

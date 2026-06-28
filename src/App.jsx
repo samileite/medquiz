@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import { fetchQuestionsByDisciplina, fetchDisciplineAvailability } from "./sheets.js";
 import { useAuth } from "./Auth.jsx";
 import { doc, setDoc, getDoc } from "firebase/firestore";
@@ -6,6 +6,7 @@ import { db } from "./firebase.js";
 import { DISCIPLINAS_POR_PERIODO, DIFFICULTIES } from "./constants.js";
 import { saveAnswer } from "./services/answers.js";
 import ProfilePage from "./Profile.jsx";
+import { compareExamCodes, formatExamLabel } from "./utils/exams.js";
 
 function Timer({ active, onTick, resetKey }) {
   const [secs, setSecs] = useState(0);
@@ -15,7 +16,7 @@ function Timer({ active, onTick, resetKey }) {
     if (active) { ref.current = setInterval(() => setSecs(s => { onTick(s + 1); return s + 1; }), 1000); }
     else clearInterval(ref.current);
     return () => clearInterval(ref.current);
-  }, [active, resetKey]);
+  }, [active, onTick, resetKey]);
   const m = String(Math.floor(secs / 60)).padStart(2, "0");
   const s = String(secs % 60).padStart(2, "0");
   return <span style={{fontVariantNumeric:"tabular-nums",color:secs>120?"#e24b4a":"#aaa",fontSize:13}}>{m}:{s}</span>;
@@ -51,28 +52,6 @@ function InfoCard({ icon, title, subtitle, children, borderColor, background }) 
   );
 }
 
-function AlternativeAnalysisCard({ letter, text, justification, status, badgeColor, active }) {
-  const border = active ? (badgeColor === "green" ? "#0f6e56" : badgeColor === "red" ? "#e24b4a" : "#e0e0e0") : "#e0e0e0";
-  const background = active ? (badgeColor === "green" ? "#eaf7f0" : badgeColor === "red" ? "#fff1f1" : "#fff") : "#fff";
-  const iconBg = badgeColor === "green" ? "#d3f0e4" : badgeColor === "red" ? "#f9d3d3" : "#f4f4f5";
-  const iconColor = badgeColor === "green" ? "#0f6e56" : badgeColor === "red" ? "#a32d2d" : "#555";
-
-  return (
-    <div style={{ borderRadius:16, border:`1px solid ${border}`, background, padding:"14px 16px", marginBottom:12 }}>
-      <div style={{ display:"flex", alignItems:"flex-start", gap:12, marginBottom: justification ? 10 : 0 }}>
-        <div style={{ minWidth:32, height:32, borderRadius:"50%", display:"grid", placeItems:"center", background:iconBg, color:iconColor, fontWeight:700 }}>{letter}</div>
-        <div style={{ flex:1 }}>
-          <div style={{ display:"flex", alignItems:"center", gap:10, flexWrap:"wrap" }}>
-            <div style={{ fontSize:14, fontWeight:600, color:"#1a1a1a", lineHeight:1.5 }}>{text}</div>
-            <Badge label={status} color={badgeColor} />
-          </div>
-        </div>
-      </div>
-      {justification && <div style={{ fontSize:13, lineHeight:1.7, color:"#333" }}>{justification}</div>}
-    </div>
-  );
-}
-
 function RestartStudyModal({ disciplina, answeredCount, onCancel, onConfirm }) {
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 20, background: "rgba(0,0,0,0.36)", display: "grid", placeItems: "center", padding: 20 }}>
@@ -97,9 +76,11 @@ function RestartStudyModal({ disciplina, answeredCount, onCancel, onConfirm }) {
 export default function App() {
   const { user, userData } = useAuth();
   const periodo = userData?.periodo || 5;
-  const disciplinasDoPeriodo = DISCIPLINAS_POR_PERIODO[periodo] || [];
+  const disciplinasDoPeriodo = useMemo(() => DISCIPLINAS_POR_PERIODO[periodo] || [], [periodo]);
 
   const [selectedDisciplina, setSelectedDisciplina] = useState(null);
+  const [selectedExams, setSelectedExams] = useState([]);
+  const [availableExams, setAvailableExams] = useState([]);
   const [selectedSubtopics, setSelectedSubtopics] = useState([]);
   const [availableSubtopics, setAvailableSubtopics] = useState([]);
   const [questions, setQuestions] = useState([]);
@@ -123,22 +104,7 @@ export default function App() {
   const [showProfile, setShowProfile] = useState(false);
   const [showRestartConfirm, setShowRestartConfirm] = useState(false);
 
-  useEffect(() => { loadProgress(); }, []);
-
-  useEffect(() => {
-    if (selectedDisciplina) loadDisciplina(selectedDisciplina);
-  }, [selectedDisciplina]);
-
-  useEffect(() => {
-    if (!disciplinasDoPeriodo.length) return;
-    async function loadAvailability() {
-      const availability = await fetchDisciplineAvailability(disciplinasDoPeriodo);
-      setAvailableDisciplines(availability);
-    }
-    loadAvailability();
-  }, [disciplinasDoPeriodo]);
-
-  async function loadProgress() {
+  const loadProgress = useCallback(async () => {
     if (!user) return;
     try {
       const ref = doc(db, "progress", user.uid);
@@ -152,7 +118,22 @@ export default function App() {
     } catch (err) {
       console.warn("Erro ao carregar progresso:", err);
     }
-  }
+  }, [user]);
+
+  useEffect(() => { loadProgress(); }, [loadProgress]);
+
+  useEffect(() => {
+    if (selectedDisciplina) loadDisciplina(selectedDisciplina);
+  }, [selectedDisciplina]);
+
+  useEffect(() => {
+    if (!disciplinasDoPeriodo.length) return;
+    async function loadAvailability() {
+      const availability = await fetchDisciplineAvailability(disciplinasDoPeriodo);
+      setAvailableDisciplines(availability);
+    }
+    loadAvailability();
+  }, [disciplinasDoPeriodo]);
 
   async function saveProgress(newAnswers, newFavorites, newNotes) {
     if (!user) return;
@@ -176,7 +157,10 @@ export default function App() {
     try {
       const qs = await fetchQuestionsByDisciplina(disciplina);
       setQuestions(qs);
+      const exams = [...new Set(qs.map(q => q.exam).filter(Boolean))].sort(compareExamCodes);
       const subs = [...new Set(qs.map(q => q.subtopic))];
+      setAvailableExams(exams);
+      setSelectedExams([]);
       setAvailableSubtopics(subs);
       setSelectedSubtopics(subs);
       setLoading(false);
@@ -205,6 +189,7 @@ export default function App() {
 
   function getSessionQuestions(mode, answerSource = answers) {
     let qs = [...questions];
+    if (selectedExams.length > 0) qs = qs.filter((q) => selectedExams.includes(q.exam));
     if (selectedSubtopics.length > 0) qs = qs.filter((q) => selectedSubtopics.includes(q.subtopic));
     if (filterDiff !== "Todas") qs = qs.filter((q) => q.difficulty === filterDiff);
     if (mode === "continue") qs = qs.filter((q) => !answerSource[q.id]);
@@ -212,6 +197,8 @@ export default function App() {
     if (mode === "favorites") qs = qs.filter((q) => favorites.has(q.id));
     return qs;
   }
+
+  const availableQuestionCount = getSessionQuestions().length;
 
   function startQuiz(mode, answerSource = answers) {
     const qs = getSessionQuestions(mode, answerSource);
@@ -559,7 +546,7 @@ export default function App() {
       )}
       <button onClick={() => { setSelectedDisciplina(null); setView("home"); }} style={{ background: "none", border: "none", color: "#aaa", fontSize: 13, cursor: "pointer", padding: 0, marginBottom: 20 }}>← Disciplinas</button>
       <h2 style={{ fontSize: 20, fontWeight: 600, marginBottom: 4 }}>{selectedDisciplina}</h2>
-      <p style={{ color: "#aaa", fontSize: 14, marginBottom: 20 }}>{questions.length} questões disponíveis</p>
+      <p style={{ color: "#aaa", fontSize: 14, marginBottom: 20 }}>{availableQuestionCount} questões disponíveis</p>
 
       {loading ? (
         <div style={{ textAlign: "center", padding: "3rem" }}>
@@ -576,6 +563,23 @@ export default function App() {
         <>
           <div style={{ background: "#f9f9f9", borderRadius: 14, padding: "1rem 1.25rem", marginBottom: 20 }}>
             <p style={{ fontSize: 12, fontWeight: 600, color: "#aaa", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>Filtros</p>
+            <div style={{ marginBottom: 14 }}>
+              <label style={{ fontSize: 12, color: "#aaa", display: "block", marginBottom: 8 }}>Avaliações</label>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+                <button
+                  onClick={() => setSelectedExams([])}
+                  style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, border: "1px solid", borderColor: selectedExams.length === 0 ? "#0f6e56" : "#e0e0e0", background: selectedExams.length === 0 ? "#e1f5ee" : "#fff", color: selectedExams.length === 0 ? "#0f6e56" : "#555", cursor: "pointer" }}>
+                  Todas
+                </button>
+                {availableExams.map(exam => (
+                  <button key={exam}
+                    onClick={() => setSelectedExams(prev => prev.includes(exam) ? prev.filter(item => item !== exam) : [...prev, exam])}
+                    style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, border: "1px solid", borderColor: selectedExams.includes(exam) ? "#0f6e56" : "#e0e0e0", background: selectedExams.includes(exam) ? "#e1f5ee" : "#fff", color: selectedExams.includes(exam) ? "#0f6e56" : "#555", cursor: "pointer" }}>
+                    {formatExamLabel(exam)}
+                  </button>
+                ))}
+              </div>
+            </div>
             <div style={{ marginBottom: 14 }}>
               <label style={{ fontSize: 12, color: "#aaa", display: "block", marginBottom: 8 }}>Assuntos</label>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>

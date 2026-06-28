@@ -56,6 +56,7 @@ const { data: joined, error: joinError } = await supabase
   .select(
     `
     id,
+    exam,
     difficulty,
     statement,
     correct_answer,
@@ -89,6 +90,7 @@ if (discQueryError) {
     .select(
       `
       id,
+      exam,
       difficulty,
       statement,
       correct_answer,

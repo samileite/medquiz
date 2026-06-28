@@ -4,6 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 import fs from "fs/promises";
 import path from "path";
 import { pathToFileURL } from "url";
+import { normalizeExamCode } from "../src/utils/exams.js";
 
 dotenv.config({ path: ".env.import" });
 
@@ -109,6 +110,7 @@ function normalizeQuestionRaw(question) {
   }
 
   return {
+    exam: normalizeExamCode(question.exam || question.examCode || question.prova),
     topic: question.topic || question.section || "Geral",
     difficulty: question.difficulty || "médio",
     statement: question.statement,
@@ -159,7 +161,7 @@ async function importQuestions() {
 
     const { data: existingQuestion, error: existingQuestionError } = await supabase
       .from("questions")
-      .select("id")
+      .select("id, exam")
       .eq("discipline_id", discipline.id)
       .eq("statement", question.statement)
       .maybeSingle();
@@ -175,6 +177,7 @@ async function importQuestions() {
       .insert({
         discipline_id: discipline.id,
         topic_id: topic.id,
+        exam: question.exam,
         difficulty: question.difficulty,
         statement: question.statement,
         question_type: question.questionType,

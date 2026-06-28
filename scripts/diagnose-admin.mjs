@@ -53,7 +53,7 @@ if (questions && questions.length > 0) {
   console.log(`   Primeiras 3:`);
   questions.slice(0, 3).forEach((q) => {
     console.log(
-      `   - ID: ${q.id}, Discipline: ${q.discipline_id}, Active: ${q.active}, Diff: ${q.difficulty}`
+      `   - ID: ${q.id}, Exam: ${q.exam}, Discipline: ${q.discipline_id}, Active: ${q.active}, Diff: ${q.difficulty}`
     );
   });
 }
@@ -88,6 +88,7 @@ if (endoDiscError || !endoDisc) {
     .select(
       `
       id,
+      exam,
       active,
       difficulty,
       discipline_id,
@@ -110,6 +111,7 @@ if (endoDiscError || !endoDisc) {
       endoQs.slice(0, 3).forEach((q, i) => {
         console.log(`\n   ${i + 1}. ID: ${q.id}`);
         console.log(`      Active: ${q.active}`);
+        console.log(`      Exam: ${q.exam}`);
         console.log(`      Difficulty: ${q.difficulty}`);
         console.log(`      Topic: ${q.topics?.name || "(sem topic)"}`);
         console.log(`      Correct Answer: ${q.correct_answer}`);
@@ -129,14 +131,14 @@ if (endoDiscError || !endoDisc) {
       // Verificar se há questões sem filtro
       const { data: allQs } = await supabase
         .from("questions")
-        .select("id, discipline_id, active")
+        .select("id, exam, discipline_id, active")
         .limit(5);
 
       if (allQs && allQs.length > 0) {
         console.log("\n   Questões no banco (amostra):");
         allQs.forEach((q) => {
           console.log(
-            `   - ID: ${q.id}, Discipline: ${q.discipline_id}, Active: ${q.active}`
+            `   - ID: ${q.id}, Exam: ${q.exam}, Discipline: ${q.discipline_id}, Active: ${q.active}`
           );
         });
       }

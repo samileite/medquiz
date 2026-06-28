@@ -1,4 +1,5 @@
 import { supabase } from "./lib/supabase.js";
+import { normalizeExamCode } from "./utils/exams.js";
 
 export async function fetchQuestionsByDisciplina(disciplina) {
   try {
@@ -14,6 +15,7 @@ export async function fetchQuestionsByDisciplina(disciplina) {
       .from("questions")
       .select(`
         id,
+        exam,
         difficulty,
         statement,
         question_type,
@@ -55,6 +57,7 @@ export async function fetchQuestionsByDisciplina(disciplina) {
 
       return {
         id: q.id,
+        exam: normalizeExamCode(q.exam),
         topic: q.topics?.name || disciplina,
         subtopic: q.topics?.name || disciplina,
         difficulty: q.difficulty || "médio",
@@ -101,7 +104,7 @@ export async function fetchDisciplineAvailability(names = []) {
 
     const { data: questions, error: questionsError } = await supabase
       .from("questions")
-      .select("discipline_id")
+      .select("discipline_id, exam")
       .in("discipline_id", disciplineIds)
       .eq("active", true);
 
