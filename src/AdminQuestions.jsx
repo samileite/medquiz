@@ -1,6 +1,7 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { fetchAdminQuestions, fetchAdminQuestionOptions, updateAdminQuestionClassification } from "./services/adminQuestions.js";
 import { compareExamCodes } from "./utils/exams.js";
+import { useAuth } from "./Auth.jsx";
 
 const ALL = "Todos";
 
@@ -204,10 +205,13 @@ function ClassificationEditor({ question, options, saving, onCancel, onSave }) {
 }
 
 export default function AdminQuestions() {
+  const { user } = useAuth();
   const [questions, setQuestions] = useState([]);
   const [options, setOptions] = useState({ disciplines: [], topics: [], taxonomy: [] });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [saveError, setSaveError] = useState("");
+  const [saveSuccess, setSaveSuccess] = useState("");
   const [editingId, setEditingId] = useState("");
   const [savingId, setSavingId] = useState("");
   const [filters, setFilters] = useState({
@@ -278,13 +282,16 @@ export default function AdminQuestions() {
   async function saveClassification(question, draft) {
     try {
       setSavingId(question.id);
-      await updateAdminQuestionClassification(question.id, draft);
+      setSaveError("");
+      setSaveSuccess("");
+      await updateAdminQuestionClassification(question.id, draft, user);
       const list = await fetchAdminQuestions();
       setQuestions(list);
       setEditingId("");
+      setSaveSuccess("Classificação salva com sucesso.");
     } catch (err) {
       console.error("Erro ao salvar classificação:", err);
-      setError("Não foi possível salvar a classificação.");
+      setSaveError(err?.message || "Não foi possível salvar a classificação.");
     } finally {
       setSavingId("");
     }
@@ -310,6 +317,18 @@ export default function AdminQuestions() {
         <SelectFilter label="Detalhe" value={filters.detail} options={filterOptions.details} onChange={(value) => updateFilter("detail", value)} />
         <SelectFilter label="Status" value={filters.active} options={["Ativas", "Inativas"]} onChange={(value) => updateFilter("active", value)} />
       </div>
+
+      {saveError && (
+        <div style={{ background: "#fcebeb", border: "1px solid #f2c4c4", borderRadius: 12, padding: "12px 14px", color: "#a32d2d", fontSize: 13, marginBottom: 16 }}>
+          {saveError}
+        </div>
+      )}
+
+      {saveSuccess && (
+        <div style={{ background: "#e1f5ee", border: "1px solid #bfe6d7", borderRadius: 12, padding: "12px 14px", color: "#0f6e56", fontSize: 13, marginBottom: 16 }}>
+          {saveSuccess}
+        </div>
+      )}
 
       {loading ? (
         <p style={{ color: "#aaa", textAlign: "center", padding: "2rem" }}>Carregando questões...</p>

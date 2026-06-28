@@ -89,21 +89,55 @@ export async function fetchAdminQuestionOptions() {
   };
 }
 
-export async function updateAdminQuestionClassification(questionId, values) {
+export async function updateAdminQuestionClassification(questionId, values, user) {
   const payload = {
+    questionId,
     exam: normalizeExamCode(values.exam),
-    topic_id: values.topicId || null,
-    grand_theme_id: values.grandThemeId || null,
-    domain_id: values.domainId || null,
-    detail_id: values.detailId || null,
+    topicId: values.topicId || null,
+    grandThemeId: values.grandThemeId || null,
+    domainId: values.domainId || null,
+    detailId: values.detailId || null,
     difficulty: values.difficulty,
     active: values.active,
   };
 
-  const { error } = await supabase
-    .from("questions")
-    .update(payload)
-    .eq("id", questionId);
+  if (!user?.getIdToken) {
+    throw new Error("Usuário admin ausente");
+  }
 
-  if (error) throw error;
+  const token = await user.getIdToken();
+  const response = await fetch("/api/update-question-classification", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const responseText = await response.text();
+  let result = null;
+
+  if (responseText) {
+    try {
+      result = JSON.parse(responseText);
+    } catch {
+      const preview = responseText.slice(0, 160).replace(/\s+/g, " ").trim();
+      throw new Error(
+        response.status === 404
+          ? "Endpoint /api/update-question-classification não encontrado. Em desenvolvimento local, rode com Vercel/servidor que suporte a pasta api."
+          : `Resposta inválida da API (${response.status}): ${preview || "sem conteúdo JSON"}`
+      );
+    }
+  }
+
+  if (!response.ok) {
+    throw new Error(result?.error || "Erro ao salvar classificação");
+  }
+
+  if (!result?.question) {
+    throw new Error("A API salvou sem retornar a questão atualizada.");
+  }
+
+  return result.question;
 }
