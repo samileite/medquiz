@@ -2,12 +2,14 @@ import { useState, useEffect } from "react";
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import { db } from "./firebase.js";
 import { useAuth } from "./Auth.jsx";
+import AdminQuestions from "./AdminQuestions.jsx";
 
 export default function AdminPanel() {
   const { logout, user } = useAuth();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [tab, setTab] = useState("todos");
+  const [section, setSection] = useState("users");
 
   useEffect(() => {
     loadUsers();
@@ -49,6 +51,19 @@ export default function AdminPanel() {
         <button onClick={logout} style={{ fontSize: 13, padding: "7px 14px", borderRadius: 8, border: "1px solid #e0e0e0", cursor: "pointer", color: "#aaa", background: "#fff" }}>Sair</button>
       </div>
 
+      <div style={{ display: "flex", gap: 10, marginBottom: 20 }}>
+        <button onClick={() => setSection("users")} style={{ padding: "8px 16px", borderRadius: 10, border: "none", background: section === "users" ? "#0f6e56" : "#f1f1f1", color: section === "users" ? "#fff" : "#555", fontWeight: 500, fontSize: 13, cursor: "pointer" }}>
+          Usuários
+        </button>
+        <button onClick={() => setSection("questions")} style={{ padding: "8px 16px", borderRadius: 10, border: "none", background: section === "questions" ? "#0f6e56" : "#f1f1f1", color: section === "questions" ? "#fff" : "#555", fontWeight: 500, fontSize: 13, cursor: "pointer" }}>
+          Questões
+        </button>
+      </div>
+
+      {section === "questions" ? (
+        <AdminQuestions />
+      ) : (
+        <>
       <div style={{ display: "flex", gap: 10, marginBottom: 20 }}>
         <button onClick={() => setTab("todos")} style={{ padding: "8px 16px", borderRadius: 10, border: "none", background: tab === "todos" ? "#0f6e56" : "#f1f1f1", color: tab === "todos" ? "#fff" : "#555", fontWeight: 500, fontSize: 13, cursor: "pointer" }}>
           Todos ({users.length})
@@ -95,6 +110,8 @@ export default function AdminPanel() {
             </div>
           );
         })
+      )}
+        </>
       )}
     </div>
   );
