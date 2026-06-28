@@ -237,3 +237,86 @@ export async function createAdminQuestion(values, user) {
 
   return result.question;
 }
+
+async function readJsonResponse(response, fallbackMessage, missingEndpointMessage) {
+  const responseText = await response.text();
+  let result = null;
+
+  if (responseText) {
+    try {
+      result = JSON.parse(responseText);
+    } catch {
+      const preview = responseText.slice(0, 160).replace(/\s+/g, " ").trim();
+      throw new Error(
+        response.status === 404
+          ? missingEndpointMessage
+          : `Resposta inválida da API (${response.status}): ${preview || "sem conteúdo JSON"}`
+      );
+    }
+  }
+
+  if (!response.ok) {
+    throw new Error(result?.error || fallbackMessage);
+  }
+
+  return result;
+}
+
+export async function parseAdminQuestionFile(file, user) {
+  if (!user?.getIdToken) {
+    throw new Error("Usuário admin ausente");
+  }
+
+  const base64 = await new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(String(reader.result || "").split(",")[1] || "");
+    reader.onerror = () => reject(new Error("Não foi possível ler o arquivo"));
+    reader.readAsDataURL(file);
+  });
+
+  const token = await user.getIdToken();
+  const response = await fetch("/api/parse-question-file", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({
+      fileName: file.name,
+      mimeType: file.type,
+      base64,
+    }),
+  });
+
+  const result = await readJsonResponse(
+    response,
+    "Erro ao extrair texto do arquivo",
+    "Endpoint /api/parse-question-file não encontrado. Em desenvolvimento local, rode com Vercel/servidor que suporte a pasta api."
+  );
+
+  return result.text || "";
+}
+
+export async function suggestAdminQuestionTaxonomy({ disciplineId, questions }, user) {
+  if (!user?.getIdToken) {
+    throw new Error("Usuário admin ausente");
+  }
+
+  const token = await user.getIdToken();
+  const response = await fetch("/api/suggest-taxonomy", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ disciplineId, questions }),
+  });
+
+  const result = await readJsonResponse(
+    response,
+    "Erro ao sugerir taxonomia",
+    "Endpoint /api/suggest-taxonomy não encontrado. Em desenvolvimento local, rode com Vercel/servidor que suporte a pasta api."
+  );
+
+  return result.suggestions || [];
+}

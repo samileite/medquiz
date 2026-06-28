@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
 import { db } from "./firebase.js";
 import { useAuth } from "./Auth.jsx";
+import AdminQuestionImport from "./AdminQuestionImport.jsx";
 import AdminQuestions from "./AdminQuestions.jsx";
 
 export default function AdminPanel() {
@@ -58,9 +59,14 @@ export default function AdminPanel() {
         <button onClick={() => setSection("questions")} style={{ padding: "8px 16px", borderRadius: 10, border: "none", background: section === "questions" ? "#0f6e56" : "#f1f1f1", color: section === "questions" ? "#fff" : "#555", fontWeight: 500, fontSize: 13, cursor: "pointer" }}>
           Questões
         </button>
+        <button onClick={() => setSection("import")} style={{ padding: "8px 16px", borderRadius: 10, border: "none", background: section === "import" ? "#0f6e56" : "#f1f1f1", color: section === "import" ? "#fff" : "#555", fontWeight: 500, fontSize: 13, cursor: "pointer" }}>
+          Importar
+        </button>
       </div>
 
-      {section === "questions" ? (
+      {section === "import" ? (
+        <AdminQuestionImport />
+      ) : section === "questions" ? (
         <AdminQuestions />
       ) : (
         <>
