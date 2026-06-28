@@ -1,5 +1,5 @@
 import { Fragment, useEffect, useMemo, useState } from "react";
-import { fetchAdminQuestions, fetchAdminQuestionOptions, updateAdminQuestion } from "./services/adminQuestions.js";
+import { createAdminQuestion, fetchAdminQuestions, fetchAdminQuestionOptions, updateAdminQuestion } from "./services/adminQuestions.js";
 import { compareExamCodes } from "./utils/exams.js";
 import { useAuth } from "./Auth.jsx";
 
@@ -116,14 +116,43 @@ function textToCorrectAnswers(value) {
     .filter(Boolean);
 }
 
+function createEmptyQuestion(options) {
+  const firstDiscipline = options.disciplines[0];
+
+  return {
+    id: "",
+    disciplineId: firstDiscipline?.id || "",
+    exam: "P1",
+    topicId: "",
+    grandThemeId: "",
+    domainId: "",
+    detailId: "",
+    difficulty: "médio",
+    questionType: "single",
+    active: true,
+    statement: "",
+    correctAnswer: "",
+    correctAnswers: [],
+    generalComment: "",
+    summary: "",
+    memoryTip: "",
+    trap: "",
+    reference: "",
+    alternatives: normalizeDraftAlternatives(),
+  };
+}
+
 function QuestionEditor({ question, options, saving, onCancel, onSave }) {
+  const isNew = !question.id;
   const [draft, setDraft] = useState({
+    disciplineId: question.disciplineId,
     exam: question.exam,
     topicId: question.topicId,
     grandThemeId: question.grandThemeId,
     domainId: question.domainId,
     detailId: question.detailId,
     difficulty: question.difficulty,
+    questionType: question.questionType,
     active: question.active,
     statement: question.statement,
     correctAnswersText: correctAnswersToText(question),
@@ -137,18 +166,18 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
 
   const topics = useMemo(
     () => options.topics
-      .filter((topic) => topic.discipline_id === question.disciplineId)
+      .filter((topic) => topic.discipline_id === draft.disciplineId)
       .sort((a, b) => a.name.localeCompare(b.name)),
-    [options.topics, question.disciplineId]
+    [draft.disciplineId, options.topics]
   );
   const grandThemes = useMemo(
     () => uniqueTaxonomyOptions(
-      options.taxonomy.filter((row) => row.discipline_id === question.disciplineId),
+      options.taxonomy.filter((row) => row.discipline_id === draft.disciplineId),
       "grand_theme_id",
       "grand_theme_name",
       "grand_theme_order"
     ),
-    [options.taxonomy, question.disciplineId]
+    [draft.disciplineId, options.taxonomy]
   );
   const domains = useMemo(() => {
     if (!draft.grandThemeId) return [];
@@ -179,6 +208,17 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
       alternatives: current.alternatives.map((alternative) => (
         alternative.letter === letter ? { ...alternative, [name]: value } : alternative
       )),
+    }));
+  }
+
+  function updateDiscipline(value) {
+    setDraft((current) => ({
+      ...current,
+      disciplineId: value,
+      topicId: "",
+      grandThemeId: "",
+      domainId: "",
+      detailId: "",
     }));
   }
 
@@ -216,7 +256,15 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
               />
             </FormField>
             <FormField label="Tipo">
-              <input value={question.questionType} readOnly style={{ ...inputStyle, color: "#777", background: "#f6f6f6" }} />
+              {isNew ? (
+                <select value={draft.questionType} onChange={(event) => updateDraft("questionType", event.target.value)} style={inputStyle}>
+                  <option value="single">single</option>
+                  <option value="multiple">multiple</option>
+                  <option value="true_false">true_false</option>
+                </select>
+              ) : (
+                <input value={question.questionType} readOnly style={{ ...inputStyle, color: "#777", background: "#f6f6f6" }} />
+              )}
             </FormField>
           </div>
           <div style={{ display: "grid", gap: 10 }}>
@@ -261,6 +309,14 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
           </div>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 14 }}>
+          {isNew && (
+            <FormField label="Disciplina">
+              <select value={draft.disciplineId} onChange={(event) => updateDiscipline(event.target.value)} style={inputStyle}>
+                <option value="">Selecione</option>
+                {options.disciplines.map((discipline) => <option key={discipline.id} value={discipline.id}>{discipline.name}</option>)}
+              </select>
+            </FormField>
+          )}
           <FormField label="Exam">
             <input value={draft.exam} onChange={(event) => updateDraft("exam", event.target.value.toUpperCase())} style={inputStyle} />
           </FormField>
@@ -315,7 +371,7 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
             disabled={saving}
             style={{ fontSize: 12, padding: "8px 14px", borderRadius: 8, border: "none", background: saving ? "#8bbcaf" : "#0f6e56", color: "#fff", fontWeight: 700, cursor: saving ? "not-allowed" : "pointer" }}
           >
-            {saving ? "Salvando..." : "Salvar questão"}
+            {saving ? "Salvando..." : isNew ? "Cadastrar questão" : "Salvar questão"}
           </button>
         </div>
       </td>
@@ -331,6 +387,7 @@ export default function AdminQuestions() {
   const [error, setError] = useState("");
   const [saveError, setSaveError] = useState("");
   const [saveSuccess, setSaveSuccess] = useState("");
+  const [creating, setCreating] = useState(false);
   const [editingId, setEditingId] = useState("");
   const [savingId, setSavingId] = useState("");
   const [filters, setFilters] = useState({
@@ -416,6 +473,24 @@ export default function AdminQuestions() {
     }
   }
 
+  async function createQuestion(draft) {
+    try {
+      setSavingId("new");
+      setSaveError("");
+      setSaveSuccess("");
+      await createAdminQuestion(draft, user);
+      const list = await fetchAdminQuestions();
+      setQuestions(list);
+      setCreating(false);
+      setSaveSuccess("Questão cadastrada com sucesso.");
+    } catch (err) {
+      console.error("Erro ao cadastrar questão:", err);
+      setSaveError(err?.message || "Não foi possível cadastrar a questão.");
+    } finally {
+      setSavingId("");
+    }
+  }
+
   return (
     <div>
       <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 12, marginBottom: 16, flexWrap: "wrap" }}>
@@ -423,10 +498,42 @@ export default function AdminQuestions() {
           <h2 style={{ fontSize: 18, margin: "0 0 4px", color: "#1a1a1a" }}>Questões</h2>
           <p style={{ margin: 0, color: "#777", fontSize: 13 }}>{shownQuestions.length} de {questions.length} questão(ões)</p>
         </div>
-        <button onClick={clearFilters} style={{ fontSize: 12, padding: "8px 12px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#555", cursor: "pointer" }}>
-          Limpar filtros
-        </button>
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          <button
+            onClick={() => {
+              setCreating((current) => !current);
+              setEditingId("");
+              setSaveError("");
+              setSaveSuccess("");
+            }}
+            style={{ fontSize: 12, padding: "8px 12px", borderRadius: 8, border: "none", background: "#0f6e56", color: "#fff", fontWeight: 700, cursor: "pointer" }}
+          >
+            {creating ? "Fechar cadastro" : "Nova questão"}
+          </button>
+          <button onClick={clearFilters} style={{ fontSize: 12, padding: "8px 12px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#555", cursor: "pointer" }}>
+            Limpar filtros
+          </button>
+        </div>
       </div>
+
+      {creating && (
+        <div style={{ overflowX: "auto", border: "1px solid #d9ece5", borderRadius: 12, background: "#fff", marginBottom: 16 }}>
+          <div style={{ padding: "12px 16px", borderBottom: "1px solid #ededed", background: "#f5faf8" }}>
+            <h3 style={{ margin: 0, fontSize: 15, color: "#1a1a1a" }}>Cadastrar nova questão</h3>
+          </div>
+          <table style={{ width: "100%", minWidth: 1060, borderCollapse: "collapse", fontSize: 12 }}>
+            <tbody>
+              <QuestionEditor
+                question={createEmptyQuestion(options)}
+                options={options}
+                saving={savingId === "new"}
+                onCancel={() => setCreating(false)}
+                onSave={createQuestion}
+              />
+            </tbody>
+          </table>
+        </div>
+      )}
 
       <div style={{ background: "#f9f9f9", border: "1px solid #ededed", borderRadius: 12, padding: 14, display: "flex", flexWrap: "wrap", gap: 10, marginBottom: 16 }}>
         <SelectFilter label="Disciplina" value={filters.discipline} options={filterOptions.disciplines} onChange={(value) => updateFilter("discipline", value)} />
