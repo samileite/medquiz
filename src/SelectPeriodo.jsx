@@ -5,15 +5,25 @@ import { useAuth } from "./Auth.jsx";
 import { PERIODOS } from "./constants.js";
 
 export default function SelectPeriodo() {
-  const { user } = useAuth();
+  const { user, refreshUserData } = useAuth();
   const [selected, setSelected] = useState(null);
   const [saving, setSaving] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleConfirm() {
-    if (!selected) return;
+    if (!selected || !user?.uid) return;
     setSaving(true);
-    await updateDoc(doc(db, "users", user.uid), { periodo: selected });
-    setSaving(false);
+    setError("");
+
+    try {
+      await updateDoc(doc(db, "users", user.uid), { periodo: selected });
+      await refreshUserData(user.uid);
+    } catch (err) {
+      console.error("Erro ao salvar período:", err);
+      setError("Não foi possível salvar seu período. Tente novamente.");
+    } finally {
+      setSaving(false);
+    }
   }
 
   return (
@@ -47,6 +57,7 @@ export default function SelectPeriodo() {
         }}>
           {saving?"Salvando...":"Confirmar e entrar"}
         </button>
+        {error ? <p style={{marginTop:12,color:"#c2410c",fontSize:13,textAlign:"center"}}>{error}</p> : null}
       </div>
     </div>
   );

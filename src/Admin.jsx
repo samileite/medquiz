@@ -4,6 +4,7 @@ import { db } from "./firebase.js";
 import { useAuth } from "./Auth.jsx";
 import AdminQuestionImport from "./AdminQuestionImport.jsx";
 import AdminQuestions from "./AdminQuestions.jsx";
+import { getAccessStateLabel, isAccessRestricted } from "./utils/access.js";
 
 export default function AdminPanel() {
   const { logout, user } = useAuth();
@@ -33,10 +34,11 @@ export default function AdminPanel() {
   const shown = tab === "pending" ? pending : users;
 
   const badgeStyle = (role) => {
-    if (role === "admin") return { bg: "#e6f1fb", color: "#185fa5", label: "Admin" };
-    if (role === "active") return { bg: "#e1f5ee", color: "#0f6e56", label: "Ativo" };
-    if (role === "blocked") return { bg: "#fcebeb", color: "#a32d2d", label: "Bloqueado" };
-    return { bg: "#faeeda", color: "#854f0b", label: "Pendente" };
+    const label = getAccessStateLabel(role);
+    if (role === "admin") return { bg: "#e6f1fb", color: "#185fa5", label };
+    if (role === "active") return { bg: "#e1f5ee", color: "#0f6e56", label };
+    if (isAccessRestricted(role)) return { bg: "#fcebeb", color: "#a32d2d", label };
+    return { bg: "#faeeda", color: "#854f0b", label };
   };
 
   return (
@@ -105,8 +107,11 @@ export default function AdminPanel() {
                   {u.role !== "active" && (
                     <button onClick={() => updateRole(u.id, "active")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#0f6e56", color: "#fff", cursor: "pointer" }}>Liberar</button>
                   )}
+                  {u.role !== "revoked" && (
+                    <button onClick={() => updateRole(u.id, "revoked")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#e24b4a", color: "#fff", cursor: "pointer" }}>Revogar acesso</button>
+                  )}
                   {u.role !== "blocked" && (
-                    <button onClick={() => updateRole(u.id, "blocked")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#e24b4a", color: "#fff", cursor: "pointer" }}>Bloquear</button>
+                    <button onClick={() => updateRole(u.id, "blocked")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#aaa", cursor: "pointer" }}>Bloquear</button>
                   )}
                   {u.role !== "pending" && (
                     <button onClick={() => updateRole(u.id, "pending")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#aaa", cursor: "pointer" }}>Pendente</button>
