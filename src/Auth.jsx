@@ -1,6 +1,6 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect, createContext, useContext, useCallback } from "react";
 import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc, onSnapshot } from "firebase/firestore";
 import { auth, provider, db, ADMIN_EMAIL } from "./firebase.js";
 
 const AuthContext = createContext(null);
@@ -14,11 +14,36 @@ export function AuthProvider({ children }) {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const refreshUserData = useCallback(async (uid) => {
+    if (!uid) return null;
+    try {
+      const ref = doc(db, "users", uid);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) {
+        return null;
+      }
+      const data = snap.data();
+      setUserData(data);
+      return data;
+    } catch (error) {
+      console.warn("Erro ao atualizar dados do usuário:", error);
+      return null;
+    }
+  }, []);
+
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (firebaseUser) => {
+    let unsubscribeUserDoc = null;
+
+    const unsubscribeAuth = onAuthStateChanged(auth, async (firebaseUser) => {
+      if (unsubscribeUserDoc) {
+        unsubscribeUserDoc();
+        unsubscribeUserDoc = null;
+      }
+
       if (firebaseUser) {
         const ref = doc(db, "users", firebaseUser.uid);
         const snap = await getDoc(ref);
+
         if (!snap.exists()) {
           const isAdmin = firebaseUser.email === ADMIN_EMAIL;
           await setDoc(ref, {
@@ -32,14 +57,29 @@ export function AuthProvider({ children }) {
         } else {
           setUserData(snap.data());
         }
+
         setUser(firebaseUser);
+        unsubscribeUserDoc = onSnapshot(ref, (updatedSnap) => {
+          if (updatedSnap.exists()) {
+            setUserData(updatedSnap.data());
+          }
+        }, (error) => {
+          console.warn("Erro ao acompanhar dados do usuário:", error);
+        });
       } else {
         setUser(null);
         setUserData(null);
       }
+
       setLoading(false);
     });
-    return unsub;
+
+    return () => {
+      unsubscribeAuth();
+      if (unsubscribeUserDoc) {
+        unsubscribeUserDoc();
+      }
+    };
   }, []);
 
   async function login() {
@@ -51,7 +91,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, userData, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, userData, loading, login, logout, refreshUserData }}>
       {children}
     </AuthContext.Provider>
   );

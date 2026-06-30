@@ -21,7 +21,7 @@ function AppRouter() {
 
   if (userData?.role === "pending") return <PendingPage />;
 
-  if (userData?.role === "blocked") return (
+  if (userData?.role === "blocked" || userData?.role === "revoked") return (
     <div style={{minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Inter,sans-serif",padding:"1rem"}}>
       <div style={{maxWidth:400,width:"100%",background:"#fff",borderRadius:20,padding:"2.5rem 2rem",boxShadow:"0 4px 24px rgba(0,0,0,0.08)",textAlign:"center"}}>
         <div style={{fontSize:48,marginBottom:16}}>🚫</div>
