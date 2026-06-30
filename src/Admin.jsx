@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { collection, getDocs, updateDoc, doc } from "firebase/firestore";
+import { collection, getDocs, updateDoc, doc, onSnapshot } from "firebase/firestore";
 import { db } from "./firebase.js";
 import { useAuth } from "./Auth.jsx";
 import AdminQuestionImport from "./AdminQuestionImport.jsx";
@@ -14,7 +14,18 @@ export default function AdminPanel() {
   const [section, setSection] = useState("users");
 
   useEffect(() => {
-    loadUsers();
+    setLoading(true);
+    const usersCollection = collection(db, "users");
+    const unsubscribe = onSnapshot(usersCollection, (snap) => {
+      const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      setUsers(list);
+      setLoading(false);
+    }, (error) => {
+      console.warn("Erro ao carregar usuários do Firestore:", error);
+      setLoading(false);
+    });
+
+    return unsubscribe;
   }, []);
 
   async function loadUsers() {

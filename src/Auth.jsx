@@ -42,30 +42,36 @@ export function AuthProvider({ children }) {
 
       if (firebaseUser) {
         const ref = doc(db, "users", firebaseUser.uid);
-        const snap = await getDoc(ref);
+        try {
+          const snap = await getDoc(ref);
 
-        if (!snap.exists()) {
-          const isAdmin = firebaseUser.email === ADMIN_EMAIL;
-          await setDoc(ref, {
-            name: firebaseUser.displayName,
-            email: firebaseUser.email,
-            photo: firebaseUser.photoURL,
-            role: isAdmin ? "admin" : "pending",
-            createdAt: new Date().toISOString(),
-          });
-          setUserData({ role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
-        } else {
-          setUserData(snap.data());
-        }
-
-        setUser(firebaseUser);
-        unsubscribeUserDoc = onSnapshot(ref, (updatedSnap) => {
-          if (updatedSnap.exists()) {
-            setUserData(updatedSnap.data());
+          if (!snap.exists()) {
+            const isAdmin = firebaseUser.email === ADMIN_EMAIL;
+            await setDoc(ref, {
+              name: firebaseUser.displayName,
+              email: firebaseUser.email,
+              photo: firebaseUser.photoURL,
+              role: isAdmin ? "admin" : "pending",
+              createdAt: new Date().toISOString(),
+            });
+            setUserData({ role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
+          } else {
+            setUserData(snap.data());
           }
-        }, (error) => {
-          console.warn("Erro ao acompanhar dados do usuário:", error);
-        });
+
+          setUser(firebaseUser);
+          unsubscribeUserDoc = onSnapshot(ref, (updatedSnap) => {
+            if (updatedSnap.exists()) {
+              setUserData(updatedSnap.data());
+            }
+          }, (error) => {
+            console.warn("Erro ao acompanhar dados do usuário:", error);
+          });
+        } catch (error) {
+          console.warn("Erro ao carregar dados do usuário autenticação:", error);
+          setUser(firebaseUser);
+          setUserData(null);
+        }
       } else {
         setUser(null);
         setUserData(null);
