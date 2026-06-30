@@ -41,6 +41,11 @@ export default function AdminPanel() {
     return { bg: "#faeeda", color: "#854f0b", label };
   };
 
+  const authorizeButtonLabel = (role) => {
+    if (role === "pending") return "Autorizar pagamento";
+    return "Ativar";
+  };
+
   return (
     <div style={{ maxWidth: 700, margin: "0 auto", padding: "1.5rem 1rem", fontFamily: "Inter,sans-serif" }}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
@@ -105,7 +110,7 @@ export default function AdminPanel() {
               {u.role !== "admin" && (
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                   {u.role !== "active" && (
-                    <button onClick={() => updateRole(u.id, "active")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#0f6e56", color: "#fff", cursor: "pointer" }}>Liberar</button>
+                    <button onClick={() => updateRole(u.id, "active")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#0f6e56", color: "#fff", cursor: "pointer" }}>{authorizeButtonLabel(u.role)}</button>
                   )}
                   {u.role !== "revoked" && (
                     <button onClick={() => updateRole(u.id, "revoked")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#e24b4a", color: "#fff", cursor: "pointer" }}>Revogar acesso</button>
