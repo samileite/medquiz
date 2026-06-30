@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { collection, getDocs, updateDoc, doc, onSnapshot } from "firebase/firestore";
+import { collection, getDocs, updateDoc, doc, onSnapshot, addDoc, deleteDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
 import { useAuth } from "./Auth.jsx";
 import AdminQuestionImport from "./AdminQuestionImport.jsx";
@@ -39,6 +39,38 @@ export default function AdminPanel() {
   async function updateRole(userId, role) {
     await updateDoc(doc(db, "users", userId), { role });
     setUsers(prev => prev.map(u => u.id === userId ? { ...u, role } : u));
+  }
+
+  const [confirm, setConfirm] = useState(null);
+
+  async function performAudit(entry) {
+    try {
+      await addDoc(collection(db, "user_audit"), entry);
+    } catch (err) {
+      console.warn("Erro ao gravar audit log:", err);
+    }
+  }
+
+  async function authorizeUser(userId, userEmail) {
+    await updateRole(userId, "active");
+    await performAudit({ action: "authorize_payment", targetUserId: userId, targetEmail: userEmail, adminId: user?.uid, details: "authorized via admin panel" , createdAt: new Date().toISOString() });
+  }
+
+  async function revokeUser(userId, userEmail) {
+    await updateRole(userId, "revoked");
+    await performAudit({ action: "revoke_access", targetUserId: userId, targetEmail: userEmail, adminId: user?.uid, details: "revoked via admin panel", createdAt: new Date().toISOString() });
+  }
+
+  async function removeUser(userId, userEmail) {
+    try {
+      await deleteDoc(doc(db, "users", userId));
+      // also try delete progress doc if exists
+      try { await deleteDoc(doc(db, "progress", userId)); } catch (e) { /* ignore */ }
+      await performAudit({ action: "remove_user", targetUserId: userId, targetEmail: userEmail, adminId: user?.uid, details: "removed user and progress via admin panel", createdAt: new Date().toISOString() });
+      setUsers(prev => prev.filter(u => u.id !== userId));
+    } catch (err) {
+      console.warn("Erro ao remover usuário:", err);
+    }
   }
 
   const pending = users.filter(u => u.role === "pending");
@@ -121,14 +153,15 @@ export default function AdminPanel() {
               {u.role !== "admin" && (
                 <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
                   {u.role !== "active" && (
-                    <button onClick={() => updateRole(u.id, "active")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#0f6e56", color: "#fff", cursor: "pointer" }}>{authorizeButtonLabel(u.role)}</button>
+                    <button onClick={() => authorizeUser(u.id, u.email)} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#0f6e56", color: "#fff", cursor: "pointer" }}>{authorizeButtonLabel(u.role)}</button>
                   )}
                   {u.role !== "revoked" && (
-                    <button onClick={() => updateRole(u.id, "revoked")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#e24b4a", color: "#fff", cursor: "pointer" }}>Revogar acesso</button>
+                    <button onClick={() => setConfirm({ type: 'revoke', id: u.id, email: u.email, name: u.name })} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "none", background: "#e24b4a", color: "#fff", cursor: "pointer" }}>Revogar acesso</button>
                   )}
                   {u.role !== "blocked" && (
-                    <button onClick={() => updateRole(u.id, "blocked")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#aaa", cursor: "pointer" }}>Bloquear</button>
+                    <button onClick={() => setConfirm({ type: 'block', id: u.id, email: u.email, name: u.name })} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#aaa", cursor: "pointer" }}>Bloquear</button>
                   )}
+                  <button onClick={() => setConfirm({ type: 'remove', id: u.id, email: u.email, name: u.name })} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "1px solid #f3c2c2", background: "#fff", color: "#a32d2d", cursor: "pointer" }}>Remover</button>
                   {u.role !== "pending" && (
                     <button onClick={() => updateRole(u.id, "pending")} style={{ fontSize: 12, padding: "5px 10px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#aaa", cursor: "pointer" }}>Pendente</button>
                   )}
@@ -137,6 +170,23 @@ export default function AdminPanel() {
             </div>
           );
         })
+      )}
+      {confirm && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 30, background: "rgba(0,0,0,0.36)", display: "grid", placeItems: "center" }}>
+          <div style={{ width: "100%", maxWidth: 520, background: "#fff", borderRadius: 12, padding: 20 }}>
+            <h3 style={{ margin: 0, marginBottom: 8 }}>{confirm.type === 'remove' ? 'Remover usuário' : confirm.type === 'revoke' ? 'Revogar acesso' : 'Confirmar ação'}</h3>
+            <p style={{ marginTop: 8 }}>{confirm.type === 'remove' ? `Tem certeza que deseja remover ${confirm.name || confirm.email}? Isso apagará os dados do usuário.` : confirm.type === 'revoke' ? `Revogar acesso de ${confirm.name || confirm.email}?` : `Executar ação ${confirm.type} para ${confirm.name || confirm.email}?`}</p>
+            <div style={{ display: 'flex', gap: 10, justifyContent: 'flex-end', marginTop: 16 }}>
+              <button onClick={() => setConfirm(null)} style={{ padding: '8px 12px', borderRadius: 8, border: '1px solid #e0e0e0', background: '#fff', cursor: 'pointer' }}>Cancelar</button>
+              <button onClick={async () => {
+                if (confirm.type === 'revoke') await revokeUser(confirm.id, confirm.email);
+                if (confirm.type === 'block') await updateRole(confirm.id, 'blocked');
+                if (confirm.type === 'remove') await removeUser(confirm.id, confirm.email);
+                setConfirm(null);
+              }} style={{ padding: '8px 12px', borderRadius: 8, border: 'none', background: '#e24b4a', color: '#fff', cursor: 'pointer' }}>{confirm.type === 'remove' ? 'Remover' : confirm.type === 'revoke' ? 'Revogar' : 'Confirmar'}</button>
+            </div>
+          </div>
+        </div>
       )}
         </>
       )}
