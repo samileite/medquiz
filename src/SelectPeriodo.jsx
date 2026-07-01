@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { doc, setDoc } from "firebase/firestore";
-import { db } from "./firebase.js";
 import { useAuth } from "./Auth.jsx";
 import { PERIODOS } from "./constants.js";
 
 export default function SelectPeriodo() {
-  const { user, refreshUserData } = useAuth();
+  const { user, syncUserProfile } = useAuth();
   const [selected, setSelected] = useState(null);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
@@ -16,9 +14,7 @@ export default function SelectPeriodo() {
     setError("");
 
     try {
-      // Use setDoc with merge to be robust if the user document is missing
-      await setDoc(doc(db, "users", user.uid), { periodo: selected }, { merge: true });
-      await refreshUserData(user.uid);
+      await syncUserProfile(user, { periodo: selected });
     } catch (err) {
       console.error("Erro ao salvar período:", err);
       setError(err?.message || "Não foi possível salvar seu período. Tente novamente.");

@@ -14,6 +14,31 @@ export function AuthProvider({ children }) {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const syncUserProfile = useCallback(async (firebaseUser, extra = {}) => {
+    const idToken = await firebaseUser.getIdToken();
+    const response = await fetch("/api/create-user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${idToken}`,
+      },
+      body: JSON.stringify({
+        name: firebaseUser.displayName,
+        email: firebaseUser.email,
+        photo: firebaseUser.photoURL,
+        ...extra,
+      }),
+    });
+    const result = await response.json().catch(() => null);
+    if (!response.ok) {
+      throw new Error(result?.error || "Não foi possível sincronizar seu cadastro.");
+    }
+    if (result?.user) {
+      setUserData(result.user);
+    }
+    return result?.user || null;
+  }, []);
+
   const refreshUserData = useCallback(async (uid) => {
     if (!uid) return null;
     try {
@@ -49,22 +74,17 @@ export function AuthProvider({ children }) {
             const isAdmin = firebaseUser.email === ADMIN_EMAIL;
             try {
               await setDoc(ref, {
-                name: firebaseUser.displayName,
-                email: firebaseUser.email,
-                photo: firebaseUser.photoURL,
-                role: isAdmin ? "admin" : "pending",
-                createdAt: new Date().toISOString(),
+                  name: firebaseUser.displayName,
+                  email: firebaseUser.email,
+                  photo: firebaseUser.photoURL,
+                  role: isAdmin ? "admin" : "pending",
+                  createdAt: new Date().toISOString(),
               });
               setUserData({ role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
             } catch (writeError) {
-              console.warn("Permissão para gravar role negada, criando usuário sem role:", writeError);
-              await setDoc(ref, {
-                name: firebaseUser.displayName,
-                email: firebaseUser.email,
-                photo: firebaseUser.photoURL,
-                createdAt: new Date().toISOString(),
-              }, { merge: true });
-              setUserData({ role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
+              console.warn("Permissão para gravar usuário no cliente negada, usando API:", writeError);
+              const serverUser = await syncUserProfile(firebaseUser);
+              setUserData(serverUser || { role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
             }
           } else {
             const data = snap.data();
@@ -81,8 +101,14 @@ export function AuthProvider({ children }) {
           });
         } catch (error) {
           console.warn("Erro ao carregar dados do usuário autenticação:", error);
+          try {
+            const serverUser = await syncUserProfile(firebaseUser);
+            setUserData(serverUser);
+          } catch (serverError) {
+            console.warn("Erro ao sincronizar usuário no servidor:", serverError);
+            setUserData(null);
+          }
           setUser(firebaseUser);
-          setUserData(null);
         }
       } else {
         setUser(null);
@@ -98,7 +124,7 @@ export function AuthProvider({ children }) {
         unsubscribeUserDoc();
       }
     };
-  }, []);
+  }, [syncUserProfile]);
 
   async function login() {
     await signInWithPopup(auth, provider);
@@ -109,7 +135,7 @@ export function AuthProvider({ children }) {
   }
 
   return (
-    <AuthContext.Provider value={{ user, userData, loading, login, logout, refreshUserData }}>
+    <AuthContext.Provider value={{ user, userData, loading, login, logout, refreshUserData, syncUserProfile }}>
       {children}
     </AuthContext.Provider>
   );
