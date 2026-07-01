@@ -75,6 +75,29 @@ function getUniqueTaxonomyOptions(rows, idKey, nameKey, orderKey) {
   return [...byId.values()].sort(compareByOrderAndName);
 }
 
+function normalizeSearchText(value) {
+  return String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+}
+
+function getQuestionSearchText(question) {
+  return normalizeSearchText([
+    question.enunciado,
+    question.topic,
+    question.subtopic,
+    question.explicacao?.geral,
+    question.explicacao?.raciocinioCli,
+    question.explicacao?.dicaMemorizacao,
+    question.explicacao?.pegadinha,
+    question.explicacao?.diretriz,
+    ...(question.alternativas || []).map((alternative) => alternative.texto),
+    ...Object.values(question.explicacao?.porAlternativa || {}),
+  ].join(" "));
+}
+
 function FilterChipGroup({ label, allLabel = "Todos", options, selectedIds, onClear, onToggle, formatLabel = (item) => item.name }) {
   return (
     <div style={{ marginBottom: 14 }}>
@@ -115,6 +138,7 @@ export default function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [view, setView] = useState("home");
+  const [keywordFilter, setKeywordFilter] = useState("");
   const [filterDiff, setFilterDiff] = useState("Todas");
   const [filteredQs, setFilteredQs] = useState([]);
   const [idx, setIdx] = useState(0);
@@ -183,6 +207,7 @@ export default function App() {
   async function loadDisciplina(disciplina) {
     setLoading(true); setError(false); setQuestions([]); setTaxonomyTree([]);
     setSelectedGrandThemeId(null); setSelectedDomainId(null); setSelectedDetailId(null);
+    setKeywordFilter("");
     try {
       const [qs, tree] = await Promise.all([
         fetchQuestionsByDisciplina(disciplina),
@@ -224,6 +249,10 @@ export default function App() {
       "detail_order"
     );
   }, [selectedDomainId, taxonomyTree]);
+  const examOptions = useMemo(
+    () => availableExams.map((exam) => ({ id: exam, name: exam })),
+    [availableExams]
+  );
   const hasTaxonomy = grandThemeOptions.length > 0;
 
   function clearGrandThemeFilter() {
@@ -236,6 +265,14 @@ export default function App() {
     setSelectedGrandThemeId((current) => current === id ? null : id);
     setSelectedDomainId(null);
     setSelectedDetailId(null);
+  }
+
+  function toggleExamFilter(exam) {
+    setSelectedExams((current) => (
+      current.includes(exam)
+        ? current.filter((item) => item !== exam)
+        : [...current, exam].sort(compareExamCodes)
+    ));
   }
 
   function clearDomainFilter() {
@@ -268,6 +305,8 @@ export default function App() {
 
   function getSessionQuestions(mode, answerSource = answers) {
     let qs = [...questions];
+    const searchTerm = normalizeSearchText(keywordFilter);
+    if (searchTerm) qs = qs.filter((q) => getQuestionSearchText(q).includes(searchTerm));
     if (selectedExams.length > 0) qs = qs.filter((q) => selectedExams.includes(q.exam));
     if (selectedGrandThemeId) qs = qs.filter((q) => q.grandThemeId === selectedGrandThemeId);
     if (selectedDomainId) qs = qs.filter((q) => q.domainId === selectedDomainId);
@@ -635,22 +674,32 @@ export default function App() {
           <div style={{ background: "#f9f9f9", borderRadius: 14, padding: "1rem 1.25rem", marginBottom: 20 }}>
             <p style={{ fontSize: 12, fontWeight: 600, color: "#aaa", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 12 }}>Filtros</p>
             <div style={{ marginBottom: 14 }}>
-              <label style={{ fontSize: 12, color: "#aaa", display: "block", marginBottom: 8 }}>Avaliações</label>
-              <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
-                <button
-                  onClick={() => setSelectedExams([])}
-                  style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, border: "1px solid", borderColor: selectedExams.length === 0 ? "#0f6e56" : "#e0e0e0", background: selectedExams.length === 0 ? "#e1f5ee" : "#fff", color: selectedExams.length === 0 ? "#0f6e56" : "#555", cursor: "pointer" }}>
-                  Todas
-                </button>
-                {availableExams.map(exam => (
-                  <button key={exam}
-                    onClick={() => setSelectedExams(prev => prev.includes(exam) ? prev.filter(item => item !== exam) : [...prev, exam])}
-                    style={{ fontSize: 12, padding: "5px 12px", borderRadius: 999, border: "1px solid", borderColor: selectedExams.includes(exam) ? "#0f6e56" : "#e0e0e0", background: selectedExams.includes(exam) ? "#e1f5ee" : "#fff", color: selectedExams.includes(exam) ? "#0f6e56" : "#555", cursor: "pointer" }}>
-                    {formatExamLabel(exam)}
+              <label style={{ fontSize: 12, color: "#aaa", display: "block", marginBottom: 8 }}>Busca por turma ou palavra-chave</label>
+              <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+                <input
+                  value={keywordFilter}
+                  onChange={(event) => setKeywordFilter(event.target.value)}
+                  placeholder="Ex.: Turma 115, 2024, T1, 2020.2"
+                  style={{ flex: "1 1 260px", minWidth: 0, padding: "8px 12px", borderRadius: 8, border: "1px solid #e0e0e0", fontSize: 14, color: "#333", background: "#fff" }}
+                />
+                {keywordFilter && (
+                  <button
+                    onClick={() => setKeywordFilter("")}
+                    style={{ fontSize: 12, padding: "8px 12px", borderRadius: 8, border: "1px solid #e0e0e0", background: "#fff", color: "#555", cursor: "pointer" }}
+                  >
+                    Limpar busca
                   </button>
-                ))}
+                )}
               </div>
             </div>
+            <FilterChipGroup
+              label="Avaliações"
+              options={examOptions}
+              selectedIds={selectedExams}
+              onClear={() => setSelectedExams([])}
+              onToggle={toggleExamFilter}
+              formatLabel={(exam) => formatExamLabel(exam.id)}
+            />
             {hasTaxonomy && (
               <>
                 <FilterChipGroup
