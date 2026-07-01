@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react";
-import { collection, getDocs, updateDoc, doc, onSnapshot, addDoc, deleteDoc } from "firebase/firestore";
-import { db } from "./firebase.js";
+import { useCallback, useState, useEffect } from "react";
 import { useAuth } from "./Auth.jsx";
 import AdminQuestionImport from "./AdminQuestionImport.jsx";
 import AdminQuestions from "./AdminQuestions.jsx";
@@ -10,66 +8,91 @@ export default function AdminPanel() {
   const { logout, user } = useAuth();
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [usersError, setUsersError] = useState("");
   const [tab, setTab] = useState("todos");
   const [section, setSection] = useState("users");
 
+  const loadUsers = useCallback(async () => {
+    try {
+      setLoading(true);
+      setUsersError("");
+      const token = await user.getIdToken();
+      const response = await fetch("/api/admin-users", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(result?.error || "Não foi possível carregar usuários.");
+      }
+      setUsers(result?.users || []);
+    } catch (err) {
+      console.warn("Erro ao carregar usuários:", err);
+      setUsersError(err?.message || "Não foi possível carregar usuários.");
+    } finally {
+      setLoading(false);
+    }
+  }, [user]);
+
   useEffect(() => {
-    setLoading(true);
-    const usersCollection = collection(db, "users");
-    const unsubscribe = onSnapshot(usersCollection, (snap) => {
-      const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-      setUsers(list);
-      setLoading(false);
-    }, (error) => {
-      console.warn("Erro ao carregar usuários do Firestore:", error);
-      setLoading(false);
-    });
-
-    return unsubscribe;
-  }, []);
-
-  async function loadUsers() {
-    setLoading(true);
-    const snap = await getDocs(collection(db, "users"));
-    const list = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-    setUsers(list);
-    setLoading(false);
-  }
+    loadUsers();
+  }, [loadUsers]);
 
   async function updateRole(userId, role) {
-    await updateDoc(doc(db, "users", userId), { role });
-    setUsers(prev => prev.map(u => u.id === userId ? { ...u, role } : u));
+    try {
+      setUsersError("");
+      const token = await user.getIdToken();
+      const response = await fetch("/api/admin-users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ action: "updateRole", userId, role }),
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(result?.error || "Não foi possível atualizar usuário.");
+      }
+      setUsers(prev => prev.map(u => u.id === userId ? { ...u, role } : u));
+    } catch (err) {
+      console.warn("Erro ao atualizar usuário:", err);
+      setUsersError(err?.message || "Não foi possível atualizar usuário.");
+      throw err;
+    }
   }
 
   const [confirm, setConfirm] = useState(null);
 
-  async function performAudit(entry) {
-    try {
-      await addDoc(collection(db, "user_audit"), entry);
-    } catch (err) {
-      console.warn("Erro ao gravar audit log:", err);
-    }
-  }
-
   async function authorizeUser(userId, userEmail) {
     await updateRole(userId, "active");
-    await performAudit({ action: "authorize_payment", targetUserId: userId, targetEmail: userEmail, adminId: user?.uid, details: "authorized via admin panel" , createdAt: new Date().toISOString() });
+    console.info("Usuário autorizado:", userEmail);
   }
 
   async function revokeUser(userId, userEmail) {
     await updateRole(userId, "revoked");
-    await performAudit({ action: "revoke_access", targetUserId: userId, targetEmail: userEmail, adminId: user?.uid, details: "revoked via admin panel", createdAt: new Date().toISOString() });
+    console.info("Acesso revogado:", userEmail);
   }
 
   async function removeUser(userId, userEmail) {
     try {
-      await deleteDoc(doc(db, "users", userId));
-      // also try delete progress doc if exists
-      try { await deleteDoc(doc(db, "progress", userId)); } catch (e) { /* ignore */ }
-      await performAudit({ action: "remove_user", targetUserId: userId, targetEmail: userEmail, adminId: user?.uid, details: "removed user and progress via admin panel", createdAt: new Date().toISOString() });
+      const token = await user.getIdToken();
+      const response = await fetch("/api/admin-users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify({ action: "delete", userId }),
+      });
+      const result = await response.json().catch(() => null);
+      if (!response.ok) {
+        throw new Error(result?.error || "Não foi possível remover usuário.");
+      }
       setUsers(prev => prev.filter(u => u.id !== userId));
+      console.info("Usuário removido:", userEmail);
     } catch (err) {
       console.warn("Erro ao remover usuário:", err);
+      setUsersError(err?.message || "Não foi possível remover usuário.");
     }
   }
 
@@ -132,6 +155,12 @@ export default function AdminPanel() {
       {pending.length > 0 && tab === "todos" && (
         <div style={{ background: "#faeeda", borderRadius: 12, padding: "12px 16px", marginBottom: 16, border: "1px solid #f5c97a" }}>
           <p style={{ fontSize: 13, color: "#854f0b", margin: 0, fontWeight: 500 }}>{pending.length} usuário(s) aguardando liberação</p>
+        </div>
+      )}
+
+      {usersError && (
+        <div style={{ background: "#fcebeb", borderRadius: 12, padding: "12px 16px", marginBottom: 16, border: "1px solid #f2c4c4" }}>
+          <p style={{ fontSize: 13, color: "#a32d2d", margin: 0, fontWeight: 500 }}>{usersError}</p>
         </div>
       )}
 
