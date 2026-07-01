@@ -73,7 +73,7 @@ export default function AdminPanel() {
     }
   }
 
-  const pending = users.filter(u => u.role === "pending");
+  const pending = users.filter(u => !u.role || u.role === "pending");
   const shown = tab === "pending" ? pending : users;
 
   const badgeStyle = (role) => {
@@ -85,7 +85,7 @@ export default function AdminPanel() {
   };
 
   const authorizeButtonLabel = (role) => {
-    if (role === "pending") return "Autorizar pagamento";
+    if (!role || role === "pending") return "Autorizar pagamento";
     return "Ativar";
   };
 

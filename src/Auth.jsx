@@ -47,16 +47,28 @@ export function AuthProvider({ children }) {
 
           if (!snap.exists()) {
             const isAdmin = firebaseUser.email === ADMIN_EMAIL;
-            await setDoc(ref, {
-              name: firebaseUser.displayName,
-              email: firebaseUser.email,
-              photo: firebaseUser.photoURL,
-              role: isAdmin ? "admin" : "pending",
-              createdAt: new Date().toISOString(),
-            });
-            setUserData({ role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
+            try {
+              await setDoc(ref, {
+                name: firebaseUser.displayName,
+                email: firebaseUser.email,
+                photo: firebaseUser.photoURL,
+                role: isAdmin ? "admin" : "pending",
+                createdAt: new Date().toISOString(),
+              });
+              setUserData({ role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
+            } catch (writeError) {
+              console.warn("Permissão para gravar role negada, criando usuário sem role:", writeError);
+              await setDoc(ref, {
+                name: firebaseUser.displayName,
+                email: firebaseUser.email,
+                photo: firebaseUser.photoURL,
+                createdAt: new Date().toISOString(),
+              }, { merge: true });
+              setUserData({ role: isAdmin ? "admin" : "pending", email: firebaseUser.email, name: firebaseUser.displayName, photo: firebaseUser.photoURL });
+            }
           } else {
-            setUserData(snap.data());
+            const data = snap.data();
+            setUserData({ ...data, role: data.role || (firebaseUser.email === ADMIN_EMAIL ? "admin" : "pending") });
           }
 
           setUser(firebaseUser);

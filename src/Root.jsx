@@ -19,7 +19,7 @@ function AppRouter() {
 
   if (!user) return <LoginPage />;
 
-  if (userData?.role === "pending") return <PendingPage />;
+  if (!userData?.role || userData.role === "pending") return <PendingPage />;
 
   if (userData?.role === "blocked" || userData?.role === "revoked") return (
     <div style={{minHeight:"100vh",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"Inter,sans-serif",padding:"1rem"}}>
