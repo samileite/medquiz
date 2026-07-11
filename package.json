@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "release:check": "npm run build && node scripts/check-release-ready.mjs",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "import-gastro": "node scripts/import-gastro-from-pdf.mjs ./scripts/gastro-from-pdf.json",
