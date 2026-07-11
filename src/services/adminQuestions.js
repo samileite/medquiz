@@ -114,12 +114,14 @@ export async function fetchAdminQuestionOptions() {
 export async function updateAdminQuestion(questionId, values, user) {
   const payload = {
     questionId,
+    disciplineId: values.disciplineId,
     exam: normalizeExamCode(values.exam),
     topicId: values.topicId || null,
     grandThemeId: values.grandThemeId || null,
     domainId: values.domainId || null,
     detailId: values.detailId || null,
     difficulty: values.difficulty,
+    questionType: values.questionType || "single",
     active: values.active,
     statement: values.statement,
     correctAnswers: values.correctAnswers,
