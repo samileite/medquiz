@@ -37,6 +37,107 @@ function StatCard({ label, value, color }) {
   );
 }
 
+function formatISODate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
+function getAnswerDate(answer) {
+  const rawDate = answer?.answeredAt || answer?.updatedAt || answer?.createdAt;
+  if (!rawDate) return null;
+  const date = new Date(rawDate);
+  if (Number.isNaN(date.getTime())) return null;
+  return formatISODate(date);
+}
+
+function getStudyStreak(practiceDates) {
+  if (practiceDates.size === 0) return 0;
+  const today = new Date();
+  let cursor = new Date(today);
+  if (!practiceDates.has(formatISODate(cursor))) {
+    cursor.setDate(cursor.getDate() - 1);
+  }
+
+  let streak = 0;
+  while (practiceDates.has(formatISODate(cursor))) {
+    streak += 1;
+    cursor.setDate(cursor.getDate() - 1);
+  }
+  return streak;
+}
+
+function StudyCalendarModal({ practiceDates, streak, onClose }) {
+  const today = new Date();
+  const monthName = today.toLocaleDateString("pt-BR", { month: "long", year: "numeric" });
+  const firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+  const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+  const leadingBlanks = firstDay.getDay();
+  const days = Array.from({ length: lastDay.getDate() }, (_, index) => index + 1);
+  const calendarCells = [
+    ...Array.from({ length: leadingBlanks }, (_, index) => ({ type: "blank", id: `blank-${index}` })),
+    ...days.map((day) => ({ type: "day", id: day, day })),
+  ];
+
+  return (
+    <div style={{ position: "fixed", inset: 0, zIndex: 30, background: "rgba(0,0,0,0.38)", display: "grid", placeItems: "center", padding: 16 }}>
+      <div style={{ width: "100%", maxWidth: 420, background: "#fff", borderRadius: 18, padding: "1.25rem", boxShadow: "0 24px 70px rgba(0,0,0,0.22)" }}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12, marginBottom: 16 }}>
+          <div>
+            <p style={{ fontSize: 12, color: "#0f6e56", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>Ofensiva</p>
+            <h3 style={{ fontSize: 20, margin: 0, color: "#1a1a1a" }}>{streak} dia{streak === 1 ? "" : "s"} de estudo</h3>
+          </div>
+          <button onClick={onClose} style={{ width: 34, height: 34, borderRadius: 10, border: "1px solid #e0e0e0", background: "#fff", color: "#777", fontSize: 18, lineHeight: 1, cursor: "pointer" }}>×</button>
+        </div>
+        <p style={{ fontSize: 13, color: "#777", lineHeight: 1.5, marginBottom: 16 }}>
+          Dias com questões respondidas aparecem marcados no calendário.
+        </p>
+        <div style={{ background: "#f9f9f9", border: "1px solid #eee", borderRadius: 14, padding: 14 }}>
+          <p style={{ fontSize: 14, fontWeight: 700, color: "#333", textTransform: "capitalize", marginBottom: 12 }}>{monthName}</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 6, marginBottom: 8 }}>
+            {["D", "S", "T", "Q", "Q", "S", "S"].map((weekday, index) => (
+              <div key={`${weekday}-${index}`} style={{ textAlign: "center", fontSize: 11, fontWeight: 700, color: "#aaa" }}>{weekday}</div>
+            ))}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)", gap: 6 }}>
+            {calendarCells.map((cell) => {
+              if (cell.type === "blank") return <div key={cell.id} style={{ aspectRatio: "1 / 1" }} />;
+              const dateKey = formatISODate(new Date(today.getFullYear(), today.getMonth(), cell.day));
+              const practiced = practiceDates.has(dateKey);
+              const isToday = cell.day === today.getDate();
+              return (
+                <div
+                  key={cell.id}
+                  title={practiced ? "Questões praticadas" : "Sem prática registrada"}
+                  style={{
+                    aspectRatio: "1 / 1",
+                    borderRadius: 10,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    gap: 1,
+                    border: isToday ? "1.5px solid #0f6e56" : "1px solid #e9e9e9",
+                    background: practiced ? "#fff3df" : "#fff",
+                    color: practiced ? "#854f0b" : "#777",
+                    fontSize: 11,
+                    fontWeight: 700,
+                    minWidth: 0,
+                  }}
+                >
+                  <span>{cell.day}</span>
+                  {practiced && <span style={{ fontSize: 12, lineHeight: 1 }}>🔥</span>}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function RestartStudyModal({ disciplina, answeredCount, onCancel, onConfirm }) {
   return (
     <div style={{ position: "fixed", inset: 0, zIndex: 20, background: "rgba(0,0,0,0.36)", display: "grid", placeItems: "center", padding: 20 }}>
@@ -155,6 +256,7 @@ export default function App() {
   const [savingProgress, setSavingProgress] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
   const [showRestartConfirm, setShowRestartConfirm] = useState(false);
+  const [showStudyCalendar, setShowStudyCalendar] = useState(false);
 
   const loadProgress = useCallback(async () => {
     if (!user) return;
@@ -293,6 +395,14 @@ export default function App() {
   const avgTime = totalAns > 0 ? Math.round(Object.values(times).reduce((a, b) => a + b, 0) / totalAns) : 0;
   const pct = totalAns > 0 ? Math.round((totalAcertos / totalAns) * 100) : 0;
   const totalErros = totalAns - totalAcertos;
+  const userName = userData?.name || user?.displayName || "Estudante";
+  const todayLabel = new Date().toLocaleDateString("pt-BR", {
+    weekday: "long",
+    day: "2-digit",
+    month: "long",
+  });
+  const practiceDates = new Set(Object.values(answers).map(getAnswerDate).filter(Boolean));
+  const studyStreak = getStudyStreak(practiceDates);
   const selectedDisciplinaAnswers = Object.entries(answers)
     .filter(([, answer]) => answer.disciplina === selectedDisciplina);
   const selectedDisciplinaHistoryCount = selectedDisciplinaAnswers.length;
@@ -386,6 +496,7 @@ export default function App() {
         selectedAnswers: selectedValues,
         correct,
         disciplina: selectedDisciplina,
+        answeredAt: new Date().toISOString(),
       },
     };
 
@@ -776,16 +887,52 @@ export default function App() {
   return (
     <div style={{ maxWidth: 660, margin: "0 auto", padding: "1.5rem 1rem", fontFamily: "Inter,sans-serif" }}>
       {showProfile && <ProfilePage onClose={() => setShowProfile(false)} />}
+      {showStudyCalendar && (
+        <StudyCalendarModal
+          practiceDates={practiceDates}
+          streak={studyStreak}
+          onClose={() => setShowStudyCalendar(false)}
+        />
+      )}
 
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
-        <div>
-          <h1 style={{ fontSize: 22, fontWeight: 600, marginBottom: 2 }}>MedQuiz 🩺</h1>
-          <p style={{ color: "#aaa", fontSize: 13 }}>{userData?.periodo ? `${userData.periodo}º Período` : ""} · Medicina</p>
+      <div style={{ background: "#fff", border: "1px solid #e8e8e8", borderRadius: 14, padding: "14px 16px", marginBottom: 18, boxShadow: "0 10px 28px rgba(0,0,0,0.04)" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10, alignItems: "stretch" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, minWidth: 0 }}>
+            <div style={{ minWidth: 0 }}>
+              <h1 style={{ fontSize: 22, fontWeight: 600, marginBottom: 4 }}>MedQuiz 🩺</h1>
+              <p style={{ color: "#555", fontSize: 14, fontWeight: 700, marginBottom: 3, overflowWrap: "anywhere" }}>{userName}</p>
+              <p style={{ color: "#aaa", fontSize: 13 }}>{userData?.periodo ? `${userData.periodo}º Período` : ""} · Medicina</p>
+            </div>
+            <button onClick={() => setShowProfile(true)} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "1px solid #e0e0e0", borderRadius: 10, padding: "6px 10px", cursor: "pointer", flexShrink: 0 }}>
+              <img src={user?.photoURL} width={28} height={28} style={{ borderRadius: "50%" }} alt="" />
+              <span style={{ fontSize: 12, color: "#555" }}>⚙️</span>
+            </button>
+          </div>
+          <div style={{ background: "#f7f7f7", borderRadius: 12, padding: "10px 12px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <p style={{ fontSize: 11, color: "#aaa", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>Hoje</p>
+            <p style={{ fontSize: 13, color: "#333", fontWeight: 600, textTransform: "capitalize", overflowWrap: "anywhere" }}>{todayLabel}</p>
+          </div>
+          <button
+            onClick={() => setShowStudyCalendar(true)}
+            style={{
+              background: "#fff7ea",
+              border: "1px solid #f4d7a9",
+              borderRadius: 12,
+              padding: "10px 12px",
+              textAlign: "left",
+              minWidth: 0,
+              cursor: "pointer",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <p style={{ fontSize: 11, color: "#854f0b", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>Sequência</p>
+            <p style={{ fontSize: 13, color: "#633806", fontWeight: 700, overflowWrap: "anywhere" }}>
+              🔥 Ofensiva de {studyStreak} dia{studyStreak === 1 ? "" : "s"} de estudo
+            </p>
+          </button>
         </div>
-        <button onClick={() => setShowProfile(true)} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "1px solid #e0e0e0", borderRadius: 10, padding: "6px 10px", cursor: "pointer" }}>
-          <img src={user?.photoURL} width={28} height={28} style={{ borderRadius: "50%" }} alt="" />
-          <span style={{ fontSize: 12, color: "#555" }}>⚙️</span>
-        </button>
       </div>
 
       <div style={{ display: "flex", gap: 10, marginBottom: 24, flexWrap: "wrap" }}>
