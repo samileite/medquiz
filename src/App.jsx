@@ -4,7 +4,7 @@ import { useAuth } from "./Auth.jsx";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import { db } from "./firebase.js";
 import { DISCIPLINAS_POR_PERIODO, DIFFICULTIES } from "./constants.js";
-import { saveAnswer } from "./services/answers.js";
+import { deleteDisciplineProgress, fetchAnswerProgress, saveAnswer } from "./services/answers.js";
 import ProfilePage from "./Profile.jsx";
 import { compareExamCodes, formatExamLabel } from "./utils/exams.js";
 
@@ -260,18 +260,22 @@ export default function App() {
 
   const loadProgress = useCallback(async () => {
     if (!user) return;
+    let storedAnswers = {};
     try {
       const ref = doc(db, "progress", user.uid);
       const snap = await getDoc(ref);
       if (snap.exists()) {
         const data = snap.data();
-        if (data.answers) setAnswers(data.answers);
+        if (data.answers) storedAnswers = data.answers;
         if (data.favorites) setFavorites(new Set(data.favorites));
         if (data.notes) setNotes(data.notes);
       }
     } catch (err) {
       console.warn("Erro ao carregar progresso:", err);
     }
+
+    const answerProgress = await fetchAnswerProgress(user);
+    setAnswers(answerProgress ? { ...storedAnswers, ...answerProgress } : storedAnswers);
   }, [user]);
 
   useEffect(() => { loadProgress(); }, [loadProgress]);
@@ -472,6 +476,7 @@ export default function App() {
       Object.entries(prev).filter(([questionId]) => !removedQuestionIds.has(questionId))
     ));
     setShowRestartConfirm(false);
+    await deleteDisciplineProgress(user, selectedDisciplina);
     await saveProgress(nextAnswers, null, null);
     startQuiz(null, nextAnswers);
   }
