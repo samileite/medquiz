@@ -113,8 +113,8 @@ export default function AdminPanel() {
   };
 
   return (
-    <div style={{ maxWidth: 700, margin: "0 auto", padding: "1.5rem 1rem", fontFamily: "Inter,sans-serif" }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
+    <div style={{ width: "100%", maxWidth: 1120, margin: "0 auto", padding: "1.5rem 1rem", fontFamily: "Inter,sans-serif" }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, marginBottom: 24, flexWrap: "wrap" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <img src={user?.photoURL} width={36} height={36} style={{ borderRadius: "50%" }} alt="" />
           <div>
@@ -125,7 +125,7 @@ export default function AdminPanel() {
         <button onClick={logout} style={{ fontSize: 13, padding: "7px 14px", borderRadius: 8, border: "1px solid #e0e0e0", cursor: "pointer", color: "#aaa", background: "#fff" }}>Sair</button>
       </div>
 
-      <div style={{ display: "flex", gap: 10, marginBottom: 20 }}>
+      <div style={{ display: "flex", gap: 10, marginBottom: 20, flexWrap: "wrap" }}>
         <button onClick={() => setSection("users")} style={{ padding: "8px 16px", borderRadius: 10, border: "none", background: section === "users" ? "#0f6e56" : "#f1f1f1", color: section === "users" ? "#fff" : "#555", fontWeight: 500, fontSize: 13, cursor: "pointer" }}>
           Usuários
         </button>
