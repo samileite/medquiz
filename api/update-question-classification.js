@@ -5,6 +5,7 @@ import admin from "firebase-admin";
 import { createClient } from "@supabase/supabase-js";
 
 const VALID_DIFFICULTIES = new Set(["fácil", "médio", "difícil"]);
+const VALID_QUESTION_TYPES = new Set(["single", "multiple", "true_false"]);
 const VALID_ANSWER_LETTERS = new Set(["A", "B", "C", "D", "E"]);
 
 function getFirebaseAdmin() {
@@ -125,12 +126,14 @@ export default async function handler(req, res) {
 
     const {
       questionId,
+      disciplineId,
       exam,
       topicId,
       grandThemeId,
       domainId,
       detailId,
       difficulty,
+      questionType,
       active,
       statement,
       correctAnswers,
@@ -146,8 +149,16 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "questionId ausente" });
     }
 
+    if (!disciplineId) {
+      return res.status(400).json({ error: "Disciplina é obrigatória" });
+    }
+
     if (!VALID_DIFFICULTIES.has(difficulty)) {
       return res.status(400).json({ error: "Dificuldade inválida" });
+    }
+
+    if (!VALID_QUESTION_TYPES.has(questionType)) {
+      return res.status(400).json({ error: "Tipo de questão inválido" });
     }
 
     if (typeof active !== "boolean") {
@@ -179,13 +190,19 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Resposta correta inválida para as alternativas informadas" });
     }
 
+    if (questionType === "single" && normalizedCorrectAnswers.length !== 1) {
+      return res.status(400).json({ error: "Questões single devem ter exatamente uma resposta correta" });
+    }
+
     const payload = {
+      discipline_id: disciplineId,
       exam: normalizeExamCode(exam),
       topic_id: emptyToNull(topicId),
       grand_theme_id: emptyToNull(grandThemeId),
       domain_id: emptyToNull(domainId),
       detail_id: emptyToNull(detailId),
       difficulty,
+      question_type: questionType,
       active,
       statement: normalizedStatement,
       correct_answer: normalizedCorrectAnswers[0],

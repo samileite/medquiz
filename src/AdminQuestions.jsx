@@ -80,6 +80,15 @@ function FormField({ label, children }) {
   );
 }
 
+function FormSection({ title, children }) {
+  return (
+    <section style={{ display: "grid", gap: 12 }}>
+      <h4 style={{ fontSize: 12, fontWeight: 800, color: "#555", textTransform: "uppercase", letterSpacing: "0.06em", margin: 0 }}>{title}</h4>
+      {children}
+    </section>
+  );
+}
+
 const inputStyle = {
   border: "1px solid #d9d9d9",
   borderRadius: 8,
@@ -254,7 +263,8 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
           <FormField label="Enunciado">
             <textarea value={draft.statement} onChange={(event) => updateDraft("statement", event.target.value)} style={{ ...textAreaStyle, minHeight: 120 }} />
           </FormField>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
+          <FormSection title="Conteúdo da questão">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
             <FormField label="Resposta correta">
               <input
                 value={draft.correctAnswersText}
@@ -264,17 +274,15 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
               />
             </FormField>
             <FormField label="Tipo">
-              {isNew ? (
-                <select value={draft.questionType} onChange={(event) => updateDraft("questionType", event.target.value)} style={inputStyle}>
-                  <option value="single">single</option>
-                  <option value="multiple">multiple</option>
-                  <option value="true_false">true_false</option>
-                </select>
-              ) : (
-                <input value={question.questionType} readOnly style={{ ...inputStyle, color: "#777", background: "#f6f6f6" }} />
-              )}
+              <select value={draft.questionType} onChange={(event) => updateDraft("questionType", event.target.value)} style={inputStyle}>
+                <option value="single">single</option>
+                <option value="multiple">multiple</option>
+                <option value="true_false">true_false</option>
+              </select>
             </FormField>
-          </div>
+            </div>
+          </FormSection>
+          <FormSection title="Alternativas e comentários por alternativa">
           <div style={{ display: "grid", gap: 10 }}>
             {draft.alternatives.map((alternative) => (
               <div key={alternative.letter} style={{ border: "1px solid #ededed", borderRadius: 10, padding: 10, background: "#fff" }}>
@@ -298,6 +306,8 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
               </div>
             ))}
           </div>
+          </FormSection>
+          <FormSection title="Explicações exibidas ao usuário">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 12 }}>
             <FormField label="Comentários">
               <textarea value={draft.generalComment} onChange={(event) => updateDraft("generalComment", event.target.value)} style={textAreaStyle} />
@@ -315,16 +325,16 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
               <textarea value={draft.reference} onChange={(event) => updateDraft("reference", event.target.value)} style={textAreaStyle} />
             </FormField>
           </div>
+          </FormSection>
       </div>
+      <FormSection title="Dados de classificação e publicação">
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 14 }}>
-          {isNew && (
-            <FormField label="Disciplina">
-              <select value={draft.disciplineId} onChange={(event) => updateDiscipline(event.target.value)} style={inputStyle}>
-                <option value="">Selecione</option>
-                {options.disciplines.map((discipline) => <option key={discipline.id} value={discipline.id}>{discipline.name}</option>)}
-              </select>
-            </FormField>
-          )}
+          <FormField label="Disciplina">
+            <select value={draft.disciplineId} onChange={(event) => updateDiscipline(event.target.value)} style={inputStyle}>
+              <option value="">Selecione</option>
+              {options.disciplines.map((discipline) => <option key={discipline.id} value={discipline.id}>{discipline.name}</option>)}
+            </select>
+          </FormField>
           <FormField label="Exam">
             <input value={draft.exam} onChange={(event) => updateDraft("exam", event.target.value.toUpperCase())} style={inputStyle} />
           </FormField>
@@ -366,6 +376,7 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
             </select>
           </FormField>
       </div>
+      </FormSection>
       <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", flexWrap: "wrap" }}>
           <button onClick={onCancel} disabled={saving} style={{ fontSize: 12, padding: "8px 12px", borderRadius: 8, border: "1px solid #d9d9d9", background: "#fff", color: "#555", cursor: saving ? "not-allowed" : "pointer" }}>
             Cancelar
