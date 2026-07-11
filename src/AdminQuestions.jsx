@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { createAdminQuestion, fetchAdminQuestions, fetchAdminQuestionOptions, updateAdminQuestion } from "./services/adminQuestions.js";
 import { compareExamCodes } from "./utils/exams.js";
 import { useAuth } from "./Auth.jsx";
@@ -42,6 +42,15 @@ function StatusBadge({ active }) {
     <span style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", minWidth: 58, fontSize: 11, padding: "3px 8px", borderRadius: 999, background: style.background, color: style.color, fontWeight: 700 }}>
       {style.label}
     </span>
+  );
+}
+
+function QuestionMeta({ label, value, children }) {
+  return (
+    <div style={{ minWidth: 0 }}>
+      <p style={{ fontSize: 10, color: "#999", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", margin: "0 0 5px" }}>{label}</p>
+      <div style={{ fontSize: 12, color: "#444", lineHeight: 1.45, overflowWrap: "anywhere" }}>{children || value || "Sem informação"}</div>
+    </div>
   );
 }
 
@@ -240,9 +249,8 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
   }
 
   return (
-    <tr style={{ background: "#fbfcfc", borderTop: "1px solid #d9ece5" }}>
-      <td colSpan={11} style={{ padding: 16 }}>
-        <div style={{ display: "grid", gap: 12, marginBottom: 16 }}>
+    <div style={{ background: "#fbfcfc", border: "1px solid #d9ece5", borderRadius: 12, padding: 14 }}>
+      <div style={{ display: "grid", gap: 12, marginBottom: 16 }}>
           <FormField label="Enunciado">
             <textarea value={draft.statement} onChange={(event) => updateDraft("statement", event.target.value)} style={{ ...textAreaStyle, minHeight: 120 }} />
           </FormField>
@@ -307,8 +315,8 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
               <textarea value={draft.reference} onChange={(event) => updateDraft("reference", event.target.value)} style={textAreaStyle} />
             </FormField>
           </div>
-        </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 14 }}>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12, marginBottom: 14 }}>
           {isNew && (
             <FormField label="Disciplina">
               <select value={draft.disciplineId} onChange={(event) => updateDiscipline(event.target.value)} style={inputStyle}>
@@ -357,8 +365,8 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
               <option value="inactive">Inativa</option>
             </select>
           </FormField>
-        </div>
-        <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", flexWrap: "wrap" }}>
+      </div>
+      <div style={{ display: "flex", gap: 8, justifyContent: "flex-end", flexWrap: "wrap" }}>
           <button onClick={onCancel} disabled={saving} style={{ fontSize: 12, padding: "8px 12px", borderRadius: 8, border: "1px solid #d9d9d9", background: "#fff", color: "#555", cursor: saving ? "not-allowed" : "pointer" }}>
             Cancelar
           </button>
@@ -373,9 +381,8 @@ function QuestionEditor({ question, options, saving, onCancel, onSave }) {
           >
             {saving ? "Salvando..." : isNew ? "Cadastrar questão" : "Salvar questão"}
           </button>
-        </div>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 }
 
@@ -517,21 +524,19 @@ export default function AdminQuestions() {
       </div>
 
       {creating && (
-        <div style={{ overflowX: "auto", border: "1px solid #d9ece5", borderRadius: 12, background: "#fff", marginBottom: 16 }}>
+        <div style={{ border: "1px solid #d9ece5", borderRadius: 12, background: "#fff", marginBottom: 16, overflow: "hidden" }}>
           <div style={{ padding: "12px 16px", borderBottom: "1px solid #ededed", background: "#f5faf8" }}>
             <h3 style={{ margin: 0, fontSize: 15, color: "#1a1a1a" }}>Cadastrar nova questão</h3>
           </div>
-          <table style={{ width: "100%", minWidth: 1060, borderCollapse: "collapse", fontSize: 12 }}>
-            <tbody>
-              <QuestionEditor
-                question={createEmptyQuestion(options)}
-                options={options}
-                saving={savingId === "new"}
-                onCancel={() => setCreating(false)}
-                onSave={createQuestion}
-              />
-            </tbody>
-          </table>
+          <div style={{ padding: 14 }}>
+            <QuestionEditor
+              question={createEmptyQuestion(options)}
+              options={options}
+              saving={savingId === "new"}
+              onCancel={() => setCreating(false)}
+              onSave={createQuestion}
+            />
+          </div>
         </div>
       )}
 
@@ -563,56 +568,49 @@ export default function AdminQuestions() {
       ) : shownQuestions.length === 0 ? (
         <p style={{ color: "#aaa", textAlign: "center", padding: "2rem" }}>Nenhuma questão encontrada</p>
       ) : (
-        <div style={{ overflowX: "auto", border: "1px solid #e0e0e0", borderRadius: 12, background: "#fff" }}>
-          <table style={{ width: "100%", minWidth: 1060, borderCollapse: "collapse", fontSize: 12 }}>
-            <thead>
-              <tr style={{ background: "#f5f7f8", color: "#555", textAlign: "left" }}>
-                <th style={{ padding: "10px 12px", width: "28%" }}>Enunciado</th>
-                <th style={{ padding: "10px 12px" }}>Disciplina</th>
-                <th style={{ padding: "10px 12px" }}>Exam</th>
-                <th style={{ padding: "10px 12px" }}>Dificuldade</th>
-                <th style={{ padding: "10px 12px" }}>Tipo</th>
-                <th style={{ padding: "10px 12px" }}>Topic legado</th>
-                <th style={{ padding: "10px 12px" }}>Grande tema</th>
-                <th style={{ padding: "10px 12px" }}>Domínio</th>
-                <th style={{ padding: "10px 12px" }}>Detalhe</th>
-                <th style={{ padding: "10px 12px" }}>Status</th>
-                <th style={{ padding: "10px 12px" }}>Ações</th>
-              </tr>
-            </thead>
-            <tbody>
-              {shownQuestions.map((question) => (
-                <Fragment key={question.id}>
-                  <tr key={question.id} style={{ borderTop: "1px solid #ededed", verticalAlign: "top" }}>
-                    <td style={{ padding: "11px 12px", lineHeight: 1.5, color: "#222" }}>{summarizeStatement(question.statement)}</td>
-                    <td style={{ padding: "11px 12px", color: "#555" }}>{question.discipline}</td>
-                    <td style={{ padding: "11px 12px", color: "#555", fontWeight: 700 }}>{question.exam}</td>
-                    <td style={{ padding: "11px 12px", color: "#555" }}>{question.difficulty}</td>
-                    <td style={{ padding: "11px 12px", color: "#555" }}>{question.questionType}</td>
-                    <td style={{ padding: "11px 12px", color: "#555" }}>{question.legacyTopic}</td>
-                    <td style={{ padding: "11px 12px", color: "#555" }}>{question.grandTheme || "Sem grande tema"}</td>
-                    <td style={{ padding: "11px 12px", color: "#555" }}>{question.domain || "Sem domínio"}</td>
-                    <td style={{ padding: "11px 12px", color: "#555" }}>{question.detail || "Sem detalhe"}</td>
-                    <td style={{ padding: "11px 12px" }}><StatusBadge active={question.active} /></td>
-                    <td style={{ padding: "11px 12px" }}>
-                      <button onClick={() => setEditingId(editingId === question.id ? "" : question.id)} style={{ fontSize: 12, padding: "6px 10px", borderRadius: 8, border: "1px solid #bdd9f0", background: "#e6f1fb", color: "#185fa5", fontWeight: 700, cursor: "pointer" }}>
-                        {editingId === question.id ? "Fechar" : "Editar"}
-                      </button>
-                    </td>
-                  </tr>
-                  {editingId === question.id && (
-                    <QuestionEditor
-                      question={question}
-                      options={options}
-                      saving={savingId === question.id}
-                      onCancel={() => setEditingId("")}
-                      onSave={(draft) => saveQuestion(question, draft)}
-                    />
-                  )}
-                </Fragment>
-              ))}
-            </tbody>
-          </table>
+        <div style={{ display: "grid", gap: 12 }}>
+          {shownQuestions.map((question) => (
+            <article key={question.id} style={{ background: "#fff", border: "1px solid #e0e0e0", borderRadius: 12, overflow: "hidden" }}>
+              <div style={{ padding: "14px 16px" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 12, marginBottom: 12 }}>
+                  <div style={{ minWidth: 0 }}>
+                    <p style={{ fontSize: 13, lineHeight: 1.55, color: "#222", fontWeight: 600, margin: "0 0 8px", overflowWrap: "anywhere" }}>
+                      {summarizeStatement(question.statement)}
+                    </p>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+                      <StatusBadge active={question.active} />
+                      <span style={{ fontSize: 11, padding: "3px 8px", borderRadius: 999, background: "#f1f1f1", color: "#555", fontWeight: 700 }}>{question.exam}</span>
+                      <span style={{ fontSize: 11, padding: "3px 8px", borderRadius: 999, background: "#f7f7f7", color: "#555" }}>{question.difficulty}</span>
+                    </div>
+                  </div>
+                  <button onClick={() => setEditingId(editingId === question.id ? "" : question.id)} style={{ fontSize: 12, padding: "7px 12px", borderRadius: 8, border: "1px solid #bdd9f0", background: "#e6f1fb", color: "#185fa5", fontWeight: 700, cursor: "pointer", flexShrink: 0 }}>
+                    {editingId === question.id ? "Fechar" : "Editar"}
+                  </button>
+                </div>
+
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: 12, borderTop: "1px solid #f0f0f0", paddingTop: 12 }}>
+                  <QuestionMeta label="Disciplina" value={question.discipline} />
+                  <QuestionMeta label="Tipo" value={question.questionType} />
+                  <QuestionMeta label="Topic legado" value={question.legacyTopic} />
+                  <QuestionMeta label="Grande tema" value={question.grandTheme || "Sem grande tema"} />
+                  <QuestionMeta label="Domínio" value={question.domain || "Sem domínio"} />
+                  <QuestionMeta label="Detalhe" value={question.detail || "Sem detalhe"} />
+                </div>
+              </div>
+
+              {editingId === question.id && (
+                <div style={{ padding: "0 14px 14px" }}>
+                  <QuestionEditor
+                    question={question}
+                    options={options}
+                    saving={savingId === question.id}
+                    onCancel={() => setEditingId("")}
+                    onSave={(draft) => saveQuestion(question, draft)}
+                  />
+                </div>
+              )}
+            </article>
+          ))}
         </div>
       )}
     </div>
