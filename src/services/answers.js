@@ -75,3 +75,60 @@ export async function saveAnswer({
     return null;
   }
 }
+
+export async function fetchAnswerProgress(user) {
+  if (!user?.getIdToken) {
+    console.error("Erro ao carregar progresso: usuário ausente");
+    return null;
+  }
+
+  try {
+    const token = await user.getIdToken();
+    const response = await fetch("/api/progress", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const result = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      console.error("Erro ao carregar progresso:", result);
+      return null;
+    }
+
+    return result?.answers || {};
+  } catch (error) {
+    console.error("Erro ao carregar progresso:", error);
+    return null;
+  }
+}
+
+export async function deleteDisciplineProgress(user, disciplineName) {
+  if (!user?.getIdToken || !disciplineName) {
+    console.error("Erro ao apagar progresso: dados ausentes");
+    return null;
+  }
+
+  try {
+    const token = await user.getIdToken();
+    const response = await fetch("/api/progress", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ disciplineName }),
+    });
+    const result = await response.json().catch(() => null);
+
+    if (!response.ok) {
+      console.error("Erro ao apagar progresso:", result);
+      return null;
+    }
+
+    return result;
+  } catch (error) {
+    console.error("Erro ao apagar progresso:", error);
+    return null;
+  }
+}
