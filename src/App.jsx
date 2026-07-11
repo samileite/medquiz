@@ -895,22 +895,41 @@ export default function App() {
         />
       )}
 
-      <div style={{ background: "#fff", border: "1px solid #e8e8e8", borderRadius: 14, padding: "14px 16px", marginBottom: 18, boxShadow: "0 10px 28px rgba(0,0,0,0.04)" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 10, alignItems: "stretch" }}>
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, minWidth: 0 }}>
-            <div style={{ minWidth: 0 }}>
-              <h1 style={{ fontSize: 22, fontWeight: 600, marginBottom: 4 }}>MedQuiz 🩺</h1>
-              <p style={{ color: "#555", fontSize: 14, fontWeight: 700, marginBottom: 3, overflowWrap: "anywhere" }}>{userName}</p>
-              <p style={{ color: "#aaa", fontSize: 13 }}>{userData?.periodo ? `${userData.periodo}º Período` : ""} · Medicina</p>
-            </div>
-            <button onClick={() => setShowProfile(true)} style={{ display: "flex", alignItems: "center", gap: 8, background: "none", border: "1px solid #e0e0e0", borderRadius: 10, padding: "6px 10px", cursor: "pointer", flexShrink: 0 }}>
-              <img src={user?.photoURL} width={28} height={28} style={{ borderRadius: "50%" }} alt="" />
-              <span style={{ fontSize: 12, color: "#555" }}>⚙️</span>
+      <div style={{ background: "#fff", border: "1px solid #e8e8e8", borderRadius: 14, padding: "12px 16px 16px", marginBottom: 18, boxShadow: "0 10px 28px rgba(0,0,0,0.04)" }}>
+        <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 6, minHeight: 14 }}>
+          <p style={{ fontSize: 11, color: "#aaa", fontWeight: 600, textTransform: "capitalize", lineHeight: 1.2 }}>{todayLabel}</p>
+        </div>
+        <div style={{ display: "flex", gap: 14, alignItems: "stretch", flexWrap: "wrap" }}>
+          <div style={{ flex: "0 1 230px", display: "flex", flexDirection: "column", justifyContent: "center", gap: 10, minWidth: 0 }}>
+            <h1 style={{ fontSize: 22, fontWeight: 700, margin: 0, color: "#1a1a1a" }}>MedQuiz</h1>
+            <button
+              onClick={() => setShowProfile(true)}
+              title="Abrir perfil"
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                border: "none",
+                background: "transparent",
+                padding: 0,
+                textAlign: "left",
+                cursor: "pointer",
+                minWidth: 0,
+              }}
+            >
+              <img
+                src={user?.photoURL}
+                width={38}
+                height={38}
+                style={{ borderRadius: "50%", border: "2px solid #f0f0f0", flexShrink: 0 }}
+                alt=""
+              />
+              <span style={{ minWidth: 0 }}>
+                <span style={{ display: "block", color: "#333", fontSize: 14, fontWeight: 700, marginBottom: 2, overflowWrap: "anywhere" }}>{userName}</span>
+                <span style={{ display: "block", color: "#aaa", fontSize: 13 }}>{userData?.periodo ? `${userData.periodo}º Período` : ""} · Medicina</span>
+              </span>
             </button>
-          </div>
-          <div style={{ background: "#f7f7f7", borderRadius: 12, padding: "10px 12px", minWidth: 0, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <p style={{ fontSize: 11, color: "#aaa", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>Hoje</p>
-            <p style={{ fontSize: 13, color: "#333", fontWeight: 600, textTransform: "capitalize", overflowWrap: "anywhere" }}>{todayLabel}</p>
           </div>
           <button
             onClick={() => setShowStudyCalendar(true)}
@@ -918,19 +937,24 @@ export default function App() {
               background: "#fff7ea",
               border: "1px solid #f4d7a9",
               borderRadius: 12,
-              padding: "10px 12px",
-              textAlign: "left",
+              padding: "18px 16px",
+              textAlign: "center",
               minWidth: 0,
+              flex: "1 1 300px",
               cursor: "pointer",
               display: "flex",
-              flexDirection: "column",
+              alignItems: "center",
               justifyContent: "center",
+              gap: 12,
             }}
           >
-            <p style={{ fontSize: 11, color: "#854f0b", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>Sequência</p>
-            <p style={{ fontSize: 13, color: "#633806", fontWeight: 700, overflowWrap: "anywhere" }}>
-              🔥 Ofensiva de {studyStreak} dia{studyStreak === 1 ? "" : "s"} de estudo
-            </p>
+            <span style={{ width: 38, height: 38, borderRadius: "50%", background: "#fff", display: "grid", placeItems: "center", fontSize: 20, flexShrink: 0 }}>🔥</span>
+            <span style={{ minWidth: 0 }}>
+              <span style={{ display: "block", fontSize: 11, color: "#854f0b", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: 4 }}>Sequência</span>
+              <span style={{ display: "block", fontSize: 15, color: "#633806", fontWeight: 800, overflowWrap: "anywhere" }}>
+                Ofensiva de {studyStreak} dia{studyStreak === 1 ? "" : "s"} de estudo
+              </span>
+            </span>
           </button>
         </div>
       </div>
