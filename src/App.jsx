@@ -52,12 +52,35 @@ function getAnswerDate(answer) {
   return formatISODate(date);
 }
 
+function normalizeUndatedAnswers(answers, fallbackDate = new Date().toISOString()) {
+  let changed = false;
+  const normalized = Object.fromEntries(
+    Object.entries(answers || {}).map(([questionId, answer]) => {
+      if (getAnswerDate(answer)) return [questionId, answer];
+      changed = true;
+      return [questionId, { ...answer, answeredAt: fallbackDate }];
+    })
+  );
+  return { answers: normalized, changed };
+}
+
+function mergeAnswerProgress(storedAnswers, answerProgress) {
+  const merged = { ...(storedAnswers || {}) };
+  Object.entries(answerProgress || {}).forEach(([questionId, answer]) => {
+    merged[questionId] = {
+      ...answer,
+      answeredAt: answer?.answeredAt || storedAnswers?.[questionId]?.answeredAt,
+    };
+  });
+  return merged;
+}
+
 function getStudyStreak(practiceDates) {
   if (practiceDates.size === 0) return 0;
   const today = new Date();
   let cursor = new Date(today);
   if (!practiceDates.has(formatISODate(cursor))) {
-    cursor.setDate(cursor.getDate() - 1);
+    return 0;
   }
 
   let streak = 0;
@@ -261,21 +284,39 @@ export default function App() {
   const loadProgress = useCallback(async () => {
     if (!user) return;
     let storedAnswers = {};
+    let storedFavorites = null;
+    let storedNotes = null;
     try {
       const ref = doc(db, "progress", user.uid);
       const snap = await getDoc(ref);
       if (snap.exists()) {
         const data = snap.data();
         if (data.answers) storedAnswers = data.answers;
-        if (data.favorites) setFavorites(new Set(data.favorites));
-        if (data.notes) setNotes(data.notes);
+        if (data.favorites) {
+          storedFavorites = data.favorites;
+          setFavorites(new Set(data.favorites));
+        }
+        if (data.notes) {
+          storedNotes = data.notes;
+          setNotes(data.notes);
+        }
       }
     } catch (err) {
       console.warn("Erro ao carregar progresso:", err);
     }
 
     const answerProgress = await fetchAnswerProgress(user);
-    setAnswers(answerProgress ? { ...storedAnswers, ...answerProgress } : storedAnswers);
+    const mergedAnswers = answerProgress ? mergeAnswerProgress(storedAnswers, answerProgress) : storedAnswers;
+    const normalized = normalizeUndatedAnswers(mergedAnswers);
+    setAnswers(normalized.answers);
+    if (normalized.changed) {
+      await setDoc(doc(db, "progress", user.uid), {
+        answers: normalized.answers,
+        favorites: storedFavorites || [],
+        notes: storedNotes || {},
+        updatedAt: new Date().toISOString(),
+      }, { merge: true });
+    }
   }, [user]);
 
   useEffect(() => { loadProgress(); }, [loadProgress]);
