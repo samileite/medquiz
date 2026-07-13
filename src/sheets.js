@@ -29,6 +29,7 @@ export async function fetchQuestionsByDisciplina(disciplina) {
         memory_tip,
         trap,
         reference,
+        image_url,
         topics(name),
         alternatives(letter, text, explanation)
       `)
@@ -54,9 +55,9 @@ export async function fetchQuestionsByDisciplina(disciplina) {
         porAlternativa[a.letter] = a.explanation || "";
       });
 
-      const imageUrl = q.reference?.startsWith("image:")
+      const imageUrl = q.image_url || (q.reference?.startsWith("image:")
         ? q.reference.replace(/^image:/, "")
-        : "";
+        : "");
 
       return {
         id: q.id,
