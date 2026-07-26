@@ -11,6 +11,7 @@
     "preview": "vite preview",
     "import-gastro": "node scripts/import-gastro-from-pdf.mjs ./scripts/gastro-from-pdf.json",
     "import-pneumologia": "node scripts/import-gastro-from-pdf.mjs ./scripts/pneumologia-from-pdf.mjs",
+    "import-pneumologia-p3": "node scripts/import-pneumologia-p3.mjs",
     "db:push": "supabase db push",
     "db:pull": "supabase db pull",
     "db:diff": "supabase db diff",
