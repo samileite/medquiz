@@ -188,6 +188,7 @@ async function importQuestions() {
         memory_tip: question.memoryTip,
         trap: question.trap,
         reference: question.imageUrl ? `image:${question.imageUrl}` : question.reference,
+        image_url: question.imageUrl,
         active: true,
       })
       .select()
