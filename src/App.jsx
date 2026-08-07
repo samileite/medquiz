@@ -8,6 +8,13 @@ import { deleteDisciplineProgress, fetchAnswerProgress, saveAnswer } from "./ser
 import ProfilePage from "./Profile.jsx";
 import { compareExamCodes, formatExamLabel } from "./utils/exams.js";
 
+function isGroupedTrueFalseQuestion(question) {
+  const correctAnswers = question?.corretas || [];
+  return question?.questionType === "true_false"
+    && correctAnswers.length > 0
+    && correctAnswers.every((answer) => /^[A-E]:(V|F)$/i.test(String(answer)));
+}
+
 function Timer({ active, onTick, resetKey }) {
   const [secs, setSecs] = useState(0);
   const ref = useRef(null);
@@ -485,7 +492,7 @@ export default function App() {
       alert(message);
       return;
     }
-    const initialSelected = qs[0]?.questionType === "true_false" ? {}
+    const initialSelected = isGroupedTrueFalseQuestion(qs[0]) ? {}
       : qs[0]?.questionType === "multiple" ? [] : null;
     setFilteredQs(qs);
     setIdx(0);
@@ -531,7 +538,7 @@ export default function App() {
 
   async function handleConfirm() {
     if (!selected || revealed) return;
-    const isTrueFalse = q?.questionType === "true_false";
+    const isTrueFalse = isGroupedTrueFalseQuestion(q);
     const selectedValues = isTrueFalse
       ? Object.entries(selected).sort(([a], [b]) => a.localeCompare(b)).map(([letter, value]) => `${letter}:${value}`)
       : Array.isArray(selected) ? selected : [selected];
@@ -579,7 +586,7 @@ export default function App() {
     if (idx < filteredQs.length - 1) {
       const nextQuestion = filteredQs[idx + 1];
       setIdx(idx + 1);
-      setSelected(nextQuestion?.questionType === "true_false" ? {}
+      setSelected(isGroupedTrueFalseQuestion(nextQuestion) ? {}
         : nextQuestion?.questionType === "multiple" ? [] : null);
       setRevealed(false);
       setTimerOn(true);
@@ -652,7 +659,7 @@ export default function App() {
 
   const selectedAnswer = selected;
   const correctAnswers = q?.corretas || (correta ? [correta] : []);
-  const isTrueFalse = q?.questionType === "true_false";
+  const isTrueFalse = isGroupedTrueFalseQuestion(q);
   const trueFalseCorrectByLetter = isTrueFalse
     ? Object.fromEntries(correctAnswers.map((answer) => String(answer).toUpperCase().split(":")))
     : {};
@@ -806,7 +813,7 @@ export default function App() {
             </div>
           )}
           <div style={{ display: "flex", gap: 10, justifyContent: "space-between" }}>
-            <button onClick={() => { if (idx > 0) { const previousQuestion = filteredQs[idx - 1]; setIdx(idx - 1); setSelected(previousQuestion?.questionType === "true_false" ? {} : previousQuestion?.questionType === "multiple" ? [] : null); setRevealed(false); setCurTime(0); } }} disabled={idx === 0} style={{ borderRadius: 10, padding: "10px 18px", fontSize: 14, cursor: "pointer" }}>← Anterior</button>
+            <button onClick={() => { if (idx > 0) { const previousQuestion = filteredQs[idx - 1]; setIdx(idx - 1); setSelected(isGroupedTrueFalseQuestion(previousQuestion) ? {} : previousQuestion?.questionType === "multiple" ? [] : null); setRevealed(false); setCurTime(0); } }} disabled={idx === 0} style={{ borderRadius: 10, padding: "10px 18px", fontSize: 14, cursor: "pointer" }}>← Anterior</button>
             <button onClick={handleNext} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>{idx < filteredQs.length - 1 ? "Próxima →" : "Ver resultado"}</button>
           </div>
         </div>

@@ -185,8 +185,10 @@ export default async function handler(req, res) {
     }
 
     const alternativeLetters = new Set(normalizedAlternatives.map((alternative) => alternative.letter));
+    const isGroupedTrueFalse = questionType === "true_false"
+      && normalizedCorrectAnswers.some((answer) => answer.includes(":"));
     const invalidAnswers = normalizedCorrectAnswers.filter((answer) => {
-      if (questionType === "true_false") {
+      if (isGroupedTrueFalse) {
         const [letter, value, extra] = answer.split(":");
         return Boolean(extra) || !alternativeLetters.has(letter) || !["V", "F"].includes(value);
       }
@@ -201,8 +203,12 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: "Questões single devem ter exatamente uma resposta correta" });
     }
 
-    if (questionType === "true_false" && normalizedCorrectAnswers.length !== normalizedAlternatives.length) {
+    if (isGroupedTrueFalse && normalizedCorrectAnswers.length !== normalizedAlternatives.length) {
       return res.status(400).json({ error: "Questões V/F devem ter um gabarito para cada assertiva" });
+    }
+
+    if (questionType === "true_false" && !isGroupedTrueFalse && normalizedCorrectAnswers.length !== 1) {
+      return res.status(400).json({ error: "Questões V/F legadas devem ter exatamente uma resposta correta" });
     }
 
     const questionPayload = {
