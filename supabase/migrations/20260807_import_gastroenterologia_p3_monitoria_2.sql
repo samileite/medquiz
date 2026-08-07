@@ -44,7 +44,7 @@ BEGIN
     END IF;
     v_question_id:=pg_temp.gastro_mon2_uuid('gastro-p3-'||q.k);
     INSERT INTO public.questions(id,discipline_id,topic_id,exam,difficulty,statement,question_type,correct_answer,correct_answers,general_comment,summary,memory_tip,trap,reference,active,image_url)
-    VALUES(v_question_id,v_discipline_id,v_topic_id,'P3',q.d,q.s,q.type,q.c->>0,ARRAY(SELECT jsonb_array_elements_text(q.c)),q.g,q.sum,q.mem,q.trap,'Prova 3 de Gastroenterologia — payload deduplicado e revisado em 2026.',true,NULL)
+    VALUES(v_question_id,v_discipline_id,v_topic_id,'P3',q.d,q.s,q.type,split_part(q.c->>0, ':', 1),ARRAY(SELECT jsonb_array_elements_text(q.c)),q.g,q.sum,q.mem,q.trap,'Prova 3 de Gastroenterologia — payload deduplicado e revisado em 2026.',true,NULL)
     ON CONFLICT(id) DO UPDATE SET topic_id=EXCLUDED.topic_id,exam='P3',difficulty=EXCLUDED.difficulty,statement=EXCLUDED.statement,question_type=EXCLUDED.question_type,correct_answer=EXCLUDED.correct_answer,correct_answers=EXCLUDED.correct_answers,general_comment=EXCLUDED.general_comment,summary=EXCLUDED.summary,memory_tip=EXCLUDED.memory_tip,trap=EXCLUDED.trap,reference=EXCLUDED.reference,active=true,image_url=NULL;
     DELETE FROM public.alternatives WHERE question_id=v_question_id;
     FOR a IN SELECT value FROM jsonb_array_elements(q.alts) LOOP
