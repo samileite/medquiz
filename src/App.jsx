@@ -485,7 +485,8 @@ export default function App() {
       alert(message);
       return;
     }
-    const initialSelected = qs[0]?.questionType === "multiple" ? [] : null;
+    const initialSelected = qs[0]?.questionType === "true_false" ? {}
+      : qs[0]?.questionType === "multiple" ? [] : null;
     setFilteredQs(qs);
     setIdx(0);
     setSelected(initialSelected);
@@ -530,15 +531,18 @@ export default function App() {
 
   async function handleConfirm() {
     if (!selected || revealed) return;
-    const selectedValues = Array.isArray(selected) ? selected : [selected];
+    const isTrueFalse = q?.questionType === "true_false";
+    const selectedValues = isTrueFalse
+      ? Object.entries(selected).sort(([a], [b]) => a.localeCompare(b)).map(([letter, value]) => `${letter}:${value}`)
+      : Array.isArray(selected) ? selected : [selected];
     const correctValues = q.corretas || (correta ? [correta] : []);
-    if (selectedValues.length === 0) return;
+    if (selectedValues.length === 0 || (isTrueFalse && selectedValues.length !== alts.length)) return;
 
     const correct = areAnswersEqual(selectedValues, correctValues);
     const newAnswers = {
       ...answers,
       [q.id]: {
-        selected: Array.isArray(selected) ? selected : selected,
+        selected,
         selectedAnswers: selectedValues,
         correct,
         disciplina: selectedDisciplina,
@@ -556,7 +560,7 @@ export default function App() {
     const result = await saveAnswer({
         user,
         questionId: q?.id,
-        selectedAnswer: !isMultiple && selectedValues.length === 1 ? selectedValues[0] : undefined,
+        selectedAnswer: !isMultiple && !isTrueFalse && selectedValues.length === 1 ? selectedValues[0] : undefined,
         selectedAnswers: selectedValues,
         correctAnswer: !isMultiple ? correta?.toString().toUpperCase() : undefined,
         correctAnswers: correctValues,
@@ -575,7 +579,8 @@ export default function App() {
     if (idx < filteredQs.length - 1) {
       const nextQuestion = filteredQs[idx + 1];
       setIdx(idx + 1);
-      setSelected(nextQuestion?.questionType === "multiple" ? [] : null);
+      setSelected(nextQuestion?.questionType === "true_false" ? {}
+        : nextQuestion?.questionType === "multiple" ? [] : null);
       setRevealed(false);
       setTimerOn(true);
       setTimerKey((k) => k + 1);
@@ -647,7 +652,13 @@ export default function App() {
 
   const selectedAnswer = selected;
   const correctAnswers = q?.corretas || (correta ? [correta] : []);
-  const hasSelection = Array.isArray(selected) ? selected.length > 0 : !!selected;
+  const isTrueFalse = q?.questionType === "true_false";
+  const trueFalseCorrectByLetter = isTrueFalse
+    ? Object.fromEntries(correctAnswers.map((answer) => String(answer).toUpperCase().split(":")))
+    : {};
+  const hasSelection = isTrueFalse
+    ? alts.length > 0 && Object.keys(selected || {}).length === alts.length
+    : Array.isArray(selected) ? selected.length > 0 : !!selected;
   const extraExplanationCards = [
     { key: "raciocinioCli", label: "Raciocínio clínico", value: q?.explicacao?.raciocinioCli, color: "#185fa5", bg: "#e6f1fb", textColor: "#0c447c" },
     { key: "dicaMemorizacao", label: "Memorização", value: q?.explicacao?.dicaMemorizacao, color: "#633806", bg: "#faeeda", textColor: "#412402" },
@@ -690,11 +701,16 @@ export default function App() {
         </div>
       )}
       <div style={{ marginBottom: 16 }}>
+        {isTrueFalse && (
+          <div style={{ marginBottom: 12, padding: "10px 12px", borderRadius: 12, background: "#e6f1fb", color: "#0c447c", fontSize: 13, lineHeight: 1.5 }}>
+            Marque Verdadeiro ou Falso em todas as assertivas para liberar o envio.
+          </div>
+        )}
         {alts.map((alt) => {
           const rawJustification = q?.explicacao?.porAlternativa?.[alt.id];
           const justification = revealed ? cleanExplanationPrefix(rawJustification) : rawJustification?.trim();
-          const isCorrect = correctAnswers.includes(alt.id);
-          const isSelected = Array.isArray(selectedAnswer) ? selectedAnswer.includes(alt.id) : selectedAnswer === alt.id;
+          const isCorrect = isTrueFalse ? selectedAnswer?.[alt.id] === trueFalseCorrectByLetter[alt.id] : correctAnswers.includes(alt.id);
+          const isSelected = isTrueFalse ? Boolean(selectedAnswer?.[alt.id]) : Array.isArray(selectedAnswer) ? selectedAnswer.includes(alt.id) : selectedAnswer === alt.id;
           const label = revealed ? (isCorrect ? "Resposta correta" : isSelected ? "Sua resposta" : null) : null;
           const explanationStyle = isCorrect
             ? { background: "#eaf7f0", border: "1px solid #c8e8d8", color: "#0f6e56" }
@@ -705,6 +721,7 @@ export default function App() {
             <div
               key={alt.id}
               onClick={() => {
+                if (isTrueFalse) return;
                 if (revealed) return;
                 if (q.questionType === "multiple") {
                   setSelected((prev) => {
@@ -728,6 +745,31 @@ export default function App() {
                 )}
                 <div style={{ flex: 1 }}>
                   <div style={{ fontSize: 14, lineHeight: 1.6, color: "#1a1a1a" }}>{alt.texto}</div>
+                  {isTrueFalse && (
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 12 }}>
+                      {[{ value: "V", label: "Verdadeiro" }, { value: "F", label: "Falso" }].map((option) => {
+                        const chosen = selectedAnswer?.[alt.id] === option.value;
+                        const expected = trueFalseCorrectByLetter[alt.id] === option.value;
+                        const background = revealed
+                          ? expected ? "#e1f5ee" : chosen ? "#ffe5e5" : "#fff"
+                          : chosen ? "#185fa5" : "#fff";
+                        const color = revealed
+                          ? expected ? "#0f6e56" : chosen ? "#a32d2d" : "#666"
+                          : chosen ? "#fff" : "#444";
+                        return (
+                          <button
+                            key={option.value}
+                            type="button"
+                            disabled={revealed}
+                            onClick={() => setSelected((current) => ({ ...(current || {}), [alt.id]: option.value }))}
+                            style={{ border: `1px solid ${chosen ? "#185fa5" : "#d9d9d9"}`, borderRadius: 10, padding: "10px 8px", background, color, fontWeight: 700, cursor: revealed ? "default" : "pointer" }}
+                          >
+                            {option.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                   {label && (
                     <div style={{ marginTop: 10, display: "inline-flex", alignItems: "center", padding: "6px 10px", borderRadius: 999, background: isCorrect ? "#e1f5ee" : "#ffe5e5", color: isCorrect ? "#0f6e56" : "#a32d2d", fontSize: 12, fontWeight: 700, letterSpacing: "0.01em" }}>
                       {label}
@@ -764,7 +806,7 @@ export default function App() {
             </div>
           )}
           <div style={{ display: "flex", gap: 10, justifyContent: "space-between" }}>
-            <button onClick={() => { if (idx > 0) { setIdx(idx - 1); setSelected(null); setRevealed(false); setCurTime(0); } }} disabled={idx === 0} style={{ borderRadius: 10, padding: "10px 18px", fontSize: 14, cursor: "pointer" }}>← Anterior</button>
+            <button onClick={() => { if (idx > 0) { const previousQuestion = filteredQs[idx - 1]; setIdx(idx - 1); setSelected(previousQuestion?.questionType === "true_false" ? {} : previousQuestion?.questionType === "multiple" ? [] : null); setRevealed(false); setCurTime(0); } }} disabled={idx === 0} style={{ borderRadius: 10, padding: "10px 18px", fontSize: 14, cursor: "pointer" }}>← Anterior</button>
             <button onClick={handleNext} style={{ background: "#0f6e56", color: "#fff", border: "none", borderRadius: 10, padding: "10px 24px", fontWeight: 600, fontSize: 14, cursor: "pointer" }}>{idx < filteredQs.length - 1 ? "Próxima →" : "Ver resultado"}</button>
           </div>
         </div>

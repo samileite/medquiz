@@ -1,4 +1,5 @@
 const VALID_ANSWERS = new Set(["A", "B", "C", "D", "E"]);
+const TRUE_FALSE_ANSWER = /^[A-E]:(V|F)$/;
 
 export async function saveAnswer({
   user,
@@ -34,7 +35,7 @@ export async function saveAnswer({
     return null;
   }
 
-  if (!normalizedSelectedAnswers.every((answer) => VALID_ANSWERS.has(answer))) {
+  if (!normalizedSelectedAnswers.every((answer) => VALID_ANSWERS.has(answer) || TRUE_FALSE_ANSWER.test(answer))) {
     console.error("Erro ao salvar resposta: selectedAnswers inválida", normalizedSelectedAnswers);
     return null;
   }
