@@ -59,7 +59,7 @@ BEGIN
       reference,active,image_url
     ) VALUES(
       v_question_id,v_discipline_id,v_topic_id,'P3',q.d,q.s,q.type,
-      q.c->>0,ARRAY(SELECT jsonb_array_elements_text(q.c)),q.g,q.sum,q.mem,q.trap,
+      split_part(q.c->>0, ':', 1),ARRAY(SELECT jsonb_array_elements_text(q.c)),q.g,q.sum,q.mem,q.trap,
       'Prova 3 de Gastroenterologia — payload deduplicado e revisado em 2026.',true,NULL
     ) ON CONFLICT(id) DO UPDATE SET
       topic_id=EXCLUDED.topic_id,exam='P3',difficulty=EXCLUDED.difficulty,
