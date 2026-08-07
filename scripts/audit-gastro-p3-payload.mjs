@@ -4,12 +4,12 @@ import path from "node:path";
 
 const projectRoot = process.cwd();
 const migrationFiles = [
-  "supabase/migrations/20260806_import_gastroenterologia_prova_3.sql",
-  "supabase/migrations/20260807_import_gastroenterologia_p3_discursivas.sql",
-  "supabase/migrations/20260807_import_gastroenterologia_p3_monitoria_1.sql",
-  "supabase/migrations/20260807_import_gastroenterologia_p3_monitoria_2.sql",
-  "supabase/migrations/20260807_import_gastroenterologia_p3_monitoria_3.sql",
-  "supabase/migrations/20260807_import_gastroenterologia_p3_complementos.sql",
+  "supabase/migrations/20260808010000_import_gastroenterologia_prova_3.sql",
+  "supabase/migrations/20260808030000_import_gastroenterologia_p3_discursivas.sql",
+  "supabase/migrations/20260808040000_import_gastroenterologia_p3_monitoria_1.sql",
+  "supabase/migrations/20260808050000_import_gastroenterologia_p3_monitoria_2.sql",
+  "supabase/migrations/20260808060000_import_gastroenterologia_p3_monitoria_3.sql",
+  "supabase/migrations/20260808020000_import_gastroenterologia_p3_complementos.sql",
 ].map((file) => path.join(projectRoot, file));
 
 function normalizeText(value) {
