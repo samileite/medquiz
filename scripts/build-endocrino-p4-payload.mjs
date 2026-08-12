@@ -49,7 +49,8 @@ singles = singles
     const legacyIndex = index < 13 ? index : index + 1;
     const sourceQuestion = sourceMcqs[sourceOrderForLegacySingles[legacyIndex]];
     return { ...question, correct: sourceQuestion.correct, alts: sourceQuestion.alts };
-  });
+  })
+  .map((question, index) => ({ ...question, n: index + 1 }));
 const topicFor = (text) => {
   const n = normalize(text);
   if (/adrenal|cushing|feocrom|aldoster|addison|21 hidrox|hipercort/.test(n)) return "Suprarrenal";
