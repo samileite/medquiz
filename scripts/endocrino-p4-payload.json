@@ -1,0 +1,2206 @@
+{
+  "singles": [
+    {
+      "n": 1,
+      "topic": "Hipófise — Hipofunção",
+      "difficulty": "fácil",
+      "statement": "Considere A = hipotálamo, B = adeno-hipófise e C = órgão-alvo. Sabendo que lesões no órgão-alvo são primárias, na hipófise são secundárias e no hipotálamo são terciárias, qual correlação está correta?",
+      "correct": "B",
+      "general": "A classificação acompanha o nível anatômico da falha endócrina: órgão-alvo é primário, hipófise é secundário e hipotálamo é terciário. Logo, A3B2C1.",
+      "summary": "Órgão-alvo = primário; hipófise = secundário; hipotálamo = terciário.",
+      "memory": "Do periférico para o central: 1 → 2 → 3.",
+      "trap": "Não numerar o eixo pela ordem anatômica de cima para baixo.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A1B2C3",
+          "e": "Incorreta. O hipotálamo não corresponde ao nível primário, e o órgão-alvo não corresponde ao terciário."
+        },
+        {
+          "l": "B",
+          "t": "A3B2C1",
+          "e": "Correta. A falha hipotalâmica é terciária, a hipofisária é secundária e a do órgão-alvo é primária."
+        },
+        {
+          "l": "C",
+          "t": "A2B3C1",
+          "e": "Incorreta. Embora C1 esteja correto, hipotálamo e hipófise foram trocados."
+        },
+        {
+          "l": "D",
+          "t": "A3B1C2",
+          "e": "Incorreta. A3 está correto, mas hipófise não é primária e órgão-alvo não é secundário."
+        },
+        {
+          "l": "E",
+          "t": "A2B1C3",
+          "e": "Incorreta. As três estruturas foram associadas a níveis inadequados."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Sobre o hiperaldosteronismo primário, assinale a alternativa correta.",
+      "correct": "E",
+      "general": "As causas mais frequentes são adenoma produtor de aldosterona e hiperplasia adrenal bilateral. Doença unilateral pode ser tratada cirurgicamente; doença bilateral costuma receber antagonista do receptor mineralocorticoide.",
+      "summary": "APA e hiperplasia bilateral são as principais etiologias do hiperaldosteronismo primário.",
+      "memory": "Unilateral: cirurgia; bilateral: espironolactona ou eplerenona.",
+      "trap": "Hipocalemia não está presente em todos os casos.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A hiperplasia adrenal bilateral deve ser tratada com adrenalectomia bilateral.",
+          "e": "Incorreta. A retirada bilateral causaria insuficiência adrenal; o tratamento usual é antagonista mineralocorticoide."
+        },
+        {
+          "l": "B",
+          "t": "A aldosterona elevada provoca retenção de sódio e hipercalemia.",
+          "e": "Incorreta. A aldosterona aumenta a excreção renal de potássio, podendo causar hipocalemia."
+        },
+        {
+          "l": "C",
+          "t": "A maioria dos pacientes com hiperaldosteronismo primário é normotensa.",
+          "e": "Incorreta. Hipertensão é manifestação central, embora possa variar em gravidade."
+        },
+        {
+          "l": "D",
+          "t": "O adenoma produtor de aldosterona é tipicamente grande e maligno.",
+          "e": "Incorreta. O APA costuma ser pequeno e benigno; carcinoma produtor de aldosterona é raro."
+        },
+        {
+          "l": "E",
+          "t": "As duas principais etiologias são adenoma produtor de aldosterona e hiperplasia adrenal bilateral.",
+          "e": "Correta. Essas entidades respondem pela maior parte dos casos e exigem estratégias terapêuticas diferentes."
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Mulher de 70 anos apresenta fratura de quadril, PTH de 542 pg/mL, cálcio de 11,3 mg/dL, fósforo baixo e microcálculos renais. Qual diagnóstico e mecanismo explicam melhor o quadro?",
+      "correct": "C",
+      "general": "Hipercalcemia com PTH inapropriadamente alto e hipofosfatemia aponta para hiperparatireoidismo primário. O PTH aumenta reabsorção tubular de cálcio, fosfatúria, calcitriol e reabsorção óssea mediada por osteoclastos.",
+      "summary": "PTH alto com hipercalcemia sugere hiperparatireoidismo primário.",
+      "memory": "PTH sobe cálcio e derruba fósforo.",
+      "trap": "Na hipercalcemia não mediada por PTH, o PTH deveria estar suprimido.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Hipercalcemia da malignidade por PTHrP, com supressão do PTH endógeno.",
+          "e": "Incorreta. O PTH está marcadamente elevado, enquanto na hipercalcemia por PTHrP ele tende a estar suprimido."
+        },
+        {
+          "l": "B",
+          "t": "Hipoparatireoidismo, por redução da reabsorção renal de cálcio.",
+          "e": "Incorreta. Hipoparatireoidismo produz PTH baixo, hipocalcemia e hiperfosfatemia."
+        },
+        {
+          "l": "C",
+          "t": "Hiperparatireoidismo primário, com aumento da reabsorção óssea, retenção renal de cálcio e fosfatúria.",
+          "e": "Correta. O conjunto hipercalcemia, PTH alto, fósforo baixo, litíase e fragilidade óssea é típico."
+        },
+        {
+          "l": "D",
+          "t": "Deficiência isolada de vitamina D, com elevação primária do cálcio sérico.",
+          "e": "Incorreta. Deficiência de vitamina D costuma reduzir ou normalizar o cálcio e causar hiperparatireoidismo secundário."
+        },
+        {
+          "l": "E",
+          "t": "Síndrome de lise tumoral, por liberação de cálcio do conteúdo intracelular.",
+          "e": "Incorreta. Lise tumoral associa-se mais a hiperfosfatemia, hipocalcemia, hiperuricemia e lesão renal."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Qual situação, isoladamente, NÃO constitui indicação clássica para rastreamento bioquímico da síndrome de Cushing?",
+      "correct": "A",
+      "general": "Rastreia-se Cushing em pacientes com sinais múltiplos e progressivos, manifestações incomuns para a idade, criança com queda de crescimento e ganho de peso e incidentaloma adrenal. Incidentaloma hipofisário isolado não é indicação clássica.",
+      "summary": "O rastreamento deve ser dirigido pela probabilidade clínica e pelo incidentaloma adrenal.",
+      "memory": "Cushing: progressão, sinais discriminatórios, idade atípica e adrenal incidental.",
+      "trap": "O gabarito histórico marcava incidentaloma adrenal, mas diretrizes o incluem entre as indicações.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Incidentaloma hipofisário sem sinais clínicos de hipercortisolismo.",
+          "e": "Correta. A presença isolada de lesão hipofisária não justifica rastrear Cushing sem contexto clínico ou funcional."
+        },
+        {
+          "l": "B",
+          "t": "Criança com redução da velocidade de crescimento e ganho progressivo de peso.",
+          "e": "Incorreta. Essa combinação é indicação importante, pois obesidade simples geralmente preserva crescimento linear."
+        },
+        {
+          "l": "C",
+          "t": "Obesidade central associada a hipertensão, diabetes e sinais progressivos sugestivos.",
+          "e": "Incorreta. A multiplicidade e progressão de manifestações aumentam a probabilidade pré-teste e justificam avaliação."
+        },
+        {
+          "l": "D",
+          "t": "Osteoporose ou hipertensão incomuns para a idade.",
+          "e": "Incorreta. Manifestações desproporcionais à idade são indicação recomendada de rastreamento."
+        },
+        {
+          "l": "E",
+          "t": "Incidentaloma adrenal compatível com adenoma.",
+          "e": "Incorreta. Incidentaloma adrenal requer avaliação de secreção autônoma de cortisol, geralmente com dexametasona 1 mg."
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "topic": "Suprarrenal",
+      "difficulty": "fácil",
+      "statement": "Qual das condições abaixo causa síndrome de Cushing ACTH-independente?",
+      "correct": "C",
+      "general": "Tumores e hiperplasias adrenais podem secretar cortisol autonomamente, suprimindo ACTH. Doença de Cushing e secreção ectópica são ACTH-dependentes.",
+      "summary": "Cortisol adrenal autônomo suprime o ACTH.",
+      "memory": "Adrenal produz cortisol sozinho: ACTH baixo.",
+      "trap": "Doença de Cushing significa adenoma hipofisário produtor de ACTH.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Pseudo-Cushing associado a álcool ou depressão.",
+          "e": "Incorreta. É ativação funcional do eixo, não produção adrenal autônoma verdadeira."
+        },
+        {
+          "l": "B",
+          "t": "Tumor carcinoide produtor de ACTH.",
+          "e": "Incorreta. Secreção ectópica de ACTH é, por definição, ACTH-dependente."
+        },
+        {
+          "l": "C",
+          "t": "Tumor adrenal produtor de cortisol.",
+          "e": "Correta. A secreção autônoma adrenal eleva cortisol e suprime o ACTH hipofisário."
+        },
+        {
+          "l": "D",
+          "t": "Adenoma hipofisário corticotrófico.",
+          "e": "Incorreta. A doença de Cushing hipofisária depende de ACTH."
+        },
+        {
+          "l": "E",
+          "t": "Carcinoma medular da tireoide produtor de ACTH.",
+          "e": "Incorreta. Quando há produção ectópica de ACTH, o mecanismo continua sendo ACTH-dependente."
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Mulher de 38 anos com feocromocitoma e pressão arterial de 190×105 mmHg será preparada para cirurgia. Qual classe anti-hipertensiva deve ser iniciada primeiro?",
+      "correct": "E",
+      "general": "O preparo começa com bloqueio alfa para controlar vasoconstrição e permitir expansão volêmica. Betabloqueador, se necessário para taquicardia, só deve ser acrescentado após alfa-bloqueio adequado.",
+      "summary": "No feocromocitoma, alfa antes de beta.",
+      "memory": "Nunca beta primeiro: alfa → volume → beta se necessário.",
+      "trap": "Betabloqueio isolado deixa vasoconstrição alfa sem oposição.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Diurético tiazídico.",
+          "e": "Incorreta. Pode agravar a contração volêmica e não bloqueia o efeito catecolaminérgico principal."
+        },
+        {
+          "l": "B",
+          "t": "Nifedipina como única preparação obrigatória.",
+          "e": "Incorreta. Bloqueador de cálcio pode complementar ou ser alternativa selecionada, mas alfa-bloqueio é a estratégia clássica inicial."
+        },
+        {
+          "l": "C",
+          "t": "Losartana.",
+          "e": "Incorreta. Bloquear o receptor de angiotensina não neutraliza adequadamente as crises catecolaminérgicas."
+        },
+        {
+          "l": "D",
+          "t": "Betabloqueador antes de qualquer outra droga.",
+          "e": "Incorreta. Pode causar crise hipertensiva por estimulação alfa-adrenérgica sem oposição."
+        },
+        {
+          "l": "E",
+          "t": "Alfa-1 bloqueador, como doxazosina ou prazosina.",
+          "e": "Correta. Promove controle da vasoconstrição antes de eventual betabloqueio e da cirurgia."
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Mulher de 19 anos apresenta ganho de peso, estrias violáceas, cortisol livre urinário elevado e ausência de supressão após dexametasona. Qual alternativa está correta?",
+      "correct": "C",
+      "general": "Após confirmar hipercortisolismo, mede-se ACTH para orientar a etiologia. A causa endógena mais comum é doença de Cushing por adenoma hipofisário corticotrófico.",
+      "summary": "A doença de Cushing hipofisária é a causa mais comum de Cushing endógeno.",
+      "memory": "Endógeno: pense primeiro em ACTH hipofisário.",
+      "trap": "Não indicar adrenalectomia antes de localizar e classificar a origem.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O quadro está confirmado como pseudo-Cushing por depressão.",
+          "e": "Incorreta. O fenótipo e testes anormais exigem investigação; depressão isolada não confirma pseudo-Cushing."
+        },
+        {
+          "l": "B",
+          "t": "A próxima conduta obrigatória é adrenalectomia direita.",
+          "e": "Incorreta. Ainda é necessário medir ACTH e localizar a fonte antes de qualquer cirurgia."
+        },
+        {
+          "l": "C",
+          "t": "A causa mais comum de Cushing endógeno é adenoma hipofisário produtor de ACTH.",
+          "e": "Correta. A doença de Cushing responde pela maior parcela dos casos endógenos."
+        },
+        {
+          "l": "D",
+          "t": "Cateterismo de seios petrosos é o padrão-ouro para diagnosticar pseudo-Cushing.",
+          "e": "Incorreta. O exame diferencia fonte hipofisária de ectópica em casos ACTH-dependentes selecionados."
+        },
+        {
+          "l": "E",
+          "t": "Tumor adrenal produtor de cortisol é ACTH-dependente.",
+          "e": "Incorreta. Produção adrenal autônoma suprime ACTH e é ACTH-independente."
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "fácil",
+      "statement": "Alan, 39 anos, apresenta hipertensão, cefaleia, fadiga, artralgia, cirurgia prévia por túnel do carpo, aumento de anel e calçado, redução da libido, sudorese e ronco. Diante da suspeita de acromegalia, qual é o primeiro exame?",
+      "correct": "D",
+      "general": "O IGF-1 ajustado para idade é o melhor teste inicial, pois integra a secreção de GH e não sofre a mesma pulsatilidade do GH aleatório. Resultado elevado ou equívoco requer confirmação apropriada.",
+      "summary": "Suspeita de acromegalia começa com IGF-1.",
+      "memory": "IGF-1 rastreia; TOTG confirma; RNM localiza.",
+      "trap": "Não pedir imagem antes da confirmação bioquímica.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Teste oral de tolerância à glicose com GH.",
+          "e": "Incorreta. É usado para confirmação quando IGF-1 está elevado ou equívoco, não como primeiro passo habitual."
+        },
+        {
+          "l": "B",
+          "t": "Ressonância magnética de hipófise.",
+          "e": "Incorreta. A imagem localiza o adenoma após estabelecer evidência bioquímica."
+        },
+        {
+          "l": "C",
+          "t": "Dosagem de GHRH.",
+          "e": "Incorreta. Tumores ectópicos produtores de GHRH são raros e a dosagem não é rastreio inicial."
+        },
+        {
+          "l": "D",
+          "t": "Dosagem sérica de IGF-1 ajustada para idade.",
+          "e": "Correta. O IGF-1 é mais estável que o GH aleatório e constitui o teste inicial recomendado."
+        },
+        {
+          "l": "E",
+          "t": "Dosagem isolada de IGFBP-3.",
+          "e": "Incorreta. IGFBP-3 não substitui IGF-1 no rastreamento de acromegalia em adultos."
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Mulher de 34 anos apresenta fadiga, ganho de peso, ciclos irregulares, galactorreia, bócio pequeno e pele seca. TSH 72 mUI/L, T4 livre 0,3 ng/dL e prolactina 55 ng/mL, confirmados. Qual é o próximo passo?",
+      "correct": "A",
+      "general": "Hipotireoidismo primário grave aumenta TRH, que estimula prolactina. O tratamento com levotiroxina corrige a causa e frequentemente normaliza a hiperprolactinemia.",
+      "summary": "Hipotireoidismo primário pode elevar prolactina por excesso de TRH.",
+      "memory": "TSH muito alto + T4L baixo + PRL moderada: trate a tireoide.",
+      "trap": "Não diagnosticar prolactinoma antes de corrigir causa secundária evidente.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Iniciar levotiroxina e reavaliar TSH, T4 livre e prolactina.",
+          "e": "Correta. Trata a causa primária e permite verificar a reversão da hiperprolactinemia."
+        },
+        {
+          "l": "B",
+          "t": "Solicitar imediatamente ressonância de hipófise.",
+          "e": "Incorreta. A causa secundária está evidente e deve ser corrigida antes de imagem, salvo sinais compressivos relevantes."
+        },
+        {
+          "l": "C",
+          "t": "Iniciar estrogênio para regularizar os ciclos.",
+          "e": "Incorreta. Não corrige o hipotireoidismo e pode interferir no eixo reprodutivo e na interpretação clínica."
+        },
+        {
+          "l": "D",
+          "t": "Iniciar agonista dopaminérgico.",
+          "e": "Incorreta. Cabergolina não é a primeira medida quando a elevação decorre de hipotireoidismo primário."
+        },
+        {
+          "l": "E",
+          "t": "Repetir apenas a prolactina sem tratar.",
+          "e": "Incorreta. O resultado já foi confirmado e há hipotireoidismo franco que exige terapia."
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "fácil",
+      "statement": "Sobre as causas de hiperprolactinemia, assinale a alternativa correta.",
+      "correct": "D",
+      "general": "Prolactinoma é o adenoma hipofisário funcionante mais frequente. Antes de diagnosticá-lo, excluem-se gestação, fármacos, hipotireoidismo, doença renal/hepática e macroprolactina conforme o contexto.",
+      "summary": "Prolactinoma é o adenoma hipofisário funcionante mais comum.",
+      "memory": "PRL: gestação, remédios, tireoide, rim/fígado, macroprolactina e prolactinoma.",
+      "trap": "No hipotireoidismo primário, o TRH aumenta.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A cirrose eleva prolactina por aumentar a depuração renal.",
+          "e": "Incorreta. Hepatopatia pode reduzir depuração e alterar regulação hormonal; não há aumento de clearance renal."
+        },
+        {
+          "l": "B",
+          "t": "Macroprolactina responde por mais de 90% dos casos em homens.",
+          "e": "Incorreta. Essa proporção não corresponde à epidemiologia da macroprolactinemia."
+        },
+        {
+          "l": "C",
+          "t": "Produção ectópica é a causa mais frequente de hiperprolactinemia.",
+          "e": "Incorreta. Produção ectópica é rara; causas fisiológicas, farmacológicas e hipofisárias são muito mais comuns."
+        },
+        {
+          "l": "D",
+          "t": "Prolactinoma é o adenoma hipofisário funcionante mais frequente.",
+          "e": "Correta. É a neoplasia hipofisária secretora mais comum."
+        },
+        {
+          "l": "E",
+          "t": "Hipotireoidismo primário eleva prolactina por diminuir TRH.",
+          "e": "Incorreta. A queda de T4 reduz retroalimentação e eleva TRH, que pode estimular prolactina."
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "topic": "Hipófise — Hipofunção",
+      "difficulty": "difícil",
+      "statement": "JVCJ, 42 anos, com queda de libido, apresenta aumento difuso da hipófise e espessamento da haste, sugerindo hipofisite linfocítica. Qual alternativa integra corretamente diagnóstico e reposição?",
+      "correct": "E",
+      "general": "Hipofisite pode causar déficits centrais de eixos gonadal, tireoidiano e adrenal. A insuficiência adrenal deve ser tratada antes de iniciar levotiroxina para evitar crise adrenal.",
+      "summary": "Hipofisite pode causar hipopituitarismo combinado; glicocorticoide vem antes de T4.",
+      "memory": "No hipopituitarismo: cortisol primeiro, tireoide depois.",
+      "trap": "Não repor levotiroxina antes de proteger o eixo adrenal.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Hipogonadismo hipergonadotrófico, tratado apenas com testosterona.",
+          "e": "Incorreta. Lesão hipotálamo-hipofisária causa hipogonadismo hipogonadotrófico e pode comprometer outros eixos."
+        },
+        {
+          "l": "B",
+          "t": "Insuficiência adrenal central isolada, sem necessidade de avaliar os demais eixos.",
+          "e": "Incorreta. Hipofisite frequentemente causa deficiências combinadas, exigindo avaliação hipofisária completa."
+        },
+        {
+          "l": "C",
+          "t": "Hipertireoidismo central por liberação excessiva de TSH.",
+          "e": "Incorreta. O padrão esperado é hipotireoidismo central, com T4 livre baixo e TSH inadequadamente baixo ou normal."
+        },
+        {
+          "l": "D",
+          "t": "Não há necessidade de reposição porque a lesão é inflamatória.",
+          "e": "Incorreta. Deficiências hormonais clinicamente relevantes devem ser repostas independentemente da etiologia inflamatória."
+        },
+        {
+          "l": "E",
+          "t": "Hipogonadismo hipogonadotrófico, hipotireoidismo e insuficiência adrenal centrais; repor glicocorticoide, depois levotiroxina e testosterona quando indicada.",
+          "e": "Correta. Reconhece os déficits centrais e a sequência segura de reposição."
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "topic": "Hipófise — Hipofunção",
+      "difficulty": "fácil",
+      "statement": "Criança de 10 anos, após cirurgia de tumor hipofisário, evolui com suspeita de diabetes insípido central. Qual achado é esperado?",
+      "correct": "E",
+      "general": "Deficiência de ADH reduz a reabsorção de água nos ductos coletores, causando grande volume de urina diluída, polidipsia e tendência a hipernatremia se a reposição hídrica for insuficiente.",
+      "summary": "Diabetes insípido central causa poliúria hipotônica.",
+      "memory": "Sem ADH: perde água livre.",
+      "trap": "DI tende a hipernatremia, não hiponatremia.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Pouco ADH aumenta a reabsorção renal de água.",
+          "e": "Incorreta. A deficiência de ADH reduz inserção de aquaporina-2 e diminui reabsorção de água."
+        },
+        {
+          "l": "B",
+          "t": "Osmolalidade urinária inapropriadamente elevada.",
+          "e": "Incorreta. A urina fica diluída, com osmolalidade inadequadamente baixa."
+        },
+        {
+          "l": "C",
+          "t": "Sódio urinário obrigatoriamente muito elevado como achado definidor.",
+          "e": "Incorreta. O achado definidor é perda de água livre com urina hipotônica, não sódio urinário alto."
+        },
+        {
+          "l": "D",
+          "t": "Hiponatremia por retenção de água.",
+          "e": "Incorreta. Retenção de água é típica de excesso de ADH; no DI há risco de hipernatremia."
+        },
+        {
+          "l": "E",
+          "t": "Poliúria com urina diluída.",
+          "e": "Correta. É a manifestação direta da incapacidade de concentrar a urina por deficiência de ADH."
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "fácil",
+      "statement": "Qual alternativa identifica corretamente uma célula responsável pela formação da matriz óssea?",
+      "correct": "E",
+      "general": "Osteoblastos, derivados de células mesenquimais, sintetizam osteoide e promovem mineralização. Osteoclastos são hematopoiéticos e reabsorvem osso; osteócitos derivam de osteoblastos.",
+      "summary": "Osteoblasto forma; osteoclasto reabsorve; osteócito mantém.",
+      "memory": "Blasto constrói, clasto quebra.",
+      "trap": "O osteócito é o estágio maduro do osteoblasto.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O osteócito é o estágio final do osteoclasto.",
+          "e": "Incorreta. Osteócito deriva de osteoblasto aprisionado na matriz mineralizada."
+        },
+        {
+          "l": "B",
+          "t": "Osteoclastos sintetizam a matriz osteoide.",
+          "e": "Incorreta. Osteoclastos degradam matriz por acidificação e enzimas proteolíticas."
+        },
+        {
+          "l": "C",
+          "t": "Osteoblastos derivam diretamente da linhagem hematopoiética monócito-macrófago.",
+          "e": "Incorreta. Essa é a origem dos osteoclastos; osteoblastos vêm de células-tronco mesenquimais."
+        },
+        {
+          "l": "D",
+          "t": "A formação óssea ocorre sem relação espacial com a reabsorção prévia.",
+          "e": "Incorreta. Na remodelação, formação e reabsorção são processos acoplados nas unidades multicelulares ósseas."
+        },
+        {
+          "l": "E",
+          "t": "Osteoblastos sintetizam osteoide e participam da formação óssea.",
+          "e": "Correta. Produzem matriz orgânica e coordenam sua mineralização."
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Mulher de 19 anos apresenta ganho de peso, estrias violáceas, cortisol livre urinário elevado e ausência de supressão à dexametasona. Qual afirmação é correta?",
+      "correct": "C",
+      "general": "O quadro confirma necessidade de investigação etiológica do hipercortisolismo. A doença de Cushing, causada por adenoma hipofisário produtor de ACTH, é a etiologia endógena mais frequente.",
+      "summary": "Cushing endógeno é mais frequentemente hipofisário e ACTH-dependente.",
+      "memory": "Confirme cortisol, meça ACTH, depois localize.",
+      "trap": "Cateterismo petroso não é exame para pseudo-Cushing.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A depressão confirma pseudo-Cushing e encerra a investigação.",
+          "e": "Incorreta. Condições de pseudo-Cushing exigem diferenciação clínica e bioquímica; não se conclui apenas por depressão."
+        },
+        {
+          "l": "B",
+          "t": "Deve-se realizar adrenalectomia direita antes de medir ACTH.",
+          "e": "Incorreta. A lateralização cirúrgica depende de demonstrar origem adrenal e localizar a lesão."
+        },
+        {
+          "l": "C",
+          "t": "A causa mais comum de Cushing endógeno é adenoma hipofisário produtor de ACTH.",
+          "e": "Correta. A doença de Cushing é a principal etiologia do hipercortisolismo endógeno."
+        },
+        {
+          "l": "D",
+          "t": "Cateterismo de seios petrosos diagnostica pseudo-Cushing.",
+          "e": "Incorreta. É usado para diferenciar origem hipofisária de ectópica em Cushing ACTH-dependente selecionado."
+        },
+        {
+          "l": "E",
+          "t": "Tumores adrenais produtores de cortisol são ACTH-dependentes.",
+          "e": "Incorreta. Eles produzem cortisol autonomamente e suprimem ACTH."
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "topic": "Hipófise — Hipofunção",
+      "difficulty": "médio",
+      "statement": "Sobre hipopituitarismo, assinale a alternativa INCORRETA.",
+      "correct": "B",
+      "general": "O quadro depende da causa, velocidade e extensão. Em lesões compressivas, GH e gonadotrofinas costumam ser perdidos antes; TSH e ACTH geralmente são preservados até fases posteriores.",
+      "summary": "GH e LH/FSH tendem a falhar antes de TSH e ACTH.",
+      "memory": "Ordem típica: GH → gonadotrofinas → TSH → ACTH.",
+      "trap": "ACTH e TSH são vitais, mas não costumam ser os primeiros eixos perdidos.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O quadro clínico depende da etiologia, do tipo e da gravidade dos déficits.",
+          "e": "Correta como afirmação. Início agudo e perda de ACTH são mais graves que déficits lentos e parciais."
+        },
+        {
+          "l": "B",
+          "t": "Os eixos de ACTH e TSH são habitualmente os primeiros afetados.",
+          "e": "Incorreta e resposta da questão. GH e gonadotrofinas geralmente são os primeiros comprometidos."
+        },
+        {
+          "l": "C",
+          "t": "Tumores hipofisários e seu tratamento estão entre as principais causas adquiridas.",
+          "e": "Correta como afirmação. Cirurgia e radioterapia também podem causar perda progressiva de eixos."
+        },
+        {
+          "l": "D",
+          "t": "Mutações em PIT1 ou PROP1 podem causar deficiências hormonais combinadas.",
+          "e": "Correta como afirmação. Esses fatores de transcrição participam do desenvolvimento e diferenciação hipofisária."
+        },
+        {
+          "l": "E",
+          "t": "Síndrome de Sheehan decorre de necrose hipofisária após hemorragia obstétrica.",
+          "e": "Correta como afirmação. Hipoperfusão de hipófise aumentada na gestação pode causar hipopituitarismo pós-parto."
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Mulher de 47 anos apresenta aumento de extremidades, macroglossia, prognatismo, hipertensão e diabetes. Sobre acromegalia, assinale a alternativa INCORRETA.",
+      "correct": "E",
+      "general": "Acromegalia quase sempre decorre de adenoma somatotrófico hipofisário. IGF-1 é o teste inicial, TOTG com GH confirma quando necessário, RNM localiza e cirurgia transesfenoidal é primeira escolha para a maioria dos tumores ressecáveis.",
+      "summary": "Acromegalia usualmente é adenoma hipofisário secretor de GH.",
+      "memory": "IGF-1 → TOTG → RNM → transesfenoidal.",
+      "trap": "Hipersecreção hipotalâmica de GHRH é causa excepcional.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Complicações cardiovasculares são importante causa de mortalidade.",
+          "e": "Correta como afirmação. Hipertensão, cardiomiopatia, arritmias e doença valvar elevam o risco cardiovascular."
+        },
+        {
+          "l": "B",
+          "t": "Se IGF-1 estiver elevado ou equívoco, a supressão do GH no TOTG pode confirmar o diagnóstico.",
+          "e": "Correta como afirmação. Falha de supressão do GH diante de hiperglicemia apoia acromegalia."
+        },
+        {
+          "l": "C",
+          "t": "Cirurgia transesfenoidal é tratamento de primeira escolha para tumor hipofisário ressecável.",
+          "e": "Correta como afirmação. Oferece controle hormonal e descompressão com equipe experiente."
+        },
+        {
+          "l": "D",
+          "t": "Ao diagnóstico, a ressonância frequentemente evidencia macroadenoma.",
+          "e": "Correta como afirmação. O diagnóstico tardio faz com que muitos tumores já tenham pelo menos 10 mm."
+        },
+        {
+          "l": "E",
+          "t": "O mecanismo habitual é hipersecreção hipotalâmica de GHRH.",
+          "e": "Incorreta e resposta da questão. A causa usual é adenoma hipofisário produtor de GH; GHRH ectópico ou hipotalâmico é raro."
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Mulher de 24 anos apresenta amenorreia e hiperprolactinemia. Assinale a alternativa INCORRETA.",
+      "correct": "A",
+      "general": "A intensidade da elevação ajuda na etiologia: valores muito altos favorecem prolactinoma, embora haja sobreposição e efeito gancho em macroadenomas. Sempre se investigam sintomas, fármacos, gestação, tireoide, rim e fígado.",
+      "summary": "Quanto maior a prolactina, maior a suspeita de prolactinoma, com exceções.",
+      "memory": "PRL muito alta aponta para prolactinoma; confirme contexto e diluição se necessário.",
+      "trap": "Fármacos geralmente causam elevações moderadas, não as maiores concentrações.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A magnitude da prolactina não ajuda na etiologia, e os valores mais altos são tipicamente farmacológicos.",
+          "e": "Incorreta e resposta da questão. A magnitude é útil e concentrações muito elevadas favorecem prolactinoma."
+        },
+        {
+          "l": "B",
+          "t": "Medicamentos psicoativos podem causar hiperprolactinemia.",
+          "e": "Correta como afirmação. Antagonismo dopaminérgico e alguns antidepressivos podem elevar prolactina."
+        },
+        {
+          "l": "C",
+          "t": "Insuficiência renal, hepatopatia, hipotireoidismo, desconexão da haste e prolactinoma são causas possíveis.",
+          "e": "Correta como afirmação. Esses mecanismos alteram depuração, TRH, inibição dopaminérgica ou produção tumoral."
+        },
+        {
+          "l": "D",
+          "t": "Amenorreia, galactorreia e infertilidade devem ser investigadas.",
+          "e": "Correta como afirmação. São manifestações do hipogonadismo induzido por prolactina e da secreção mamária."
+        },
+        {
+          "l": "E",
+          "t": "Hipotireoidismo primário descompensado pode elevar prolactina por aumento de TRH.",
+          "e": "Correta como afirmação. O TRH estimula tireotrofos e também lactotrofos."
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Mulher de 63 anos, com embolia pulmonar prévia, diabetes, hipertensão, fratura de colo de fêmur e T-scores de -4,8 na coluna e -2,9 no fêmur, necessita tratamento para osteoporose. Assinale a alternativa correta.",
+      "correct": "E",
+      "general": "Fratura de quadril e T-score ≤-2,5 estabelecem alto ou muito alto risco. Bisfosfonatos são opção de primeira linha em muitos pacientes por reduzirem reabsorção osteoclástica; risco muito alto pode exigir avaliação de terapia anabólica.",
+      "summary": "Bisfosfonatos reduzem reabsorção óssea e são primeira linha frequente.",
+      "memory": "Fratura de quadril já indica tratamento, independentemente do T-score.",
+      "trap": "Radiografia não substitui densitometria para medir massa óssea.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Osteoporose acomete especialmente adultos jovens.",
+          "e": "Incorreta. A prevalência aumenta com idade e é particularmente relevante após a menopausa e em idosos."
+        },
+        {
+          "l": "B",
+          "t": "Radiografia simples é o melhor exame para diagnóstico densitométrico.",
+          "e": "Incorreta. DXA é o método padrão para mensurar densidade mineral; radiografia detecta perda apenas tardiamente."
+        },
+        {
+          "l": "C",
+          "t": "As principais fontes alimentares de vitamina D são leite e derivados não fortificados.",
+          "e": "Incorreta. Fontes naturais relevantes incluem peixes gordurosos, gema e fígado; alimentos fortificados dependem do país."
+        },
+        {
+          "l": "D",
+          "t": "Atividade física aeróbica é fator de risco para osteoporose.",
+          "e": "Incorreta. Exercícios com sustentação de peso e resistência ajudam massa óssea, força e prevenção de quedas."
+        },
+        {
+          "l": "E",
+          "t": "Bisfosfonatos são opção de primeira linha e inibem a reabsorção mediada por osteoclastos.",
+          "e": "Correta. Têm eficácia antifratura e são amplamente usados quando não há contraindicação."
+        }
+      ]
+    }
+  ],
+  "grouped": [
+    {
+      "n": 1,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 1 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:F",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A prolactina é um hormônio produzido pelas células somatotróficas da hipófise anterior",
+          "e": "A prolactina é produzida pelas células lactotróficas da adeno-hipófise. As células somatotróficas produzem GH."
+        },
+        {
+          "l": "B",
+          "t": "Pela idade e por ser nulípara, a gestação pode ser descartada do possível diagnóstico dessa paciente.",
+          "e": "Gestação sempre deve ser excluída em mulher em idade fértil com galactorreia/amenorreia, independentemente de idade ou nuliparidade."
+        },
+        {
+          "l": "C",
+          "t": "Os agonistas dopaminérgicos como a cabergolina, ligam-se aos receptores D2 nos lactotrofos inibindo a síntese de prolactina",
+          "e": "Agonistas dopaminérgicos, como cabergolina, atuam nos receptores D2 dos lactotrofos, reduzindo síntese e secreção de prolactina."
+        },
+        {
+          "l": "D",
+          "t": "Caso seja um tumor hipofisário, o diagnóstico mais provável é macroprolactinoma",
+          "e": "Se houver prolactinoma, não é obrigatório que seja macroprolactinoma. Microprolactinomas são frequentes em mulheres e muitas vezes se apresentam com galactorreia e alterações menstruais."
+        },
+        {
+          "l": "E",
+          "t": "Lesões que causam compressão em haste hipofisária podem causar hiperprolactinemia por impedir a chegada de dopamina para a hipófise",
+          "e": "Compressão da haste reduz a chegada de dopamina à hipófise. Como a dopamina normalmente inibe a prolactina, sua redução leva a hiperprolactinemia por efeito de haste."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Avalie o caso clínico e responda as questões a seguir: Homem de 55 anos, hipertenso, é avaliado com queixa crônica de fraqueza e dores articulares. Refere também alteração de glicemia capilar em exame realizado na UBS. Relata que seu anel de casamento não cabe mais no seu dedo e perdeu vários pares de sapatos nos últimos 5 anos devido ao crescimento do seu pé. Ao exame físico foi observado prognatismo, aumento de nariz e lábios. Foi feita a suspeita clínica de acromegalia. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:F",
+        "D:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A dosagem de GH basal não é um bom exame para confirmação do diagnóstico uma vez que a secreção do GH é pulsátil.",
+          "e": "O GH basal isolado não é bom exame confirmatório porque sua secreção é pulsátil e varia ao longo do dia."
+        },
+        {
+          "l": "B",
+          "t": "As complicações sistêmicas resultam em elevada morbi-mortalidade e redução da expectativa de vida",
+          "e": "A acromegalia aumenta morbimortalidade por complicações principalmente cardiovasculares, respiratórias e metabólicas. Pacientes com acromegalia podem ter outras alterações endócrinas e metabólicas como: diabetes, ganho de peso, hiperinsulinemia e hipertensão."
+        },
+        {
+          "l": "C",
+          "t": "Crescimento linear exagerado e gigantismo são vistos na maioria dos pacientes adultos com tumores secretores de GH.",
+          "e": "Crescimento linear exagerado ocorre quando o excesso de GH surge antes do fechamento das cartilagens de crescimento, causando gigantismo. No adulto ocorre acromegalia, com aumento de extremidades e partes moles, sem aumento da altura. A cirurgia com abordagem transcraniana é o tratamento de primeira escolha na maioria dos casos. Como alternativa, pode ser feita a via transesfenoidal, pois esta tem altas taxas de complicações."
+        },
+        {
+          "l": "D",
+          "t": "A cirurgia com abordagem transcraniana é o tratamento de primeira escolha na maioria dos casos. Como alternativa, pode ser feita a via transesfenoidal, pois esta tem altas taxas de complicações.",
+          "e": "A abordagem cirúrgica de escolha é geralmente a transesfenoidal. A via transcraniana é reservada para casos selecionados e costuma ser mais invasiva."
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 3 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:V",
+        "D:V",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A magnitude da elevação nos níveis séricos de prolactina é útil na determinação da etiologia, uma vez que os valores mais altos são encontrados em pacientes com hiperprolactinemia por prolactinomas.",
+          "e": "Prolactinomas, especialmente os macroprolactinomas, costumam produzir níveis mais elevados de prolactina. A intensidade da elevação ajuda na investigação etiológica."
+        },
+        {
+          "l": "B",
+          "t": "O uso de alguns medicamentos psicoativos pode estar associado à hiperprolactinemia de etiologia farmacológica.",
+          "e": "Antipsicóticos e outros fármacos que reduzem a ação dopaminérgica podem elevar a prolactina, pois a dopamina normalmente inibe sua secreção."
+        },
+        {
+          "l": "C",
+          "t": "A hiperprolactinemia patológica pode ser causada por insuficiência renal e hepática.",
+          "e": "Doenças renal e hepática podem reduzir a depuração/metabolização da prolactina, levando ao aumento de seus níveis séricos."
+        },
+        {
+          "l": "D",
+          "t": "A hiperprolactinemia deve ser investigada em mulheres frente à ocorrência de queixas como amenorreia/irregularidade menstrual, galactorreia e infertilidade.",
+          "e": "A prolactina elevada inibe o eixo GnRH → LH/FSH, podendo causar hipogonadismo, amenorreia, infertilidade e galactorreia."
+        },
+        {
+          "l": "E",
+          "t": "A hiperprolactinemia pode ser vista em pacientes com hipotireoidismo primário descompensado, devido sobretudo ao aumento do TRH (que estimula a síntese de prolactina).",
+          "e": "No hipotireoidismo primário, há T4 ↓ → TRH ↑ e TSH ↑; o TRH também estimula os lactotrofos, podendo elevar a prolactina."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 4 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:F",
+        "C:F",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O tratamento substitutivo visa administrar os próprios hormônios hipofisários",
+          "e": "O tratamento não costuma repor os hormônios hipofisários em si, mas os hormônios finais das glândulas-alvo, como glicocorticoide, levotiroxina e hormônios sexuais. A redução ou a ausência de lactação é o último sinal clínico a aparecer"
+        },
+        {
+          "l": "B",
+          "t": "A redução ou a ausência de lactação é o último sinal clínico a aparecer",
+          "e": "A falha na lactação pode ser um dos primeiros sinais, por deficiência de prolactina após necrose hipofisária. A tomografia de crânio é de grande ajuda no diagnóstico"
+        },
+        {
+          "l": "C",
+          "t": "A tomografia de crânio é de grande ajuda no diagnóstico",
+          "e": "A RNM de sela túrcica é mais útil que a TC para avaliação da hipófise. Com o tempo, pode haver aspecto de sela vazia. Não devemos administrar hormônio tireoidiano precocemente se houver suspeita de insuficiência adrenal"
+        },
+        {
+          "l": "D",
+          "t": "Não devemos administrar hormônio tireoidiano precocemente se houver suspeita de insuficiência adrenal",
+          "e": "Se houver suspeita de insuficiência adrenal, deve-se repor glicocorticoide antes da levotiroxina, pois o hormônio tireoidiano pode precipitar crise adrenal. A melhor conduta é a expectante, não há necessidade de reposição hormonal."
+        },
+        {
+          "l": "E",
+          "t": "A melhor conduta é a expectante, não há necessidade de reposição hormonal.",
+          "e": "O tratamento é reposição hormonal, não conduta expectante."
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 5 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Por definição, a doença de Cushing resulta de um adenoma hipofisário.",
+          "e": "Doença de Cushing é, por definição, o hipercortisolismo causado por adenoma hipofisário secretor de ACTH. Por definição, a doença de Cushing resulta de um adenoma cortical adrenal."
+        },
+        {
+          "l": "B",
+          "t": "Por definição, a doença de Cushing resulta de um adenoma cortical adrenal.",
+          "e": "Adenoma cortical adrenal causa síndrome de Cushing ACTH-independente, e não doença de Cushing. A administração de glicocorticóides é causa de Síndrome de Cushing."
+        },
+        {
+          "l": "C",
+          "t": "A administração de glicocorticóides é causa de Síndrome de Cushing.",
+          "e": "O uso crônico de glicocorticoides exógenos é a causa mais comum de síndrome de Cushing. Todas as causas de hiperadrenocorticismo são de origem adrenal."
+        },
+        {
+          "l": "D",
+          "t": "Todas as causas de hiperadrenocorticismo são de origem adrenal.",
+          "e": "Nem todas as causas são adrenais. Podem ser: hipofisárias; ectópicas; adrenais; iatrogênicas por corticoide. O teste de supressão com dexametasona é um bom teste para investigar a Síndrome de Cushing"
+        },
+        {
+          "l": "E",
+          "t": "O teste de supressão com dexametasona é um bom teste para investigar a Síndrome de Cushing",
+          "e": "O teste de supressão com dexametasona é utilizado na investigação do hipercortisolismo. Em indivíduos normais, a dexametasona suprime o cortisol; na síndrome de Cushing, essa supressão é inadequada."
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 6 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:V",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Independentemente da causa, o paciente com doença de Addison tende a apresentar hipercalcemia",
+          "e": "A doença de Addison não se caracteriza por hipercalcemia obrigatória. Pode ocorrer hipercalcemia em alguns casos, mas não é um achado típico ou constante. Independentemente da causa, o paciente com doença de Addison tende a apresentar hipercalemia"
+        },
+        {
+          "l": "B",
+          "t": "Independentemente da causa, o paciente com doença de Addison tende a apresentar hipercalemia",
+          "e": "Na insuficiência adrenal primária há deficiência de aldosterona, levando a menor excreção renal de potássio → hipercalemia. Na doença de Addison o déficit de volume pode ser severo e a hipotensão e o choque podem não responder aos vasopressores a menos que sejam administrados glicocorticóides"
+        },
+        {
+          "l": "C",
+          "t": "Na doença de Addison o déficit de volume pode ser severo e a hipotensão e o choque podem não responder aos vasopressores a menos que sejam administrados glicocorticóides",
+          "e": "Na crise adrenal pode haver hipovolemia e hipotensão graves. A resposta aos vasopressores pode ser inadequada enquanto não houver reposição de glicocorticoide, geralmente hidrocortisona. O procedimento padrão mais adequado para detectar feocromocitoma é a dosagem de metanefrinas urinárias."
+        },
+        {
+          "l": "D",
+          "t": "O procedimento padrão mais adequado para detectar feocromocitoma é a dosagem de metanefrinas urinárias.",
+          "e": "no contexto da prova. A investigação bioquímica do feocromocitoma pode ser feita com metanefrinas urinárias fracionadas de 24 h. Atualmente, tanto elas quanto as metanefrinas plasmáticas livres são testes iniciais recomendados. Níveis baixos de hormônios do córtex adrenal resultam em bócio"
+        },
+        {
+          "l": "E",
+          "t": "Níveis baixos de hormônios do córtex adrenal resultam em bócio",
+          "e": "A deficiência de hormônios do córtex adrenal não causa bócio. Bócio está relacionado principalmente a alterações da tireoide/TSH."
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 7 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Não se deve retirar o cálcio alimentar da dieta do paciente com hiperparatireoidismo",
+          "e": "Não se recomenda retirar cálcio da dieta no hiperparatireoidismo. A ingestão adequada de cálcio deve ser mantida; restrição excessiva pode até aumentar a secreção de PTH. Hipoparatireoidismo é doença rara, mas pode ter complicações graves"
+        },
+        {
+          "l": "B",
+          "t": "Hipoparatireoidismo é doença rara, mas pode ter complicações graves",
+          "e": "O hipoparatireoidismo é relativamente raro, mas pode causar hipocalcemia grave, tetania, convulsões e arritmias. A principal causa do hipoparatireoidismo é por complicações cirúrgicas"
+        },
+        {
+          "l": "C",
+          "t": "A principal causa do hipoparatireoidismo é por complicações cirúrgicas",
+          "e": "A causa mais comum é pós-cirúrgica, especialmente após tireoidectomia ou cirurgia cervical, por remoção ou lesão das paratireoides. O tratamento do hipoparatireoidismo é feito com reposição de PTH"
+        },
+        {
+          "l": "D",
+          "t": "O tratamento do hipoparatireoidismo é feito com reposição de PTH",
+          "e": "O tratamento convencional é feito com reposição de cálcio e vitamina D ativa (calcitriol). A reposição de PTH não é a terapia habitual de primeira linha e fica reservada para situações selecionadas. O pseudohipoparatireoidismo apresenta níveis elevados de PTH sérico"
+        },
+        {
+          "l": "E",
+          "t": "O pseudohipoparatireoidismo apresenta níveis elevados de PTH sérico",
+          "e": "No pseudohipoparatireoidismo, há resistência dos tecidos à ação do PTH. Assim, o organismo tenta compensar produzindo mais PTH → PTH elevado, com tendência a cálcio baixo e fósforo alto."
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 8 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:F",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A osteoporose é uma doença caracterizada pela fragilidade óssea e alterações na sua microarquitetura",
+          "e": "A osteoporose é caracterizada por redução da resistência óssea, com baixa massa óssea e deterioração da microarquitetura, aumentando o risco de fraturas. O tabagismo pode acarretar diminuição de massa óssea e maior risco de fraturas sobretudo com o avançar da idade"
+        },
+        {
+          "l": "B",
+          "t": "O tabagismo pode acarretar diminuição de massa óssea e maior risco de fraturas sobretudo com o avançar da idade",
+          "e": "O tabagismo acelera a perda de massa óssea e aumenta o risco de fraturas, sobretudo com o envelhecimento. Indivíduos com IMC < 18 kg/m2 têm menor risco de ocorrência de osteoporose"
+        },
+        {
+          "l": "C",
+          "t": "Indivíduos com IMC < 18 kg/m2 têm menor risco de ocorrência de osteoporose",
+          "e": "Baixo IMC é fator de risco para osteoporose. Indivíduos muito magros tendem a ter menor reserva óssea e maior risco de fraturas. O uso de corticóides como por exemplo prednisona 20mg ao dia, por mais de 3 meses, não é fator para ocorrência de osteoporose, pois a dose da medicação utilizada é baixa"
+        },
+        {
+          "l": "D",
+          "t": "O uso de corticóides como por exemplo prednisona 20mg ao dia, por mais de 3 meses, não é fator para ocorrência de osteoporose, pois a dose da medicação utilizada é baixa",
+          "e": "Uso crônico de glicocorticoides, como prednisona por ≥3 meses, é fator importante de risco para osteoporose. 20 mg/dia é uma dose relevante, não baixa. Em uma paciente com 65 anos e T score <= -2,5, em coluna, fêmur total ou colo de fêmur, temos diagnóstico de osteoporose"
+        },
+        {
+          "l": "E",
+          "t": "Em uma paciente com 65 anos e T score <= -2,5, em coluna, fêmur total ou colo de fêmur, temos diagnóstico de osteoporose",
+          "e": "Em mulher de 65 anos, T-score ≤ -2,5 em coluna lombar, colo do fêmur ou fêmur total é compatível com osteoporose densitométrica."
+        }
+      ]
+    },
+    {
+      "n": 9,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 9 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:V",
+        "D:V",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O hiperparatireoidismo primário é causado por produção excessiva e secreção de paratormônio (PTH) por uma ou mais glândulas paratireoides.",
+          "e": "O hiperparatireoidismo primário ocorre por secreção autônoma excessiva de PTH por uma ou mais paratireoides, geralmente por adenoma. O hiperparatireoidismo primário é uma causa comum de hipocalcemia"
+        },
+        {
+          "l": "B",
+          "t": "O hiperparatireoidismo primário é uma causa comum de hipocalcemia",
+          "e": "O hiperparatireoidismo primário costuma causar hipercalcemia, não hipocalcemia, pois o PTH aumenta o cálcio sérico. As alterações mentais ou de comportamento podem fazer parte do quadro clínico do hiperparatireoidismo"
+        },
+        {
+          "l": "C",
+          "t": "As alterações mentais ou de comportamento podem fazer parte do quadro clínico do hiperparatireoidismo",
+          "e": "Alterações neuropsiquiátricas podem ocorrer, como fadiga, depressão, dificuldade de concentração e alterações de comportamento. A inadequação dos níveis de vitamina D é tida como uma das possíveis causas para falha do tratamento medicamentoso da osteoporose"
+        },
+        {
+          "l": "D",
+          "t": "A inadequação dos níveis de vitamina D é tida como uma das possíveis causas para falha do tratamento medicamentoso da osteoporose",
+          "e": "Deficiência ou insuficiência de vitamina D pode comprometer a resposta ao tratamento da osteoporose e deve ser corrigida. A vitamina D, produzida na pele ou ingerida, sofre transformações químicas até se transformar em sua forma ativa (calcitriol) com importantes funções na fisiologia ósteo-mineral"
+        },
+        {
+          "l": "E",
+          "t": "A vitamina D, produzida na pele ou ingerida, sofre transformações químicas até se transformar em sua forma ativa (calcitriol) com importantes funções na fisiologia ósteo-mineral",
+          "e": "A vitamina D passa por ativações até formar calcitriol, sua forma ativa, que participa principalmente da absorção intestinal de cálcio e fósforo."
+        }
+      ]
+    },
+    {
+      "n": 10,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 10 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:F",
+        "C:F",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Bifosfonatos são um grupo de drogas com boa absorção oral.",
+          "e": "Os bisfosfonatos têm baixa absorção oral. Por isso, devem ser tomados em jejum, apenas com água, evitando alimentos e outros medicamentos logo após. A calcitonina é um análogo de hidroxiapatita"
+        },
+        {
+          "l": "B",
+          "t": "A calcitonina é um análogo de hidroxiapatita",
+          "e": "A calcitonina é um hormônio produzido pelas células C da tireoide e atua inibindo osteoclastos. Não é análogo de hidroxiapatita. A vitamina D deve ser ingerida com o estômago vazio para melhorar a biodisponibilidade."
+        },
+        {
+          "l": "C",
+          "t": "A vitamina D deve ser ingerida com o estômago vazio para melhorar a biodisponibilidade.",
+          "e": "A vitamina D é lipossolúvel e sua absorção tende a ser melhor quando ingerida com uma refeição que contenha gordura, não em jejum. A densitometria óssea de rotina na osteoporose primária tem maior valor diagnóstico se associada à dosagem de cálcio e fosfatase alcalina"
+        },
+        {
+          "l": "D",
+          "t": "A densitometria óssea de rotina na osteoporose primária tem maior valor diagnóstico se associada à dosagem de cálcio e fosfatase alcalina",
+          "e": "A densitometria óssea (DXA) tem valor diagnóstico por si só. Cálcio e fosfatase alcalina ajudam na investigação de causas secundárias, mas não aumentam diretamente o valor diagnóstico da DXA para osteoporose primária. Atividade física deve ser evitada em indivíduos com osteoporose comprovada"
+        },
+        {
+          "l": "E",
+          "t": "Atividade física deve ser evitada em indivíduos com osteoporose comprovada",
+          "e": "Atividade física não deve ser evitada. Exercícios com carga, resistência muscular e treino de equilíbrio ajudam a preservar massa óssea e reduzir risco de quedas."
+        }
+      ]
+    },
+    {
+      "n": 11,
+      "topic": "Hipófise — Hipofunção",
+      "difficulty": "médio",
+      "statement": "Bloco 11 — Hipófise — Hipofunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:F",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A extensão supra-selar do tumor habitualmente leva a comprometimento ótico que torna necessária a realização de campimetria nestes casos.",
+          "e": "Extensão suprasselar pode comprimir o quiasma óptico, causando alteração de campo visual; por isso, a campimetria está indicada."
+        },
+        {
+          "l": "B",
+          "t": "Os sintomas podem ser inespecíficos e a doença subdiagnosticada, o que associa à redução da expectativa de vida.",
+          "e": "A acromegalia pode evoluir de forma insidiosa, com sintomas inespecíficos, levando a diagnóstico tardio e aumento de morbimortalidade."
+        },
+        {
+          "l": "C",
+          "t": "Depois que o diagnóstico laboratorial tiver sido estabelecido, deve-se realizar Tomografia Computadorizada (TC) de crânio, tórax e abdome para localização do tumor.",
+          "e": "Após confirmação bioquímica, o exame de imagem de escolha é a RNM de sela túrcica/hipófise, e não TC de crânio, tórax e abdome de rotina."
+        },
+        {
+          "l": "D",
+          "t": "O crescimento linear exagerado e gigantismo é muito comum e acontece quando a doença ocorre após o fechamento das cartilagens de crescimento.",
+          "e": "Gigantismo ocorre quando o excesso de GH aparece antes do fechamento das cartilagens de crescimento. Após o fechamento, ocorre acromegalia, sem aumento importante da altura."
+        },
+        {
+          "l": "E",
+          "t": "Ao diagnóstico, a maioria dos casos decorrem de macroadenomas hipofisários.",
+          "e": "Muitos pacientes são diagnosticados tardiamente e já apresentam macroadenoma hipofisário."
+        }
+      ]
+    },
+    {
+      "n": 12,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 12 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "As formas de alto peso molecular da prolactina (Macroprolactina) têm baixa bioatividade e são encontradas em baixos níveis na circulação.",
+          "e": "A macroprolactina é uma forma de alto peso molecular, com baixa atividade biológica. Pode elevar a prolactina laboratorialmente com poucos ou nenhum sintoma."
+        },
+        {
+          "l": "B",
+          "t": "Deve-se avaliar se há presença de sintomas e sinais relacionados à hiperprolactinemia, como aumento de libido.",
+          "e": "A hiperprolactinemia costuma causar redução da libido, não aumento, além de hipogonadismo, galactorreia e infertilidade."
+        },
+        {
+          "l": "C",
+          "t": "O achado de imagem sugestiva de adenoma hipofisário pode ser encontrado em até 10% da população normal e a ressonância magnética, sem sinais de patologia.",
+          "e": "Pequenos incidentalomas hipofisários podem ser encontrados em indivíduos assintomáticos. Portanto, um nódulo de 0,5 cm pode ser incidental e não necessariamente explicar a PRL elevada."
+        },
+        {
+          "l": "D",
+          "t": "A conduta é iniciar um teste terapêutico por 3 meses com um agonista dopaminérgico em dose baixa.",
+          "e": "Não se deve iniciar agonista dopaminérgico apenas como “teste terapêutico”. Primeiro é preciso esclarecer a causa da hiperprolactinemia."
+        },
+        {
+          "l": "E",
+          "t": "Deve-se pesquisar macroprolactinemia.",
+          "e": "Como a prolactina está apenas moderadamente elevada e há um pequeno adenoma, deve-se pesquisar macroprolactinemia para evitar atribuir erroneamente a elevação ao microadenoma."
+        }
+      ]
+    },
+    {
+      "n": 13,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 13 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:F",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Este sintoma provavelmente resulta de síndrome de Sheehan.",
+          "e": "A ausência de lactação no pós-parto pode ser manifestação precoce da síndrome de Sheehan, por deficiência de prolactina secundária à necrose hipofisária."
+        },
+        {
+          "l": "B",
+          "t": "Este é um sinal precoce da síndrome de Cushing.",
+          "e": "Falha na lactação não é manifestação típica de síndrome de Cushing."
+        },
+        {
+          "l": "C",
+          "t": "Este sintoma sugere ter ocorrido uma complicação hemorrágica no parto.",
+          "e": "A ausência de lactação isoladamente sugere deficiência de prolactina/hipopituitarismo, mas não permite concluir que houve uma complicação hemorrágica no parto. Para pensar em síndrome de Sheehan, precisa haver contexto obstétrico compatível, especialmente hemorragia pós-parto importante, hipotensão ou choque."
+        },
+        {
+          "l": "D",
+          "t": "Este sintoma levanta a suspeita da síndrome de secreção inapropriada de ADH.",
+          "e": "SIADH causa retenção de água e hiponatremia; não é causa típica de falha na lactação."
+        },
+        {
+          "l": "E",
+          "t": "Este sintoma é comum em parturientes nesta faixa etária e não leva a suspeita de deficiência hormonal.",
+          "e": "Ausência de lactação não deve ser considerada normal apenas pela idade da paciente; pode indicar deficiência de prolactina e hipopituitarismo."
+        }
+      ]
+    },
+    {
+      "n": 14,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 14 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:F",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Em relação à glicemia, o GH é um hormônio antagonista à insulina.",
+          "e": "O GH exerce efeito anti-insulínico predominante: reduz a captação periférica de glicose e aumenta a produção hepática, favorecendo resistência à insulina e hiperglicemia."
+        },
+        {
+          "l": "B",
+          "t": "Em relação à glicemia, o GH é um hormônio antagonista ao glucagon.",
+          "e": "GH e glucagon podem elevar a glicemia por mecanismos distintos; portanto, o GH não é antagonista do glucagon."
+        },
+        {
+          "l": "C",
+          "t": "GH é um hormônio que não tem nenhuma relação com o metabolismo glicídico.",
+          "e": "O GH não é antagonista do glucagon. Na verdade, ambos podem contribuir para aumentar a glicemia. O GH participa diretamente do metabolismo glicídico, tendo efeito hiperglicemiante e anti-insulínico."
+        },
+        {
+          "l": "D",
+          "t": "GH é um hormônio cuja deficiência pode até ser causa de episódios hiperglicêmicos matinais em crianças.",
+          "e": "A deficiência de GH tende a causar hipoglicemia, principalmente em crianças, e não hiperglicemia."
+        },
+        {
+          "l": "E",
+          "t": "Durante a investigação de baixa estatura, para avaliar o nível de GH, o melhor marcador sérico é GH sérico matinal, porque sua secreção é pulsátil.",
+          "e": "Como a secreção de GH é pulsátil, uma dosagem isolada de GH matinal não é confiável. Na investigação de deficiência de GH, utiliza-se IGF-1 e, quando necessário, testes de estímulo."
+        }
+      ]
+    },
+    {
+      "n": 15,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 15 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:F",
+        "C:F",
+        "D:V",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O lobo anterior corresponde a cerca de 20% da hipófise.",
+          "e": "O lobo anterior (adeno-hipófise) corresponde à maior parte da hipófise, cerca de 75–80%, e não 20%."
+        },
+        {
+          "l": "B",
+          "t": "A PRL não está sujeita à inibição por retroalimentação pelos hormônios produzidos em tecido-alvo.",
+          "e": "Ela pode ser considerada falsa porque a prolactina possui feedback negativo, só que diferente dos outros eixos: a própria PRL estimula neurônios dopaminérgicos no hipotálamo, aumentando dopamina, e a dopamina então inibe os lactotrofos e reduz a secreção de PRL. Isso é chamado de feedback curto (short-loop feedback)."
+        },
+        {
+          "l": "C",
+          "t": "O adenoma hipofisário mais frequente é o somatotropinoma (tumor secretor de hormônio de crescimento).",
+          "e": "O adenoma hipofisário funcionante mais frequente é o prolactinoma, não o somatotropinoma."
+        },
+        {
+          "l": "D",
+          "t": "A cirurgia é o tratamento de primeira escolha para todos os tumores hipofisários, com exceção dos prolactinomas.",
+          "e": "Em muitos adenomas hipofisários funcionantes e não funcionantes, a cirurgia é o tratamento de escolha quando há indicação. A grande exceção clássica é o prolactinoma, cujo tratamento inicial costuma ser com agonista dopaminérgico, como cabergolina."
+        },
+        {
+          "l": "E",
+          "t": "A secreção hipofisária pode ser influenciada também pelo ciclo diário claro-escuro",
+          "e": "A secreção hipofisária sofre influência do ritmo circadiano. Exemplo: GH aumenta durante o sono e ACTH/cortisol apresentam variação ao longo do dia."
+        }
+      ]
+    },
+    {
+      "n": 16,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 16 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:V",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O tratamento do hiperparatireoidismo em geral é cirúrgico",
+          "e": "O tratamento definitivo do hiperparatireoidismo primário sintomático é, em geral, cirúrgico, com paratireoidectomia."
+        },
+        {
+          "l": "B",
+          "t": "Nunca há mais de uma glândula paratireóide afetada no hiperparatireoidismo",
+          "e": "Pode haver acometimento de mais de uma paratireoide, especialmente nos casos de hiperplasia multiglandular."
+        },
+        {
+          "l": "C",
+          "t": "As alterações mentais ou de comportamento podem fazer parte do quadro сlínico do hiperparatireoidismo",
+          "e": "Alterações neuropsiquiátricas, como fadiga, depressão, dificuldade de concentração e alterações de comportamento, podem ocorrer no hiperparatireoidismo."
+        },
+        {
+          "l": "D",
+          "t": "Não se deve retirar o cálcio da dieta do paciente com hiperparatireoidismo",
+          "e": "Não se recomenda retirar cálcio da dieta. Deve-se manter ingestão adequada de cálcio, evitando restrição excessiva."
+        },
+        {
+          "l": "E",
+          "t": "O tratamento do hipoparatireoidismo é feito com reposição de PTH",
+          "e": "O tratamento convencional do hipoparatireoidismo é feito com cálcio + vitamina D ativa (calcitriol). Reposição de PTH fica reservada para casos selecionados."
+        }
+      ]
+    },
+    {
+      "n": 17,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Paciente feminina de 63 anos, com antecedente de embolia pulmonar, diabetes e hipertensão, apresentou fratura de colo de fêmur há 6 meses, sendo diagnosticada com osteoporose de coluna (T escore -4,8) e do fêmur (T escore -2,9). Em uso atual de glibenclamida, metformina e enalapril. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A osteoporose é uma doença silenciosa que afeta especialmente as mulheres na pós-menopausa e idosos e tem elevada taxa de morbimortalidade. O principal objetivo do tratamento da osteoporose é a prevenção das fraturas.",
+          "e": "A osteoporose é muitas vezes silenciosa até ocorrer fratura, acomete principalmente mulheres pós-menopausa e idosos, e o objetivo central do tratamento é reduzir o risco de fraturas."
+        },
+        {
+          "l": "B",
+          "t": "O exame mais adequado para o diagnóstico da osteoporose é a densitometria óssea, que permite avaliar o grau da doença e serve como método de acompanhamento do tratamento. O valor < -1,5 DP (desvio padrão) no exame de densitometria faz o diagnóstico de osteoporose.",
+          "e": "A densitometria óssea é o exame de referência, mas o diagnóstico densitométrico de osteoporose em mulheres pós-menopausa é feito com T-score ≤ -2,5, e não < -1,5. ≥ -1,0: normal entre -1,0 e -2,5: osteopenia ≤ -2,5: osteoporose"
+        },
+        {
+          "l": "C",
+          "t": "O cálcio é um nutriente importante na prevenção da osteoporose. A ingestão inadequada pode resultar em redução da massa óssea. Além assim, é importante uma adequada oferta de cálcio proveniente da alimentação.",
+          "e": "O cálcio é importante para manutenção da massa óssea, e ingestão inadequada pode contribuir para perda óssea."
+        },
+        {
+          "l": "D",
+          "t": "Alguns fatores de risco importantes relacionados à osteoporose e a fraturas na pós-menopausa são: idade, sexo masculino, etnia branca ou oriental, história prévia pessoal e familiar de fratura, obesidade, tabagismo, ingestão abusiva de bebidas alcoólicas e atividade física aeróbica.",
+          "e": "A alternativa mistura fatores de risco verdadeiros com falsos. São fatores de risco: idade avançada, baixo peso, tabagismo, álcool excessivo, história de fratura e sedentarismo. Já sexo masculino, obesidade e atividade física aeróbica não são fatores de risco clássicos dessa forma."
+        },
+        {
+          "l": "E",
+          "t": "Os bisfosfonatos são a classe de drogas considerada de primeira linha para o tratamento da osteoporose na pós-menopausa e agem inibindo a atividade dos osteoclastos.",
+          "e": "Os bisfosfonatos são anti-reabsortivos e atuam principalmente inibindo a atividade dos osteoclastos, sendo tratamento de primeira linha em muitos pacientes com osteoporose pós-menopausa."
+        }
+      ]
+    },
+    {
+      "n": 18,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 18 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:V",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Os osteoclastos são células responsáveis pela formação óssea.",
+          "e": "Os osteoclastos fazem reabsorção óssea, ou seja, degradam o osso. Quem forma osso são os osteoblastos."
+        },
+        {
+          "l": "B",
+          "t": "O metabolismo ósseo é acoplado, ou seja, ocorre formação nos locais onde houve reabsorção prévia.",
+          "e": "O remodelamento ósseo é acoplado: primeiro ocorre reabsorção por osteoclastos e depois formação óssea por osteoblastos no mesmo local."
+        },
+        {
+          "l": "C",
+          "t": "O PTH (paratormônio) atua no aumento da calcemia, sendo que a secreção do PTH promove a desmineralização óssea, aumentando os níveis de Ca no sangue.",
+          "e": "O PTH aumenta a calcemia. Entre seus efeitos, favorece reabsorção óssea, aumenta reabsorção renal de cálcio e estimula a formação de calcitriol."
+        },
+        {
+          "l": "D",
+          "t": "Os osteoblastos são responsáveis pela síntese de matriz óssea.",
+          "e": "Os osteoblastos sintetizam a matriz óssea, principalmente o osteóide, participando da formação do osso."
+        },
+        {
+          "l": "E",
+          "t": "O osteócito é o estágio final de diferenciação do osteoclasto.",
+          "e": "O osteócito é o estágio final de diferenciação do osteoblasto, não do osteoclasto."
+        }
+      ]
+    },
+    {
+      "n": 19,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 19 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A síndrome de Cushing dependente da hipófise, conhecida como Doença de Cushing, é a causa mais comum de síndrome de Cushing endógena.",
+          "e": "A doença de Cushing é causada por adenoma hipofisário secretor de ACTH e é a causa mais comum de síndrome de Cushing endógena."
+        },
+        {
+          "l": "B",
+          "t": "O uso de glicocorticóides como medicação é a causa mais frequente da síndrome de Cushing.",
+          "e": "O uso crônico de glicocorticoides exógenos é a causa mais frequente de síndrome de Cushing no geral."
+        },
+        {
+          "l": "C",
+          "t": "O teste de supressão com dexametasona é um bom teste para investigar síndrome de Cushing.",
+          "e": "O teste de supressão com dexametasona é um dos testes usados para rastrear hipercortisolismo. Na síndrome de Cushing, o cortisol não suprime adequadamente."
+        },
+        {
+          "l": "D",
+          "t": "No hiperaldosteronismo primário, o paciente apresenta cefaléia holocraniana, hipertensão arterial em picos, hipercalemia e sudorese.",
+          "e": "Esse quadro lembra mais feocromocitoma. No hiperaldosteronismo primário, o típico é HAS + renina baixa + aldosterona alta, podendo haver hipocalemia, e não hipercalemia."
+        },
+        {
+          "l": "E",
+          "t": "As metanefrinas plasmáticas são o exame de escolha inicial para investigação no diagnóstico de feocromocitoma.",
+          "e": "As metanefrinas plasmáticas livres são um dos principais exames iniciais para investigação de feocromocitoma; metanefrinas urinárias fracionadas também podem ser utilizadas."
+        }
+      ]
+    },
+    {
+      "n": 20,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 20 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:V",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Em um paciente hipertenso com suspeita de feocromocitoma, um teste bioquímico para confirmar essa hipótese seria a dosagem de metanefrinas (plasmáticas ou urinárias).",
+          "e": "Na suspeita de feocromocitoma, a investigação bioquímica é feita com metanefrinas plasmáticas livres ou metanefrinas urinárias fracionadas."
+        },
+        {
+          "l": "B",
+          "t": "A sintomatologia dos feocromocitomas pode se apresentar como: hipertensão, palpitações, sudorese e cefaleia.",
+          "e": "O feocromocitoma pode cursar com HAS, palpitações, sudorese e cefaleia. A tríade clássica é cefaleia + sudorese + palpitações."
+        },
+        {
+          "l": "C",
+          "t": "Uma mulher de 38 anos com hipocalemia persistente, expansão crônica do volume plasmático e hipertensão arterial sistêmica tem possibilidade de um diagnóstico de hiperaldosteronismo primário.",
+          "e": "O hiperaldosteronismo primário causa retenção de sódio e água, expansão volêmica e HAS, além de aumentar a excreção renal de potássio, podendo causar hipocalemia."
+        },
+        {
+          "l": "D",
+          "t": "Hiperaldosteronismo primário e feocromocitoma são causas de hipertensão arterial secundária.",
+          "e": "Tanto o hiperaldosteronismo primário quanto o feocromocitoma são causas endócrinas clássicas de hipertensão arterial secundária."
+        },
+        {
+          "l": "E",
+          "t": "Em pacientes com suspeita clínica de síndrome de Cushing, o primeiro passo é a detecção da lesão causadora por meio de exames de imagem (tomografia de tórax inicialmente e, em seguida, de crânio).",
+          "e": "Na suspeita de síndrome de Cushing, o primeiro passo é confirmar bioquimicamente o hipercortisolismo, e não procurar a lesão por imagem. Só depois se investiga a etiologia."
+        }
+      ]
+    },
+    {
+      "n": 21,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 21 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:V",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Durante a investigação laboratorial, já tendo sido confirmado o hipercortisolismo, se encontrarmos uma dosagem de ACTH alta na síndrome de Cushing, esse fato aponta para uma provável patologia primária da suprarrenal.",
+          "e": "ACTH alto indica síndrome de Cushing ACTH-dependente, sugerindo origem hipofisária ou ectópica. Na causa adrenal, o cortisol é produzido autonomamente e o ACTH fica baixo/suprimido."
+        },
+        {
+          "l": "B",
+          "t": "Os feocromocitomas são tumores secretores de catecolaminas que apesar de raros implicam em elevada morbimortalidade (efeitos metabólicos e cardiovasculares).",
+          "e": "Feocromocitomas secretam catecolaminas e podem causar crises hipertensivas, arritmias e outras complicações cardiovasculares importantes."
+        },
+        {
+          "l": "C",
+          "t": "Uma lesão em adrenal > 6 cm, margens irregulares e áreas de necrose é sugestiva de malignidade.",
+          "e": "Lesão adrenal grande, irregular, heterogênea e com necrose levanta suspeita de malignidade. O corte de >6 cm é clássico em provas mais antigas."
+        },
+        {
+          "l": "D",
+          "t": "Os adenomas produtores de aldosterona têm como manifestação mais característica a hipertensão arterial sistêmica associada à hipocalemia, no entanto nós podemos ter hiperaldosteronismo primário normocalêmico.",
+          "e": "Hiperaldosteronismo primário costuma causar HAS ± hipocalemia. Muitos pacientes, porém, apresentam potássio normal."
+        },
+        {
+          "l": "E",
+          "t": "Os feocromocitomas são na maioria das vezes bilaterais e malignos.",
+          "e": "A maioria dos feocromocitomas é unilateral e não apresenta comportamento metastático. Bilateralidade é mais associada a formas hereditárias."
+        }
+      ]
+    },
+    {
+      "n": 22,
+      "topic": "Hipófise — Hipofunção",
+      "difficulty": "médio",
+      "statement": "Bloco 22 — Hipófise — Hipofunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Temos panhipopituitarismo quando ocorre a redução de dois ou mais hormônios hipofisários decorrente de condições que acometem a região hipotálamo-hipofisária.",
+          "e": "Pan-hipopituitarismo significa deficiência de praticamente todos os hormônios da adeno-hipófise, e não apenas de dois ou mais. Deficiência de dois ou mais eixos é hipopituitarismo múltiplo."
+        },
+        {
+          "l": "B",
+          "t": "Entre as causas de hipopituitarismo podemos ter razões congênitas ou adquiridas.",
+          "e": "O hipopituitarismo pode ter causas congênitas (genéticas/desenvolvimento) ou adquiridas."
+        },
+        {
+          "l": "C",
+          "t": "São exemplos de causas adquiridas do hipopituitarismo: tumor hipofisário, traumatismo crônico encefálico, doenças inflamatórias e infiltrativas, necrose hipofisária pós-parto (síndrome de Sheehan).",
+          "e": "Tumores, traumatismo craniano, doenças inflamatórias/infiltrativas e síndrome de Sheehan são causas adquiridas clássicas."
+        },
+        {
+          "l": "D",
+          "t": "Podemos ter sintomas decorrentes de uma compressão (efeito de massa) por uma lesão como: cefaleia, alterações de campo visual, paralisias de nervos periféricos.",
+          "e": "Lesões expansivas podem causar cefaleia, alterações do campo visual e paralisias de nervos cranianos por compressão de estruturas vizinhas."
+        },
+        {
+          "l": "E",
+          "t": "Muitas vezes o diagnóstico é tardio devido às manifestações clínicas inespecíficas. O quadro clínico varia conforme o tipo de deficiência hormonal, a velocidade de instalação, o sexo, a idade e a causa do hipopituitarismo.",
+          "e": "O quadro pode ser insidioso e variar conforme qual eixo hormonal falhou, intensidade, velocidade de instalação, idade e etiologia."
+        }
+      ]
+    },
+    {
+      "n": 23,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 23 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A deficiência de GH nas crianças ocasiona uma baixa estatura e retardo do crescimento.",
+          "e": "A deficiência de GH na infância reduz o crescimento linear, levando a baixa estatura e redução da velocidade de crescimento."
+        },
+        {
+          "l": "B",
+          "t": "A deficiência de TSH devido ao hipopituitarismo tem manifestações clínicas semelhantes ao hipotireoidismo primário, podendo ser o hipotireoidismo de origem central mais insidioso e com clínica mais leve.",
+          "e": "A deficiência de TSH causa hipotireoidismo central, com manifestações semelhantes ao hipotireoidismo primário, como fadiga, sonolência, constipação e intolerância ao frio. Em geral, pode ter apresentação mais insidiosa. a"
+        }
+      ]
+    },
+    {
+      "n": 24,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 24 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:F",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A osteoporose é definida por baixa massa óssea associada à deterioração da microarquitetura do osso com aumento do risco de fragilidade e de fraturas.",
+          "e": "A osteoporose cursa com baixa massa óssea e deterioração da microarquitetura, aumentando a fragilidade e o risco de fraturas."
+        },
+        {
+          "l": "B",
+          "t": "Doença de Cushing e hipogonadismo são causas muito comuns de osteoporose, por isso devemos investigar todos os pacientes para essas doenças.",
+          "e": "Síndrome de Cushing e hipogonadismo podem causar osteoporose secundária, mas não devem ser investigados indiscriminadamente em todos os pacientes; a pesquisa depende da história clínica e dos fatores de risco."
+        },
+        {
+          "l": "C",
+          "t": "O baixo peso IMC < 18 kg/m² é um fator de risco em relação à ocorrência de osteoporose. Já o uso de corticoides é um fator protetor pela sua ação anti-inflamatória.",
+          "e": "Baixo peso é fator de risco, mas o uso crônico de glicocorticoides também aumenta o risco de osteoporose; não é fator protetor."
+        },
+        {
+          "l": "D",
+          "t": "O tratamento da osteoporose com bisfosfonatos pode ser mantido continuamente por mais de dez anos sem riscos para o paciente.",
+          "e": "Bisfosfonatos não devem ser mantidos indefinidamente sem reavaliação. Uso prolongado pode aumentar risco de eventos como fratura atípica de fêmur e osteonecrose de mandíbula."
+        },
+        {
+          "l": "E",
+          "t": "Os bisfosfonatos são medicações anabólicas e estimuladoras da reabsorção óssea.",
+          "e": "Bisfosfonatos são anti-reabsortivos: inibem a atividade dos osteoclastos. Não são anabólicos nem estimulam reabsorção óssea."
+        }
+      ]
+    },
+    {
+      "n": 25,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 25 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:F",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Na avaliação das pacientes com hiperprolactinemia é importante questionar se a paciente tem sintomas relacionados (amenorreia/irregularidade menstrual, galactorreia).",
+          "e": "Amenorreia, irregularidade menstrual e galactorreia são manifestações clássicas da hiperprolactinemia e devem ser pesquisadas."
+        },
+        {
+          "l": "B",
+          "t": "A hiperprolactinemia patológica pode ser causada por insuficiência renal e hepática, hipotireoidismo, desconexão de haste hipofisária e prolactinoma.",
+          "e": "Insuficiência renal/hepática, hipotireoidismo, efeito de haste e prolactinoma são causas reconhecidas de hiperprolactinemia."
+        },
+        {
+          "l": "C",
+          "t": "Diante desse achado de hiperprolactinemia, o passo seguinte é solicitar ressonância nuclear de sela túrcica para investigação de possível adenoma hipofisário, causa mais comum de hiperprolactinemia.",
+          "e": "A RNM não é necessariamente o passo seguinte imediato. Antes, deve-se excluir causas secundárias e considerar macroprolactinemia, especialmente com elevação moderada de PRL."
+        },
+        {
+          "l": "D",
+          "t": "O aumento da macroprolactina é a responsável por mais de 90% dos casos de hiperprolactinemia em homens.",
+          "e": "Macroprolactina pode causar hiperprolactinemia assintomática, mas não responde por >90% dos casos em homens."
+        },
+        {
+          "l": "E",
+          "t": "A magnitude da elevação nos níveis séricos de prolactina é útil na determinação da etiologia, uma vez que os valores mais altos são encontrados em pacientes com hiperprolactinemia farmacológica.",
+          "e": "A magnitude da PRL ajuda na etiologia, mas os valores mais altos costumam ocorrer nos prolactinomas, sobretudo macroprolactinomas, e não na forma farmacológica."
+        }
+      ]
+    },
+    {
+      "n": 26,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 26 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:V",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "As complicações respiratórias são as primeiras causas de mortalidade nos pacientes com acromegalia.",
+          "e": "As principais causas de mortalidade na acromegalia são sobretudo cardiovasculares, não respiratórias."
+        },
+        {
+          "l": "B",
+          "t": "Nos pacientes em que o diagnóstico não puder ser descartado ou confirmado com as dosagens basais de GH e IGF-1, está indicada a dosagem do GH durante teste oral de tolerância à glicose.",
+          "e": "Quando GH e IGF-1 basais não esclarecem o diagnóstico, realiza-se TOTG com dosagem de GH. Na acromegalia, o GH não suprime adequadamente após a glicose."
+        },
+        {
+          "l": "C",
+          "t": "A cirurgia é considerada a terapia de primeira escolha no tratamento da acromegalia e, na maioria dos casos, realizada por via transesfenoidal.",
+          "e": "A cirurgia transesfenoidal é o tratamento de primeira escolha na maioria dos adenomas hipofisários ressecáveis."
+        },
+        {
+          "l": "D",
+          "t": "O principal mecanismo envolvido na gênese dos sintomas da acromegalia é a hipersecreção de GHRH (growth-hormone-releasing hormone – GHRH) hipotalâmico.",
+          "e": "A causa habitual é adenoma hipofisário secretor de GH, com aumento secundário de IGF-1. Hipersecreção de GHRH é rara."
+        },
+        {
+          "l": "E",
+          "t": "Na maioria das vezes, a ressonância nuclear magnética (RNM) de sela túrcica evidencia um microadenoma hipofisário.",
+          "e": "Na maioria dos casos, o diagnóstico é tardio e a RNM mostra macroadenoma, não microadenoma."
+        }
+      ]
+    },
+    {
+      "n": 27,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Analise o caso clínico e responda a questão a seguir: Mulher, 70 anos, pós-menopausa há 22 anos, comparece para avaliação por dor dorsal e antecedente de fratura vertebral detectada em radiografia. Nega trauma importante. Refere baixo peso, sedentarismo e etilismo crônico. Densitometria óssea: Coluna lombar: T-score = -2,4 Colo do fêmur: T-score = -2,6. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:V",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A presença de fratura vertebral por fragilidade é um marcador importante de fragilidade óssea e risco de novas fraturas.",
+          "e": "Fratura vertebral por baixo impacto é marcador de fragilidade óssea e aumenta bastante o risco de novas fraturas."
+        },
+        {
+          "l": "B",
+          "t": "O etilismo crônico pode contribuir para redução de massa óssea e aumento do risco de fraturas.",
+          "e": "O etilismo crônico favorece perda de massa óssea, piora a qualidade óssea e aumenta o risco de quedas e fraturas."
+        },
+        {
+          "l": "C",
+          "t": "Nesta paciente, há critério densitométrico para osteoporose.",
+          "e": "Há critério densitométrico para osteoporose porque o T-score do colo do fêmur é -2,6, ou seja, ≤ -2,5."
+        },
+        {
+          "l": "D",
+          "t": "O T-score deve ser substituído obrigatoriamente pelo Z-score em mulheres idosas.",
+          "e": "Em mulheres pós-menopausa e idosos, usa-se principalmente o T-score. O Z-score é mais útil em mulheres pré-menopausa, homens <50 anos e crianças."
+        },
+        {
+          "l": "E",
+          "t": "O tratamento da osteoporose se baseia exclusivamente em medicações, sem relevância de medidas comportamentais.",
+          "e": "O tratamento não é apenas medicamentoso. Medidas como atividade física, prevenção de quedas, cessação do tabagismo, redução do álcool e adequação de cálcio/vitamina D são importantes."
+        }
+      ]
+    },
+    {
+      "n": 28,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 28 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:F",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A principal alteração fisiopatológica da osteoporose induzida por glicocorticóides é o aumento persistente da formação óssea por hiperatividade osteoblástica compensatória.",
+          "e": "Glicocorticoides reduzem a formação óssea, principalmente por inibir osteoblastos, além de favorecer reabsorção óssea e reduzir absorção intestinal de cálcio."
+        },
+        {
+          "l": "B",
+          "t": "Hipogonadismo pode contribuir para perda de massa óssea em homens.",
+          "e": "O hipogonadismo reduz o estímulo hormonal sobre o osso e pode causar perda de massa óssea e maior risco de fraturas em homens."
+        },
+        {
+          "l": "C",
+          "t": "Homens não devem ser investigados para osteoporose, pois trata-se de doença exclusivamente feminina.",
+          "e": "Osteoporose também ocorre em homens, principalmente com idade avançada, hipogonadismo, uso de corticoide ou fratura por fragilidade."
+        },
+        {
+          "l": "D",
+          "t": "A avaliação clínica de fatores de risco e fraturas prévias é importante na estratificação de risco.",
+          "e": "História de fraturas, uso de medicamentos e fatores de risco são fundamentais para avaliar o risco de novas fraturas e causas secundárias."
+        },
+        {
+          "l": "E",
+          "t": "A presença de fratura por fragilidade em homem, especialmente em idosos, costuma ser um achado esperado do envelhecimento e dispensa investigação etiológica adicional na maioria dos casos.",
+          "e": "Fratura por fragilidade em homem não deve ser considerada apenas “do envelhecimento”; exige investigação de osteoporose e de causas secundárias."
+        }
+      ]
+    },
+    {
+      "n": 29,
+      "topic": "Metabolismo ósseo e paratireoide",
+      "difficulty": "médio",
+      "statement": "Bloco 29 — Metabolismo ósseo e paratireoide. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:V",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O Caso 1 é compatível com hiperparatireoidismo primário, enquanto o Caso 2 sugere hipoparatireoidismo pós-cirúrgico, sendo ambos os diagnósticos sustentados pela correlação entre quadro clínico e padrão laboratorial.",
+          "e": "Caso 1: Ca ↑ + PTH ↑ + fósforo ↓ → hiperparatireoidismo primário. Caso 2: Ca ↓ + PTH ↓ + fósforo ↑ após tireoidectomia → hipoparatireoidismo pós-cirúrgico."
+        },
+        {
+          "l": "B",
+          "t": "A hipofosfatemia no Caso 1 e a hiperfosfatemia no Caso 2 podem ser explicadas, respectivamente, pela presença e pela deficiência da ação do PTH sobre a excreção renal de fósforo.",
+          "e": "O PTH aumenta a excreção renal de fósforo. Assim: PTH ↑ → fósforo ↓ → hipofosfatemia → hiperparatireoidismo primário. PTH ↓ → fósforo ↑ → hipoparatireoidismo pós-cirúrgico."
+        },
+        {
+          "l": "C",
+          "t": "A presença de nefrolitíase no Caso 1 e de espasmo carpopedal no Caso 2 pode ser compreendida como manifestações clínicas relacionadas às alterações do metabolismo do cálcio.",
+          "e": "No Caso 1, hipercalcemia favorece nefrolitíase. No Caso 2, hipocalcemia aumenta excitabilidade neuromuscular, causando cãibras e espasmo carpopedal."
+        },
+        {
+          "l": "D",
+          "t": "No Caso 1, exames de localização, como ultrassonografia cervical e cintilografia com sestamibi, são indispensáveis para estabelecer o diagnóstico inicial da doença.",
+          "e": "O diagnóstico do hiperparatireoidismo primário é bioquímico, com cálcio e PTH. USG cervical e sestamibi são exames de localização pré-operatória, não para confirmar o diagnóstico."
+        },
+        {
+          "l": "E",
+          "t": "No Caso 2, a reposição de cálcio e calcitriol pode ser necessária, enquanto no Caso 1 a doença pode cursar com repercussões ósseas, incluindo redução de massa óssea e aumento do risco de fraturas.",
+          "e": "No hipoparatireoidismo, pode ser necessária reposição de cálcio + calcitriol. Já o hiperparatireoidismo pode causar reabsorção óssea, osteopenia/osteoporose e maior risco de fraturas."
+        }
+      ]
+    },
+    {
+      "n": 30,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 30 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:V",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "As complicações cardiovasculares são as primeiras causas de mortalidade nos pacientes com acromegalia.",
+          "e": "As complicações cardiovasculares estão entre as principais causas de mortalidade na acromegalia, especialmente por HAS, cardiomiopatia e alterações metabólicas."
+        },
+        {
+          "l": "B",
+          "t": "Nos pacientes em que o diagnóstico não pode ser descartado ou confirmado com as dosagens basais de GH e IGF-1, está indicada a dosagem do GH durante teste oral de tolerância à glicose.",
+          "e": "Quando GH e IGF-1 basais não esclarecem o diagnóstico, pode-se realizar TOTG com dosagem de GH. Na acromegalia, o GH não suprime adequadamente após a glicose."
+        },
+        {
+          "l": "C",
+          "t": "A cirurgia é considerada a terapia de primeira escolha no tratamento da acromegalia e na maioria dos casos realizada por via transesfenoidal.",
+          "e": "A cirurgia transesfenoidal é o tratamento de primeira escolha na maioria dos pacientes com adenoma hipofisário ressecável."
+        },
+        {
+          "l": "D",
+          "t": "Geralmente a ressonância nuclear magnética (RNM) de sela túrcica evidencia um microadenoma hipofisário.",
+          "e": "Na maioria dos casos, o diagnóstico ocorre tardiamente e a RNM evidencia macroadenoma, não microadenoma."
+        },
+        {
+          "l": "E",
+          "t": "O principal mecanismo envolvido na gênese dos sintomas da acromegalia é a hipersecreção de GHRH (growth-hormone releasing hormone GHRH) hipotalâmico.",
+          "e": "A causa habitual é um adenoma hipofisário secretor de GH, levando a aumento de IGF-1. Hipersecreção de GHRH é causa rara de acromegalia."
+        }
+      ]
+    },
+    {
+      "n": 31,
+      "topic": "Hipófise — Hiperfunção",
+      "difficulty": "médio",
+      "statement": "Bloco 31 — Hipófise — Hiperfunção. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:F",
+        "D:V",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "A cirrose hepática causa hiperprolactinemia por provocar diminuição da depuração renal do hormônio.",
+          "e": "A cirrose pode causar hiperprolactinemia por redução da depuração/metabolização da prolactina, mas a frase erra ao atribuir isso especificamente à depuração renal."
+        },
+        {
+          "l": "B",
+          "t": "Ao se deparar com aumento nos níveis de prolactina na ausência de sintomas compatíveis com hiperprolactinemia, é preciso suspeitar da presença de macroprolactina.",
+          "e": "Hiperprolactinemia com poucos ou nenhum sintoma deve levantar suspeita de macroprolactina, forma de alto peso molecular e baixa atividade biológica."
+        },
+        {
+          "l": "C",
+          "t": "A produção ectópica de PRL por tumores extra-hipofisários é a causa patológica mais frequente de hiperprolactinemia.",
+          "e": "Produção ectópica de prolactina é rara. Entre as causas patológicas hipofisárias, o prolactinoma é muito mais frequente."
+        },
+        {
+          "l": "D",
+          "t": "O prolactinoma representa o adenoma funcionante hipofisário mais frequente.",
+          "e": "O prolactinoma é o adenoma hipofisário funcionante mais comum."
+        },
+        {
+          "l": "E",
+          "t": "O hipotireoidismo primário pode ser causa de hiperprolactinemia, a qual é provocada pela diminuição do hormônio liberador de tireotrofina (TRH).",
+          "e": "No hipotireoidismo primário ocorre aumento de TRH, não diminuição. O TRH elevado pode estimular os lactotrofos e aumentar a prolactina."
+        }
+      ]
+    },
+    {
+      "n": 32,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 32 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:F",
+        "D:V",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "No diagnóstico de feocromocitoma a dosagem das catecolaminas plasmáticas é o exame de maior sensibilidade diagnóstica. __________",
+          "e": "No feocromocitoma, os exames bioquímicos mais sensíveis são as metanefrinas plasmáticas livres ou metanefrinas urinárias fracionadas, e não a dosagem direta de catecolaminas plasmáticas. → Correção: “No diagnóstico de feocromocitoma, a dosagem de metanefrinas plasmáticas ou urinárias apresenta maior sensibilidade diagnóstica.”"
+        },
+        {
+          "l": "B",
+          "t": "No hipercortisolismo o ACTH estar alto ou normal-alto no Cushing hipofisário e baixo/suprimido no Cushing adrenal. __________",
+          "e": "No Cushing hipofisário, o ACTH costuma estar elevado ou inadequadamente normal; no Cushing adrenal, o cortisol é produzido autonomamente e o ACTH fica baixo/suprimido."
+        },
+        {
+          "l": "C",
+          "t": "A droga de primeira escolha no preparo pré-operatório do feocromocitoma é o betabloqueador. __________",
+          "e": "O preparo pré-operatório começa com bloqueio alfa-adrenérgico, e não beta-bloqueio. Betabloqueador só deve ser usado depois do bloqueio alfa, se necessário para controlar taquicardia. → Correção: “A droga de primeira escolha no preparo pré-operatório do feocromocitoma é um alfa-bloqueador.”"
+        },
+        {
+          "l": "D",
+          "t": "A tríade clássica de feocromocitoma é taquicardia, sudorese e cefaléia. __________",
+          "e": "A tríade clássica do feocromocitoma é cefaleia + sudorese + palpitações/taquicardia, frequentemente associada a hipertensão."
+        },
+        {
+          "l": "E",
+          "t": "Presença de giba, fácies em lua cheia, estrias violáceas e osteoporose são achados frequentes na síndrome de Cushing. __________",
+          "e": "Giba dorsocervical, fácies em lua cheia, estrias violáceas e osteoporose são manifestações típicas do hipercortisolismo."
+        }
+      ]
+    },
+    {
+      "n": 33,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 33 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:F",
+        "C:F",
+        "D:V",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Alguns fatores transcripcionais causam hipopituitarismo congênito: Pit-1, PROP 1, e HESX1.",
+          "e": "Mutações em fatores de transcrição como PIT-1, PROP-1 e HESX1 podem causar hipopituitarismo congênito, por comprometer o desenvolvimento e a função da hipófise."
+        },
+        {
+          "l": "B",
+          "t": "As causas mais comuns de hipopituitarismo adquirido são tumorais e pós quimioterapia.",
+          "e": "As causas adquiridas mais comuns incluem principalmente tumores hipofisários e seu tratamento com cirurgia ou radioterapia, e não quimioterapia como causa clássica principal."
+        },
+        {
+          "l": "C",
+          "t": "A anemia falciforme, sarcoidose e hemocromatose apresentam a mesma etiopatogenia de hipofunção da hipófise.",
+          "e": "Essas doenças podem afetar a hipófise, mas por mecanismos diferentes: sarcoidose e hemocromatose são infiltrativas, enquanto anemia falciforme pode causar lesão por eventos vasculares/isquêmicos."
+        },
+        {
+          "l": "D",
+          "t": "Os achados laboratoriais podem incluir: ACTH baixo ou normal, TSH baixo ou discretamente elevado e Testosterona baixa.",
+          "e": "No hipopituitarismo, os hormônios periféricos podem estar baixos com hormônios hipofisários baixos ou inadequadamente normais. Assim, pode haver ACTH baixo/normal, TSH baixo ou discretamente elevado e testosterona baixa."
+        },
+        {
+          "l": "E",
+          "t": "O quadro clínico de insuficiência adrenal central apresenta: hipotensão postural, perda de peso, fraqueza e náuseas.",
+          "e": "A insuficiência adrenal central pode causar fraqueza, náuseas, perda de peso e hipotensão, por deficiência de cortisol."
+        }
+      ]
+    },
+    {
+      "n": 34,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 34 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:V",
+        "B:V",
+        "C:F",
+        "D:F",
+        "E:V"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "Os adenomas não funcionantes cursam com hiperprolactinemia devido compressão de haste hipofisária.",
+          "e": "Adenomas hipofisários não funcionantes podem causar hiperprolactinemia por efeito de haste: a compressão da haste reduz a chegada de dopamina à hipófise, retirando a inibição sobre a prolactina."
+        },
+        {
+          "l": "B",
+          "t": "O déficit de GH no adulto pode cursar com indisposição e fraqueza.",
+          "e": "Déficit de GH no adulto pode cursar com fadiga, indisposição, fraqueza, redução de massa magra e piora da qualidade de vida."
+        },
+        {
+          "l": "C",
+          "t": "No hipotireoidismo secundário, o seguimento laboratorial deve ser feito com dosagem de TSH e T4 Livre.",
+          "e": "No hipotireoidismo central, o TSH não é confiável para seguimento. O acompanhamento deve ser feito principalmente pelo T4 livre, ajustando a levotiroxina para mantê-lo em faixa adequada."
+        },
+        {
+          "l": "D",
+          "t": "A apoplexia hipofisária e os meningeomas possuem etiologia vascular no hipopituitarismo.",
+          "e": "A apoplexia hipofisária tem etiologia vascular/hemorrágica, mas meningioma é uma lesão tumoral, não vascular."
+        },
+        {
+          "l": "E",
+          "t": "O paciente com insuficiência adrenal central (secundária) cursa com déficit apenas dos glicocorticóides, com preservação do eixo mineralocorticoide.",
+          "e": "Na insuficiência adrenal central há deficiência de ACTH → cortisol baixo, mas a aldosterona costuma estar preservada porque é regulada principalmente pelo sistema renina-angiotensina-aldosterona."
+        }
+      ]
+    },
+    {
+      "n": 35,
+      "topic": "Suprarrenal",
+      "difficulty": "médio",
+      "statement": "Bloco 35 — Suprarrenal. Julgue cada assertiva como verdadeira ou falsa.",
+      "correct": [
+        "A:F",
+        "B:V",
+        "C:F",
+        "D:F",
+        "E:F"
+      ],
+      "general": "Analise cada assertiva de forma independente, relacionando o padrão clínico e laboratorial à fisiologia e à conduta endocrinológica.",
+      "summary": "Bloco de verdadeiro ou falso revisado e consolidado a partir das listas da prova.",
+      "memory": "Julgue cada frase pelo mecanismo fisiológico e evite generalizações absolutas.",
+      "trap": "Todas as assertivas devem ser respondidas antes da submissão.",
+      "alts": [
+        {
+          "l": "A",
+          "t": "O cushing adrenal apresenta quadro clínico mais agressivo, com hipercortisolismo persistente mesmo após retirada do tumor adrenal.",
+          "e": "No Cushing adrenal, a retirada do tumor produtor de cortisol tende a corrigir o hipercortisolismo. Pode haver insuficiência adrenal transitória no pós-operatório por supressão do eixo HHA."
+        },
+        {
+          "l": "B",
+          "t": "Há inúmeros análogos sintéticos de cortisol, utilizados principalmente como anti-inflamatórios, antialérgicos e imunodepressores. Assim, o Cushing medicamentoso é a principal causa de hipercortisolismo na população.",
+          "e": "O uso crônico de glicocorticoides exógenos é a causa mais comum de síndrome de Cushing na população."
+        },
+        {
+          "l": "C",
+          "t": "Um efeito adverso induzido por corticoides é a osteoporose, perda de peso e hipotensão postural.",
+          "e": "Corticoides podem causar osteoporose, mas costumam levar a ganho de peso e hipertensão, não perda de peso e hipotensão postural."
+        },
+        {
+          "l": "D",
+          "t": "O teste de Liddle 2, supressão com dexametasona 8 mg é a melhor forma de confirmação de excesso de cortisol endógeno.",
+          "e": "O teste com 8 mg de dexametasona (Liddle 2) não é usado para confirmar hipercortisolismo. Ele era utilizado na investigação etiológica, especialmente para diferenciar doença de Cushing de outras causas ACTH-dependentes. Para confirmar hipercortisolismo usam-se testes como dexametasona 1 mg, cortisol salivar noturno ou cortisol livre urinário."
+        },
+        {
+          "l": "E",
+          "t": "O tratamento cirúrgico com retirada tumoral deve ser primeira opção terapêutica em todos os casos de síndrome de Cushing. Radioterapia e bloqueadores da esteroidogênese adrenal, fazem parte da segunda linha de tratamento.",
+          "e": "Cirurgia não é primeira opção em todos os casos. Depende da etiologia. Por exemplo, no Cushing iatrogênico por corticoide não há tumor para operar."
+        }
+      ]
+    }
+  ]
+}
