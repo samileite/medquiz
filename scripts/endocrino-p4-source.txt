@@ -1,0 +1,1623 @@
+Prova 3
+LISTA 1
+
+Distúrbios do eixo hipotálamo-hipófise-tireóide (HHT) podem ocorrer em qualquer um desses três órgãos. Dependendo do nível (local) da lesão, tais disfunções são classificadas como primárias, secundárias ou terciárias. Com relação às disfunções do eixo HHT, correlacione as colunas e marque a alternativa correspondente:
+
+A: Hipotálamo; 
+B: Adeno-hipófise; 
+C: Adrenal
+
+1-Nível primário; 
+2-Nível secundário; 
+3-Nível terciário
+
+A1, B2, C3
+Justificativa: Inverte os extremos: hipotálamo não é primário e a glândula periférica não é terciária.
+A3, B2, C1
+Gabarito. Justificativa:hipotálamo = terciário → hipófise = secundário → glândula-alvo = primário.
+A2, B3, C1
+Justificativa: Hipófise e hipotálamo estão invertidos. Hipófise = secundário; hipotálamo = terciário.
+A3, B1, C2
+Justificativa: Hipotálamo está correto, mas hipófise não é primária e adrenal não é secundária.
+A2, B1, C3
+Justificativa: Todas as associações estão incorretas.
+
+Explicação geral: 
+A classificação indica onde está a lesão, e não a gravidade da doença:
+Hipotálamo → nível terciário
+O hipotálamo é o nível mais superior dos eixos endócrinos. Ele produz hormônios liberadores que controlam a adeno-hipófise, como TRH, CRH e GnRH. Por isso, uma alteração originada no hipotálamo é denominada terciária.
+Adeno-hipófise → nível secundário
+A adeno-hipófise recebe estímulos hipotalâmicos e secreta hormônios tróficos que atuam nas glândulas periféricas, como TSH, ACTH, LH e FSH. Alterações hipofisárias são classificadas como secundárias.
+Adrenal → nível primário
+Quando a alteração está na própria glândula-alvo periférica, ela é denominada primária. Assim, uma doença da adrenal é uma insuficiência adrenal primária, enquanto uma doença da tireoide seria um hipotireoidismo primário
+Dica de memorização: 
+“Quanto mais perto do órgão-alvo, menor o número.”
+
+O hiperaldosteronismo primário (HAP) é uma síndrome que engloba um grupo de distúrbios caracterizados pela produção excessiva e autônoma de aldosterona. Em relação ao diagnóstico e conduta do HAP, analise as afirmativas a seguir e assinale a alternativa CORRETA:
+A adrenalectomia total laparoscópica é o tratamento recomendado em pacientes com hiperplasia bilateral de adrenais.
+Justificativa: Na hiperplasia adrenal bilateral, o tratamento é medicamentoso com antagonista do receptor mineralocorticoide, principalmente espironolactona (ou eplerenona). A adrenalectomia é indicada principalmente na doença unilateral, como adenoma produtor de aldosterona unilateral.
+A produção aumentada de aldosterona causa retenção de sódio e de potássio que se prolongada e severa pode levar à hipercalemia.
+Justificativa: A aldosterona promove retenção de sódio e excreção renal de potássio, portanto pode causar hipocalemia, e não hipercalemia. Também aumenta a excreção de H⁺, podendo produzir alcalose metabólica.
+A maioria dos pacientes com hiperaldosteronismo primário são normotensos
+Justificativa: O HAP é uma importante causa de hipertensão arterial secundária. A HAS pode ser resistente, mas muitos pacientes apresentam graus menos intensos de hipertensã
+O adenoma produtor de aldosterona, em geral, é maligno e apresenta grandes dimensões
+Justificativa: O adenoma produtor de aldosterona (adenoma de Conn) é geralmente benigno e pequeno. Carcinoma adrenocortical produtor de aldosterona é raro.
+As duas principais etiologias são o adenoma produtor de aldosterona e a hiperplasia adrenal bilateral
+Gabarito. Justificativa: As duas causas mais importantes são a hiperplasia adrenal bilateral e o adenoma produtor de aldosterona. A hiperplasia bilateral é, atualmente, a causa mais frequente.
+
+Explicação geral: 
+A aldosterona atua principalmente no túbulo distal/ducto coletor renal:
+Aldosterona ↑ → Na⁺ e água ↑ → volume circulante ↑ → HAS
+Ao mesmo tempo:
+Aldosterona ↑ → K⁺ e H⁺ na urina ↑ → hipocalemia + alcalose metabólica
+⚠️ Importante: nem todo paciente com HAP apresenta hipocalemia. Muitos são normocalêmicos.
+O rastreamento é feito pela relação aldosterona/renina (ARR):
+Aldosterona ↑ + renina suprimida → relação aldosterona/renina ↑
+Depois da confirmação, é necessário determinar se a produção é unilateral ou bilateral, pois isso muda o tratamento.
+Dica de memorização: 
+HAP = “Aldosterona segura SAL e joga K fora”
+
+Na⁺/água ↑ → HAS
+K⁺ ↓ → hipocalemia
+Renina ↓
+Unilateral → cirurgia
+Bilateral → espironolactona
+
+Pegadinha clássica: hipocalemia é característica, mas não é obrigatória para o diagnóstico.
+
+Paciente do sexo feminino, 70 anos, encaminhada pelo reumatologista, procurou ambulatório de endocrinologia com história de fratura de quadril e osteoporose refratária há quatro anos. Ao exame físico: sem alterações significativas, com Sinal de Giordano (+) à direita. Restante do exame físico normal.
+
+Exames laboratoriais:
+Hemograma: anemia normocrômica e normocítica, Hb: 10,7
+Função hepática: normal
+Função tireoide: normal
+Clearance de creatinina: 55 ml/min (VN: > 90ml/min)
+PTH: 542 pg/ml (ref: 9 - 55pg/ml)
+Cálcio corrigido 11,3 mg/dl (ref: 8,5-10,5 mg/dl)
+Fósforo 2.3 mg/ml (ref: 2,5- 4,5 mg/dl)
+TC de abdome sem contraste: micro cálculos renais bilaterais.
+Densitometria óssea: 
+Lombar: T-score -2,9 / DMO 0,524; 
+Colo fêmur T-score -3,6 / DMO 0,551;
+Femur total: T-score  -2,5 / DMO 0,776; 
+radio distal: T score -3,8/ DMO 0,633
+Sobre o caso podemos afirmar:
+Devido a idade da paciente, o diagnóstico mais provável é de hipercalcemia da malignidade.
+Justificativa: Na hipercalcemia da malignidade, o PTH endógeno fica suprimido pelo cálcio elevado. Aqui, o PTH está extremamente elevado (542 pg/mL), indicando hipercalcemia PTH-dependente.
+Diante do importante aumento dos níveis de PTH e cálcio, a maior probabilidade é de estarmos diante de um caso de carcinoma de paratireoide.
+Justificativa: PTH muito elevado e hipercalcemia podem levantar suspeita de carcinoma, mas não são suficientes para diagnosticá-lo. O carcinoma de paratireoide é raro e costuma apresentar hipercalcemia mais acentuada, PTH muito elevado e/ou massa cervical. A causa mais comum de HPTP é adenoma benigno de paratireoide.
+A redução dos níveis de fósforo ocorre essencialmente pelo influxo intracelular de fósforo induzido pela hipercalcemia.
+Justificativa: O fósforo baixo ocorre porque o PTH reduz a reabsorção de fosfato no túbulo proximal, aumentando sua eliminação urinária (fosfatúria). Não é explicado por influxo intracelular induzido pela hipercalcemia.
+O provável mecanismo da hipercalcemia é hiperatividade osteoclástica induzida pelos altos níveis de PTH, por provável adenoma primário de paratireóides.
+Gabarito. Justificativa: O excesso de PTH favorece a reabsorção óssea, indiretamente aumentando a atividade osteoclástica, além de aumentar a reabsorção renal de cálcio e a produção de calcitriol. O resultado pode ser hipercalcemia, perda de massa óssea e nefrolitíase.
+A paciente deve ter como primeira escolha de tratamento o uso de bisfosfonatos.
+Justificativa: Em HPTP sintomático, o tratamento definitivo é paratireoidectomia, não bisfosfonato. Esta paciente tem indicações claras de cirurgia, incluindo fratura/osteoporose importante e nefrolitíase.
+
+Explicação geral: 
+O PTH aumenta o cálcio e diminui o fósforo sérico:
+
+PTH ↑ → Ca²⁺ ↑ + P ↓
+
+Ele faz isso por três mecanismos principais:
+Osso: favorece reabsorção óssea → Ca²⁺ ↑.
+Rim: aumenta reabsorção de Ca²⁺ e elimina fósforo.
+Rim/intestino: estimula 1α-hidroxilase → calcitriol ↑ → absorção intestinal de Ca²⁺ ↑.
+
+Por isso, o quadro clássico pode envolver:
+“Pedras + ossos” → nefrolitíase + osteoporose/fraturas.
+
+Dica de memorização: 
+PTH = “Põe cálcio no sangue e Tira o fósforo.”
+Neste caso:
+Ca 11,3 ↑ + PTH 542 ↑ + P 2,3 ↓ → Hiperparatireoidismo primário
+HPTP + cálculo renal + osteoporose/fratura → indicação de paratireoidectomia.
+Síndrome de Cushing endógena pode ser definida como uma condição resultante de exposição prolongada e inapropriada a quantidades excessivas de cortisol, perda parcial do sistema de feedback do eixo hipotálamo-hipófise-adrenal e perda do ritmo circadiano da secreção de cortisol. Como consequência do hipercortisolismo, pode-se observar comorbidades comuns na prática clínica como obesidade, hipertensão arterial, diabetes mellitus, nefrolitíase, osteopenia ou osteoporose. Contudo, essas comorbidades não são específicas e são bastante prevalentes na população, o que pode gerar confusão na avaliação diagnóstica da síndrome de Cushing, já que os testes de screening são sujeitos a resultados falso positivos. Com isso em mente, diversas sociedades têm proposto critérios para indicar avaliação diagnóstica de Cushing.
+NÃO é um critério para avaliação de Cushing:
+Incidentaloma hipofisário
+Justificativa: Pode justificar investigação de hipersecreção hormonal, especialmente se houver características clínicas compatíveis. Adenomas corticotróficos podem produzir ACTH e causar doença de Cushing.
+Pacientes pediátricos com redução da velocidade de crescimento e ganho de peso.
+Justificativa: É uma combinação muito sugestiva de hipercortisolismo. Na obesidade simples, a criança geralmente mantém ou aumenta a velocidade de crescimento; no Cushing, ocorre ganho ponderal com desaceleração do crescimento linear.
+Obesidade abdominal associada a hipertensão arterial e Diabetes mellitus.
+Gabarito. Justificativa: NÃO é, isoladamente, indicação de rastreamento. São manifestações comuns e inespecíficas. A investigação ganha importância quando existem características mais discriminatórias de hipercortisolismo.
+Características não usuais para a idade (osteoporose coluna, hipertensão arterial).
+Justificativa: É indicação de investigação. Osteoporose/fratura em indivíduo jovem ou hipertensão em idade incomum podem ser manifestações de hipercortisolismo secundário.
+Incidentaloma adrenal.
+Justificativa: É indicação para avaliar secreção autônoma de cortisol, mesmo que o paciente não apresente os sinais clássicos da síndrome de Cushing.
+
+Explicação geral: O rastreio para síndrome de Cushing deve ser direcionado a pacientes com achados mais específicos ou incomuns, evitando investigar indiscriminadamente obesidade, HAS e diabetes isoladamente.
+Dica de memorização: 
+Cushing em criança: engorda e para de crescer.
+Adulto: procure sinais específicos, não apenas obesidade + HAS + DM.
+Sobre o caso, assinale o INCORRETO:
+Paciente feminino, 32 anos, submetida a tireoidectomia total devido bócio multinodular atóxico, evolui no segundo dia de pós operatório com quadro de astenia intensa, lentificação dos movimentos e fraqueza muscular em membros inferiores e câimbras recorrentes.
+Ao exame físico: EGB, eupnéica, afebril, hidratada, normocorada, consciente e orientada,sonolenta.
+ACV: RCR 2T sem sopro. FC: 72. PA: 100 x 80 mmHg
+AR e abdome: normais
+Sinal de Trousseau (+)
+Sinal de Chvostek (+)
+PTH: 1 pg/ml (ref: 9 – 55 pg/ml)
+Cálcio corrigido: 6,5 mg/dl (ref: 8,5-10,5 mg/dl)
+Fósforo: 5,1 mg/ml (ref: 2,5- 4,5 mg/dl)
+Trata-se de um caso de hipoparatireoidismo pós operatório que em geral ocorre devido à remoção das paratireoides e/ou em função do dano ao suprimento sanguíneo dessas glândulas.
+Justificativa: Após tireoidectomia, o hipoparatireoidismo pode ocorrer por remoção acidental das paratireoides, trauma ou comprometimento de sua vascularização, levando à redução do PTH.
+A hipocalcemia é uma das complicações mais comuns no pós-operatório da tireoidectomia, sendo na maioria das vezes transitória.
+Justificativa: A hipocalcemia é uma complicação frequente após tireoidectomia e, na maior parte dos casos pós-operatórios, é transitória, com recuperação da função paratireoidiana.
+O tratamento da fase crônica baseia-se na reposição suplementação de cálcio, calcitriol e colecalciferol.
+Justificativa: No hipoparatireoidismo crônico, o tratamento convencional baseia-se em vitamina D ativa (calcitriol) e adequação/reposição de cálcio; também se mantém status adequado de vitamina D, podendo-se utilizar colecalciferol.
+Na fase aguda, há indicação clássica de tratamento imediato com Gluconato de cálcio 10% endovenoso.
+Justificativa: A paciente apresenta hipocalcemia grave e sintomática (Ca 6,5 mg/dL), com câimbras e sinais de Trousseau/Chvostek. Nessa situação, está indicado cálcio intravenoso, classicamente gluconato de cálcio.
+PTH age essencialmente elevando os níveis plasmáticos de cálcio pela mobilização do Ca2+ do osso e absorção intestinal, exercendo efeito pouco significativo sobre a excreção de cálcio renal.
+Gabarito. Justificativa: O PTH não atua pouco no rim. Ele exerce importante ação renal, aumentando a reabsorção de cálcio, reduzindo a reabsorção de fósforo (fosfatúria) e estimulando a formação de calcitriol, que aumenta a absorção intestinal de cálcio.
+
+Explicação geral:
+PTH ↑ → cálcio ↑ e fósforo ↓.
+Quando falta PTH: cálcio ↓ e fósforo ↑.
+
+Dica de memorização:
+PTH “Põe cálcio no sangue e Tira fósforo”.
+Pós-tireoidectomia + Trousseau/Chvostek + Ca↓ + PTH↓ → hipoparatireoidismo.
+
+Alan é um homem de 39 anos que se apresentou ao seu médico da unidade de saúde básica porque foi detectado aumento de pressão durante uma avaliação de rotina realizada no seu trabalho. Alan expressou uma série de queixas aparentemente não específicas no início da consulta, incluindo dor de cabeça, fadiga e dor nas articulações. Quando o médico da atenção primária notou que Alan tinha feito uma cirurgia para a síndrome do túnel do carpo há vários anos e revelou que o tamanho do seu anel e sapato aumentara nos últimos anos, o índice de suspeita do médico de atenção primária aumentou e ela começou a perguntar mais perguntas para investigar a possibilidade de acromegalia. Essas perguntas revelaram que Alan estava experimentando diminuição do desejo sexual, aumento da transpiração e ronco. Alan foi testado para confirmação bioquímica de acromegalia e depois encaminhado a um endocrinologista para posterior avaliação e tratamento. Quando um paciente apresenta sinais e sintomas que causam suspeita de acromegalia, quais dos seguintes passos será o primeiro? Assinale o item correto:
+Solicitar um teste oral de tolerância à glicose.
+Justificativa: O TOTG com dosagem de GH é usado para confirmação quando o IGF-1 está elevado ou o diagnóstico permanece duvidoso. Não é o primeiro exame.
+Solicitar uma ressonância magnética da pituitária.
+Justificativa: A RNM de hipófise é feita após confirmação bioquímica, para localizar o adenoma e avaliar extensão tumoral.
+Solicitar um nível de hormônio liberador de GH (GHRH).
+Justificativa: A dosagem de GHRH não faz parte da investigação inicial. É reservada para situações raras, como suspeita de produção ectópica.
+Solicitar um nível de IGF-1.
+Gabarito. Justificativa: O IGF-1 é o melhor exame inicial de rastreamento da acromegalia, pois reflete a secreção média de GH e varia menos ao longo do dia.
+Solicitar nível de IGFBP3. 
+Justificativa: O IGFBP-3 não é o exame de escolha para investigação inicial da acromegalia em adultos.
+
+Explicação geral: 
+Na suspeita de acromegalia, a sequência clássica é: IGF-1 → TOTG com GH → RNM de hipófise.
+
+Dica de memorização:
+IGF-1 rastreia, TOTG confirma, RNM localiza.
+
+Uma mulher de 34 anos de idade,refere fadiga, ganho de peso, ciclos menstruais irregulares e secreção leitosa em ambas as mamas há 6 meses. O exame físico revela um pequeno bócio, pele seca, e galactorreia à expressão mamária bilateral. Os resultados laboratoriais incluem um teste de gravidez negativo, um TSH de 72 UI/mL (VR:0,5-4,5), T4 livre de 0,3 (VR:0.7–1.8 ng/dl), e um nível de prolactina sérica inicial de 55 ng /mL (VR<24,2). Os exames laboratoriais foram repetidos e confirmaram as mesmas alterações, com resultados semelhantes. Qual é o próximo passo mais adequado para a conduta da hiperprolactinemia da paciente no caso clínico abaixo?
+Iniciar terapia levotiroxina.
+Gabarito. Justificativa: A paciente tem hipotireoidismo primário franco: TSH muito elevado e T4 livre baixo. O aumento de TRH estimula também a secreção de prolactina, explicando a hiperprolactinemia. O tratamento é corrigir o hipotireoidismo com levotiroxina.
+Obter uma ressonância magnética da hipófise.
+Justificativa: A RNM de hipófise não é o primeiro passo quando há uma causa evidente de hiperprolactinemia. Deve-se tratar primeiro o hipotireoidismo e reavaliar a prolactina.
+Iniciar a terapia com estrogênio.
+Justificativa: Estrogênio não trata a causa do problema e pode, inclusive, aumentar a prolactina.
+Iniciar a terapia agonista da dopamina.
+Justificativa: Agonista dopaminérgico, como cabergolina, é indicado principalmente em prolactinoma. Aqui, a causa mais provável é o hipotireoidismo.
+Colher nova prolactina sérica.
+Justificativa: A prolactina já foi repetida e permaneceu elevada. O próximo passo é tratar a causa identificada, não repetir novamente o exame.
+
+Explicação geral: 
+Hipotireoidismo primário → TRH ↑ → TSH ↑ e prolactina ↑.
+
+Dica de memorização:
+TSH muito alto + PRL moderadamente alta → pense em hipotireoidismo antes de prolactinoma.
+A prolactina (PRL) é produzida e secretada pelas células lactotróficas da hipófise anterior, sob controle inibitório de fatores hipotalâmicos, tal como a dopamina. Assinale a alternativa CORRETA em relação às causas de hiperprolactinemia.
+A cirrose hepática causa hiperprolactinemia por provocar aumento da depuração renal do hormônio.
+Justificativa: A cirrose pode causar hiperprolactinemia por redução da depuração/metabolização da prolactina, e não por aumento da depuração renal.
+O aumento da macroprolactina é a responsável por mais de 90% dos casos de hiperprolactinemia em homens.
+Justificativa: A macroprolactina pode causar elevação laboratorial da PRL com pouca repercussão clínica, mas não responde por >90% dos casos em homens.
+A produção ectópica de PRL por tumores extra hipofisários é a causa patológica mais frequente de hiperprolactinemia.
+Justificativa: Produção ectópica de PRL é rara. A causa patológica hipofisária mais frequente é o prolactinoma.
+O prolactinoma representa o adenoma funcionante hipofisário mais frequente.
+Gabarito. Justificativa: O prolactinoma é o adenoma hipofisário funcionante mais comum e causa hiperprolactinemia por secreção autônoma de PRL.
+O hipotireoidismo primário pode ser causa de hiperprolactinemia, a qual é provocada pela diminuição do hormônio liberador de tireotrofina (TRH).
+Justificativa: No hipotireoidismo primário há aumento de TRH, que pode estimular a secreção de prolactina. A alternativa erra ao dizer que o TRH diminui.
+
+Explicação geral: 
+Hiperprolactinemia pode ocorrer por prolactinoma, medicamentos, hipotireoidismo, doença renal/hepática e efeito de haste.
+
+Dica de memorização:
+Hipotireoidismo: TRH ↑ → TSH ↑ e PRL ↑.
+Adenoma funcionante mais comum = prolactinoma.
+Leia o texto e responda.
+A suspeita clínica de hipercortisolismo deverá ser avaliada com base na epidemiologia da síndrome de Cushing e sempre confirmada pela avaliação laboratorial. Após confirmação do hipercortisolismo, deve-se do proceder ao diagnóstico etiológico da Síndrome de Cushing, com a dosagem do principal hormônio regulador da função do córtex adrenal, o hormônio adrenocorticotrófico (ACTH), separando assim os casos em Síndrome de Cushing ACTH independente e Síndrome de Cushing ACTH dependente.
+É causa de Síndrome de Cushing ACTH independente:
+O pseudo-cushing.
+Justificativa: O pseudo-Cushing é um estado de hipercortisolismo funcional, visto em situações como alcoolismo, depressão grave e obesidade, sem neoplasia adrenal autônoma.
+O tumor carcinóide.
+Justificativa: Tumor carcinoide pode produzir ACTH ectópico, causando síndrome de Cushing ACTH-dependente.
+O tumor adrenal.
+Gabarito. Justificativa: Tumores adrenais produtores de cortisol secretam cortisol de forma autônoma, levando à supressão do ACTH. Portanto, são causas de Cushing ACTH-independente.
+A doença de Cushing.
+Justificativa: A doença de Cushing é causada por adenoma hipofisário produtor de ACTH, logo é ACTH-dependente.
+O carcinoma medular.
+Justificativa: Carcinoma medular não é causa típica de síndrome de Cushing ACTH-independente.
+
+Explicação geral: 
+ACTH baixo → pense em causa adrenal.
+ACTH alto/normal → pense em hipófise ou produção ectópica.
+
+Dica de memorização:
+Adrenal produz cortisol sozinha → ACTH cai.
+
+Uma mulher de 38 anos teve diagnóstico recente de feocromocitoma chega ao ambulatório para consulta de orientação antes da cirurgia. Ao exame físico sua PA é de 190x105 mmHg. O restante do exame físico é normal. Qual a classe de anti-hipertensivos de 1ª escolha para controle pressórico da paciente antes da cirurgia?
+Diuréticos Tiazídicos.
+Justificativa: Tiazídicos não são a primeira escolha, pois não controlam adequadamente os efeitos da descarga catecolaminérgica.
+Antagonistas dos canais de cálcio (Nifedipina).
+Justificativa: Bloqueadores de canal de cálcio podem ser usados como adjuvantes, mas não são a terapia clássica inicial.
+Inibidores da enzima conversora da angiotensina (Losartana)
+Justificativa: IECA/BRAs não são o tratamento de escolha para o preparo pré-operatório do feocromocitoma.
+Inibidores adrenérgicos (Betabloqueadores)
+Justificativa: Betabloqueadores podem ser usados após bloqueio alfa adequado para controlar taquicardia. Nunca devem ser iniciados antes, pois podem causar vasoconstrição alfa desinibida e piora grave da hipertensão.
+Inibidores adrenérgicos (Alfa-1 bloqueadores).
+Gabarito. Justificativa: O tratamento inicial é feito com bloqueio alfa-adrenérgico, classicamente com fenoxibenzamina ou alfa-1 bloqueadores como doxazosina, antes da cirurgia.
+
+Explicação geral: 
+No feocromocitoma, primeiro bloqueia-se o efeito alfa, responsável principalmente pela vasoconstrição e hipertensão.
+
+Dica de memorização:
+Feocromocitoma: ALFA antes de BETA.
+Nunca faça beta-bloqueio isolado antes do alfa-bloqueio.
+
+JVCJ, 42 anos, masculino, portador de Diabetes Mellitus tipo 2 há 11 anos, em tratamento com metformina 2g/d, sinvastatina 20mg/d e glimepirida 4mg/d, e Psoríase em remissão, em uso apenas de hidratante a base de uréia. Negava uso crônico de corticóide, comorbidades outras ou antecedentes pessoais significativos. Procurou assistência endocrinológica devido queixa de queda da libido e impotência sexual, diminuição da pilificação periférica, além de astenia, tontura e indisposição. Exame físico sem alterações, exceto por presença de circunferência abdominal aumentada (CA: 97 cm), discreta ginecomastia bilateral e pele com áreas ressecadas e descamativas.
+Apresentava:
+ Testosterona Total 128 (VR:300-900 ng/mL); 
+LH 1,5 (VR:1,5-9,3 mUI/mL) e 
+FSH 3,3 (VR:1,1-8 mUI/mL); 
+TSH 1,01 (VR: 0,4-4 mUI/mL), 
+T4L 0,45 (VR:0,7-1,5ng/mL) e 
+T3T 0,58 (VR: 40-180ng/dL); 
+Cortisol Matinal 0,4 (VR:5,4-25 mcg/dL), 
+Cortisol Salivar às 8h 2,7 nmol/L (VR: 5,25-19,1 nmol/L) e 
+ACTH 5 (VR: 10-60 pg/mL). 
+Densitometria óssea mostrava osteopenia em coluna lombar.
+Submetido à RNM de sela túrcica que evidenciou hipófise aumentada de volume difusamente, espessamento de haste hipofisária.
+
+Assinale a alternativa correta em relação à etiologia e tratamento do caso abaixo:
+Hipogonadismo Hipergonadotrófico, Hipotireoidismo Central secundário à Hipofisite Linfocítica. Reposição de testosterona apenas.
+Justificativa: A testosterona está baixa com LH e FSH baixos/inadequadamente normais, caracterizando hipogonadismo hipogonadotrófico, e não hipergonadotrófico. Além disso, há também insuficiência adrenal central, então testosterona isoladamente não basta.
+Insuficiência adrenal central secundária à tumor hipofisário. Tratamento cirúrgico e reposição de glicocorticóide.
+Justificativa: O quadro sugere hipofisite linfocítica, não tumor hipofisário clássico. A RNM mostra aumento difuso da hipófise e espessamento da haste, achados compatíveis com processo inflamatório.
+Hipogonadismo Hipogonadotrófico, Hipertireoidismo e Insuficiência adrenal central secundária à Hipofisite Linfocítica. Reposição de testosterona e glicocorticóide.
+Justificativa: O paciente tem hipotireoidismo central, não hipertireoidismo: T4 livre está baixo com TSH inadequadamente normal. O restante da descrição se aproxima do diagnóstico.
+Hipogonadismo Hipogonadotrófico, Hipotireoidismo e Insuficiência adrenal centrais secundários ao diabetes mellitus tipo 2. Não há necessidade de terapia de reposição hormonal.
+Justificativa: Diabetes mellitus tipo 2 não explica esse conjunto de déficits hipofisários múltiplos nem o espessamento da haste. Há necessidade de reposição hormonal.
+Hipogonadismo Hipogonadotrófico, Hipotireoidismo e Insuficiência adrenal centrais devido a Hipofisite Linfocítica. Reposição de testosterona, glicocorticóide e levotiroxina.
+Gabarito. Justificativa: O paciente apresenta:
+Hipogonadismo hipogonadotrófico: testosterona ↓ com LH/FSH baixos ou inadequadamente normais.
+Hipotireoidismo central: T4L ↓ com TSH inadequadamente normal.
+Insuficiência adrenal central: cortisol ↓ com ACTH baixo.
+RNM compatível com hipofisite linfocítica.
+
+Explicação geral: 
+Déficits de vários eixos + hipófise aumentada difusamente + haste espessada sugerem hipofisite.
+
+Dica de memorização:
+Hormônio periférico baixo + hormônio hipofisário baixo/inadequadamente normal = deficiência central.
+
+⚠️ No tratamento, em geral, deve-se repor primeiro o glicocorticoide e depois iniciar levotiroxina, para evitar precipitar crise adrenal.
+
+Criança de 10 anos foi submetida à cirurgia de tumor de hipófise e no pós operatório apresentou quadro suspeito de diabetes insípido. Qual alteração é encontrada nesta doença?
+Pouco ADH (hormônio antidiurético), o que aumenta a reabsorção de água
+Justificativa: Há pouco ADH, mas isso reduz a reabsorção de água no túbulo coletor.
+Osmolalidade urinária inapropriadamente elevada
+Justificativa: No diabetes insípido, a urina é muito diluída, portanto a osmolalidade urinária é baixa.
+Sódio urinário elevado
+Justificativa: Não é o achado característico principal. O problema central é a perda de água livre.
+Hiponatremia
+Justificativa: O mais típico é hipernatremia, especialmente se a reposição hídrica for inadequada.
+Poliúria
+Gabarito. Justificativa: A deficiência de ADH reduz a reabsorção de água, levando a grande volume de urina diluída.
+
+Explicação geral: 
+ADH ↓ → reabsorção de água ↓ → poliúria + urina diluída + tendência à hipernatremia.
+
+Dica de memorização:
+Diabetes insípido = “muita urina, pouca concentração”.
+Assinale a afirmativa correta das abaixo:
+O osteócito é o estágio final de diferenciação do osteoclasto
+Justificativa: O osteócito é o estágio final de diferenciação do osteoblasto, não do osteoclasto.
+Os osteoclastos são responsáveis pela síntese de matriz óssea
+Justificativa: Quem sintetiza a matriz óssea é o osteoblasto. O osteoclasto faz reabsorção óssea.
+Os osteoblastos são originários do sistema hematopoiético, como os monócitos e macrófagos.
+Justificativa: Os osteoclastos é que derivam da linhagem hematopoiética/monócito-macrófago. Os osteoblastos derivam de células mesenquimais.
+O metabolismo ósseo é acoplado, ou seja, ocorre formação nos locais onde houve reabsorção prévia
+Gabarito. Justificativa: O remodelamento ósseo é acoplado: primeiro ocorre reabsorção pelo osteoclasto e, em seguida, formação óssea pelo osteoblasto no mesmo local.
+Os osteoblastos são células responsáveis pela formação óssea
+Justificativa: ⚠️ Conceitualmente verdadeira. Os osteoblastos realmente são responsáveis pela formação óssea. Porém, se a questão exige apenas uma alternativa, há provável erro de elaboração, porque D e E estão corretas.
+
+Explicação geral: 
+Osteoclasto reabsorve; osteoblasto forma; osteócito mantém o osso.
+
+Dica de memorização:
+CLASTO = “quebra”
+BLASTO = “constrói”
+CITO = célula óssea madura
+
+Paciente do sexo feminino, 19 anos, com ganho de peso progressivo (20 Kg em 2 anos), fraqueza muscular proximal e estrias violáceas no abdômen, coxas e braços. Refere também desânimo e crises de choro.
+PA 140 x 90 mmHg Peso: 80 Kg, Altura: 1,55m IMC: 33,2 
+Exames hormonais: cortisol livre urinário = 240 µg/24h (VR:3-43); 
+cortisol das 8h após supressão overnight com 1 mg de dexametasona = 25 µg/Dl (VR: <1,8). 
+Assinale a alternativa correta sobre este caso:
+
+Pseudo-síndrome de Cushing por depressão é a principal hipótese diagnóstica.
+Justificativa: Embora depressão possa causar pseudo-Cushing, esta paciente tem sinais mais específicos de hipercortisolismo, como fraqueza muscular proximal e estrias violáceas, além de testes claramente alterados.
+Adrenalectomia direita está indicada.
+Justificativa: Não há informação mostrando tumor adrenal direito. Antes de definir cirurgia, é preciso estabelecer a etiologia do hipercortisolismo.
+A causa mais comum da síndrome de Cushing endógena é o adenoma hipofisário produtor de ACTH.
+Gabarito. Justificativa: A causa mais comum de Cushing endógeno é a doença de Cushing, geralmente por adenoma hipofisário secretor de ACTH.
+O cateterismo bilateral dos seios petrosos inferiores é o exame padrão ouro para diferenciar doença de Cushing do estado de pseudo-Cushing.
+Justificativa: O cateterismo dos seios petrosos inferiores é usado principalmente para diferenciar fonte hipofisária de ACTH de fonte ectópica, não para diferenciar Cushing verdadeiro de pseudo-Cushing.
+Tumor adrenal é uma causa de Síndrome de Cushing ACTH-dependente.
+Justificativa: Tumor adrenal produtor de cortisol causa síndrome de Cushing ACTH-independente, com ACTH suprimido.
+
+Explicação geral: 
+Os exames confirmam hipercortisolismo endógeno; depois disso, dosa-se ACTH para separar causas dependentes e independentes.
+
+Dica de memorização:
+Cushing endógeno mais comum = hipófise.
+Adrenal produz cortisol sozinha → ACTH cai.
+
+O hipopituitarismo é definido pela deficiência parcial ou completa de um ou mais hormônios da hipófise ou hipotálamo. O hipopituitarismo acomete 45 em cada 100.000 habitantes. Pode ter causas adquiridas ou genéticas. A respeito do hipopituitarismo é INCORRETO:
+O quadro clínico e as complicações do hipopituitarismo dependem da etiologia, do tipo e da gravidade da insuficiência hormonal.
+Justificativa: A apresentação do hipopituitarismo varia conforme causa, velocidade de instalação, número de eixos acometidos e intensidade da deficiência hormonal.
+Os eixos do ACTH e TSH são os primeiros afetados por lesões tumorais intra selares.
+Gabarito. Justificativa: Em lesões expansivas hipofisárias, os eixos mais sensíveis costumam ser GH e gonadotrofinas (LH/FSH). ACTH e TSH geralmente são comprometidos mais tardiamente.
+Tumores hipofisários e seu tratamento (cirurgia ou radioterapia) são as principais causas.
+Justificativa: Tumores hipofisários e seu tratamento por cirurgia ou radioterapia estão entre as causas adquiridas mais comuns de hipopituitarismo.
+Mutações de fatores de transcrição como PIT 1 e PROP-1 podem causar várias deficiências associadas como GH, prolactina e TSH no mesmo paciente.
+Justificativa: Mutações em fatores de transcrição como PIT-1 e PROP-1 podem causar deficiência combinada de vários hormônios hipofisários.
+Síndrome de Sheehan caracteriza-se pelo hipopituitarismo por necrose da glândula pituitária decorrente de uma complicação hemorrágica pós-parto.
+Justificativa: A síndrome de Sheehan decorre de necrose isquêmica da hipófise após hemorragia obstétrica importante, levando a hipopituitarismo.
+
+Explicação geral: 
+Nos tumores hipofisários, costuma ocorrer primeiro GH ↓ e LH/FSH ↓; ACTH e TSH tendem a cair depois.
+
+Dica de memorização:
+Hipófise comprimida: GH e gonadotrofinas caem primeiro.
+
+I.M.S.S., feminina, 47 anos, negra. Iniciou três anos antes da avaliação médica quadro de parestesia e alodinia em região palmar, acompanhados de aumento de extremidades. Também foi notada macroglossia durante a realização de endoscopia digestiva alta (EDA). Exame físico: prognatismo, aumento de nariz, lábios e mãos. PA:160x100mmHg. Na investigação inicial observou-se glicemia 128 mg/dL; HbA1c 7,3%. Em relação ao caso clínico suspeito de acromegalia, assinale o INCORRETO
+As complicações cardiovasculares são as primeiras causas de mortalidade nos pacientes com acromegalia.
+Justificativa: Complicações cardiovasculares estão entre as principais causas de mortalidade na acromegalia, especialmente HAS, cardiomiopatia e doença cardiovascular.
+Nos pacientes em que o diagnóstico não pode ser descartado ou confirmado com as dosagens basais de GH e IGF-1, está indicada a dosagem do GH durante teste oral de tolerância à glicose.
+Justificativa: Quando GH e IGF-1 basais não esclarecem o diagnóstico, realiza-se TOTG com dosagem de GH. Na acromegalia, o GH não suprime adequadamente após a glicose.
+A cirurgia é considerada a terapia de primeira escolha no tratamento da acromegalia e na maioria dos casos realizada por via transesfenoidal.
+Justificativa: A cirurgia transesfenoidal é o tratamento de primeira escolha na maioria dos adenomas hipofisários ressecáveis associados à acromegalia.
+Geralmente a ressonância nuclear magnética (RNM) de sela túrcica evidencia um macrodenoma hipofisário.
+Justificativa: A maioria dos pacientes é diagnosticada tardiamente e apresenta macroadenoma hipofisário na RNM.
+O principal mecanismo envolvido na gênese dos sintomas da acromegalia é a hipersecreção de GHRH (growth-hormone releasing hormone GHRH) hipotalâmico
+Gabarito. Justificativa: O principal mecanismo é a hipersecreção de GH por adenoma hipofisário, com aumento secundário de IGF-1. Hipersecreção de GHRH é causa rara.
+
+Explicação geral: 
+Acromegalia = GH ↑ → IGF-1 ↑, geralmente por adenoma hipofisário.
+
+Dica de memorização:
+IGF-1 rastreia, TOTG confirma, RNM localiza.
+
+ Mulher, 24 anos, solteira, foi ao ginecologista com queixa de amenorréia há 6 meses. Nega doenças prévias ou atuais. Não é tabagista, nem etilista e nem usuária de drogas ilícitas. Não está usando anticoncepcional hormonal. Em relação ao caso clínico, assinale o item INCORRETO:
+A magnitude da elevação nos níveis séricos de prolactina é útil na determinação da etiologia, uma vez que os valores mais altos são encontrados em pacientes com hiperprolactinemia farmacológica.
+Gabarito. Justificativa: A magnitude da prolactina ajuda na etiologia, mas os valores mais altos costumam ocorrer nos prolactinomas, especialmente macroprolactinomas, e não na forma farmacológica.
+O uso de alguns medicamentos psicoativos pode estar associado à hiperprolactinemia de etiologia farmacológica.
+Justificativa: Alguns psicoativos, principalmente antipsicóticos, bloqueiam a ação da dopamina e podem elevar a prolactina.
+A hiperprolactinemia patológica pode ser causada insuficiência renal e hepática, hipotireoidismo, desconexão de haste hipofisária e prolactinoma.
+Justificativa: Insuficiência renal/hepática, hipotireoidismo, lesões da haste hipofisária e prolactinoma são causas reconhecidas de hiperprolactinemia.
+A hiperprolactinemia deve ser investigada em mulheres frente à ocorrência de queixas como amenorreia/irregularidade menstrual, galactorreia e infertilidade.
+Justificativa: Amenorreia, irregularidade menstrual, galactorreia e infertilidade são manifestações típicas e justificam investigação de prolactina.
+A hiperprolactinemia pode ser vista em pacientes com hipotireoidismo primário descompensado, devido sobretudo ao aumento do TRH (que estimula a síntese de prolactina).
+Justificativa: No hipotireoidismo primário, há TRH aumentado, que estimula tanto TSH quanto prolactina.
+
+Explicação geral: 
+A prolactina é normalmente inibida pela dopamina. Se essa inibição cai ou há estímulo aumentado por TRH, a PRL sobe.
+
+Dica de memorização:
+PRL alta → pense em prolactinoma, remédios, hipotireoidismo e efeito de haste.
+
+Paciente feminina de 63 anos com antecedente de embolia pulmonar, diabetes e hipertensão apresentou fratura de colo de fêmur há 6 meses, sendo diagnosticada com osteoporose de coluna (T escore:-4,8) e do fêmur (T escore:-2,9). Em uso atual de glibenclamida, metformina e enalapril. 
+Em relação às causas de perda óssea e à osteoporose, assinale o item CORRETO:
+A osteoporose é uma doença silenciosa que afeta especialmente os adultos jovens e tem elevada taxa de morbimortalidade.
+Justificativa: A osteoporose é realmente uma doença muitas vezes silenciosa e com alta morbimortalidade, mas acomete principalmente mulheres pós-menopausa e idosos, não adultos jovens.
+O exame mais adequado para o diagnóstico da Osteoporose é a radiografia, que permite avaliar o estágio da doença e serve como método de acompanhamento do tratamento.
+Justificativa: O exame de escolha para diagnóstico e acompanhamento é a densitometria óssea (DXA), e não a radiografia simples. A radiografia detecta perda óssea mais tardiamente.
+A vitamina D é importante no tratamento da osteoporose. As principais fontes na dieta são o leite e os seus derivados.
+Justificativa: A vitamina D é importante, mas suas principais fontes não são leite e derivados. A principal fonte é a síntese cutânea pela exposição solar, além de alguns alimentos específicos (óleos,peixes gordurosos, gema de ovo, fígado).
+Alguns fatores de risco importantes relacionados à osteoporose e a fraturas na pós-menopausa são: idade, etnia branca ou oriental, história prévia pessoal e familiar de fratura, obesidade, tabagismo, ingestão abusiva de bebidas alcoólicas e atividade física aeróbica.
+Justificativa: Idade, etnia branca/oriental, história de fratura, tabagismo e álcool aumentam risco, mas obesidade e atividade física aeróbica não são fatores de risco clássicos; em geral, baixo peso e sedentarismo aumentam o risco.
+Os bisfosfonatos são a classe de drogas considerada de primeira linha para o tratamento da osteoporose na pós-menopausa e agem inibindo a atividade dos osteoclastos.
+Gabarito. Justificativa: Os bisfosfonatos são drogas de primeira linha em muitos casos de osteoporose pós-menopausa e atuam inibindo os osteoclastos, reduzindo a reabsorção óssea.
+
+Explicação geral: 
+Osteoporose = redução da resistência óssea com aumento do risco de fraturas.
+DXA é o exame principal.
+
+Dica de memorização:
+Bisfosfonato bloqueia osteoclasto = diminui reabsorção óssea.
+
+Assinale a afirmativa CORRETA das abaixo sobre o metabolismo ósseo:
+O osteócito é o estágio final de diferenciação do osteoclasto
+Justificativa: O osteócito é o estágio final de diferenciação do osteoblasto, não do osteoclasto.
+Os osteoclastos são responsáveis pela síntese de matriz óssea
+Justificativa: O osteoclasto faz reabsorção/destruição óssea. Quem sintetiza a matriz óssea é o osteoblasto.
+PTH atua na diminuição da calcemia, sua secreção promove a formação óssea, aumentando os níveis de Ca no sangue.
+Justificativa: O PTH aumenta a calcemia, não diminui. Ele favorece reabsorção óssea, aumenta reabsorção renal de cálcio e estimula a formação de calcitriol.
+As principais funções da vitamina D são aumentar a absorção de cálcio intestinal e promover maior reabsorção tubular de cálcio nos túbulos renais.
+Gabarito. Justificativa: A vitamina D aumenta principalmente a absorção intestinal de cálcio e fósforo e também favorece a reabsorção renal de cálcio.
+
+Explicação geral: 
+Osteoblasto = forma osso
+Osteoclasto = reabsorve osso
+PTH = aumenta Ca²⁺
+Vitamina D = aumenta absorção intestinal de Ca²⁺
+
+Dica de memorização:
+BLASTO constrói, CLASTO destrói.
+PTH e vitamina D ajudam a aumentar o cálcio no sangue.
+
+JVCJ, 42 anos, masculino, portador de Diabetes Mellitus tipo 2 há 11 anos, em tratamento com metformina 2g/d, sinvastatina 20mg/d e glimepirida 4mg/d, e Psoríase em remissão, em uso apenas de hidratante a base de uréia. Negava uso crônico de corticóide, comorbidades outras ou antecedentes pessoais significativos. Procurou assistência endocrinológica com queixa principal de cefaléia de início há 6 meses. Associado ao quadro, apresentava queda da libido e impotência sexual, diminuição da pilificação periférica, além de astenia, tontura e indisposição. Exame físico sem alterações, exceto por presença de circunferência abdominal aumentada (CA: 97 cm) e discreta ginecomastia bilateral.
+Apresentava:
+Testosterona Total 128 (VR:300-900 ng/mL); 
+LH 1,5 (VR:1,5-9,3 mUI/mL) e 
+FSH 3,3 (VR:1,1-8 mUI/mL); 
+TSH 1,01 (VR: 0,4-4 mUI/mL), 
+T4L 0,45 (VR:0,7-1,5ng/mL) e 
+T3T 0,58 (VR: 40-180ng/dL); 
+Cortisol Matinal 0,4 (VR:5,4-25 mcg/dL), 
+ACTH 5 (VR: 10-60 pg/mL). 
+Prolactina normal.
+Densitometria óssea mostrava osteopenia em coluna lombar.
+Submetido à RNM de sela túrcica que evidenciou macroadenoma de hipófise com extensão supra-selar, sem invasão de seios cavernosos.
+
+
+Assinale a alternativa CORRETA em relação às alterações encontradas no caso clínico abaixo e seu tratamento:
+O tratamento é a reposição de hormônios deficientes, neste caso: reposição de testosterona, glicocorticóide e levotiroxina.
+Gabarito. Justificativa: As deficiências são tratadas repondo os hormônios das glândulas-alvo: glicocorticoide, levotiroxina e, quando indicada, testosterona. Não se repõem rotineiramente ACTH ou TSH
+⚠️ Ponto importante: a ordem importa: diante de insuficiência adrenal associada a hipotireoidismo central, deve-se garantir reposição de glicocorticoide antes de iniciar levotiroxina, pois o hormônio tireoidiano pode precipitar descompensação adrenal.
+O tratamento é à reposição de hormônios hipofisários. Deve-se repor TSH, ACTH e as gonadotrofinas (FSH e LH).
+Justificativa: Não se tratam essas deficiências administrando TSH, ACTH, LH e FSH. Repõem-se os produtos finais: por exemplo, hidrocortisona no eixo adrenal e levotiroxina no eixo tireoidiano.
+O paciente apresenta Hipogonadismo Hipergonadotrófico e Hipotireoidismo Central decorrentes de Macroadenoma Hipofisário não-secretor.
+Justificativa: O hipogonadismo é hipogonadotrófico, não hipergonadotrófico. Se a testosterona está baixa, seria esperado LH/FSH elevados caso o defeito estivesse nos testículos; aqui estão baixos/inadequadamente normais → defeito central.
+A cefaleia do paciente não está relacionada ao tumor hipofisário neste caso, pois lesões nesta região não causam efeito local em estruturas adjacentes.
+Justificativa: Macroadenomas podem causar efeito de massa, incluindo cefaleia e alterações visuais por compressão de estruturas vizinhas. Lesões que atingem ou comprimem o quiasma óptico exigem avaliação específica do campo visual.
+Este tumor hipofisário também pode ter indicação cirúrgica, devido a sua proximidade com o quiasma óptico. O acesso de escolha para cirurgia de hipófise é a via transcraniana. 
+Justificativa: A primeira parte pode estar correta: tumores com comprometimento ou contato com o quiasma podem ter indicação cirúrgica. O erro está no final: a abordagem habitual para adenomas hipofisários é transesfenoidal, não transcraniana.
+
+Explicação geral: 
+Hormônio periférico (primário) ↓ + hormônio hipofisário ↓ ou inadequadamente normal → deficiência central (hipófise (secundário) + hipotálamo (terciário).
+
+Dica de memorização:
+Hipófise falhou? Reponha o hormônio final, não o hormônio hipofisário.
+E nesta situação: corticóide antes da levotiroxina.
+
+Exemplo no eixo tireoidiano: Hipotálamo → TRH → Hipófise → TSH → Tireóide → T4
+
+Se o T4 está baixo:
+
+problema na tireoide → hipotireoidismo primário;
+problema na hipófise → hipotireoidismo secundário;
+problema no hipotálamo → hipotireoidismo terciário;
+secundário e terciário = hipotireoidismo central.
+
+🧠 Dica:
+Central = hipotálamo ou hipófise.
+Periférico/primário = órgão-alvo.
+
+
+
+LISTA 2- PAG 34
+A osteoporose é considerada pela OMS como a "Epidemia Silenciosa do Século". e atualmente é um problema de saúde pública no mundo inteiro devido ao aumento na expectativa de vida das populações. A densitometria óssea é o exame de referência para o diagnóstico da osteoporose. São indicações de realização densitometria óssea EXCETO:
+Todos indivíduos que tenham apresentado fratura por trauma mínimo ou atraumática.
+Justificativa: Fratura por baixo impacto/trauma mínimo sugere fragilidade óssea e é indicação de avaliação para osteoporose.
+Mulheres com idade igual ou superior a 65 anos
+Justificativa: Mulheres com 65 anos ou mais devem realizar densitometria, mesmo sem outros fatores de risco.
+Homens com idade igual ou superior a 70 anos
+Justificativa: Homens com 70 anos ou mais também têm indicação de densitometria.
+Mulheres na pós-menopausa (após 50 anos) com fatores de risco para fratura
+Justificativa: Mulheres na pós-menopausa com fatores de risco para fratura devem ser avaliadas com densitometria.
+Para acompanhamento da eficácia do tratamento, a cada 6 meses. 
+Gabarito. Justificativa: Não se recomenda repetir densitometria a cada 6 meses rotineiramente. O acompanhamento costuma ser feito em intervalos maiores, geralmente de 1 a 2 anos, conforme risco e tratamento.
+
+Explicação geral: 
+A densitometria serve para diagnóstico e acompanhamento, mas mudanças na massa óssea são lentas; por isso, repetir em 6 meses geralmente não acrescenta informação útil.
+
+Dica de memorização:
+DXA: mulher ≥65, homem ≥70, fratura por fragilidade ou risco aumentado.
+
+PMJ, 38 anos, masculino, procurou assistência endocrinológica devido queixa de queda da libido e impotência sexual, diminuição da pilificação periférica, além de astenia, tontura e indisposição. Negava uso crônico de corticóide, comorbidades outras ou antecedentes pessoais significativos. Exame físico sem alterações, exceto por presença de circunferência abdominal aumentada (CA: 102 cm), discreta ginecomastia bilateral. Apresentava:
+Testosterona Total 68 (VR:300-900 ng/mL); 
+LH 1,5 (VR:1,5-9,3 mUI/mL) e FSH 3,3 (VR:1,1-8 mUI/mL); 
+TSH 1,01 (VR: 0,4-4 mUI/mL), 
+T4L 0,45 (VR:0,7-1,5ng/mL) e 
+T3T 0,58 (VR: 40-180 ng/dL); 
+Cortisol Matinal 0,4 (VR:5,4-25 mcg/dL), 
+Cortisol Salivar às 8h 2,7 nmol/L (VR: 5,25-19,1nmol/L) e 
+ACTH 5 (VR: 10-60 pg/mL). 
+Submetido à RNM de sela túrcica que evidenciou imagem sugestiva de macroadenoma hipofisário medindo 3,0x1,7x1,8 cm, sem desvio de haste hipofisária. 
+Densitometria óssea mostrava osteopenia em coluna lombar.
+Sobre este caso, assinale a alternativa CORRETA sobre o diagnóstico e tratamento: 
+Hipogonadismo Hipergonadotrófico, Hipotireoidismo Central secundários ao tumor hipofisário. Reposição de testosterona apenas
+Justificativa: O hipogonadismo não é hipergonadotrófico. Se o problema fosse testicular, LH e FSH estariam elevados. Aqui, com testosterona muito baixa e LH/FSH baixos ou inadequadamente normais, o defeito é central.
+Hipogonadismo Hipogonadotrófico, Hipotireoidismo e Insuficiência adrenal centrais secundários ao tumor hipofisário. Reposição de testosterona, glicocorticóide e levotiroxina. Uso de bracelete de identificação. 
+Gabarito. Justificativa: Há hipogonadismo hipogonadotrófico + hipotireoidismo central + insuficiência adrenal central por macroadenoma. O tratamento inclui reposição dos hormônios finais deficientes: testosterona, glicocorticoide e levotiroxina. Pacientes com insuficiência adrenal devem ter identificação de alerta para situações de emergência.
+Insuficiência adrenal central secundária à tumor hipofisário. Tratamento cirúrgico e reposição de glicocorticóide. Uso de bracelete de identificação.
+Justificativa: A insuficiência adrenal central existe, mas não é a única deficiência. O paciente também apresenta hipogonadismo central e hipotireoidismo central.
+Hipogonadismo Hipogonadotrófico, Hipertireoidismo e Insuficiência adrenal central secundária à Hipofisite Linfocítica. Reposição de testosterona e glicocorticóide.
+Justificativa: O paciente não tem hipertireoidismo, e a RNM mostra macroadenoma, não hipofisite linfocítica.
+Hipogonadismo Hipogonadotrófico, Hipotireoidismo e Insuficiência adrenal centrais secundários à Hipofisite Linfocítica. Não há necessidade de terapia de reposição hormonal.
+Justificativa: Além de a etiologia indicada estar errada, há necessidade clara de reposição hormonal.
+
+Explicação geral: 
+Hormônio periférico baixo + hormônio hipofisário baixo/inadequadamente normal = deficiência central.
+
+Dica de memorização:
+Macroadenoma pode “apertar” a hipófise e derrubar vários eixos de uma vez.
+
+O hipopituitarismo é caracterizado pela deficiência genética ou adquirida de um ou mais hormônios hipofisários. Sobre a investigação diagnósticas das diversas deficiências hormonais a ele associadas, assinale a INCORRETA
+O Teste de Tolerância à Insulina (ITT) pode dar o diagnóstico de Insuficiência adrenal ou de GH. 
+Justificativa: O Teste de Tolerância à Insulina (ITT) provoca hipoglicemia, um estresse que normalmente estimula simultaneamente ACTH/cortisol e GH. Por isso, pode avaliar tanto a reserva adrenal central quanto a deficiência de GH.
+No ITT, um pico de GH < 5 ng/mL em crianças e < 3 ng/mL em adultos são diagnósticos de Deficiência de GH. 
+Justificativa: No ITT, a ausência de elevação adequada do GH sugere deficiência de GH. Os pontos de corte variam conforme idade, método e IMC; em adultos, valores próximos de 3 ng/mL são classicamente utilizados.
+O teste da L-Argenina não deve ser realizado em idosos, portadores de valvulopatia, cardiopatas e convulsões.
+Justificativa: Testes provocativos para GH precisam de cautela em pacientes com maior risco cardiovascular ou neurológico. Atenção: as contraindicações clássicas mais importantes citadas para o ITT incluem cardiopatia isquêmica e epilepsia; a redação atribuindo esse conjunto especificamente à L-arginina é pouco precisa.
+O teste de estímulo com TRH pode ser útil no diagnóstico de Hiperprolactinemia e Hipotireoidismo Central.
+Justificativa: Considerada correta no contexto histórico da prova. O teste com TRH avalia a resposta hipofisária de TSH e também pode provocar elevação de prolactina. Porém, atualmente, não se recomenda rotineiramente teste dinâmico de TSH para diagnosticar hipotireoidismo central; usa-se principalmente T4 livre associado ao TSH.
+No teste de estímulo do ACTH, infunde-se ACTH IV e se dosa o cortisol 0, 30 e 60’. Se houver um pico do cortisol ≥ 20 mg/dL, confirma-se o diagnóstico de Insuficiência adrenal. 
+Justificativa: Está invertida: cortisol sobe adequadamente = reserva adrenal preservada. Se o cortisol não atingir resposta adequada após ACTH, pensa-se em insuficiência adrenal.
+
+Explicação geral: 
+Nos testes de estímulo, queremos saber se a glândula consegue responder: responde bem → função preservada; não responde → deficiência.
+
+Dica de memorização:
+ACTH dado → cortisol deve subir.
+Se não sobe, pense em insuficiência adrenal.
+
+Assinale a alternativa correta: Uma mulher de 31 anos de idade, que tem dois filhos saudáveis, relata que ela não menstruou nos últimos 6 meses, mas ela não está grávida e não toma medicamentos. Há 1 semana, ela notou saída de leite de seus seios. Refere também dores de cabeça durante os últimos 3 meses. Também ela está preocupada com sua visão, pois, enquanto dirigia seu carro quase bateu em um ônibus enquanto mudava de pista. Procurou o oftalmologista na época, e o médico disse que sua visão lateral estava reduzida. Ao exame físico, ela está afebril e normotensa. Qual dos seguintes resultados de testes de laboratório é mais provável de estar presente nessa mulher?
+cortisol sérico aumentado
+Justificativa: Sugere hipercortisolismo/Cushing, que não explica bem amenorreia + galactorreia + perda de campo visual lateral.
+falta de supressão do GH (hormônio do crescimento) no teste oral com sobrecarga de glicose
+Justificativa: É achado de acromegalia, que cursaria com aumento de extremidades, prognatismo, macroglossia etc.
+hiperprolactinemia
+Gabrito. Justificativa: É o achado mais provável. Excesso de prolactina causa galactorreia, amenorreia, infertilidade e hipogonadismo.
+teste de tolerância à glicose alterado
+Justificativa: Pode ocorrer em acromegalia ou diabetes, mas não é o achado que melhor explica o quadro.
+diminuição da TSH
+Justificativa: Pode ocorrer em hipopituitarismo, mas não explica diretamente a associação típica de amenorreia + galactorreia.
+
+Explicação geral: 
+PRL alta → inibe GnRH → LH/FSH ↓ → amenorreia e infertilidade.
+
+Dica de memorização:
+Amenorreia + galactorreia + cefaleia/alteração visual = pense em prolactinoma.
+
+Mulher, solteira, 23 anos, com queixa de amenorréia secundária há 3 meses. Faz uso de fluoxetina 20 mg/dia há 6 meses, para distúrbio do humor. Nega uso de outras substâncias. Ao exame: tireóide palpável, sem nódulos e de consistência normal; galactorréia ausente; oleosidade de pele com acnes isoladas em face. Exames laboratoriais: prolactina= 180 ng/mL (VR<25), TSH e T4 livre normais. Qual seria o próximo passo na abordagem deste caso abaixo?
+Solicitar dosagem de beta-HCG
+Gabarito. Justificativa: O primeiro passo é solicitar beta-HCG. Gravidez deve sempre ser excluída na investigação de hiperprolactinemia em mulher em idade fértil.
+Pesquisar macroprolactinemia.
+Justificativa: Macroprolactina deve ser lembrada sobretudo quando há hiperprolactinemia com quadro clínico pouco compatível ou discrepante. Aqui, antes disso, ainda falta excluir gravidez.
+Pedir RNM de sela turca e, caso haja microadenoma, iniciar teste terapêutico com agonista dopaminérgico em dose baixa
+Justificativa: A RNM pode ser necessária depois, se a hiperprolactinemia persistir sem causa não tumoral evidente. Não é o primeiro passo antes de excluir gravidez e revisar causas secundárias.
+Suspender a fluoxetina, pois o diagnóstico é de hiperprolactinemia farmacológica.
+Justificativa: A fluoxetina pode elevar prolactina, mas não se deve concluir automaticamente que seja farmacológica, especialmente com PRL de 180 ng/mL. Além disso, medicamentos não devem ser suspensos abruptamente sem avaliação do risco-benefício.
+Iniciar contraceptivo oral.
+Justificativa: Contraceptivo oral não trata a causa da hiperprolactinemia e não deve ser iniciado antes de esclarecer a etiologia.
+
+Explicação geral: 
+Na mulher com amenorreia + PRL alta, primeiro exclua gravidez; depois investigue medicamentos, hipotireoidismo, macroprolactina e, se necessário, hipófise.
+
+Dica de memorização:
+A paciente tem amenorreia secundária + prolactina elevada. Antes de atribuir a hiperprolactinemia à fluoxetina ou investigar hipófise, é obrigatório excluir gravidez, que é causa fisiológica comum de amenorreia e hiperprolactinemia.
+Amenorreia? Primeiro beta-HCG.
+Depois pense nas outras causas de PRL alta.
+
+Avalie o caso clínico abaixo e assinale a correta hipótese diagnóstica:
+Uma mulher de 44 anos de idade foi submetida a uma cirurgia transesfenoidal para tratamento de macroprolactinoma complicado com comprometimento visual (compressão do quiasma óptico). Ablação de massa residual tumoral significativa pós-cirurgia foi feita por meio de radioterapia. Cerca de um ano depois, passou a apresentar fraqueza, hipoglicemia após aumentar a atividade física, depressão, sonolência e amenorréia.
+Doença de Addison.
+Justificativa: É insuficiência adrenal primária, causada por doença da própria adrenal. Aqui, o problema é mais provavelmente central, por lesão hipofisária pós-tratamento.
+Pan-hipopituitarismo pós-radiação.
+Gabarito. Justificativa: Correta. Radioterapia na região hipofisária pode causar perda progressiva de vários hormônios da hipófise, levando a fraqueza, hipoglicemia, sonolência, depressão e amenorreia.
+Hipogonadismo idiopático.
+Justificativa: Explicaria amenorreia, mas não justifica hipoglicemia, fraqueza e sonolência.
+Insulinoma
+Justificativa: Pode causar hipoglicemia, mas não explica bem a amenorreia e o antecedente de cirurgia/radioterapia hipofisária.
+Síndrome de Sheehan.
+Justificativa: Ocorre por necrose hipofisária após hemorragia obstétrica importante, o que não aparece no caso.
+
+Explicação geral: 
+Radioterapia hipofisária pode causar hipopituitarismo progressivo, comprometendo vários eixos hormonais.
+
+Dica de memorização:
+Hipófise operada/irradiada + vários sintomas hormonais = pense em pan-hipopituitarismo.
+De acordo com o Ministério da Saúde, cerca de 10 milhões de brasileiros acima de 50 anos têm osteoporose. A doença é resultado da perda progressiva da massa óssea, podendo resultar em ossos finos, ocos, frágeis e, consequentemente, suscetíveis a fraturas. É correto afirmar sobre a osteoporose, EXCETO:
+Osteoporose Pós-Menopausa geralmente surge nos primeiros 10 anos após menopausa e a deficiência estrogênica é a anormalidade básica. 
+Justificativa: A osteoporose pós-menopausa está fortemente relacionada à deficiência de estrogênio, que acelera a reabsorção óssea, sobretudo nos primeiros anos após a menopausa.
+Os principais determinantes do risco de Osteoporose são o pico de massa óssea e a velocidade de perda óssea, ambos influenciados por fatores Genéticos e Ambientais.
+Justificativa: O risco de osteoporose depende principalmente do pico de massa óssea atingido e da velocidade de perda óssea, influenciados por genética, nutrição, atividade física, tabagismo, álcool e fatores hormonais.
+Obesas, em comparação a mulheres magras, têm o mesmo risco de fratura em sítios centrais e periféricos.
+Gabarito. Justificativa: Mulheres obesas e magras não têm exatamente o mesmo risco. Baixo peso é fator clássico de risco para osteoporose e fraturas; a obesidade pode alterar o padrão de risco conforme o sítio de fratura.
+A determinação da massa óssea através da densitometria óssea é o melhor indicador mensurável da quantidade de massa óssea e é útil na avaliação do risco de fraturas osteoporóticas.
+Justificativa: A densitometria óssea (DXA) é o principal método para estimar massa óssea e avaliar risco de fraturas osteoporóticas.
+A vit. D (colecalciferol) desempenha um importante papel na absorção intestinal do cálcio e na mineralização do osso novo. 
+Justificativa: A vitamina D aumenta a absorção intestinal de cálcio e participa da mineralização adequada do tecido ósseo.
+
+Explicação geral: 
+Osteoporose resulta de baixa massa óssea + perda de qualidade estrutural, aumentando o risco de fraturas.
+
+Dica de memorização:
+Baixo peso aumenta risco.
+DXA mede massa óssea.
+Vitamina D ajuda a absorver cálcio.
+
+Leia o texto e responda:
+Aldosteronismo primário (AP) é a causa mais comum de hipertensão arterial secundária com uma prevalência estimada de 4% nos pacientes hipertensos em atenção primária e em torno de 10% dos pacientes referenciados. É particularmente comum em pacientes com hipertensão arterial resistente, com prevalência de 14-21%, sendo a forma curável mais comum de hipertensão arterial. Por conta dos efeitos cardiovasculares do excesso de aldosterona que são independentes da pressão arterial elevada, pacientes com aldosteronismo primário tem maior morbimortalidade cardiovascular do que pacientes com hipertensão essencial pareados para idade, sexo e grau de elevação da pressão arterial. Pelo exposto, torna-se muito importante o seu reconhecimento e diagnóstico correto. Por outro lado, não é justificada a avaliação de todos os pacientes hipertensos. Dentre as recomendações para avaliação de AP, NÃO é possível incluir:
+Hipertensão com hipocalemia espontânea ou induzida por diurético. 
+Justificativa: HAS associada à hipocalemia espontânea ou induzida por diurético é indicação clássica para investigar hiperaldosteronismo primário.
+Hipertensão e incidentaloma adrenal. 
+Justificativa: HAS + incidentaloma adrenal também deve levantar suspeita de produção autônoma de aldosterona.
+PA> 150/100 mmHg em 3 ocasiões diferentes. 
+Justificativa: PA sustentada >150/100 mmHg em 3 medidas diferentes é critério clássico para investigação. 
+Hipertensão e apneia do sono. 
+Justificativa: HAS associada a apneia obstrutiva do sono também foi incluída entre os grupos clássicos de rastreio.
+Hipertensão associada a sintomas de palpitações e tremor.
+Gabarito. Justificativa: Palpitações e tremor, sobretudo se vierem com cefaléia, sudorese e crises hipertensivas, sugerem mais feocromocitoma.
+
+Explicação geral: 
+No HAP, pense em HAS + renina baixa + aldosterona alta, frequentemente com hipocalemia.
+
+Dica de memorização:
+HAP = pressão alta + K⁺ baixo.
+Palpitação + tremor/sudorese = pense em feocromocitoma.
+
+Obs.: diretrizes mais recentes ampliaram bastante o rastreamento de hiperaldosteronismo, mas para o padrão clássico dessa prova, a alternativa 5 é a resposta.
+
+I.M.S.S., feminina, 47 anos, negra. Iniciou três anos antes da avaliação médica quadro de parestesia e alodinia em região palmar, acompanhados de aumento de extremidades. Também foi notada macroglossia durante a realização de endoscopia digestiva alta (EDA).
+Exame físico: prognatismo, aumento de nariz, lábios e mãos (vide imagem).
+PA:160x100mmHg. Na investigação inicial observou-se glicemia 128 mg/dL; HbA1c 7,3%.
+Em relação ao caso clínico suspeito de acromegalia assinale a alternativa CORRETA:
+As complicações respiratórias e a neoplasia são as principais causas de mortalidade nos pacientes com acromegalia.
+Justificativa: As principais causas de mortalidade na acromegalia são sobretudo cardiovasculares. Complicações respiratórias e neoplasias também contribuem, mas não são as principais isoladamente.
+Nos pacientes em que o diagnóstico não pode ser descartado ou confirmado com as dosagens basais de GH e IGF-1, está indicada a dosagem do GH durante teste oral de tolerância à glicose.
+Gabarito. Justificativa: Quando GH e IGF-1 basais não esclarecem o diagnóstico, está indicado o TOTG com dosagem de GH. Na acromegalia, o GH não é suprimido adequadamente após a sobrecarga de glicose.
+Os análogos da somatostatina são o tratamento de escolha para os pacientes com microadenomas e para aqueles com compressão de quiasma óptico. 
+Justificativa: Em adenoma ressecável, especialmente com compressão do quiasma óptico, o tratamento de escolha é cirurgia transesfenoidal. Análogos da somatostatina são importantes, mas não substituem a cirurgia nesses casos.
+Um valor de GH (growth hormone) abaixo de 2,5 mcg/dl afasta o diagnóstico de acromegalia neste paciente. 
+Justificativa: Um GH basal isolado não afasta acromegalia, porque sua secreção é pulsátil. O exame inicial mais útil é o IGF-1; se necessário, confirma-se com TOTG.
+Geralmente a ressonância nuclear magnética (RNM) de sela túrcica evidencia um microadenoma hipofisário.
+Justificativa: Na maioria dos casos diagnosticados, a RNM mostra macroadenoma hipofisário, não microadenoma.
+
+Explicação geral: 
+Acromegalia = GH ↑ → IGF-1 ↑, geralmente por adenoma hipofisário.
+
+Dica de memorização:
+IGF-1 rastreia, TOTG confirma, RNM localiza.
+
+Avalie o caso clínico abaixo e assinale a alternativa correta:
+Paciente do sexo feminino, 19 anos, natural e procedente de Rio Branco (AC), começou há 2 anos com ganho de peso progressivo (20 Kg),fraqueza, debilidade muscular de aparecimento gradativo. Há um ano apresentou aborto espontâneo, exacerbação deste quadro, com presença de obesidade central, fácies de lua cheia, acne, hirsutismo, estrias violáceas no abdômen, coxas e braços, lesões na pele, gibosidade, edemas nos membros inferiores, níveis pressóricos ligeiramente elevados (130 x 90 mmHg), Na investigação detectou-se glicemia 146 mg/dL. Realizado o teste de supressão com 1 mg de dexametasona ao deitar com dosagem de cortisol plasmático na manhã seguinte e observou-se que não houve supressão do cortisol após dexametasona. Foram realizadas dosagens de cortisol salivar às 23h e cortisol urinário na urina de 24, ambas alteradas. Dosou-se também o ACTH, que resultou em 1 pg/mL (VR < 46 pg/ dL). 
+Dentre as opções abaixo, a suspeita diagnóstica é:
+Doença de Cushing. 
+Justificativa: A doença de Cushing é causada por adenoma hipofisário produtor de ACTH, portanto costuma cursar com ACTH normal-alto ou elevado, não suprimido.
+Hiperplasia adrenal congênita 
+Justificativa: Hiperplasia adrenal congênita costuma se apresentar com alterações da esteroidogênese desde a infância/adolescência e não explica este padrão clássico de hipercortisolismo com ACTH suprimido.
+Síndrome de Cushing por adenoma adrenal.
+Justificativa: O hipercortisolismo está confirmado e o ACTH = 1 pg/mL está suprimido, indicando Cushing ACTH-independente. A principal suspeita passa a ser produção autônoma de cortisol pela adrenal, como adenoma adrenal.
+Síndrome dos ovários policísticos.
+Justificativa: SOP pode causar obesidade, acne e hirsutismo, mas não explica fácies em lua cheia, estrias violáceas, fraqueza muscular proximal e testes de hipercortisolismo alterados.
+Secreção ectópica de ACTH. 
+Justificativa: Secreção ectópica de ACTH causa síndrome de Cushing ACTH-dependente, portanto o ACTH estaria elevado ou inadequadamente normal.
+
+Explicação geral: 
+Cortisol alto + ACTH baixo = causa adrenal.
+
+Dica de memorização:
+ACTH caiu? Olhe a adrenal.
+ACTH subiu? Pense em hipófise ou ectópico.
+Avalie o caso clínico abaixo e assinale a alternativa correta: Na investigação de dor abdominal em mulher de 52 anos foi encontrada à tomografia computadorizada (TC) um nódulo sólido na adrenal direita com a seguinte descrição: 
+Nódulo medindo 2,6 cm, com densidade pré-contraste de 2 unidades de Hounsfield. O clareamento do contraste foi de 65% após 10 minutos da sua administração endovenosa. Sugestivo de adenoma adrenal. 
+A paciente tem diagnóstico de hipertensão e dislipidemia. Nega paroxismos. 
+Ao exame físico, ausculta cardíaca e pressão arterial normais. Sobre este caso é CORRETO afirmar que:
+A possibilidade de feocromocitoma está excluída, visto ser o paciente normotenso. 
+Justificativa: Feocromocitoma não é excluído apenas porque a paciente está normotensa. Pode haver apresentação sem hipertensão sustentada ou sem paroxismos típicos.
+A adrenalectomia unilateral está indicada, independentemente do status funcional da lesão, por se tratar de uma lesão com alto risco de malignidade
+Justificativa: Não há indicação de adrenalectomia apenas pelo tamanho. Lesões homogêneas com ≤10 UH na TC sem contraste têm aspecto benigno e, se não funcionantes, geralmente não necessitam cirurgia.
+O paciente deve ser submetido a uma biópsia aspirativa percutânea com agulha fina para verificar se trata-se de adenoma ou carcinoma adrenal.
+Justificativa: Isso não é a conduta padrão em incidentaloma adrenal. A biópsia adrenal não serve rotineiramente para diferenciar adenoma de carcinoma adrenocortical e, de modo geral, deve ser evitada. As diretrizes recomendam considerar biópsia apenas em situações bem específicas, sobretudo quando existe história de malignidade extra-adrenal, a lesão não foi caracterizada como benigna por imagem e o resultado mudaria a conduta. Além disso, antes de qualquer biópsia é obrigatório excluir feocromocitoma.
+Uma massa adrenal homogênea com ≤10 UH na TC sem contraste é considerada característica de adenoma benigno rico em lipídios.
+Caso a avaliação hormonal seja normal, o paciente deve ser seguido com avaliações periódicas do tamanho da massa adrenal e dosagens hormonais.
+Gabarito. Justificativa: Se a avaliação hormonal for normal, trata-se de provável incidentaloma adrenal não funcionante. Protocolos mais antigos recomendavam acompanhamento periódico de imagem e função hormonal.
+⚠️ Atualização importante: pelas diretrizes europeias mais recentes, uma lesão homogênea com ≤10 UH já é considerada claramente benigna e não necessita seguimento radiológico de rotina; também não se recomenda repetir avaliação hormonal se a avaliação inicial foi normal, salvo surgimento de novos sinais ou piora de comorbidades.
+Metástase adrenal é a principal hipótese diagnóstica. 
+Justificativa: Metástase não é a principal hipótese. A densidade de 2 UH e o washout elevado são típicos de adenoma adrenal, além de não haver história de câncer conhecida.
+
+Explicação geral: 
+Incidentaloma adrenal exige duas perguntas: é maligno? é funcionante?
+
+Dica de memorização:
+≤10 UH sem contraste = pense em adenoma benigno rico em lipídios.
+
+O tecido ósseo é um tecido vivo e hormonalmente ativo. Ele é composto por diferentes tipos celulares e uma matriz mineralizada. A respeito do metabolismo ósseo, marque a alternativa INCORRETA:
+A osteoprotegerina tem um papel fundamental na proteção óssea contra o excesso de reabsorção óssea promovida pelo sistema RANK-RANKL.
+Justificativa: A osteoprotegerina (OPG) funciona como um “receptor-cebo” para o RANKL, impedindo sua ligação ao RANK e, assim, reduzindo a formação e ativação dos osteoclastos.
+O ligante do RANK atua estimulando os osteoblastos a promoverem a formação óssea.
+Justificativa: O RANKL não estimula osteoblastos. Ele se liga ao RANK nos precursores dos osteoclastos, promovendo diferenciação e ativação osteoclástica → aumenta reabsorção óssea.
+A vitamina D atua a nível intestinal aumentando a absorção do cálcio alimentar.
+Justificativa: A vitamina D aumenta a absorção intestinal de cálcio e fósforo, contribuindo para a mineralização óssea.
+O paratormônio (PTH) atua estimulando a reabsorção óssea a fim de manter os níveis de cálcio séricos dentro da normalidade.
+Justificativa: O PTH aumenta a calcemia, entre outros mecanismos, favorecendo reabsorção óssea e aumentando a reabsorção renal de cálcio.
+A calcitonina é um antagonista natural do PTH.
+Justificativa: A calcitonina tem efeito oposto ao PTH sobre o osso, inibindo osteoclastos e reduzindo reabsorção óssea.
+
+Explicação geral: 
+RANKL ativa osteoclasto; OPG bloqueia RANKL.
+
+Dica de memorização:
+RANKL = reabsorve.
+OPG = protege o osso.
+
+O feocromocitoma é um tumor originado de células cromafins e tem como manifestação clínica mais comum a hipertensão arterial. Sobre essa patologia, julgue as assertivas abaixo e assinale a alternativa CORRETA:
+O tratamento definitivo de escolha do feocromocitoma é feito atualmente com iodo radioativo, através da infusão de MIBG (Meta Iodo Benzil Guanidina) que vai rastrear em todo o corpo lesões primárias e metastáticas, destruindo-as através da radiação.
+Justificativa: O tratamento definitivo do feocromocitoma localizado é cirúrgico, geralmente por adrenalectomia. O MIBG radioativo pode ser usado em casos selecionados de doença metastática ou irressecável, não como tratamento padrão inicial.
+Pacientes com sintomas sugestivos (ex: tríade de cefaleia + sudorese + palpitações) devem ser investigados para feocromocitoma.
+Gabarito. Justificativa: A tríade clássica de cefaleia + sudorese + palpitações, sobretudo associada a hipertensão ou crises paroxísticas, deve levantar suspeita de feocromocitoma e motivar investigação bioquímica.
+Não há necessidade de investigar pacientes com nódulo adrenal identificado por algum exame de imagem (ex: pcte fez uma tc de abdome para avaliar fígado e terminou sendo detectado um incidentaloma adrenal) para feocromocitoma.
+Justificativa: Um incidentaloma adrenal pode exigir investigação hormonal, incluindo exclusão de feocromocitoma conforme as características da lesão e o contexto clínico.
+Trata-se de um tumor neuroendócrino, produtor de catecolaminas podendo ser esporádico ou familiar. Nos casos familiares, os pacientes acometidos costumam ser mais velhos e apresentar quadros mais brandos, com menor prevalência de feocromocitoma extra-adrenal e maligno.
+Justificativa: O feocromocitoma é realmente um tumor neuroendócrino produtor de catecolaminas e pode ser esporádico ou hereditário. O erro está em afirmar que os casos familiares costumam ocorrer em pacientes mais velhos e serem mais brandos; formas hereditárias frequentemente aparecem mais precocemente e podem ser bilaterais ou multifocais
+Em pacientes com suspeita de feocromocitoma, cirurgia deve ser feita imediatamente, não sendo necessário preparo e nem uso de medicações antes da cirurgia
+Justificativa: A cirurgia não deve ser feita sem preparo. Pacientes com feocromocitoma funcionante devem receber bloqueio adrenérgico pré-operatório, classicamente bloqueio alfa, por cerca de 7–14 dias, para reduzir o risco de crise hipertensiva e complicações cardiovasculares durante a cirurgia.
+
+Explicação geral: 
+Feocromocitoma = tumor de células cromafins que produz catecolaminas, causando principalmente hipertensão e crises adrenérgicas.
+
+Dica de memorização:
+Feo = cefaleia + coração disparado + camisa suada.
+Cirurgia? ALFA antes de operar.
+
+Mulher de 68 anos, 3 Gesta 3 Para, menopausa aos 48 anos sem histórico de uso de estrogênios ou progestagênios na pós-menopausa, procura atendimento por resultado recente de sua primeira densitometria óssea que mostrou T-score de -1,9 e Z-score de -0,4 para coluna lombar (L1-L4). Nega doenças crônicas, mas refere diminuição da altura em relação a antes da menopausa (cerca de 3 cm), com cifose dorsal e lordose cervical. Nega tabagismo e etilismo. Não sabe informar antecedentes familiares por ter sido adotada. Foi solicitada radiografia de coluna tóraco-lombar que revelou duas vértebras com diminuição na altura dos corpos vertebrais. Nesse caso, ASSINALE A CORRETA:
+Mesmo sem osteoporose pela densitometria, há indicação de tratamento medicamentoso específico para osteoporose.
+Justificativa: A paciente tem duas vértebras com redução de altura, compatíveis com fraturas vertebrais por fragilidade. Isso já confere alto risco de novas fraturas e justifica tratamento específico, mesmo com T-score de -1,9.
+Fármacos anti-reabsortivos ósseos não estão indicados, devendo-se escolher o tratamento com estrogênio.
+Justificativa: Anti-reabsortivos podem estar indicados. Estrogênio não é tratamento de escolha nessa mulher de 68 anos, especialmente tantos anos após a menopausa.
+O tratamento com fármacos específicos para osteoporose só estaria indicado se o Z-score estivesse abaixo de -2,0.
+Justificativa: O Z-score não é o parâmetro usado para indicar tratamento em mulher pós-menopausa. Nessa faixa etária usamos principalmente T-score, presença de fraturas e risco clínico.
+A indicação ou não de tratamento depende do resultado obtido na “ferramenta de avaliação de risco de fratura da OMS” (conhecido como “FRAX®”).
+Justificativa: O FRAX é útil para estimar risco quando a decisão terapêutica não está clara, mas aqui já existem fraturas vertebrais, que por si só sustentam indicação de tratamento. Além disso, múltiplas fraturas vertebrais colocam a paciente em categoria de risco muito elevado.
+Não há indicação de tratamento específico, apenas orientação dietética e controle com nova densitometria em 6 meses. Se houver perda óssea nesse período, passa a existir indicação de tratamento farmacológico.
+Justificativa: Não é adequado apenas observar. A paciente já apresenta fraturas vertebrais, perda de altura e deformidade da coluna, portanto necessita tratamento específico.
+
+Explicação geral: 
+T-score entre -1 e -2,5 = osteopenia, mas fratura vertebral por fragilidade pode estabelecer osteoporose clínica e indicar tratamento mesmo sem T-score ≤ -2,5.
+
+Dica de memorização:
+Fratura por fragilidade pesa mais que o T-score.
+Aqui: T-score -1,9 + fratura vertebral = tratar.
+
+Estão corretas as afirmativas: 
+Uma mulher branca de 30 anos, apresentou um quadro agudo de fraqueza nas mãos que progrediu, rapidamente, para os membros superiores e inferiores, tronco e região cervical. Foi atendida no pronto socorro do HCFMUSP, onde constatou-se tetraparesia, associada à hipertensão arterial e à hipocalemia. Medicada com cloreto de potássio (KCl) intravenoso, a paciente apresentou melhora dos sintomas sendo, em seguida, transferida para o Serviço de Endocrinologia e Metabologia. Referia hipertensão arterial há 2,5 anos, mas negava poliúria e polidpsia. Cinco meses antes do episódio relatado, a paciente apresentou quadro semelhante, sendo atendida em outro serviço de onde trazia o seguinte relatório: quadro de tetraparesia grau 4, com hiporreflexia global e hipoestesia subjetiva. Potássio: 2,0 mEq/L; CPK: 7.759U/L. Tinha sido medicada com injeção intravenosa de KCl, apresentando reversão do quadro. Sua mãe é hipertensa. Exame físico: PA: 150x100 mmHg (posição supina e ortostática); P: 82 bpm. Diminuição da força muscular nos membros com hiporreflexia global. Fundo de olho normal
+
+Analise as afirmativas a seguir e assinale as alternativas corretas em relação ao caso clínico de suspeitA de hiperaldosteronismo primário:
+
+I. O adenoma produtor de aldosterona, em geral, é maligno e apresenta grandes dimensões. 
+II. Hipertensão normocalêmica é a forma mais comum de apresentação do
+hiperaldosteronismo na atualidade, encontrando-se hipocalemia nos casos mais severos da doença e após longo período sem diagnóstico. 
+III. A maioria dos pacientes com hiperaldosteronismo primário são normotensos. 
+
+II apenas
+Gabarito. Justificativa:  Atualmente, muitos pacientes com hiperaldosteronismo primário têm potássio normal. A hipocalemia costuma aparecer nos casos mais intensos ou prolongados.
+I apenas.
+Justificativa: O adenoma produtor de aldosterona, em geral, é benigno e pequeno. Carcinoma produtor de aldosterona é raro.
+II, III apenas
+Justificativa: O hiperaldosteronismo primário é uma causa de hipertensão arterial secundária. Portanto, a maioria dos pacientes é hipertensa, não normotensa.
+I, II e III.
+Justificativa: I - Falsa: O adenoma produtor de aldosterona, em geral, é benigno e pequeno. Carcinoma produtor de aldosterona é raro.
+III - Falsa: O hiperaldosteronismo primário é uma causa de hipertensão arterial secundária. Portanto, a maioria dos pacientes é hipertensa, não normotensa.
+I, II apenas.
+Justificativa: O adenoma produtor de aldosterona, em geral, é benigno e pequeno. Carcinoma produtor de aldosterona é raro.
+
+Explicação geral: 
+Aldosterona ↑ → retenção de sódio e água → HAS; perda renal de K⁺ → hipocalemia.
+
+Dica de memorização:
+HAP pode ter K⁺ normal.
+HAS é regra; hipocalemia não é obrigatória.
+
+A acromegalia é diagnosticada pela documentação de altos níveis de GH e IGF-1 na circulação. Após esta documentação inicial, qual dos seguintes testes deve ser realizado para confirmação bioquímica da acromegalia?
+Níveis aleatórios de GH e prolactina.
+Justificativa: GH aleatório é pouco confiável porque sua secreção é pulsátil. Prolactina não confirma acromegalia.
+Nível aleatório de GHRH.
+Justificativa: A dosagem de GHRH não faz parte da confirmação de rotina; é reservada para situações raras, como suspeita de secreção ectópica.
+Níveis séricos de GH durante teste de supressão de GH com sobrecarga de glicose.
+Justificativa: Faz-se TOTG com dosagem de GH. Em pessoas normais, a glicose suprime o GH; na acromegalia, ele não cai adequadamente.
+Níveis séricos de proteína de ligação IGF-1 e IGF-1.
+Justificativa: Proteínas de ligação do IGF-1 não são usadas como teste confirmatório de rotina.
+Solicitar nível de Somatostatina.
+Justificativa: A dosagem de somatostatina não é utilizada para confirmar acromegalia.
+
+Explicação geral: 
+Na suspeita: IGF-1 elevado → TOTG com GH para confirmar.
+
+Dica de memorização:
+Acromegalia = GH não suprime com glicose.
+
+Turma 111 -  06/12/2022
+Paciente feminina 38 anos, nulípara, procura o consultório do endocrinologista por galactorréia há 5 meses. Sobre o caso clínico, assinale V (Verdadeiro) ou F (Falso)
+( ) A prolactina é um hormônio produzido pelas células somatotróficas da hipófise anterior
+Justificativa: Falsa. A prolactina é produzida pelas células lactotróficas da adeno-hipófise. As células somatotróficas produzem GH.
+( ) Pela idade e por ser nulípara, a gestação pode ser descartada do possível diagnóstico dessa paciente.
+Justificativa: Falsa. Gestação sempre deve ser excluída em mulher em idade fértil com galactorreia/amenorreia, independentemente de idade ou nuliparidade.
+( ) Os agonistas dopaminérgicos como a cabergolina, ligam-se aos receptores D2 nos lactotrofos inibindo a síntese de prolactina
+Justificativa: Verdadeira. Agonistas dopaminérgicos, como cabergolina, atuam nos receptores D2 dos lactotrofos, reduzindo síntese e secreção de prolactina.
+( ) Caso seja um tumor hipofisário, o diagnóstico mais provável é macroprolactinoma
+Justificativa: Falsa. Se houver prolactinoma, não é obrigatório que seja macroprolactinoma. Microprolactinomas são frequentes em mulheres e muitas vezes se apresentam com galactorreia e alterações menstruais.
+( ) Lesões que causam compressão em haste hipofisária podem causar hiperprolactinemia por impedir a chegada de dopamina para a hipófise
+Justificativa: Verdadeira. Compressão da haste reduz a chegada de dopamina à hipófise. Como a dopamina normalmente inibe a prolactina, sua redução leva a hiperprolactinemia por efeito de haste.
+
+Explicação geral: 
+Dopamina freia prolactina. Se a dopamina cai, a prolactina sobe.
+
+Dica de memorização:
+Lactotrofo → prolactina.
+Somatotrofo → GH.
+Haste comprimida → dopamina ↓ → prolactina ↑.
+
+Avalie o caso clínico e responda as questões a seguir:
+Homem de 55 anos, hipertenso, é avaliado com queixa crônica de fraqueza e dores articulares. Refere também alteração de glicemia capilar em exame realizado na UBS. Relata que seu anel de casamento não cabe mais no seu dedo e perdeu vários pares de sapatos nos últimos 5 anos devido ao crescimento do seu pé. Ao exame físico foi observado prognatismo, aumento de nariz e lábios. Foi feita a suspeita clínica de acromegalia.
+Sobre a acromegalia, assinale a alternativa V ou F
+( ) A dosagem de GH basal não é um bom exame para confirmação do diagnóstico uma vez que  a secreção do GH é pulsátil.
+Justificativa: Verdadeira. O GH basal isolado não é bom exame confirmatório porque sua secreção é pulsátil e varia ao longo do dia.
+( ) As complicações sistêmicas resultam em elevada morbi-mortalidade e redução da expectativa de vida
+Justificativa: Verdadeira. A acromegalia aumenta morbimortalidade por complicações principalmente cardiovasculares, respiratórias e metabólicas.
+Pacientes com acromegalia podem ter outras alterações endócrinas e metabólicas como: diabetes, ganho de peso, hiperinsulinemia e hipertensão.
+Justificativa: Veradeiro. O excesso de GH causa resistência à insulina, podendo levar a hiperinsulinemia, diabetes, hipertensão e alterações de composição corporal.
+Crescimento linear exagerado e gigantismo são vistos na maioria dos pacientes adultos com tumores secretores de GH.
+Justificativa: Falsa. Crescimento linear exagerado ocorre quando o excesso de GH surge antes do fechamento das cartilagens de crescimento, causando gigantismo. No adulto ocorre acromegalia, com aumento de extremidades e partes moles, sem aumento da altura.
+A cirurgia com abordagem transcraniana é o tratamento de primeira escolha na maioria dos casos. Como alternativa, pode ser feita a via transesfenoidal, pois esta tem altas taxas de complicações.
+Justificativa: Falsa. A abordagem cirúrgica de escolha é geralmente a transesfenoidal. A via transcraniana é reservada para casos selecionados e costuma ser mais invasiva.
+
+Explicação geral: 
+Excesso de GH antes do fechamento das cartilagens = gigantismo. Depois = acromegalia.
+
+Dica de memorização:
+IGF-1 rastreia, TOTG confirma, RNM localiza, transesfenoidal trata.
+
+Em relação ao caso clínico, assinale o item V (verdadeiro) ou F (falso):
+
+Mulher, 24 anos, solteira, foi ao ginecologista com queixa de amenorréia há 6 meses. Nega doenças prévias ou atuais. Não é tabagista, nem etilista e nem usuária de drogas ilícitas. Não está usando anticoncepcional hormonal.
+( V ) A magnitude da elevação nos níveis séricos de prolactina é útil na determinação da etiologia, uma vez que os valores mais altos são encontrados em pacientes com hiperprolactinemia por prolactinomas.
+Justificativa: Verdadeiro. Prolactinomas, especialmente os macroprolactinomas, costumam produzir níveis mais elevados de prolactina. A intensidade da elevação ajuda na investigação etiológica.
+( V ) O uso de alguns medicamentos psicoativos pode estar associado à hiperprolactinemia de etiologia farmacológica.
+Justificativa: Verdadeiro. Antipsicóticos e outros fármacos que reduzem a ação dopaminérgica podem elevar a prolactina, pois a dopamina normalmente inibe sua secreção.
+( V ) A hiperprolactinemia patológica pode ser causada por insuficiência renal e hepática.
+Justificativa: Verdadeiro. Doenças renal e hepática podem reduzir a depuração/metabolização da prolactina, levando ao aumento de seus níveis séricos.
+( V ) A hiperprolactinemia deve ser investigada em mulheres frente à ocorrência de queixas como amenorreia/irregularidade menstrual, galactorreia e infertilidade.
+Justificativa: Verdadeiro. A prolactina elevada inibe o eixo GnRH → LH/FSH, podendo causar hipogonadismo, amenorreia, infertilidade e galactorreia.
+( V ) A hiperprolactinemia pode ser vista em pacientes com hipotireoidismo primário descompensado, devido sobretudo ao aumento do TRH (que estimula a síntese de prolactina).
+Justificativa: Verdadeiro. No hipotireoidismo primário, há T4 ↓ → TRH ↑ e TSH ↑; o TRH também estimula os lactotrofos, podendo elevar a prolactina.
+
+Explicação geral: 
+Dopamina freia PRL; TRH estimula PRL.
+
+Dica de memorização:
+PRL alta: prolactinoma, medicamentos, hipotireoidismo, rim/fígado e efeito de haste.
+
+Nos casos de pan-hipopituitarismo decorrente da necrose hipofisária subsequente à hemorragia pós-parto, assinale (V) para verdadeiro ou (F) para falso:
+O tratamento substitutivo visa administrar os próprios hormônios hipofisários
+Justificativa: Falsa. O tratamento não costuma repor os hormônios hipofisários em si, mas os hormônios finais das glândulas-alvo, como glicocorticoide, levotiroxina e hormônios sexuais.
+A redução ou a ausência de lactação é o último sinal clínico a aparecer
+Justificativa: Falsa. A falha na lactação pode ser um dos primeiros sinais, por deficiência de prolactina após necrose hipofisária.
+A tomografia de crânio é de grande ajuda no diagnóstico
+Justificativa: Falsa. A RNM de sela túrcica é mais útil que a TC para avaliação da hipófise. Com o tempo, pode haver aspecto de sela vazia.
+Não devemos administrar hormônio tireoidiano precocemente se houver suspeita de insuficiência adrenal
+Justificativa: Verdadeira. Se houver suspeita de insuficiência adrenal, deve-se repor glicocorticoide antes da levotiroxina, pois o hormônio tireoidiano pode precipitar crise adrenal.
+A melhor conduta é a expectante, não há necessidade de reposição hormonal.
+Justificativa: Falsa. O tratamento é reposição hormonal, não conduta expectante.
+
+Explicação geral: 
+Sheehan = necrose hipofisária após hemorragia obstétrica → hipopituitarismo.
+
+Dica de memorização:
+Pós-parto + hemorragia + não consegue amamentar = pense em Sheehan.
+
+Sobre as assertivas abaixo, assinale (V) para verdadeiro ou (F) para falso:
+Por definição, a doença de Cushing resulta de um adenoma hipofisário.
+Justificativa: Verdadeira. Doença de Cushing é, por definição, o hipercortisolismo causado por adenoma hipofisário secretor de ACTH.
+Por definição, a doença de Cushing resulta de um adenoma cortical adrenal.
+Justificativa: Falsa. Adenoma cortical adrenal causa síndrome de Cushing ACTH-independente, e não doença de Cushing.
+A administração de glicocorticóides é causa de Síndrome de Cushing.
+Justificativa: Verdadeira. O uso crônico de glicocorticoides exógenos é a causa mais comum de síndrome de Cushing.
+Todas as causas de hiperadrenocorticismo são de origem adrenal.
+Justificativa: Falsa. Nem todas as causas são adrenais. Podem ser:
+hipofisárias;
+ectópicas;
+adrenais;
+iatrogênicas por corticoide.
+O teste de supressão com dexametasona é um bom teste para investigar a Síndrome de Cushing
+Justificativa: Verdadeira. O teste de supressão com dexametasona é utilizado na investigação do hipercortisolismo. Em indivíduos normais, a dexametasona suprime o cortisol; na síndrome de Cushing, essa supressão é inadequada.
+
+Explicação geral: 
+Doença de Cushing = hipófise.
+Síndrome de Cushing = qualquer causa de excesso de cortisol.
+
+Dica de memorização:
+Doença = hipófise. Síndrome = termo geral.
+
+Sobre as assertivas abaixo, assinale (V) para verdadeiro ou (F) para falso:
+Independentemente da causa, o paciente com doença de Addison tende a apresentar hipercalcemia
+Justificativa: Falsa. A doença de Addison não se caracteriza por hipercalcemia obrigatória. Pode ocorrer hipercalcemia em alguns casos, mas não é um achado típico ou constante.
+Independentemente da causa, o paciente com doença de Addison tende a apresentar hipercalemia
+Justificativa: Verdadeira. Na insuficiência adrenal primária há deficiência de aldosterona, levando a menor excreção renal de potássio → hipercalemia.
+Na doença de Addison o déficit de volume pode ser severo e a hipotensão e o choque podem não responder aos vasopressores a menos que sejam administrados glicocorticóides
+Justificativa: Verdadeira. Na crise adrenal pode haver hipovolemia e hipotensão graves. A resposta aos vasopressores pode ser inadequada enquanto não houver reposição de glicocorticoide, geralmente hidrocortisona.
+O procedimento padrão mais adequado para detectar feocromocitoma é a dosagem de metanefrinas urinárias.
+Justificativa: Verdadeira no contexto da prova. A investigação bioquímica do feocromocitoma pode ser feita com metanefrinas urinárias fracionadas de 24 h. Atualmente, tanto elas quanto as metanefrinas plasmáticas livres são testes iniciais recomendados.
+Níveis baixos de hormônios do córtex adrenal resultam em bócio
+Justificativa: Falsa. A deficiência de hormônios do córtex adrenal não causa bócio. Bócio está relacionado principalmente a alterações da tireoide/TSH.
+
+Explicação geral: 
+Addison = cortisol ↓ + aldosterona ↓ → hipotensão, hiponatremia e hipercalemia.
+
+Dica de memorização:
+Addison: “perde sal, segura K⁺ e perde pressão”.
+
+Sobre as assertivas abaixo, assinale (V) para verdadeiro ou (F) para falso:
+Não se deve retirar o cálcio alimentar da dieta do paciente com hiperparatireoidismo
+Justificativa: Verdadeira. Não se recomenda retirar cálcio da dieta no hiperparatireoidismo. A ingestão adequada de cálcio deve ser mantida; restrição excessiva pode até aumentar a secreção de PTH.
+Hipoparatireoidismo é doença rara, mas pode ter complicações graves
+Justificativa: Verdadeira. O hipoparatireoidismo é relativamente raro, mas pode causar hipocalcemia grave, tetania, convulsões e arritmias.
+A principal causa do hipoparatireoidismo é por complicações cirúrgicas
+Justificativa: Verdadeira. A causa mais comum é pós-cirúrgica, especialmente após tireoidectomia ou cirurgia cervical, por remoção ou lesão das paratireoides.
+O tratamento do hipoparatireoidismo é feito com reposição de PTH
+Justificativa: Falsa. O tratamento convencional é feito com reposição de cálcio e vitamina D ativa (calcitriol). A reposição de PTH não é a terapia habitual de primeira linha e fica reservada para situações selecionadas.
+O pseudohipoparatireoidismo apresenta níveis elevados de PTH sérico
+Justificativa: Verdadeira. No pseudohipoparatireoidismo, há resistência dos tecidos à ação do PTH. Assim, o organismo tenta compensar produzindo mais PTH → PTH elevado, com tendência a cálcio baixo e fósforo alto.
+
+Explicação geral: 
+Hipoparatireoidismo: PTH ↓ → Ca ↓, P ↑.
+Pseudohipoparatireoidismo: PTH ↑, mas não funciona direito.
+
+Dica de memorização:
+“Pseudo” = tem PTH, mas o corpo não responde.
+
+Em relação à osteoporose, assinale (V) para verdadeiro e (F) para falso:
+A osteoporose é uma doença caracterizada pela fragilidade óssea e alterações na sua microarquitetura
+Justificativa: Verdadeira. A osteoporose é caracterizada por redução da resistência óssea, com baixa massa óssea e deterioração da microarquitetura, aumentando o risco de fraturas.
+O tabagismo pode acarretar diminuição de massa óssea e maior risco de fraturas sobretudo com o avançar da idade
+Justificativa: Verdadeira. O tabagismo acelera a perda de massa óssea e aumenta o risco de fraturas, sobretudo com o envelhecimento.
+Indivíduos com IMC < 18 kg/m2 têm menor risco de ocorrência de osteoporose
+Justificativa: Falsa. Baixo IMC é fator de risco para osteoporose. Indivíduos muito magros tendem a ter menor reserva óssea e maior risco de fraturas.
+O uso de corticóides como por exemplo prednisona 20mg ao dia, por mais de 3 meses, não é fator para ocorrência de osteoporose, pois a dose da medicação utilizada é baixa
+Justificativa: Falsa. Uso crônico de glicocorticoides, como prednisona por ≥3 meses, é fator importante de risco para osteoporose. 20 mg/dia é uma dose relevante, não baixa.
+Em uma paciente com 65 anos e T score <= -2,5, em coluna, fêmur total ou colo de fêmur, temos diagnóstico de osteoporose
+Justificativa: Verdadeira. Em mulher de 65 anos, T-score ≤ -2,5 em coluna lombar, colo do fêmur ou fêmur total é compatível com osteoporose densitométrica.
+
+Explicação geral: 
+Osteoporose = osso frágil + maior risco de fratura.
+
+Dica de memorização:
+Baixo peso, cigarro e corticoide = risco ósseo.
+T-score ≤ -2,5 = osteoporose.
+
+Em relação às alternativas abaixo, assinale (V) para verdadeiro e (F) para falso:
+O hiperparatireoidismo primário é causado por produção excessiva e secreção de paratormônio (PTH) por uma ou mais glândulas paratireoides.
+Justificativa: Verdadeira. O hiperparatireoidismo primário ocorre por secreção autônoma excessiva de PTH por uma ou mais paratireoides, geralmente por adenoma.
+O hiperparatireoidismo primário é uma causa comum de hipocalcemia
+Justificativa: Falsa. O hiperparatireoidismo primário costuma causar hipercalcemia, não hipocalcemia, pois o PTH aumenta o cálcio sérico.
+As alterações mentais ou de comportamento podem fazer parte do quadro clínico do hiperparatireoidismo
+Justificativa: Verdadeira. Alterações neuropsiquiátricas podem ocorrer, como fadiga, depressão, dificuldade de concentração e alterações de comportamento.
+A inadequação dos níveis de vitamina D é tida como uma das possíveis causas para falha do tratamento medicamentoso da osteoporose
+Justificativa: Verdadeira. Deficiência ou insuficiência de vitamina D pode comprometer a resposta ao tratamento da osteoporose e deve ser corrigida.
+A vitamina D, produzida na pele ou ingerida, sofre transformações químicas até se transformar em sua forma ativa (calcitriol) com importantes funções na fisiologia ósteo-mineral
+Justificativa: Verdadeira. A vitamina D passa por ativações até formar calcitriol, sua forma ativa, que participa principalmente da absorção intestinal de cálcio e fósforo.
+
+Explicação geral: 
+PTH ↑ → cálcio ↑; vitamina D ajuda a absorver cálcio.
+
+Dica de memorização:
+HiperPTH = hiperCALCEMIA.
+Calcitriol = vitamina D ativa.
+
+Em relação às alternativas abaixo, assinale  (V) para verdadeiro e (F) para falso:
+Bifosfonatos são um grupo de drogas com boa absorção oral.
+Justificativa: Falsa. Os bisfosfonatos têm baixa absorção oral. Por isso, devem ser tomados em jejum, apenas com água, evitando alimentos e outros medicamentos logo após.
+A calcitonina é um análogo de hidroxiapatita
+Justificativa: Falsa. A calcitonina é um hormônio produzido pelas células C da tireoide e atua inibindo osteoclastos. Não é análogo de hidroxiapatita.
+A vitamina D deve ser ingerida com o estômago vazio para melhorar a biodisponibilidade.
+Justificativa: Falsa. A vitamina D é lipossolúvel e sua absorção tende a ser melhor quando ingerida com uma refeição que contenha gordura, não em jejum.
+A densitometria óssea de rotina na osteoporose primária tem maior valor diagnóstico se associada à dosagem de cálcio e fosfatase alcalina
+Justificativa: Falsa. A densitometria óssea (DXA) tem valor diagnóstico por si só. Cálcio e fosfatase alcalina ajudam na investigação de causas secundárias, mas não aumentam diretamente o valor diagnóstico da DXA para osteoporose primária.
+Atividade física deve ser evitada em indivíduos com osteoporose comprovada
+Justificativa: Falsa. Atividade física não deve ser evitada. Exercícios com carga, resistência muscular e treino de equilíbrio ajudam a preservar massa óssea e reduzir risco de quedas.
+
+Explicação geral: 
+Na osteoporose, DXA diagnostica, exames laboratoriais procuram causas secundárias e exercício faz parte do tratamento.
+
+Dica de memorização:
+Bisfosfonato: pouca absorção. Vitamina D: com refeição. Exercício: faz bem ao osso.
+
+Turma 111 - 07/12/2022
+Identifique e assinale V (verdadeiro) ou F (falso) sobre acromegalia.
+( V ) A extensão supra-selar do tumor habitualmente leva a comprometimento ótico que torna necessária a realização de campimetria nestes casos.
+Justificativa: Verdadeira. Extensão suprasselar pode comprimir o quiasma óptico, causando alteração de campo visual; por isso, a campimetria está indicada.
+( V ) Os sintomas podem ser inespecíficos e a doença subdiagnosticada, o que associa à redução da expectativa de vida.
+Justificativa: Verdadeira. A acromegalia pode evoluir de forma insidiosa, com sintomas inespecíficos, levando a diagnóstico tardio e aumento de morbimortalidade.
+( F ) Depois que o diagnóstico laboratorial tiver sido estabelecido, deve-se realizar Tomografia Computadorizada (TC) de crânio, tórax e abdome para localização do tumor.
+Justificativa: Falsa. Após confirmação bioquímica, o exame de imagem de escolha é a RNM de sela túrcica/hipófise, e não TC de crânio, tórax e abdome de rotina. 
+( F ) O crescimento linear exagerado e gigantismo é muito comum e acontece quando a doença ocorre após o fechamento das cartilagens de crescimento.
+Justificativa: Falsa. Gigantismo ocorre quando o excesso de GH aparece antes do fechamento das cartilagens de crescimento. Após o fechamento, ocorre acromegalia, sem aumento importante da altura. 
+( V ) Ao diagnóstico, a maioria dos casos decorrem de macroadenomas hipofisários.
+Justificativa: Verdadeira. Muitos pacientes são diagnosticados tardiamente e já apresentam macroadenoma hipofisário.
+
+Explicação geral: 
+Acromegalia = excesso de GH no adulto, geralmente por adenoma hipofisário.
+
+Dica de memorização:
+Antes de fechar cartilagem = gigantismo. Depois = acromegalia.
+
+Em investigação de quadro de cefaleia em homem de 45 anos, foi detectada em RM de crânio a presença de nódulo hipointenso em T1 de 0,5 cm em hipófise à esquerda. Nega uso de qualquer medicação. Foi detectado prolactina (PRL) = 55 ng/mL (VR: 2,5-22). O exame foi repetido com resultado de PRL = 52 ng/mL. Em relação à investigação diagnóstica do aumento de prolactina e ao caso clínico, assinale a alternativa V (verdadeiro) ou F (falso):
+( V ) As formas de alto peso molecular da prolactina (Macroprolactina) têm baixa bioatividade e são encontradas em baixos níveis na circulação.
+Justificativa: Verdadeira. A macroprolactina é uma forma de alto peso molecular, com baixa atividade biológica. Pode elevar a prolactina laboratorialmente com poucos ou nenhum sintoma.
+( F ) Deve-se avaliar se há presença de sintomas e sinais relacionados à hiperprolactinemia, como aumento de libido.
+Justificativa: Falsa. A hiperprolactinemia costuma causar redução da libido, não aumento, além de hipogonadismo, galactorreia e infertilidade.
+( V ) O achado de imagem sugestiva de adenoma hipofisário pode ser encontrado em até 10% da população normal e a ressonância magnética, sem sinais de patologia.
+Justificativa: Verdadeira. Pequenos incidentalomas hipofisários podem ser encontrados em indivíduos assintomáticos. Portanto, um nódulo de 0,5 cm pode ser incidental e não necessariamente explicar a PRL elevada.
+( F ) A conduta é iniciar um teste terapêutico por 3 meses com um agonista dopaminérgico em dose baixa.
+Justificativa: Falsa. Não se deve iniciar agonista dopaminérgico apenas como “teste terapêutico”. Primeiro é preciso esclarecer a causa da hiperprolactinemia.
+( V ) Deve-se pesquisar macroprolactinemia.
+Justificativa: Verdadeira. Como a prolactina está apenas moderadamente elevada e há um pequeno adenoma, deve-se pesquisar macroprolactinemia para evitar atribuir erroneamente a elevação ao microadenoma. 
+
+Explicação geral: 
+PRL moderadamente alta + poucos sintomas = pense em macroprolactina.
+
+Dica de memorização:
+Macroprolactina = exame alto, efeito biológico baixo.
+
+Em relação ao caso clínico, assinale o item V (verdadeiro) ou F (falso):
+Mulher, 24 anos, solteira, foi ao ginecologista com queixa de amenorreia há 6 meses. Nega doenças prévias ou atuais. Não é tabagista, nem etilista e nem usuária de drogas ilícitas. Não está usando anticoncepcional hormonal.
+( V ) A magnitude da elevação nos níveis séricos de prolactina é útil na determinação da etiologia, uma vez que os valores mais altos são encontrados em pacientes com hiperprolactinemia por prolactinomas.
+Justificativa: Verdadeira. A magnitude da elevação da prolactina ajuda na etiologia. Em geral, quanto maior a PRL, maior a suspeita de prolactinoma, e há correlação aproximada entre tamanho tumoral e nível de prolactina. Valores >200 ng/mL tornam macroprolactinoma mais provável, embora existam exceções.
+( V ) O uso de alguns medicamentos psicoativos pode estar associado à hiperprolactinemia de etiologia farmacológica.
+Justificativa: Verdadeira. Alguns medicamentos psicoativos, principalmente os que bloqueiam a ação da dopamina, podem causar hiperprolactinemia farmacológica.
+( V ) A hiperprolactinemia patológica pode ser causada por insuficiência renal e hepática.
+Justificativa: Verdadeira. Insuficiência renal e hepática podem causar hiperprolactinemia, geralmente de intensidade leve a moderada.
+( V ) A hiperprolactinemia deve ser investigada em mulheres frente à ocorrência de queixas como amenorreia/irregularidade menstrual, galactorreia e infertilidade.
+Justificativa: Verdadeira. Amenorreia, irregularidade menstrual, galactorreia e infertilidade são manifestações típicas da hiperprolactinemia e justificam sua investigação.
+( V ) A hiperprolactinemia pode ser vista em pacientes com hipotireoidismo primário descompensado, devido sobretudo ao aumento do TRH (que estimula a síntese de prolactina).
+Justificativa: Verdadeira. No hipotireoidismo primário ocorre aumento de TRH, que além de estimular TSH também pode estimular os lactotrofos e elevar a prolactina.
+
+Explicação geral: 
+A quantidade de prolactina importa: elevações muito altas favorecem macroprolactinoma; elevações moderadas também podem ocorrer por medicamentos, hipotireoidismo, insuficiência renal/hepática, efeito de haste ou macroprolactina.
+
+Dica de memorização:
+Quanto maior a PRL, mais pense em macroprolactinoma — mas não é uma regra absoluta. Um microprolactinoma também pode aumentar bastante a prolactina; macroadenoma não é requisito para PRL alta.
+
+Em relação ao caso clínico, assinale o item V (verdadeiro) ou F (falso).
+Após o parto de seu segundo filho, um bebê recém-nascido normal a termo do sexo masculino, uma paciente de 22 anos não apresentou lactação.
+
+( V ) Este sintoma provavelmente resulta de síndrome de Sheehan.
+Justificativa: Verdadeira. A ausência de lactação no pós-parto pode ser manifestação precoce da síndrome de Sheehan, por deficiência de prolactina secundária à necrose hipofisária.
+( F ) Este é um sinal precoce da síndrome de Cushing.
+Justificativa: Falsa. Falha na lactação não é manifestação típica de síndrome de Cushing.
+( F ) Este sintoma sugere ter ocorrido uma complicação hemorrágica no parto.
+Justificativa: Falsa. A ausência de lactação isoladamente sugere deficiência de prolactina/hipopituitarismo, mas não permite concluir que houve uma complicação hemorrágica no parto. Para pensar em síndrome de Sheehan, precisa haver contexto obstétrico compatível, especialmente hemorragia pós-parto importante, hipotensão ou choque.
+( F ) Este sintoma levanta a suspeita da síndrome de secreção inapropriada de ADH. 
+Justificativa: Falsa. SIADH causa retenção de água e hiponatremia; não é causa típica de falha na lactação.
+( F ) Este sintoma é comum em parturientes nesta faixa etária e não leva a suspeita de deficiência hormonal.
+Justificativa: Falsa. Ausência de lactação não deve ser considerada normal apenas pela idade da paciente; pode indicar deficiência de prolactina e hipopituitarismo.
+
+Explicação geral: 
+Sheehan = hemorragia pós-parto → necrose hipofisária → hipopituitarismo.
+
+Dica de memorização:
+Pós-parto + não lacta = pensar em Sheehan, sobretudo se houve hemorragia.
+
+Em relação ao GH (hormônio de crescimento), assinale o item V (verdadeiro) ou F (falso).
+( F ) Em relação à glicemia, o GH é um hormônio antagonista à insulina.
+Justificativa: Falsa. Do ponto de vista fisiológico moderno, o GH tem efeitos anti-insulínicos importantes, porque reduz a captação periférica de glicose e aumenta a produção hepática de glicose; porém, seus efeitos metabólicos são bifásicos: inicialmente pode ter efeitos semelhantes aos da insulina e, depois, predominam efeitos anti-insulínicos. Apesar de predominar efeito anti-insulínico em determinadas condições, a afirmação é excessivamente absoluta.
+( F ) Em relação à glicemia, o GH é um hormônio antagonista ao glucagon.
+Justificativa: Falsa. 
+( F ) GH é um hormônio que não tem nenhuma relação com o metabolismo glicídico.
+Justificativa: Falsa. O GH não é antagonista do glucagon. Na verdade, ambos podem contribuir para aumentar a glicemia. O GH participa diretamente do metabolismo glicídico, tendo efeito hiperglicemiante e anti-insulínico.
+( F ) GH é um hormônio cuja deficiência pode até ser causa de episódios hiperglicêmicos matinais em crianças.
+Justificativa: Falsa. A deficiência de GH tende a causar hipoglicemia, principalmente em crianças, e não hiperglicemia.
+( F ) Durante a investigação de baixa estatura, para avaliar o nível de GH, o melhor marcador sérico é GH sérico matinal, porque sua secreção é pulsátil.
+Justificativa: Falsa. Como a secreção de GH é pulsátil, uma dosagem isolada de GH matinal não é confiável. Na investigação de deficiência de GH, utiliza-se IGF-1 e, quando necessário, testes de estímulo.
+
+Explicação geral: 
+GH aumenta glicemia e antagoniza a ação da insulina.
+
+Dica de memorização:
+GH alto → glicose sobe.
+GH baixo → pode dar hipoglicemia, sobretudo em crianças.
+
+Em relação às alternativas abaixo, assinale (V) para verdadeiro e (F) para falso.
+( F ) O lobo anterior corresponde a cerca de 20% da hipófise.
+Justificativa: Falsa. O lobo anterior (adeno-hipófise) corresponde à maior parte da hipófise, cerca de 75–80%, e não 20%.
+( F ) A PRL não está sujeita à inibição por retroalimentação pelos hormônios produzidos em tecido-alvo.
+Justificativa: Falsa. Ela pode ser considerada falsa porque a prolactina possui feedback negativo, só que diferente dos outros eixos: a própria PRL estimula neurônios dopaminérgicos no hipotálamo, aumentando dopamina, e a dopamina então inibe os lactotrofos e reduz a secreção de PRL. Isso é chamado de feedback curto (short-loop feedback).
+( F ) O adenoma hipofisário mais frequente é o somatotropinoma (tumor secretor de hormônio de crescimento).
+Justificativa: Falsa. O adenoma hipofisário funcionante mais frequente é o prolactinoma, não o somatotropinoma.
+( V ) A cirurgia é o tratamento de primeira escolha para todos os tumores hipofisários, com exceção dos prolactinomas.
+Justificativa: Verdadeira. Em muitos adenomas hipofisários funcionantes e não funcionantes, a cirurgia é o tratamento de escolha quando há indicação. A grande exceção clássica é o prolactinoma, cujo tratamento inicial costuma ser com agonista dopaminérgico, como cabergolina.
+( V ) A secreção hipofisária pode ser influenciada também pelo ciclo diário claro-escuro
+Justificativa: Verdadeira. A secreção hipofisária sofre influência do ritmo circadiano. Exemplo: GH aumenta durante o sono e ACTH/cortisol apresentam variação ao longo do dia. 
+
+Explicação geral: 
+A hipófise anterior é a maior parte da glândula e secreta GH, PRL, ACTH, TSH, LH e FSH.
+
+Dica de memorização:
+PRL ↑ → dopamina ↑ → PRL ↓ (short-loop feedback).
+Prolactina = dopamina freia.
+Prolactinoma = exceção clássica à cirurgia inicial.
+
+Em relação às alternativas abaixo, assinale (V) para verdadeiro e (F) para falso:
+(  ) O tratamento do hiperparatireoidismo em geral é cirúrgico
+Justificativa: Verdadeira. O tratamento definitivo do hiperparatireoidismo primário sintomático é, em geral, cirúrgico, com paratireoidectomia.
+( F ) Nunca há mais de uma glândula paratireóide afetada no hiperparatireoidismo
+Justificativa: Falsa. Pode haver acometimento de mais de uma paratireoide, especialmente nos casos de hiperplasia multiglandular.
+( V ) As alterações mentais ou de comportamento podem fazer parte do quadro сlínico do hiperparatireoidismo 
+Justificativa: Verdadeira. Alterações neuropsiquiátricas, como fadiga, depressão, dificuldade de concentração e alterações de comportamento, podem ocorrer no hiperparatireoidismo.
+( V ) Não se deve retirar o cálcio da dieta do paciente com hiperparatireoidismo
+Justificativa: Verdadeira. Não se recomenda retirar cálcio da dieta. Deve-se manter ingestão adequada de cálcio, evitando restrição excessiva.
+(  ) O tratamento do hipoparatireoidismo é feito com reposição de PTH
+Justificativa: Falsa. O tratamento convencional do hipoparatireoidismo é feito com cálcio + vitamina D ativa (calcitriol). Reposição de PTH fica reservada para casos selecionados.
+
+Explicação geral: 
+HiperPTH → geralmente cirurgia.
+HipoPTH → cálcio + calcitriol.
+
+Dica de memorização:
+PTH alto: tira a glândula quando indicado.
+PTH baixo: repõe cálcio e vitamina D.
+
+Paciente feminina de 63 anos, com antecedente de embolia pulmonar, diabetes e hipertensão, apresentou fratura de colo de fêmur há 6 meses, sendo diagnosticada com osteoporose de coluna (T escore -4,8) e do fêmur (T escore -2,9). Em uso atual de glibenclamida, metformina e enalapril.
+Em relação às causas de perda óssea e à osteoporose, assinale V (verdadeiro) ou F (falso):
+( V ) A osteoporose é uma doença silenciosa que afeta especialmente as mulheres na pós-menopausa e idosos e tem elevada taxa de morbimortalidade. O principal objetivo do tratamento da osteoporose é a prevenção das fraturas.
+Justificativa: Verdadeira. A osteoporose é muitas vezes silenciosa até ocorrer fratura, acomete principalmente mulheres pós-menopausa e idosos, e o objetivo central do tratamento é reduzir o risco de fraturas.
+( F ) O exame mais adequado para o diagnóstico da osteoporose é a densitometria óssea, que permite avaliar o grau da doença e serve como método de acompanhamento do tratamento. O valor < -1,5 DP (desvio padrão) no exame de densitometria faz o diagnóstico de osteoporose.
+Justificativa: Falsa. A densitometria óssea é o exame de referência, mas o diagnóstico densitométrico de osteoporose em mulheres pós-menopausa é feito com T-score ≤ -2,5, e não < -1,5.
+≥ -1,0: normal
+entre -1,0 e -2,5: osteopenia
+≤ -2,5: osteoporose 
+( V ) O cálcio é um nutriente importante na prevenção da osteoporose. A ingestão inadequada pode resultar em redução da massa óssea. Além assim, é importante uma adequada oferta de cálcio proveniente da alimentação.
+Justificativa: Verdadeira. O cálcio é importante para manutenção da massa óssea, e ingestão inadequada pode contribuir para perda óssea.
+( F ) Alguns fatores de risco importantes relacionados à osteoporose e a fraturas na pós-menopausa são: idade, sexo masculino, etnia branca ou oriental, história prévia pessoal e familiar de fratura, obesidade, tabagismo, ingestão abusiva de bebidas alcoólicas e atividade física aeróbica.
+Justificativa: Falsa. A alternativa mistura fatores de risco verdadeiros com falsos. São fatores de risco: idade avançada, baixo peso, tabagismo, álcool excessivo, história de fratura e sedentarismo. Já sexo masculino, obesidade e atividade física aeróbica não são fatores de risco clássicos dessa forma.
+( V ) Os bisfosfonatos são a classe de drogas considerada de primeira linha para o tratamento da osteoporose na pós-menopausa e agem inibindo a atividade dos osteoclastos.
+Justificativa: Verdadeira. Os bisfosfonatos são anti-reabsortivos e atuam principalmente inibindo a atividade dos osteoclastos, sendo tratamento de primeira linha em muitos pacientes com osteoporose pós-menopausa.
+
+Explicação geral: 
+T-score ≤ -2,5 = osteoporose.
+Entre -1 e -2,5 = osteopenia.
+
+Dica de memorização:
+-2,5 é o número da osteoporose.
+
+Sobre a bioquímica do tecido ósseo, assinale V (verdadeiro) ou F (falso) nas afirmativas abaixo:
+( F ) Os osteoclastos são células responsáveis pela formação óssea.
+Justificativa:Falsa. Os osteoclastos fazem reabsorção óssea, ou seja, degradam o osso. Quem forma osso são os osteoblastos.
+( V ) O metabolismo ósseo é acoplado, ou seja, ocorre formação nos locais onde houve reabsorção prévia.
+Justificativa: Verdadeira. O remodelamento ósseo é acoplado: primeiro ocorre reabsorção por osteoclastos e depois formação óssea por osteoblastos no mesmo local.
+( V ) O PTH (paratormônio) atua no aumento da calcemia, sendo que a secreção do PTH promove a desmineralização óssea, aumentando os níveis de Ca no sangue.
+Justificativa: Verdadeira. O PTH aumenta a calcemia. Entre seus efeitos, favorece reabsorção óssea, aumenta reabsorção renal de cálcio e estimula a formação de calcitriol.
+( V ) Os osteoblastos são responsáveis pela síntese de matriz óssea.
+Justificativa: Verdadeira. Os osteoblastos sintetizam a matriz óssea, principalmente o osteóide, participando da formação do osso.
+( F ) O osteócito é o estágio final de diferenciação do osteoclasto.
+Justificativa: Falsa. O osteócito é o estágio final de diferenciação do osteoblasto, não do osteoclasto.
+
+Explicação geral: 
+Osteoclasto reabsorve; osteoblasto forma; osteócito mantém.
+
+Dica de memorização:
+CLASTO = quebra
+BLASTO = constrói
+CITO = célula óssea madura
+Em relação às alternativas abaixo assinale (V) para verdadeiro ou (F) para falso:
+( V ) A síndrome de Cushing dependente da hipófise, conhecida como Doença de Cushing, é a causa mais comum de síndrome de Cushing endógena.
+Justificativa: Verdadeira. A doença de Cushing é causada por adenoma hipofisário secretor de ACTH e é a causa mais comum de síndrome de Cushing endógena.
+( V ) O uso de glicocorticóides como medicação é a causa mais frequente da síndrome de Cushing.
+Justificativa: Verdadeira. O uso crônico de glicocorticoides exógenos é a causa mais frequente de síndrome de Cushing no geral.
+( V ) O teste de supressão com dexametasona é um bom teste para investigar síndrome de Cushing.
+Justificativa: Verdadeira. O teste de supressão com dexametasona é um dos testes usados para rastrear hipercortisolismo. Na síndrome de Cushing, o cortisol não suprime adequadamente.
+( F ) No hiperaldosteronismo primário, o paciente apresenta cefaléia holocraniana, hipertensão arterial em picos, hipercalemia e sudorese.
+Justificativa: Falsa. Esse quadro lembra mais feocromocitoma. No hiperaldosteronismo primário, o típico é HAS + renina baixa + aldosterona alta, podendo haver hipocalemia, e não hipercalemia.
+( V ) As metanefrinas plasmáticas são o exame de escolha inicial para investigação no diagnóstico de feocromocitoma.
+Justificativa: Verdadeira. As metanefrinas plasmáticas livres são um dos principais exames iniciais para investigação de feocromocitoma; metanefrinas urinárias fracionadas também podem ser utilizadas.
+
+
+Explicação geral: 
+Cushing → excesso de cortisol.
+HAP → HAS ± hipocalemia.
+Feo → catecolaminas → metanefrinas.
+
+Dica de memorização:
+Feo = cefaleia + palpitação + sudorese.
+HAP = pressão alta + K⁺ baixo.
+
+
+Turma 114 - 01/11/2023
+Em relação às doenças da suprarrenal, assinale V (verdadeiro) ou F (falso):
+( ) Em um paciente hipertenso com suspeita de feocromocitoma, um teste bioquímico para confirmar essa hipótese seria a dosagem de metanefrinas (plasmáticas ou urinárias).
+Justificativa: Verdadeira. Na suspeita de feocromocitoma, a investigação bioquímica é feita com metanefrinas plasmáticas livres ou metanefrinas urinárias fracionadas.
+( ) A sintomatologia dos feocromocitomas pode se apresentar como: hipertensão, palpitações, sudorese e cefaleia.
+Justificativa: Verdadeira. O feocromocitoma pode cursar com HAS, palpitações, sudorese e cefaleia. A tríade clássica é cefaleia + sudorese + palpitações.
+( ) Uma mulher de 38 anos com hipocalemia persistente, expansão crônica do volume plasmático e hipertensão arterial sistêmica tem possibilidade de um diagnóstico de hiperaldosteronismo primário.
+Justificativa: Verdadeira. O hiperaldosteronismo primário causa retenção de sódio e água, expansão volêmica e HAS, além de aumentar a excreção renal de potássio, podendo causar hipocalemia.
+( ) Hiperaldosteronismo primário e feocromocitoma são causas de hipertensão arterial secundária.
+Justificativa: Verdadeira. Tanto o hiperaldosteronismo primário quanto o feocromocitoma são causas endócrinas clássicas de hipertensão arterial secundária.
+( ) Em pacientes com suspeita clínica de síndrome de Cushing, o primeiro passo é a detecção da lesão causadora por meio de exames de imagem (tomografia de tórax inicialmente e, em seguida, de crânio).
+Justificativa: Falsa. Na suspeita de síndrome de Cushing, o primeiro passo é confirmar bioquimicamente o hipercortisolismo, e não procurar a lesão por imagem. Só depois se investiga a etiologia.
+
+Explicação geral: 
+Feo → metanefrinas. HAP → HAS ± hipocalemia. Cushing → primeiro confirma cortisol alto, depois localiza a causa.
+
+Dica de memorização:
+Hormônio primeiro, imagem depois.
+
+Em relação às doenças da suprarrenal, assinale V (verdadeiro) ou F (falso):
+( ) Durante a investigação laboratorial, já tendo sido confirmado o hipercortisolismo, se encontrarmos uma dosagem de ACTH alta na síndrome de Cushing, esse fato aponta para uma provável patologia primária da suprarrenal. 
+Justificativa: Falsa. ACTH alto indica síndrome de Cushing ACTH-dependente, sugerindo origem hipofisária ou ectópica. Na causa adrenal, o cortisol é produzido autonomamente e o ACTH fica baixo/suprimido.
+( ) Os feocromocitomas são tumores secretores de catecolaminas que apesar de raros implicam em elevada morbimortalidade (efeitos metabólicos e cardiovasculares).
+Justificativa: Verdadeira. Feocromocitomas secretam catecolaminas e podem causar crises hipertensivas, arritmias e outras complicações cardiovasculares importantes.
+( ) Uma lesão em adrenal > 6 cm, margens irregulares e áreas de necrose é sugestiva de malignidade.
+Justificativa: Verdadeira. Lesão adrenal grande, irregular, heterogênea e com necrose levanta suspeita de malignidade. O corte de >6 cm é clássico em provas mais antigas.
+( ) Os adenomas produtores de aldosterona têm como manifestação mais característica a hipertensão arterial sistêmica associada à hipocalemia, no entanto nós podemos ter hiperaldosteronismo primário normocalêmico.
+Justificativa: Verdadeira. Hiperaldosteronismo primário costuma causar HAS ± hipocalemia. Muitos pacientes, porém, apresentam potássio normal.
+( ) Os feocromocitomas são na maioria das vezes bilaterais e malignos.
+Justificativa: Falsa. A maioria dos feocromocitomas é unilateral e não apresenta comportamento metastático. Bilateralidade é mais associada a formas hereditárias.
+
+Explicação geral: 
+ACTH alto → hipófise/ectópico. ACTH baixo → adrenal.
+
+Dica de memorização:
+Cushing adrenal = cortisol alto com ACTH baixo.
+Em relação ao hipopituitarismo, assinale (V) para verdadeiro e (F) para falso:
+( ) Temos panhipopituitarismo quando ocorre a redução de dois ou mais hormônios hipofisários decorrente de condições que acometem a região hipotálamo-hipofisária.
+Justificativa: Falsa. Pan-hipopituitarismo significa deficiência de praticamente todos os hormônios da adeno-hipófise, e não apenas de dois ou mais. Deficiência de dois ou mais eixos é hipopituitarismo múltiplo.
+( ) Entre as causas de hipopituitarismo podemos ter razões congênitas ou adquiridas.
+Justificativa: Verdadeira. O hipopituitarismo pode ter causas congênitas (genéticas/desenvolvimento) ou adquiridas.
+( ) São exemplos de causas adquiridas do hipopituitarismo: tumor hipofisário, traumatismo crônico encefálico, doenças inflamatórias e infiltrativas, necrose hipofisária pós-parto (síndrome de Sheehan).
+Justificativa: Verdadeira. Tumores, traumatismo craniano, doenças inflamatórias/infiltrativas e síndrome de Sheehan são causas adquiridas clássicas.
+( ) Podemos ter sintomas decorrentes de uma compressão (efeito de massa) por uma lesão como: cefaleia, alterações de campo visual, paralisias de nervos periféricos.
+Justificativa: Falsa. Lesões expansivas podem causar cefaleia, alterações do campo visual e paralisias de nervos cranianos por compressão de estruturas vizinhas.
+( ) Muitas vezes o diagnóstico é tardio devido às manifestações clínicas inespecíficas. O quadro clínico varia conforme o tipo de deficiência hormonal, a velocidade de instalação, o sexo, a idade e a causa do hipopituitarismo.
+Justificativa: Verdadeira. O quadro pode ser insidioso e variar conforme qual eixo hormonal falhou, intensidade, velocidade de instalação, idade e etiologia.
+
+Explicação geral: 
+Hipopituitarismo pode causar déficits hormonais + efeito de massa.
+
+Dica de memorização:
+Tumor hipofisário pode “apertar” e “parar”:
+apertar = cefaleia/visão; parar = deficiência hormonal.
+Em relação ao hipopituitarismo, assinale (V) para verdadeiro e (F) para falso:
+( ) A deficiência de GH nas crianças ocasiona uma baixa estatura e retardo do crescimento.
+Justificativa: Verdadeira. A deficiência de GH na infância reduz o crescimento linear, levando a baixa estatura e redução da velocidade de crescimento.
+( ) A deficiência de TSH devido ao hipopituitarismo tem manifestações clínicas semelhantes ao hipotireoidismo primário, podendo ser o hipotireoidismo de origem central mais insidioso e com clínica mais leve.
+Justificativa: Verdadeira. A deficiência de TSH causa hipotireoidismo central, com manifestações semelhantes ao hipotireoidismo primário, como fadiga, sonolência, constipação e intolerância ao frio. Em geral, pode ter apresentação mais insidiosa.
+a
+
+Explicação geral: 
+No hipopituitarismo, a falta de hormônios hipofisários reduz a função das glândulas-alvo.
+
+Dica de memorização:
+GH baixo na criança = cresce pouco.
+TSH baixo/inadequado + T4L baixo = hipotireoidismo central.
+a
+a
+a
+a
+( ) Diversos trabalhos demonstraram que a prática regular de exercícios físicos causa aumento da densidade mineral óssea (DMO), melhora o equilíbrio, aumenta a força muscular e diminui o risco de quedas.
+Justificativa: Verdadeira. Exercícios regulares ajudam a preservar/aumentar a massa óssea, melhoram força muscular, equilíbrio e reduzem risco de quedas.
+( ) O tabagismo pode levar a diminuição de massa óssea e maior risco de fraturas. A elevada ingestão de álcool também aumenta o risco de fraturas.
+Justificativa: Verdadeira. Tabagismo e consumo excessivo de álcool aumentam o risco de perda óssea e fraturas.
+( ) O Z score deve ser empregado em homens com menos de 50 anos e mulheres pós-menopausadas, temos osteoporose com esse score ≤ -2,5.
+Justificativa: Falsa. 
+O Z-score é usado principalmente em homens <50 anos e mulheres pré-menopausa, além de crianças. Em mulheres pós-menopausa, usa-se o T-score.
+Além disso, Z-score ≤ -2,0 significa “abaixo do esperado para a idade”; não se usa ≤ -2,5 para diagnosticar osteoporose.
+
+Explicação geral: 
+T-score = pós-menopausa e homens ≥50 anos.
+Z-score = jovens/pré-menopausa.
+
+Dica de memorização:
+T = Topo da massa óssea jovem.
+Z = compara com a mesma idade.
+
+Em relação às alternativas abaixo, assinale (V) para verdadeiro e (F) para falso:
+( ) A osteoporose é definida por baixa massa óssea associada à deterioração da microarquitetura do osso com aumento do risco de fragilidade e de fraturas.
+Justificativa: Verdadeira. A osteoporose cursa com baixa massa óssea e deterioração da microarquitetura, aumentando a fragilidade e o risco de fraturas.
+( ) Doença de Cushing e hipogonadismo são causas muito comuns de osteoporose, por isso devemos investigar todos os pacientes para essas doenças. 
+Justificativa: Falsa. Síndrome de Cushing e hipogonadismo podem causar osteoporose secundária, mas não devem ser investigados indiscriminadamente em todos os pacientes; a pesquisa depende da história clínica e dos fatores de risco.
+( ) O baixo peso IMC < 18 kg/m² é um fator de risco em relação à ocorrência de osteoporose. Já o uso de corticoides é um fator protetor pela sua ação anti-inflamatória.
+Justificativa: Falsa. Baixo peso é fator de risco, mas o uso crônico de glicocorticoides também aumenta o risco de osteoporose; não é fator protetor.
+( ) O tratamento da osteoporose com bisfosfonatos pode ser mantido continuamente por mais de dez anos sem riscos para o paciente.
+Justificativa: Falsa. Bisfosfonatos não devem ser mantidos indefinidamente sem reavaliação. Uso prolongado pode aumentar risco de eventos como fratura atípica de fêmur e osteonecrose de mandíbula.
+( ) Os bisfosfonatos são medicações anabólicas e estimuladoras da reabsorção óssea.
+Justificativa: Falsa. Bisfosfonatos são anti-reabsortivos: inibem a atividade dos osteoclastos. Não são anabólicos nem estimulam reabsorção óssea.
+
+Explicação geral: 
+Bisfosfonato = anti-reabsortivo, não anabólico.
+Romosozumabe → anabólico → forma osso.
+
+Dica de memorização:
+Corticoide perde osso; bisfosfonato freia osteoclasto.
+Mulher, 24 anos, solteira, foi ao ginecologista para fazer exames de rotina. Nega doenças prévias ou atuais. Nunca usou qualquer medicamento contínuo, não é tabagista, nem etilista e nem usuária de drogas ilícitas. Não está usando anticoncepcional hormonal. Hemograma, glicemia, eletrólitos, função renal, função hepática e perfil lipídico foram normais. Apresentou prolactina = 76 ng/mL (VR < 20), beta-hCG negativo e TSH = 0,8 mUI/mL (VR 0,5–5,0).
+Em relação ao caso clínico de hiperprolactinemia, assinale V (verdadeiro) ou F (falso):
+( ) Na avaliação das pacientes com hiperprolactinemia é importante questionar se a paciente tem sintomas relacionados (amenorreia/irregularidade menstrual, galactorreia).
+Justificativa: Verdadeira. Amenorreia, irregularidade menstrual e galactorreia são manifestações clássicas da hiperprolactinemia e devem ser pesquisadas.
+( ) A hiperprolactinemia patológica pode ser causada por insuficiência renal e hepática, hipotireoidismo, desconexão de haste hipofisária e prolactinoma.
+Justificativa: Verdadeira. Insuficiência renal/hepática, hipotireoidismo, efeito de haste e prolactinoma são causas reconhecidas de hiperprolactinemia.
+( ) Diante desse achado de hiperprolactinemia, o passo seguinte é solicitar ressonância nuclear de sela túrcica para investigação de possível adenoma hipofisário, causa mais comum de hiperprolactinemia.
+Justificativa: Falsa. A RNM não é necessariamente o passo seguinte imediato. Antes, deve-se excluir causas secundárias e considerar macroprolactinemia, especialmente com elevação moderada de PRL.
+( ) O aumento da macroprolactina é a responsável por mais de 90% dos casos de hiperprolactinemia em homens.
+Justificativa: Falsa. Macroprolactina pode causar hiperprolactinemia assintomática, mas não responde por >90% dos casos em homens.
+( ) A magnitude da elevação nos níveis séricos de prolactina é útil na determinação da etiologia, uma vez que os valores mais altos são encontrados em pacientes com hiperprolactinemia farmacológica.
+Justificativa: Falsa. A magnitude da PRL ajuda na etiologia, mas os valores mais altos costumam ocorrer nos prolactinomas, sobretudo macroprolactinomas, e não na forma farmacológica.
+
+Explicação geral: 
+PRL moderadamente alta → excluir causas secundárias antes da RNM.
+
+Dica de memorização:
+PRL muito alta = pense mais em prolactinoma.
+(1,0 ponto) I.M.S.S., feminina, 47 anos, negra. Iniciou três anos antes da avaliação médica quadro de parestesia e alodinia em região palmar, acompanhados de aumento de extremidades. Também foi notada macroglossia durante a realização de procedimentos na digestiva alta (EDA). 
+Exame físico: prognatismo, aumento de nariz, lábios e mãos.
+PA: 160 × 100 mmHg. Na investigação inicial observou-se glicemia 128 mg/dL; HbA1c 7,3%.
+Em relação ao caso clínico suspeito de acromegalia, assinale V (verdadeiro) ou F (falso):
+( ) As complicações respiratórias são as primeiras causas de mortalidade nos pacientes com acromegalia.
+Justificativa: Falsa. As principais causas de mortalidade na acromegalia são sobretudo cardiovasculares, não respiratórias.
+( ) Nos pacientes em que o diagnóstico não puder ser descartado ou confirmado com as dosagens basais de GH e IGF-1, está indicada a dosagem do GH durante teste oral de tolerância à glicose.
+Justificativa: Verdadeira. Quando GH e IGF-1 basais não esclarecem o diagnóstico, realiza-se TOTG com dosagem de GH. Na acromegalia, o GH não suprime adequadamente após a glicose.
+( ) A cirurgia é considerada a terapia de primeira escolha no tratamento da acromegalia e, na maioria dos casos, realizada por via transesfenoidal.
+Justificativa: Verdadeira. A cirurgia transesfenoidal é o tratamento de primeira escolha na maioria dos adenomas hipofisários ressecáveis.
+( ) O principal mecanismo envolvido na gênese dos sintomas da acromegalia é a hipersecreção de GHRH (growth-hormone-releasing hormone – GHRH) hipotalâmico. 
+Justificativa: Falsa. A causa habitual é adenoma hipofisário secretor de GH, com aumento secundário de IGF-1. Hipersecreção de GHRH é rara.
+( ) Na maioria das vezes, a ressonância nuclear magnética (RNM) de sela túrcica evidencia um microadenoma hipofisário.
+Justificativa: Falsa. Na maioria dos casos, o diagnóstico é tardio e a RNM mostra macroadenoma, não microadenoma.
+
+Explicação geral: 
+Acromegalia = adenoma hipofisário → GH ↑ → IGF-1 ↑.
+
+Dica de memorização:
+IGF-1 rastreia → TOTG confirma → RNM localiza → transesfenoidal trata.
+(0,5 ponto) Homem de 55 anos, hipertenso, é avaliado com queixa crônica de fraqueza e dores articulares. Refere também alteração de glicemia capilar em exame realizado na UBS. Relata que seu anel de casamento não cabe mais no seu dedo e perdeu vários pares de sapatos nos últimos 5 anos devido ao crescimento do seu pé. Ao exame físico foi observado prognatismo, aumento de nariz e lábios. Foi solicitada ressonância magnética de sela túrcica que evidencia a presença de nódulo hipofisário de 12 mm (1,2 cm). Laboratorialmente chama a atenção nível muito elevado de IGF-1 (insulin-like growth factor 1). É mais provável o encontro de glicemia de jejum (mg/dL), laudo radiológico e pressão arterial (mmHg), respectivamente, de:
+220, macroadenoma hipofisário e 170 × 110.
+Justificativa: Verdadeira. O excesso de GH causa resistência à insulina, favorecendo hiperglicemia/diabetes. Além disso, 12 mm = macroadenoma e a acromegalia frequentemente cursa com hipertensão.
+55, microadenoma hipofisário e 170 × 110.
+Justificativa: Falsa. A acromegalia tende a causar hiperglicemia, não hipoglicemia. Além disso, 12 mm não é microadenoma.
+220, microadenoma hipofisário e 170 × 110.
+Justificativa: Falsa. A glicemia e a PA são plausíveis, mas 12 mm caracteriza macroadenoma.
+55, macroadenoma hipofisário e 100 × 50.
+Justificativa: Falsa. O laudo está correto como macroadenoma, porém hipoglicemia e hipotensão não são o padrão esperado.
+220, macroadenoma hipofisário e 100 × 50.
+Justificativa: Falsa. A hiperglicemia e o macroadenoma estão corretos, mas 100 × 50 mmHg não combina com a hipertensão típica da acromegalia.
+
+Explicação geral: 
+GH ↑ → resistência à insulina → glicemia ↑
+Tumor ≥10 mm = macroadenoma
+
+Dica de memorização:
+Acromegalia: glicose sobe, pressão sobe, e 10 mm é o corte do macroadenoma.
+(0,5 ponto) TEEM 2023 Modificada. Homem, 45 anos de idade, procura o endocrinologista para avaliação de um tumor descoberto ao realizar uma TC do crânio por sinusite crônica. A TC evidencia um macroadenoma hipofisário com 2,3 cm, com compressão de haste hipofisária e do quiasma óptico.
+Sobre o caso acima, marque a alternativa CORRETA:
+A campimetria visual está indicada em pacientes cujo tumor comprime o quiasma óptico, mesmo na ausência de queixas visuais.
+Justificativa: Verdadeira. 
+O tratamento cirúrgico está indicado em todos os macroincidentalomas pelo maior risco de crescimento.
+Justificativa: Falsa. Nem todo macroincidentaloma precisa de cirurgia. A indicação depende de efeito de massa, comprometimento visual, crescimento, hipersecreção hormonal e contexto clínico.
+O tratamento primário com cabergolina está indicado nos casos com contraindicação à cirurgia.
+Justificativa: Falsa. A cabergolina é tratamento de primeira escolha principalmente para prolactinoma, não para todo macroadenoma com contraindicação cirúrgica.
+A avaliação da função hipofisária está indicada somente nos tumores ≥ 2 cm, principalmente quando existe compressão de estruturas adjacentes.
+Justificativa: Falsa. A avaliação da função hipofisária não fica restrita a tumores ≥2 cm. Macroadenomas já merecem avaliação hormonal, mesmo menores que isso.
+Pacientes acromegálicos apresentam usualmente concentrações séricas diminuídas de GH.
+Justificativa: Falsa. Na acromegalia, o GH tende a estar elevado e não suprime adequadamente no TOTG.
+
+Explicação geral: 
+Tumor próximo/comprimindo quiasma → avaliar campo visual.
+
+Dica de memorização:
+Quiasma apertado = campimetria indicada.
+
+
+Turma 120 - A
+Analise o caso clínico e responda a questão a seguir:
+Mulher, 70 anos, pós-menopausa há 22 anos, comparece para avaliação por dor dorsal e antecedente de fratura vertebral detectada em radiografia. Nega trauma importante. Refere baixo peso, sedentarismo e etilismo crônico.
+Densitometria óssea:
+Coluna lombar: T-score = -2,4
+Colo do fêmur: T-score = -2,6
+Assinale V ou F:
+( ) A presença de fratura vertebral por fragilidade é um marcador importante de fragilidade óssea e risco de novas fraturas.
+Justificativa: Verdadeira. Fratura vertebral por baixo impacto é marcador de fragilidade óssea e aumenta bastante o risco de novas fraturas.
+( ) O etilismo crônico pode contribuir para redução de massa óssea e aumento do risco de fraturas.
+Justificativa: Verdadeira. O etilismo crônico favorece perda de massa óssea, piora a qualidade óssea e aumenta o risco de quedas e fraturas.
+( ) Nesta paciente, há critério densitométrico para osteoporose.
+Justificativa: Verdadeira. Há critério densitométrico para osteoporose porque o T-score do colo do fêmur é -2,6, ou seja, ≤ -2,5.
+( ) O T-score deve ser substituído obrigatoriamente pelo Z-score em mulheres idosas.
+Justificativa: Falsa. Em mulheres pós-menopausa e idosos, usa-se principalmente o T-score. O Z-score é mais útil em mulheres pré-menopausa, homens <50 anos e crianças. 
+( ) O tratamento da osteoporose se baseia exclusivamente em medicações, sem relevância de medidas comportamentais.
+Justificativa: Falsa. O tratamento não é apenas medicamentoso. Medidas como atividade física, prevenção de quedas, cessação do tabagismo, redução do álcool e adequação de cálcio/vitamina D são importantes. 
+Explicação geral: 
+T-score ≤ -2,5 = osteoporose. Fratura por fragilidade aumenta ainda mais o risco.
+
+Dica de memorização:
+Idoso/pós-menopausa → T-score.
+Mulheres pré-menopausa, homens <50 anos e crianças → Z-score.
+
+Fratura por fragilidade = alto risco.
+Analise o caso clínico e responda a questão a seguir:
+Caso clínico:
+Homem, 58 anos, com antecedente de hipogonadismo e uso crônico de prednisona para doença pulmonar, é avaliado após fratura de costela ao mínimo trauma. Densitometria óssea mostra baixa massa óssea.
+
+Assinale V ou F:
+
+( ) A principal alteração fisiopatológica da osteoporose induzida por glicocorticóides é o aumento persistente da formação óssea por hiperatividade osteoblástica compensatória.
+Justificativa: Falsa. Glicocorticoides reduzem a formação óssea, principalmente por inibir osteoblastos, além de favorecer reabsorção óssea e reduzir absorção intestinal de cálcio.
+( ) Hipogonadismo pode contribuir para perda de massa óssea em homens.
+Justificativa: Verdadeira. O hipogonadismo reduz o estímulo hormonal sobre o osso e pode causar perda de massa óssea e maior risco de fraturas em homens.
+( ) Homens não devem ser investigados para osteoporose, pois trata-se de doença exclusivamente feminina.
+Justificativa: Falsa. Osteoporose também ocorre em homens, principalmente com idade avançada, hipogonadismo, uso de corticoide ou fratura por fragilidade.
+( ) A avaliação clínica de fatores de risco e fraturas prévias é importante na estratificação de risco.
+Justificativa: Verdadeira. História de fraturas, uso de medicamentos e fatores de risco são fundamentais para avaliar o risco de novas fraturas e causas secundárias.
+( ) A presença de fratura por fragilidade em homem, especialmente em idosos, costuma ser um achado esperado do envelhecimento e dispensa investigação etiológica adicional na maioria dos casos.
+Justificativa: Falsa. Fratura por fragilidade em homem não deve ser considerada apenas “do envelhecimento”; exige investigação de osteoporose e de causas secundárias.
+Explicação geral: 
+Neste caso há dois fatores fortes de osteoporose secundária: hipogonadismo + uso crônico de glicocorticoide.
+
+Dica de memorização:
+Homem com fratura por fragilidade = investigar causa secundária.
+
+PTH – Metabolismo do cálcio e fósforo - O hormônio da paratireóide (PTH) participa ativamente da regulação do metabolismo do cálcio e do fósforo. Alterações na sua secreção podem cursar com manifestações clínicas, laboratoriais e esqueléticas distintas. Considere os dois casos clínicos a seguir:
+
+Caso 1: Mulher, 64 anos, em investigação de hipercalcemia detectada em exames de rotina. Refere história prévia de nefrolitíase.
+
+Exames laboratoriais:
+Cálcio total: 11,6 mg/dL
+Fósforo: 2,2 mg/dL
+PTH: 138 pg/mL
+Creatinina: normal
+
+Caso 2: Mulher, 39 anos, submetida à tireoidectomia total há 7 dias, apresenta parestesias em extremidades, cãibras e espasmo carpopedal.
+
+Exames laboratoriais:
+Cálcio total: 7,0 mg/dL
+Fósforo: 5,9 mg/dL
+PTH: baixo
+
+Com base na interpretação dos casos, julgue os itens a seguir em V (verdadeiro) ou F (falso):
+( ) O Caso 1 é compatível com hiperparatireoidismo primário, enquanto o Caso 2 sugere hipoparatireoidismo pós-cirúrgico, sendo ambos os diagnósticos sustentados pela correlação entre quadro clínico e padrão laboratorial.
+Justificativa: Verdadeira.
+Caso 1: Ca ↑ + PTH ↑ + fósforo ↓ → hiperparatireoidismo primário.
+Caso 2: Ca ↓ + PTH ↓ + fósforo ↑ após tireoidectomia → hipoparatireoidismo pós-cirúrgico.
+( ) A hipofosfatemia no Caso 1 e a hiperfosfatemia no Caso 2 podem ser explicadas, respectivamente, pela presença e pela deficiência da ação do PTH sobre a excreção renal de fósforo.
+Justificativa: Verdadeira. O PTH aumenta a excreção renal de fósforo. Assim:
+PTH ↑ → fósforo ↓ → hipofosfatemia → hiperparatireoidismo primário.
+PTH ↓ → fósforo ↑ → hipoparatireoidismo pós-cirúrgico.
+( ) A presença de nefrolitíase no Caso 1 e de espasmo carpopedal no Caso 2 pode ser compreendida como manifestações clínicas relacionadas às alterações do metabolismo do cálcio.
+Justificativa: Verdadeira. 
+No Caso 1, hipercalcemia favorece nefrolitíase.
+No Caso 2, hipocalcemia aumenta excitabilidade neuromuscular, causando cãibras e espasmo carpopedal.
+( ) No Caso 1, exames de localização, como ultrassonografia cervical e cintilografia com sestamibi, são indispensáveis para estabelecer o diagnóstico inicial da doença.
+Justificativa: Falsa. O diagnóstico do hiperparatireoidismo primário é bioquímico, com cálcio e PTH. USG cervical e sestamibi são exames de localização pré-operatória, não para confirmar o diagnóstico.
+( ) No Caso 2, a reposição de cálcio e calcitriol pode ser necessária, enquanto no Caso 1 a doença pode cursar com repercussões ósseas, incluindo redução de massa óssea e aumento do risco de fraturas.
+Justificativa: Verdadeira. No hipoparatireoidismo, pode ser necessária reposição de cálcio + calcitriol. Já o hiperparatireoidismo pode causar reabsorção óssea, osteopenia/osteoporose e maior risco de fraturas.
+Explicação geral: 
+PTH ↑ → cálcio ↑ e fósforo ↓.
+PTH ↓ → cálcio ↓ e fósforo ↑
+
+Dica de memorização:
+PTH põe cálcio no sangue e joga fósforo na urina.
+
+Avalie o caso clínico: I.M.S.S., feminina, 47 anos, negra. Iniciou três anos antes da avaliação médica quadro de parestesia e alodinia em região palmar, acompanhados de aumento de extremidades. Também foi notada macroglossia durante a realização de endoscopia digestiva alta (EDA).
+
+Exame físico: prognatismo, aumento de nariz, lábios e mãos. PA: 160x100mmHg. Na investigação inicial observou-se glicemia 128 mg/dL; HbA1c 7,3%.
+
+Sobre o caso acima, assinale V (verdadeiro) ou F (falso):
+
+( ) As complicações cardiovasculares são as primeiras causas de mortalidade nos pacientes com acromegalia.
+Justificativa: Verdadeira. As complicações cardiovasculares estão entre as principais causas de mortalidade na acromegalia, especialmente por HAS, cardiomiopatia e alterações metabólicas.
+( ) Nos pacientes em que o diagnóstico não pode ser descartado ou confirmado com as dosagens basais de GH e IGF-1, está indicada a dosagem do GH durante teste oral de tolerância à glicose.
+Justificativa: Verdadeira. Quando GH e IGF-1 basais não esclarecem o diagnóstico, pode-se realizar TOTG com dosagem de GH. Na acromegalia, o GH não suprime adequadamente após a glicose.
+( ) A cirurgia é considerada a terapia de primeira escolha no tratamento da acromegalia e na maioria dos casos realizada por via transesfenoidal.
+Justificativa: Verdadeira. A cirurgia transesfenoidal é o tratamento de primeira escolha na maioria dos pacientes com adenoma hipofisário ressecável.
+( ) Geralmente a ressonância nuclear magnética (RNM) de sela túrcica evidencia um microadenoma hipofisário.
+Justificativa: Falsa. Na maioria dos casos, o diagnóstico ocorre tardiamente e a RNM evidencia macroadenoma, não microadenoma.
+( ) O principal mecanismo envolvido na gênese dos sintomas da acromegalia é a hipersecreção de GHRH (growth-hormone releasing hormone GHRH) hipotalâmico.
+Justificativa: Falsa. A causa habitual é um adenoma hipofisário secretor de GH, levando a aumento de IGF-1. Hipersecreção de GHRH é causa rara de acromegalia.
+Explicação geral: 
+Acromegalia = adenoma hipofisário → GH ↑ → IGF-1 ↑.
+
+Dica de memorização:
+IGF-1 rastreia → TOTG ajuda a confirmar → RNM localiza → transesfenoidal trata.
+
+Hiperprolactinemia: A prolactina (PRL) é produzida e secretada pelas células lactotróficas da hipófise anterior, sob controle inibitório de fatores hipotalâmicos, tal como a dopamina. Assinale V (verdadeiro) ou F (falso): em relação às causas de hiperprolactinemia.
+
+( ) A cirrose hepática causa hiperprolactinemia por provocar diminuição da depuração renal do hormônio.
+Justificativa: Falsa. A cirrose pode causar hiperprolactinemia por redução da depuração/metabolização da prolactina, mas a frase erra ao atribuir isso especificamente à depuração renal.
+( ) Ao se deparar com aumento nos níveis de prolactina na ausência de sintomas compatíveis com hiperprolactinemia, é preciso suspeitar da presença de macroprolactina.
+Justificativa: Verdadeira. Hiperprolactinemia com poucos ou nenhum sintoma deve levantar suspeita de macroprolactina, forma de alto peso molecular e baixa atividade biológica.
+( ) A produção ectópica de PRL por tumores extra-hipofisários é a causa patológica mais frequente de hiperprolactinemia.
+Justificativa: Falsa. Produção ectópica de prolactina é rara. Entre as causas patológicas hipofisárias, o prolactinoma é muito mais frequente.
+( ) O prolactinoma representa o adenoma funcionante hipofisário mais frequente.
+Justificativa: Verdadeira. O prolactinoma é o adenoma hipofisário funcionante mais comum.
+( ) O hipotireoidismo primário pode ser causa de hiperprolactinemia, a qual é provocada pela diminuição do hormônio liberador de tireotrofina (TRH).
+Justificativa: Falsa. No hipotireoidismo primário ocorre aumento de TRH, não diminuição. O TRH elevado pode estimular os lactotrofos e aumentar a prolactina. 
+Explicação geral: 
+Dopamina inibe PRL; TRH estimula PRL.
+
+Dica de memorização:
+PRL alta sem sintomas → pense em macroprolactina.
+Hipotireoidismo: TRH ↑ → PRL ↑.
+
+Doenças Adrenais: Assinale V ou F para as alternativas abaixo, em relação às Doenças Adrenais. CORRIJA as alternativas FALSAS, ao lado da questão.
+
+( ) No diagnóstico de feocromocitoma a dosagem das catecolaminas plasmáticas é o exame de maior sensibilidade diagnóstica. __________
+Justificativa: Falsa. No feocromocitoma, os exames bioquímicos mais sensíveis são as metanefrinas plasmáticas livres ou metanefrinas urinárias fracionadas, e não a dosagem direta de catecolaminas plasmáticas. → Correção: “No diagnóstico de feocromocitoma, a dosagem de metanefrinas plasmáticas ou urinárias apresenta maior sensibilidade diagnóstica.”
+( ) No hipercortisolismo o ACTH estar alto ou normal-alto no Cushing hipofisário e baixo/suprimido no Cushing adrenal. __________
+Justificativa: Verdadeira. No Cushing hipofisário, o ACTH costuma estar elevado ou inadequadamente normal; no Cushing adrenal, o cortisol é produzido autonomamente e o ACTH fica baixo/suprimido.
+( ) A droga de primeira escolha no preparo pré-operatório do feocromocitoma é o betabloqueador. __________
+Justificativa: Falsa. O preparo pré-operatório começa com bloqueio alfa-adrenérgico, e não beta-bloqueio. Betabloqueador só deve ser usado depois do bloqueio alfa, se necessário para controlar taquicardia. → Correção: “A droga de primeira escolha no preparo pré-operatório do feocromocitoma é um alfa-bloqueador.”
+( ) A tríade clássica de feocromocitoma é taquicardia, sudorese e cefaléia. __________
+Justificativa: Verdadeira. A tríade clássica do feocromocitoma é cefaleia + sudorese + palpitações/taquicardia, frequentemente associada a hipertensão.
+( ) Presença de giba, fácies em lua cheia, estrias violáceas e osteoporose são achados frequentes na síndrome de Cushing. __________
+Justificativa: Verdadeira. Giba dorsocervical, fácies em lua cheia, estrias violáceas e osteoporose são manifestações típicas do hipercortisolismo.
+Explicação geral: 
+Feo → metanefrinas e alfa-bloqueio.
+Cushing adrenal → ACTH baixo.
+
+Dica de memorização:
+Feocromocitoma: “META primeiro, ALFA antes de BETA.”
+
+Hipofunção hipofisária: Assinale V ou F para as alternativas abaixo, em relação a hipofunção hipofisária.
+
+( ) Alguns fatores transcripcionais causam hipopituitarismo congênito: Pit-1, PROP 1, e HESX1.
+Justificativa: Verdadeira. Mutações em fatores de transcrição como PIT-1, PROP-1 e HESX1 podem causar hipopituitarismo congênito, por comprometer o desenvolvimento e a função da hipófise.
+( ) As causas mais comuns de hipopituitarismo adquirido são tumorais e pós quimioterapia.
+Justificativa: Falsa. As causas adquiridas mais comuns incluem principalmente tumores hipofisários e seu tratamento com cirurgia ou radioterapia, e não quimioterapia como causa clássica principal.
+( ) A anemia falciforme, sarcoidose e hemocromatose apresentam a mesma etiopatogenia de hipofunção da hipófise.
+Justificativa: Falsa. Essas doenças podem afetar a hipófise, mas por mecanismos diferentes: sarcoidose e hemocromatose são infiltrativas, enquanto anemia falciforme pode causar lesão por eventos vasculares/isquêmicos.
+( ) Os achados laboratoriais podem incluir: ACTH baixo ou normal, TSH baixo ou discretamente elevado e Testosterona baixa.
+Justificativa: Verdadeira. No hipopituitarismo, os hormônios periféricos podem estar baixos com hormônios hipofisários baixos ou inadequadamente normais. Assim, pode haver ACTH baixo/normal, TSH baixo ou discretamente elevado e testosterona baixa.
+( ) O quadro clínico de insuficiência adrenal central apresenta: hipotensão postural, perda de peso, fraqueza e náuseas.
+Justificativa: Verdadeira. A insuficiência adrenal central pode causar fraqueza, náuseas, perda de peso e hipotensão, por deficiência de cortisol.
+Explicação geral: 
+Hipopituitarismo = deficiência de um ou mais eixos hormonais da hipófise.
+
+Dica de memorização:
+Hormônio periférico baixo + hormônio hipofisário baixo/normal inadequado = deficiência central.
+
+Hiperplasia Adrenal Congênita: Em relação a Hiperplasia Adrenal Congênita por deficiência da 21-Hidroxilase: Cite:
+
+O marcador laboratorial de diagnóstico
+Justificativa: 17-hidroxiprogesterona (17-OHP) elevada. A deficiência da 21-hidroxilase bloqueia a síntese de cortisol e leva ao acúmulo de 17-OHP, que é desviada para produção de andrógenos.
+O achado de exame físico principal no recém nascido de sexo masculino 
+Justificativa: Macrogenitossomia/Virilização precoce, podendo a genitália também pode ser aparentemente normal; O excesso de andrógenos pode provocar aumento peniano desproporcional, geralmente sem aumento testicular proporcional. Em alguns recém-nascidos, porém, a genitália pode parecer normal.
+O achado de exame físico principal no recém nascido de sexo feminino 
+Justificativa: Virilização da genitália externa / genitália ambígua, frequentemente com clitoromegalia. O excesso de andrógenos intrauterinos promove virilização dos genitais externos femininos.
+Nas formas virilizantes simples, qual o hormônio que deve ser usado no tratamento? 
+Justificativa: Glicocorticoide, preferencialmente hidrocortisona. A reposição de cortisol reduz o estímulo de ACTH e, consequentemente, diminui a produção excessiva de andrógenos adrenais.
+Como se apresenta a idade óssea da criança? 
+Justificativa: Avançada. O excesso de andrógenos acelera o crescimento e a maturação óssea, podendo levar a fechamento precoce das cartilagens de crescimento e baixa estatura final.
+
+Dica de memorização
+21-hidroxilase ↓ → 17-OHP ↑ → andrógenos ↑ → virilização + idade óssea avançada.
+
+Hipofunção hipofisária: Assinale V ou F para as alternativas abaixo, em relação a hipofunção hipofisária:
+( ) Os adenomas não funcionantes cursam com hiperprolactinemia devido compressão de haste hipofisária.
+Justificativa: Verdadeiro. Adenomas hipofisários não funcionantes podem causar hiperprolactinemia por efeito de haste: a compressão da haste reduz a chegada de dopamina à hipófise, retirando a inibição sobre a prolactina.
+( ) O déficit de GH no adulto pode cursar com indisposição e fraqueza.
+Justificativa: Verdadeiro. Déficit de GH no adulto pode cursar com fadiga, indisposição, fraqueza, redução de massa magra e piora da qualidade de vida.
+( ) No hipotireoidismo secundário, o seguimento laboratorial deve ser feito com dosagem de TSH e T4 Livre.
+Justificativa: Falsa. No hipotireoidismo central, o TSH não é confiável para seguimento. O acompanhamento deve ser feito principalmente pelo T4 livre, ajustando a levotiroxina para mantê-lo em faixa adequada.
+( ) A apoplexia hipofisária e os meningeomas possuem etiologia vascular no hipopituitarismo.
+Justificativa: Falsa. A apoplexia hipofisária tem etiologia vascular/hemorrágica, mas meningioma é uma lesão tumoral, não vascular.
+( ) O paciente com insuficiência adrenal central (secundária) cursa com déficit apenas dos glicocorticóides, com preservação do eixo mineralocorticoide.
+Justificativa: Verdadeiro. Na insuficiência adrenal central há deficiência de ACTH → cortisol baixo, mas a aldosterona costuma estar preservada porque é regulada principalmente pelo sistema renina-angiotensina-aldosterona.
+
+Explicação geral: 
+Central = cortisol baixo, mas aldosterona preservada.
+
+Dica de memorização:
+ACTH controla cortisol; renina-angiotensina controla aldosterona.
+
+Hipercortisolismo – Síndrome de Cushing : Em relação ao hipercortisolismo (Síndrome de Cushing), ASSINALE (verdadeiro) ou F (FALSO)
+( ) O cushing adrenal apresenta quadro clínico mais agressivo, com hipercortisolismo persistente mesmo após retirada do tumor adrenal.
+Justificativa: Falsa. No Cushing adrenal, a retirada do tumor produtor de cortisol tende a corrigir o hipercortisolismo. Pode haver insuficiência adrenal transitória no pós-operatório por supressão do eixo HHA.
+( ) Há inúmeros análogos sintéticos de cortisol, utilizados principalmente como anti-inflamatórios, antialérgicos e imunodepressores. Assim, o Cushing medicamentoso é a principal causa de hipercortisolismo na população.
+Justificativa: Verdadeira. O uso crônico de glicocorticoides exógenos é a causa mais comum de síndrome de Cushing na população.
+( ) Um efeito adverso induzido por corticoides é a osteoporose, perda de peso e hipotensão postural.
+Justificativa: Falsa. Corticoides podem causar osteoporose, mas costumam levar a ganho de peso e hipertensão, não perda de peso e hipotensão postural.
+( ) O teste de Liddle 2, supressão com dexametasona 8 mg é a melhor forma de confirmação de excesso de cortisol endógeno.
+Justificativa: Falsa. O teste com 8 mg de dexametasona (Liddle 2) não é usado para confirmar hipercortisolismo. Ele era utilizado na investigação etiológica, especialmente para diferenciar doença de Cushing de outras causas ACTH-dependentes. Para confirmar hipercortisolismo usam-se testes como dexametasona 1 mg, cortisol salivar noturno ou cortisol livre urinário.
+( ) O tratamento cirúrgico com retirada tumoral deve ser primeira opção terapêutica em todos os casos de síndrome de Cushing. Radioterapia e bloqueadores da esteroidogênese adrenal, fazem parte da segunda linha de tratamento.
+Justificativa: Falsa. Cirurgia não é primeira opção em todos os casos. Depende da etiologia. Por exemplo, no Cushing iatrogênico por corticoide não há tumor para operar.
+
+Explicação geral: 
+Primeiro confirma-se o hipercortisolismo; depois se define a causa com ACTH e investigação etiológica.
+
+Dica de memorização:
+Dexametasona 1 mg = rastreia/confirmar.
+8 mg = diferencia causa, não confirma.
